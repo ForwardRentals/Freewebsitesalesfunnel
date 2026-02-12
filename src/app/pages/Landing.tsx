@@ -64,7 +64,7 @@ const structuredData = [
     telephone: "+1-604-849-8898",
     email: "freesitecompany@gmail.com",
     description: "Free custom-coded websites for small businesses. No templates, no hidden fees.",
-    image: "https://freesitecompany.com/og-image.svg",
+    image: "https://freesitecompany.com/og-image.png",
     address: {
       "@type": "PostalAddress",
       addressRegion: "BC",
