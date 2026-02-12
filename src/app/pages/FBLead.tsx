@@ -58,10 +58,15 @@ export function FBLead() {
     setIsSubmitting(true);
 
     const payload = {
-      formType: "FBLead",
-      submittedAt: new Date().toISOString(),
-      ...formData,
-      businessType: selectedType,
+      form_name: "FBLead",
+      created_time: new Date().toISOString(),
+      full_name: formData.fullName,
+      email: formData.email,
+      phone_number: formData.phone,
+      business_name: formData.businessName,
+      business_type: selectedType,
+      is_organic: "true",
+      platform: "website",
     };
 
     try {

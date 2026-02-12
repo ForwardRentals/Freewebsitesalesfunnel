@@ -83,9 +83,23 @@ export function GetStarted() {
 
     try {
       const payload = {
-        formType: "GetStarted",
-        submittedAt: new Date().toISOString(),
-        ...formData,
+        form_name: "GetStarted",
+        created_time: new Date().toISOString(),
+        full_name: formData.businessName,
+        email: formData.email,
+        phone_number: formData.phone,
+        website: formData.currentWebsite,
+        business_name: formData.businessName,
+        location: formData.location,
+        current_host: formData.currentHost,
+        launch_date: formData.launchDate,
+        services: formData.services,
+        pages_needed: formData.pagesNeeded,
+        sample_websites: formData.sampleWebsites,
+        additional_info: formData.additionalInfo,
+        monthly_budget: formData.monthlyBudget,
+        is_organic: "true",
+        platform: "website",
       };
       const form = new FormData();
       for (const [key, value] of Object.entries(payload)) {
