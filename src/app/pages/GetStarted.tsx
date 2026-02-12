@@ -101,14 +101,15 @@ export function GetStarted() {
         is_organic: "true",
         platform: "website",
       };
-      const form = new FormData();
+      const params = new URLSearchParams();
       for (const [key, value] of Object.entries(payload)) {
-        form.append(key, value);
+        params.append(key, value);
       }
       await fetch(GOOGLE_SHEET_URL, {
         method: "POST",
         mode: "no-cors",
-        body: form,
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: params.toString(),
       });
     } catch (error) {
       console.error("Failed to submit form:", error);
