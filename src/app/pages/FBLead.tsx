@@ -51,7 +51,7 @@ export function FBLead() {
     setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
-  const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbxwI2ZSYVYWSQkOMShbpWH17cshCJQFY5yVyUShMh0aj_tHJGAxPdC87WZDcBHhTrPn/exec";
+  const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbwZ5AtTv-T-vAptWFRfjEMEdsCVX32eNjXP0D1fxImPP6Oo964piJaq4wuo9dQYEP1Ohw/exec";
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
