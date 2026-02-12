@@ -13,8 +13,8 @@ export function Footer() {
               <Logo />
             </Link>
             <p className="text-zinc-400 mb-6">
-              Building professional, custom websites for small businesses — completely free. 
-              You own the code. We handle the tech.
+              Professional web designer for small businesses. Free custom website design &
+              development — no templates, no website builders. You own the code. We handle the tech.
             </p>
             <div className="flex gap-4">
               <a
@@ -81,14 +81,15 @@ export function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="font-bold text-white mb-4">Services</h3>
+            <h3 className="font-bold text-white mb-4">Web Design Services</h3>
             <ul className="space-y-3">
-              <li className="text-zinc-400">Free Website Build</li>
-              <li className="text-zinc-400">Website Hosting</li>
-              <li className="text-zinc-400">Custom Development</li>
-              <li className="text-zinc-400">SEO Optimization</li>
-              <li className="text-zinc-400">Ongoing Support</li>
+              <li className="text-zinc-400">Free Custom Website Design</li>
+              <li className="text-zinc-400">Small Business Web Development</li>
+              <li className="text-zinc-400">Mobile-Responsive Web Design</li>
+              <li className="text-zinc-400">Website Hosting & Management</li>
+              <li className="text-zinc-400">SEO & Google Optimization</li>
               <li className="text-zinc-400">Custom Email Setup</li>
+              <li className="text-zinc-400">Ongoing Website Support</li>
             </ul>
           </div>
 

@@ -112,10 +112,10 @@ const promotions = [
 
 export function Plans() {
   useEffect(() => {
-    document.title = "Pricing Plans | FreeSiteCompany";
+    document.title = "Web Design Pricing — Free Website Build + Affordable Plans | FreeSiteCompany";
     const meta = document.querySelector('meta[name="description"]');
     if (meta) {
-      meta.setAttribute("content", "Simple, transparent pricing for your custom website. Free build included. Starter plan from $9.99/mo, Growth from $19.99/mo. No long-term contracts.");
+      meta.setAttribute("content", "Affordable web design pricing for small businesses. Free custom website build included. Hosting & support from $9.99/mo. No contracts, no hidden fees. Compare to hiring a web designer or using a website builder.");
     }
   }, []);
 

@@ -19,33 +19,33 @@ import {
 const features = [
   {
     icon: Code,
-    title: "Fully Manual Development",
-    description: "Every website is custom-coded by hand — no templates, no shortcuts",
+    title: "Real Web Designer, Not a Template",
+    description: "Every website is custom-coded by a professional web developer — no drag-and-drop builders, no cookie-cutter themes",
   },
   {
     icon: Zap,
-    title: "Lightning Fast",
-    description: "Optimized for speed and performance from day one",
+    title: "Faster Than Any Website Builder",
+    description: "Hand-coded sites load faster than Wix, Squarespace, or WordPress — better for SEO and your customers",
   },
   {
     icon: Shield,
     title: "Secure & Backed Up",
-    description: "Automated security monitoring and daily backups included",
+    description: "Automated security monitoring and daily backups included with every managed plan",
   },
   {
     icon: Rocket,
     title: "Quick Turnaround",
-    description: "Get your website launched faster than you think",
+    description: "Get your professional website designed and launched faster than you think",
   },
 ];
 
 const benefits = [
-  "100% custom design tailored to your brand",
-  "Mobile-friendly for customers on-the-go",
-  "Local SEO optimized to get found on Google",
-  "Online booking & contact forms",
+  "100% custom web design tailored to your brand",
+  "Mobile-responsive design for customers on-the-go",
+  "Local SEO optimized to rank on Google",
+  "Online booking & contact forms built-in",
   "Showcase your menu, services, or portfolio",
-  "You own the complete codebase",
+  "You own the complete codebase — no platform lock-in",
 ];
 
 const stats = [
@@ -58,50 +58,167 @@ const stats = [
 const structuredData = [
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": "ProfessionalService",
+    "@id": "https://freesitecompany.com/#organization",
     name: "FreeSiteCompany",
+    alternateName: "Free Site Company",
     url: "https://freesitecompany.com",
     telephone: "+1-604-849-8898",
     email: "freesitecompany@gmail.com",
-    description: "Free custom-coded websites for small businesses. No templates, no hidden fees.",
+    description: "Professional web designer and website builder for small businesses. We build custom-coded websites for free — no templates, no page builders. Hand-coded web design for restaurants, salons, contractors, clinics, and service businesses.",
     image: "https://freesitecompany.com/og-image.png",
     address: {
       "@type": "PostalAddress",
       addressRegion: "BC",
       addressCountry: "CA",
     },
-    areaServed: {
-      "@type": "State",
-      name: "British Columbia",
-      containedInPlace: { "@type": "Country", name: "Canada" },
-    },
+    areaServed: [
+      { "@type": "Country", name: "Canada" },
+      { "@type": "Country", name: "United States" },
+    ],
     priceRange: "Free - $27.99/mo",
+    knowsAbout: [
+      "Web Design",
+      "Web Development",
+      "Custom Website Builder",
+      "Small Business Websites",
+      "Responsive Web Design",
+      "SEO Optimization",
+      "Website Hosting",
+    ],
+    sameAs: [],
   },
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "FreeSiteCompany",
+    name: "FreeSiteCompany — Free Web Designer for Small Business",
     url: "https://freesitecompany.com",
+    description: "Free custom web design and development for small businesses. Professional web designer offering hand-coded websites with no templates.",
+    potentialAction: {
+      "@type": "SearchAction",
+      target: "https://freesitecompany.com/get-started",
+      description: "Get started with your free custom website",
+    },
   },
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "Free Custom Website Build",
-    provider: { "@type": "Organization", name: "FreeSiteCompany" },
-    description: "Professional, custom-coded website built for free for your small business. Includes 2 rounds of revisions.",
-    areaServed: "British Columbia, Canada",
-    offers: {
-      "@type": "Offer",
-      price: "0",
-      priceCurrency: "CAD",
-      description: "Free website build with 2 revisions included",
+    name: "Free Website Design & Development",
+    serviceType: "Web Design",
+    provider: {
+      "@type": "Organization",
+      name: "FreeSiteCompany",
+      url: "https://freesitecompany.com",
     },
+    description: "Professional web designer builds your small business website for free. Custom-coded, mobile-responsive web design with 2 rounds of revisions included. No templates, no website builders — real hand-coded development.",
+    areaServed: [
+      { "@type": "Country", name: "Canada" },
+      { "@type": "Country", name: "United States" },
+    ],
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Web Design Services",
+      itemListElement: [
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Free Custom Website Build",
+            description: "Complete custom-coded website designed and built for free. Includes 2 revision rounds. You own the full codebase.",
+          },
+          price: "0",
+          priceCurrency: "CAD",
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Website Hosting & Support — Starter",
+            description: "Managed hosting, security monitoring, backups, and phone/email support for your website.",
+          },
+          price: "9.99",
+          priceCurrency: "CAD",
+          priceSpecification: {
+            "@type": "UnitPriceSpecification",
+            price: "9.99",
+            priceCurrency: "CAD",
+            unitText: "MONTH",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Website Hosting & Support — Growth",
+            description: "Everything in Starter plus content updates, speed optimization, SEO hygiene, priority support, and monthly blog posting.",
+          },
+          price: "19.99",
+          priceCurrency: "CAD",
+          priceSpecification: {
+            "@type": "UnitPriceSpecification",
+            price: "19.99",
+            priceCurrency: "CAD",
+            unitText: "MONTH",
+          },
+        },
+      ],
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "How much does a web designer cost?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "At FreeSiteCompany, our web design service is completely free. We hand-code a custom website for your business at no cost. If you want ongoing hosting and support, plans start at $9.99/month.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Can I get a website built for free?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes! FreeSiteCompany builds custom-coded websites for small businesses completely free. Unlike template-based website builders, every site is hand-coded by a real developer. You receive the full codebase and own it outright.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What is the best website builder for small business?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "While drag-and-drop website builders like Wix or Squarespace are popular, they limit your control and performance. FreeSiteCompany offers a better alternative: a professional web designer builds your site with custom code for free. You get a faster, more flexible website that you fully own.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "How do I find a web designer near me?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "FreeSiteCompany serves small businesses across Canada and the US remotely. You don't need a local web designer — we handle everything online. Fill out our simple form, and our team will design and build your custom website for free.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Do I own the website code?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes, 100%. Unlike most website builders that lock you into their platform, FreeSiteCompany gives you the complete source code. You can host it anywhere, modify it, or hand it to another developer.",
+        },
+      },
+    ],
   },
 ];
 
 export function Landing() {
   useEffect(() => {
-    document.title = "Free Custom Website for Your Business | FreeSiteCompany";
+    document.title = "Free Web Designer for Small Business | Custom Website Builder | FreeSiteCompany";
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta) {
+      meta.setAttribute("content", "Looking for a web designer? Get a free custom-coded website for your small business. No templates, no page builders. Professional web design & development — hand-built by real developers. Restaurants, salons, contractors & more.");
+    }
   }, []);
 
   return (
@@ -176,12 +293,12 @@ export function Landing() {
               transition={{ delay: 0.4, duration: 0.6 }}
               className="text-xl md:text-2xl text-zinc-400 mb-12 leading-relaxed"
             >
-              Professional website for your local business — fully custom-coded, no templates.
+              Skip the website builders. Get a professional web designer to hand-code your site — for free.
               <br />
               <span className="text-emerald-400 font-semibold">
                 Perfect for restaurants, salons, contractors, clinics & service businesses.
               </span>{" "}
-              You own the code. We handle the tech.
+              You own the code. No platform lock-in. No monthly builder fees.
             </motion.p>
 
             <motion.p
@@ -251,10 +368,10 @@ export function Landing() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Why Choose FreeSiteCompany?
+              Why Hire Our Web Designers?
             </h2>
             <p className="text-xl text-zinc-400">
-              Everything you need to establish your online presence
+              Better than any website builder — real developers, real custom code
             </p>
           </motion.div>
 

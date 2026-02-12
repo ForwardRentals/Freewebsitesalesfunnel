@@ -19,7 +19,7 @@ import { Label } from "../components/ui/label";
 
 export function GetStarted() {
   useEffect(() => {
-    document.title = "Get Started — Free Website | FreeSiteCompany";
+    document.title = "Get Your Free Website — Hire a Web Designer Today | FreeSiteCompany";
   }, []);
 
   const navigate = useNavigate();
