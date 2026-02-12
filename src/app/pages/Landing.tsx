@@ -14,6 +14,12 @@ import {
   TrendingUp,
   Users,
   Clock,
+  Search,
+  PenTool,
+  BarChart3,
+  Layers,
+  Globe,
+  FileText,
 } from "lucide-react";
 
 const features = [
@@ -46,6 +52,39 @@ const benefits = [
   "Online booking & contact forms built-in",
   "Showcase your menu, services, or portfolio",
   "You own the complete codebase — no platform lock-in",
+];
+
+const buildIncludes = [
+  {
+    icon: Search,
+    title: "Powerful SEO Built-In",
+    description: "Every site ships with structured data, meta tags, open graph tags, sitemap, and semantic HTML — built to rank on Google from day one",
+  },
+  {
+    icon: FileText,
+    title: "Blog-Ready Architecture",
+    description: "Want to publish articles, news, or updates? We can build in a blog section so you can drive organic traffic and keep customers engaged",
+  },
+  {
+    icon: Layers,
+    title: "Dynamic & Interactive Builds",
+    description: "Smooth animations, interactive elements, and dynamic content — not a static page. Your site feels alive and professional",
+  },
+  {
+    icon: BarChart3,
+    title: "Analytics-Ready",
+    description: "Pre-wired for Google Analytics, Meta Pixel, and conversion tracking so you can measure what matters from launch day",
+  },
+  {
+    icon: Globe,
+    title: "Blazing Fast Performance",
+    description: "Optimized images, lazy loading, and clean code means your site scores 90+ on Google PageSpeed — faster than WordPress or Wix",
+  },
+  {
+    icon: PenTool,
+    title: "Designed to Convert",
+    description: "Every layout is crafted to guide visitors toward booking, calling, or contacting you — not just looking pretty",
+  },
 ];
 
 const stats = [
@@ -443,8 +482,66 @@ export function Landing() {
         </div>
       </section>
 
-      {/* How It Works */}
+      {/* Every Build Comes Loaded */}
       <section className="py-24 px-6">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Every Build Comes{" "}
+              <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
+                Loaded
+              </span>
+            </h2>
+            <p className="text-xl text-zinc-400 max-w-3xl mx-auto">
+              This isn't a basic landing page. Every website we build is a dynamic, SEO-powered,
+              conversion-optimized machine — ready to grow your business.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {buildIncludes.map((item, index) => (
+              <motion.div
+                key={item.title}
+                initial={{ y: 20, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                whileHover={{ y: -5 }}
+                className="relative group"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/10 to-cyan-500/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="relative p-8 bg-zinc-900/50 border border-zinc-800 rounded-2xl hover:border-emerald-500/50 transition-all h-full">
+                  <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-emerald-500/20 to-cyan-500/20 rounded-xl mb-4">
+                    <item.icon className="h-6 w-6 text-emerald-400" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">{item.title}</h3>
+                  <p className="text-zinc-400">{item.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            className="mt-12 text-center"
+          >
+            <p className="text-zinc-500 text-sm max-w-2xl mx-auto">
+              Blog functionality, extra pages, and advanced integrations available as add-ons.
+              Every build starts with a rock-solid foundation — you decide how far to take it.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* How It Works */}
+      <section className="py-24 px-6 bg-zinc-900/50">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ y: 20, opacity: 0 }}
