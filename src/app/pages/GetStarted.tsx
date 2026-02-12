@@ -81,39 +81,35 @@ export function GetStarted() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    try {
-      const payload = {
-        form_name: "GetStarted",
-        created_time: new Date().toISOString(),
-        full_name: formData.businessName,
-        email: formData.email,
-        phone_number: formData.phone,
-        website: formData.currentWebsite,
-        business_name: formData.businessName,
-        location: formData.location,
-        current_host: formData.currentHost,
-        launch_date: formData.launchDate,
-        services: formData.services,
-        pages_needed: formData.pagesNeeded,
-        sample_websites: formData.sampleWebsites,
-        additional_info: formData.additionalInfo,
-        monthly_budget: formData.monthlyBudget,
-        is_organic: "true",
-        platform: "website",
-      };
-      const params = new URLSearchParams();
-      for (const [key, value] of Object.entries(payload)) {
-        params.append(key, value);
-      }
-      await fetch(GOOGLE_SHEET_URL, {
-        method: "POST",
-        mode: "no-cors",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: params.toString(),
-      });
-    } catch (error) {
-      console.error("Failed to submit form:", error);
+    const payload = {
+      form_name: "GetStarted",
+      created_time: new Date().toISOString(),
+      full_name: formData.businessName,
+      email: formData.email,
+      phone_number: formData.phone,
+      website: formData.currentWebsite,
+      business_name: formData.businessName,
+      location: formData.location,
+      current_host: formData.currentHost,
+      launch_date: formData.launchDate,
+      services: formData.services,
+      pages_needed: formData.pagesNeeded,
+      sample_websites: formData.sampleWebsites,
+      additional_info: formData.additionalInfo,
+      monthly_budget: formData.monthlyBudget,
+      is_organic: "true",
+      platform: "website",
+    };
+    const params = new URLSearchParams();
+    for (const [key, value] of Object.entries(payload)) {
+      params.append(key, value);
     }
+    fetch(GOOGLE_SHEET_URL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: params.toString(),
+    }).catch(() => {});
 
     navigate("/thank-you");
   };

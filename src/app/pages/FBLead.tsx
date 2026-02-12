@@ -69,20 +69,16 @@ export function FBLead() {
       platform: "website",
     };
 
-    try {
-      const params = new URLSearchParams();
-      for (const [key, value] of Object.entries(payload)) {
-        params.append(key, value);
-      }
-      await fetch(GOOGLE_SHEET_URL, {
-        method: "POST",
-        mode: "no-cors",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: params.toString(),
-      });
-    } catch (error) {
-      console.error("Failed to submit form:", error);
+    const params = new URLSearchParams();
+    for (const [key, value] of Object.entries(payload)) {
+      params.append(key, value);
     }
+    fetch(GOOGLE_SHEET_URL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: params.toString(),
+    }).catch(() => {});
 
     navigate("/thank-you");
   };
