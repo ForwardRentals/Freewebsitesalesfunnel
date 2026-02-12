@@ -103,7 +103,7 @@ const structuredData = [
     alternateName: "Free Site Company",
     url: "https://freesitecompany.com",
     telephone: "+1-604-849-8898",
-    email: "freesitecompany@gmail.com",
+    email: "freesitecompanycanada@gmail.com",
     description: "Professional web designer and website builder for small businesses. We build custom-coded websites for free — no templates, no page builders. Hand-coded web design for restaurants, salons, contractors, clinics, and service businesses.",
     image: "https://freesitecompany.com/og-image.png",
     address: {

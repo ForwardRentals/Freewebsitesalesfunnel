@@ -99,11 +99,11 @@ export function Footer() {
             <address className="not-italic space-y-4">
               <div>
                 <a
-                  href="mailto:freesitecompany@gmail.com"
+                  href="mailto:freesitecompanycanada@gmail.com"
                   className="flex items-start gap-3 text-zinc-400 hover:text-emerald-400 transition-colors group"
                 >
                   <Mail className="h-5 w-5 flex-shrink-0 mt-0.5 group-hover:text-emerald-400" />
-                  <span className="break-all">freesitecompany@gmail.com</span>
+                  <span className="break-all">freesitecompanycanada@gmail.com</span>
                 </a>
               </div>
               <div>
