@@ -75,7 +75,7 @@ export function GetStarted() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbwZ5AtTv-T-vAptWFRfjEMEdsCVX32eNjXP0D1fxImPP6Oo964piJaq4wuo9dQYEP1Ohw/exec";
+  const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbyf2n_cRhou3C45Vz-mTUqg7VoFK_Tjczbxu-UwOd5uSa7mYm54Q-ff4DyqqdeHghbolQ/exec";
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
