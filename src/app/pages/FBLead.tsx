@@ -53,11 +53,12 @@ export function FBLead() {
 
   const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbxwI2ZSYVYWSQkOMShbpWH17cshCJQFY5yVyUShMh0aj_tHJGAxPdC87WZDcBHhTrPn/exec";
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (isSubmitting) return;
     setIsSubmitting(true);
 
-    const payload = {
+    const payload = new URLSearchParams({
       form_name: "FBLead",
       created_time: new Date().toISOString(),
       full_name: formData.fullName,
@@ -67,20 +68,10 @@ export function FBLead() {
       business_type: selectedType,
       is_organic: "true",
       platform: "website",
-    };
+    });
 
-    const params = new URLSearchParams();
-    for (const [key, value] of Object.entries(payload)) {
-      params.append(key, value);
-    }
-    fetch(GOOGLE_SHEET_URL, {
-      method: "POST",
-      mode: "no-cors",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: params.toString(),
-    }).catch(() => {});
-
-    navigate("/thank-you");
+    navigator.sendBeacon(GOOGLE_SHEET_URL, payload);
+    window.location.href = "/thank-you";
   };
 
   const isValid =

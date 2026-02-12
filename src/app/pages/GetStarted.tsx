@@ -77,11 +77,12 @@ export function GetStarted() {
 
   const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbxwI2ZSYVYWSQkOMShbpWH17cshCJQFY5yVyUShMh0aj_tHJGAxPdC87WZDcBHhTrPn/exec";
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (isSubmitting) return;
     setIsSubmitting(true);
 
-    const payload = {
+    const payload = new URLSearchParams({
       form_name: "GetStarted",
       created_time: new Date().toISOString(),
       full_name: formData.businessName,
@@ -99,19 +100,10 @@ export function GetStarted() {
       monthly_budget: formData.monthlyBudget,
       is_organic: "true",
       platform: "website",
-    };
-    const params = new URLSearchParams();
-    for (const [key, value] of Object.entries(payload)) {
-      params.append(key, value);
-    }
-    fetch(GOOGLE_SHEET_URL, {
-      method: "POST",
-      mode: "no-cors",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: params.toString(),
-    }).catch(() => {});
+    });
 
-    navigate("/thank-you");
+    navigator.sendBeacon(GOOGLE_SHEET_URL, payload);
+    window.location.href = "/thank-you";
   };
 
   const progress = (step / 4) * 100;
@@ -485,9 +477,10 @@ export function GetStarted() {
                 ) : (
                   <Button
                     type="submit"
-                    className="bg-gradient-to-r from-emerald-500 to-cyan-500 text-white hover:shadow-lg hover:shadow-emerald-500/50"
+                    disabled={isSubmitting}
+                    className="bg-gradient-to-r from-emerald-500 to-cyan-500 text-white hover:shadow-lg hover:shadow-emerald-500/50 disabled:opacity-50"
                   >
-                    Submit Request
+                    {isSubmitting ? "Submitting..." : "Submit Request"}
                     <CheckCircle2 className="h-4 w-4 ml-2" />
                   </Button>
                 )}
