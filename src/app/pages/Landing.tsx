@@ -261,7 +261,7 @@ export function Landing() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-white">
+    <div className="min-h-screen bg-zinc-950 text-white overflow-x-hidden">
       {structuredData.map((data, i) => (
         <script
           key={i}
