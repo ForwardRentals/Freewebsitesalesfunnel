@@ -82,15 +82,19 @@ export function GetStarted() {
     setIsSubmitting(true);
 
     try {
+      const payload = {
+        formType: "GetStarted",
+        submittedAt: new Date().toISOString(),
+        ...formData,
+      };
+      const form = new FormData();
+      for (const [key, value] of Object.entries(payload)) {
+        form.append(key, value);
+      }
       await fetch(GOOGLE_SHEET_URL, {
         method: "POST",
         mode: "no-cors",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          formType: "GetStarted",
-          submittedAt: new Date().toISOString(),
-          ...formData,
-        }),
+        body: form,
       });
     } catch (error) {
       console.error("Failed to submit form:", error);
