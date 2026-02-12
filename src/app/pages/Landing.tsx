@@ -272,7 +272,7 @@ export function Landing() {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-6 overflow-hidden">
+      <section className="relative pt-24 sm:pt-32 pb-12 sm:pb-20 px-4 sm:px-6 overflow-hidden">
         {/* Animated background elements */}
         <div className="absolute inset-0 overflow-hidden">
           <motion.div
@@ -317,7 +317,7 @@ export function Landing() {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.6 }}
-              className="text-6xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight"
+              className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-4 sm:mb-6 leading-tight"
             >
               Need a{" "}
               <span className="bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent">
@@ -330,7 +330,7 @@ export function Landing() {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.4, duration: 0.6 }}
-              className="text-xl md:text-2xl text-zinc-400 mb-12 leading-relaxed"
+              className="text-base sm:text-xl md:text-2xl text-zinc-400 mb-8 sm:mb-12 leading-relaxed"
             >
               Skip the website builders. Get a professional web designer to hand-code your site — for free.
               <br />
@@ -374,9 +374,9 @@ export function Landing() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-12 px-6 border-y border-zinc-800/50">
+      <section className="py-8 sm:py-12 px-4 sm:px-6 border-y border-zinc-800/50">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8">
             {stats.map((stat, index) => (
               <motion.div
                 key={stat.label}
@@ -386,11 +386,11 @@ export function Landing() {
                 transition={{ delay: index * 0.1 }}
                 className="text-center"
               >
-                <stat.icon className="h-8 w-8 text-emerald-400 mx-auto mb-3" />
-                <div className="text-4xl font-bold bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent mb-2">
+                <stat.icon className="h-6 w-6 sm:h-8 sm:w-8 text-emerald-400 mx-auto mb-2 sm:mb-3" />
+                <div className="text-2xl sm:text-4xl font-bold bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent mb-1 sm:mb-2">
                   {stat.value}
                 </div>
-                <div className="text-zinc-400">{stat.label}</div>
+                <div className="text-xs sm:text-base text-zinc-400">{stat.label}</div>
               </motion.div>
             ))}
           </div>
@@ -398,23 +398,23 @@ export function Landing() {
       </section>
 
       {/* Features Section */}
-      <section className="py-24 px-6">
+      <section className="py-12 sm:py-24 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-10 sm:mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4">
               Why Hire Our Web Designers?
             </h2>
-            <p className="text-xl text-zinc-400">
+            <p className="text-base sm:text-xl text-zinc-400">
               Better than any website builder — real developers, real custom code
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8">
             {features.map((feature, index) => (
               <motion.div
                 key={feature.title}
@@ -438,21 +438,21 @@ export function Landing() {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-24 px-6 bg-zinc-900/50">
+      <section className="py-12 sm:py-24 px-4 sm:px-6 bg-zinc-900/50">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
             <motion.div
               initial={{ x: -50, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
                 What's Included in Your{" "}
                 <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
                   Free Website
                 </span>
               </h2>
-              <p className="text-xl text-zinc-400 mb-8">
+              <p className="text-base sm:text-xl text-zinc-400 mb-6 sm:mb-8">
                 No gimmicks. No hidden fees for the initial build. You get a fully
                 functional, professional website completely free.
               </p>
@@ -483,27 +483,27 @@ export function Landing() {
       </section>
 
       {/* Every Build Comes Loaded */}
-      <section className="py-24 px-6">
+      <section className="py-12 sm:py-24 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-10 sm:mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4">
               Every Build Comes{" "}
               <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
                 Loaded
               </span>
             </h2>
-            <p className="text-xl text-zinc-400 max-w-3xl mx-auto">
+            <p className="text-base sm:text-xl text-zinc-400 max-w-3xl mx-auto">
               This isn't a basic landing page. Every website we build is a dynamic, SEO-powered,
               conversion-optimized machine — ready to grow your business.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
             {buildIncludes.map((item, index) => (
               <motion.div
                 key={item.title}
@@ -541,18 +541,18 @@ export function Landing() {
       </section>
 
       {/* How It Works */}
-      <section className="py-24 px-6 bg-zinc-900/50">
+      <section className="py-12 sm:py-24 px-4 sm:px-6 bg-zinc-900/50">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-10 sm:mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4">
               Simple Process, Amazing Results
             </h2>
-            <p className="text-xl text-zinc-400">
+            <p className="text-base sm:text-xl text-zinc-400">
               Get your website in 3 easy steps
             </p>
           </motion.div>
@@ -598,7 +598,7 @@ export function Landing() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 px-6 relative overflow-hidden">
+      <section className="py-12 sm:py-24 px-4 sm:px-6 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/10 via-cyan-500/10 to-blue-500/10" />
         <motion.div
           initial={{ scale: 0.9, opacity: 0 }}
@@ -606,7 +606,7 @@ export function Landing() {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto text-center relative z-10"
         >
-          <h2 className="text-4xl md:text-6xl font-bold mb-6">
+          <h2 className="text-2xl sm:text-4xl md:text-6xl font-bold mb-4 sm:mb-6">
             Ready to Get Started?
           </h2>
           <p className="text-xl text-zinc-400 mb-10">

@@ -51,24 +51,31 @@ export function FBLead() {
     setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const GOOGLE_SHEET_URL = "YOUR_GOOGLE_APPS_SCRIPT_URL_HERE";
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    const payload = { ...formData, businessType: selectedType };
-    console.log("FB Lead submitted:", payload);
+    const payload = {
+      formType: "FBLead",
+      submittedAt: new Date().toISOString(),
+      ...formData,
+      businessType: selectedType,
+    };
 
-    // TODO: Replace with your actual backend/webhook endpoint
-    // Example: send to email service, Google Sheets, or CRM
-    // fetch("https://your-api.com/leads", {
-    //   method: "POST",
-    //   headers: { "Content-Type": "application/json" },
-    //   body: JSON.stringify(payload),
-    // });
+    try {
+      await fetch(GOOGLE_SHEET_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+    } catch (error) {
+      console.error("Failed to submit form:", error);
+    }
 
-    setTimeout(() => {
-      navigate("/thank-you");
-    }, 600);
+    navigate("/thank-you");
   };
 
   const isValid =

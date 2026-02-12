@@ -166,7 +166,7 @@ export function Plans() {
       />
       <Navigation />
 
-      <div className="pt-24 pb-20 px-6">
+      <div className="pt-24 pb-20 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <motion.div
@@ -180,13 +180,13 @@ export function Plans() {
                 Simple, Transparent Pricing
               </span>
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6">
               Choose Your{" "}
               <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
                 Support Plan
               </span>
             </h1>
-            <p className="text-xl text-zinc-400 max-w-2xl mx-auto">
+            <p className="text-base sm:text-xl text-zinc-400 max-w-2xl mx-auto">
               Start with a free website build, then choose a plan if you want hosting,
               updates, and support. Perfect for small businesses ready to grow online!
             </p>

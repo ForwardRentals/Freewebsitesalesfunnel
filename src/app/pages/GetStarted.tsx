@@ -73,10 +73,29 @@ export function GetStarted() {
     if (step > 1) setStep(step - 1);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const GOOGLE_SHEET_URL = "YOUR_GOOGLE_APPS_SCRIPT_URL_HERE";
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    // In a real app, you'd send this to a backend
+    setIsSubmitting(true);
+
+    try {
+      await fetch(GOOGLE_SHEET_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          formType: "GetStarted",
+          submittedAt: new Date().toISOString(),
+          ...formData,
+        }),
+      });
+    } catch (error) {
+      console.error("Failed to submit form:", error);
+    }
+
     navigate("/thank-you");
   };
 
@@ -86,7 +105,7 @@ export function GetStarted() {
     <div className="min-h-screen bg-zinc-950 text-white">
       <Navigation />
 
-      <div className="pt-24 pb-20 px-6">
+      <div className="pt-24 pb-20 px-4 sm:px-6">
         <div className="max-w-3xl mx-auto">
           {/* Header */}
           <motion.div
@@ -100,7 +119,7 @@ export function GetStarted() {
                 Step {step} of 4
               </span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold mb-4">
               Let's Build Your{" "}
               <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
                 Free Website
@@ -130,7 +149,7 @@ export function GetStarted() {
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: -20, opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="bg-zinc-900/50 border border-zinc-800 rounded-2xl p-8 md:p-12"
+            className="bg-zinc-900/50 border border-zinc-800 rounded-2xl p-5 sm:p-8 md:p-12"
           >
             <form onSubmit={handleSubmit}>
               {/* Step 1: Basic Information */}
