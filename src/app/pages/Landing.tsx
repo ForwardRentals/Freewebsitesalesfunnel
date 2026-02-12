@@ -307,7 +307,7 @@ export function Landing() {
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-500/10 border border-emerald-500/20 rounded-full mb-8"
+              className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-emerald-500/10 border border-emerald-500/20 rounded-full mb-4 sm:mb-8"
             >
               <Sparkles className="h-4 w-4 text-emerald-400" />
               <span className="text-emerald-400 font-semibold">Limited Time Offer</span>
@@ -330,21 +330,21 @@ export function Landing() {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.4, duration: 0.6 }}
-              className="text-base sm:text-xl md:text-2xl text-zinc-400 mb-8 sm:mb-12 leading-relaxed"
+              className="text-sm sm:text-xl md:text-2xl text-zinc-400 mb-4 sm:mb-8 leading-relaxed"
             >
               Skip the website builders. Get a professional web designer to hand-code your site — for free.
-              <br />
+              <br className="hidden sm:block" />
               <span className="text-emerald-400 font-semibold">
-                Perfect for restaurants, salons, contractors, clinics & service businesses.
+                {" "}Perfect for restaurants, salons, contractors, clinics & service businesses.
               </span>{" "}
-              You own the code. No platform lock-in. No monthly builder fees.
+              <span className="hidden sm:inline">You own the code. No platform lock-in. No monthly builder fees.</span>
             </motion.p>
 
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5, duration: 0.6 }}
-              className="text-sm text-zinc-500 mb-8 max-w-2xl mx-auto"
+              className="hidden sm:block text-sm text-zinc-500 mb-8 max-w-2xl mx-auto"
             >
               * We will build your website, then do 2 full rounds of revisions included
             </motion.p>
@@ -353,18 +353,18 @@ export function Landing() {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.6, duration: 0.6 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center"
             >
               <Link
                 to="/get-started"
-                className="group px-8 py-4 bg-gradient-to-r from-emerald-500 to-cyan-500 text-white rounded-lg font-bold text-lg hover:shadow-2xl hover:shadow-emerald-500/50 transition-all hover:scale-105 flex items-center gap-2"
+                className="group w-full sm:w-auto text-center px-6 py-3 sm:px-8 sm:py-4 bg-gradient-to-r from-emerald-500 to-cyan-500 text-white rounded-lg font-bold text-base sm:text-lg hover:shadow-2xl hover:shadow-emerald-500/50 transition-all hover:scale-105 flex items-center justify-center gap-2"
               >
                 Get Started Free
                 <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
                 to="/plans"
-                className="px-8 py-4 bg-zinc-800/50 border border-zinc-700 text-white rounded-lg font-semibold text-lg hover:bg-zinc-800 transition-all"
+                className="w-full sm:w-auto text-center px-6 py-3 sm:px-8 sm:py-4 bg-zinc-800/50 border border-zinc-700 text-white rounded-lg font-semibold text-base sm:text-lg hover:bg-zinc-800 transition-all"
               >
                 View Plans
               </Link>
