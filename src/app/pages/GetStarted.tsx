@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router";
 import { motion } from "motion/react";
 import { Navigation } from "../components/Navigation";
@@ -18,6 +18,10 @@ import { Textarea } from "../components/ui/textarea";
 import { Label } from "../components/ui/label";
 
 export function GetStarted() {
+  useEffect(() => {
+    document.title = "Get Started — Free Website | FreeSiteCompany";
+  }, []);
+
   const navigate = useNavigate();
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({

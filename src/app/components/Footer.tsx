@@ -95,8 +95,8 @@ export function Footer() {
           {/* Contact Info */}
           <div>
             <h3 className="font-bold text-white mb-4">Get In Touch</h3>
-            <ul className="space-y-4">
-              <li>
+            <address className="not-italic space-y-4">
+              <div>
                 <a
                   href="mailto:freesitecompany@gmail.com"
                   className="flex items-start gap-3 text-zinc-400 hover:text-emerald-400 transition-colors group"
@@ -104,8 +104,8 @@ export function Footer() {
                   <Mail className="h-5 w-5 flex-shrink-0 mt-0.5 group-hover:text-emerald-400" />
                   <span className="break-all">freesitecompany@gmail.com</span>
                 </a>
-              </li>
-              <li>
+              </div>
+              <div>
                 <a
                   href="tel:+16048498898"
                   className="flex items-start gap-3 text-zinc-400 hover:text-emerald-400 transition-colors group"
@@ -113,12 +113,12 @@ export function Footer() {
                   <Phone className="h-5 w-5 flex-shrink-0 mt-0.5 group-hover:text-emerald-400" />
                   <span>(604) 849-8898</span>
                 </a>
-              </li>
-              <li className="flex items-start gap-3 text-zinc-400">
+              </div>
+              <div className="flex items-start gap-3 text-zinc-400">
                 <MapPin className="h-5 w-5 flex-shrink-0 mt-0.5 text-emerald-400" />
                 <span>Serving Small Businesses Everywhere</span>
-              </li>
-            </ul>
+              </div>
+            </address>
           </div>
         </div>
 
@@ -126,7 +126,7 @@ export function Footer() {
         <div className="pt-8 border-t border-zinc-800">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-zinc-500 text-sm">
-              © 2026 FreeSiteCompany. Building the web, one free site at a time.
+              © 2026 FreeSiteCompany. Building the web, one free site at a time. 100% Made in Canada.
             </p>
             <div className="flex gap-6 text-sm">
               <a href="#" className="text-zinc-500 hover:text-emerald-400 transition-colors">

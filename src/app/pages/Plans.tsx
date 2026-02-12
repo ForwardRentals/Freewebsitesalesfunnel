@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Link } from "react-router";
 import { motion } from "motion/react";
 import { Navigation } from "../components/Navigation";
@@ -110,8 +111,59 @@ const promotions = [
 ];
 
 export function Plans() {
+  useEffect(() => {
+    document.title = "Pricing Plans | FreeSiteCompany";
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta) {
+      meta.setAttribute("content", "Simple, transparent pricing for your custom website. Free build included. Starter plan from $9.99/mo, Growth from $19.99/mo. No long-term contracts.");
+    }
+  }, []);
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "Is the website build really free?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes! We build your website at no cost. You'll receive the complete codebase. Monthly plans are only if you want hosting, support, and ongoing updates.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Can I manage it myself?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Absolutely! We can write the code for any hosting provider you need (Vercel, Netlify, AWS, etc.). If you already know how to deploy and manage sites, perfect! If not, we'll show you exactly how to do it. Our $399 one-time setup package includes 5 hours of hands-on training.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What if I need more revisions?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Additional revisions and custom work are billed at $35/hour. We'll always get your approval before doing any paid work.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Can I cancel anytime?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes! No long-term contracts. You can cancel your monthly plan anytime and keep your website code. No questions asked.",
+        },
+      },
+    ],
+  };
+
   return (
     <div className="min-h-screen bg-zinc-950 text-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <Navigation />
 
       <div className="pt-24 pb-20 px-6">

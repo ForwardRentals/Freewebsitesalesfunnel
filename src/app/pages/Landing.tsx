@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Link } from "react-router";
 import { motion } from "motion/react";
 import { Navigation } from "../components/Navigation";
@@ -51,11 +52,61 @@ const stats = [
   { icon: Users, value: "50+", label: "Small Businesses Served" },
   { icon: TrendingUp, value: "100%", label: "Custom Built - No Templates" },
   { icon: Clock, value: "24hr", label: "Average Response Time" },
+  { icon: Shield, value: "100%", label: "Made in Canada" },
+];
+
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: "FreeSiteCompany",
+    url: "https://freesitecompany.com",
+    telephone: "+1-604-849-8898",
+    email: "freesitecompany@gmail.com",
+    description: "Free custom-coded websites for small businesses. No templates, no hidden fees.",
+    areaServed: {
+      "@type": "State",
+      name: "British Columbia",
+      containedInPlace: { "@type": "Country", name: "Canada" },
+    },
+    priceRange: "Free - $27.99/mo",
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "FreeSiteCompany",
+    url: "https://freesitecompany.com",
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Free Custom Website Build",
+    provider: { "@type": "Organization", name: "FreeSiteCompany" },
+    description: "Professional, custom-coded website built for free for your small business. Includes 2 rounds of revisions.",
+    areaServed: "British Columbia, Canada",
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "CAD",
+      description: "Free website build with 2 revisions included",
+    },
+  },
 ];
 
 export function Landing() {
+  useEffect(() => {
+    document.title = "Free Custom Website for Your Business | FreeSiteCompany";
+  }, []);
+
   return (
     <div className="min-h-screen bg-zinc-950 text-white">
+      {structuredData.map((data, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+        />
+      ))}
       <Navigation />
       
       {/* Hero Section */}
@@ -163,7 +214,7 @@ export function Landing() {
       {/* Stats Section */}
       <section className="py-12 px-6 border-y border-zinc-800/50">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
               <motion.div
                 key={stat.label}

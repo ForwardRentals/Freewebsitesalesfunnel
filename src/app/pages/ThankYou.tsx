@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Link } from "react-router";
 import { motion } from "motion/react";
 import { Navigation } from "../components/Navigation";
@@ -15,6 +16,10 @@ import {
 import { Button } from "../components/ui/button";
 
 export function ThankYou() {
+  useEffect(() => {
+    document.title = "Thank You | FreeSiteCompany";
+  }, []);
+
   return (
     <div className="min-h-screen bg-zinc-950 text-white">
       <Navigation />
