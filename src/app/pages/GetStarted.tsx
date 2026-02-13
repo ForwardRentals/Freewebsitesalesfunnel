@@ -103,6 +103,11 @@ export function GetStarted() {
     });
 
     navigator.sendBeacon(GOOGLE_SHEET_URL, payload);
+    if (typeof window.fbq === "function") {
+      window.fbq("track", "Lead", {
+        content_name: formData.businessName,
+      });
+    }
     window.location.href = "/thank-you";
   };
 
