@@ -53,7 +53,7 @@ export function FBLead() {
 
   const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbyf2n_cRhou3C45Vz-mTUqg7VoFK_Tjczbxu-UwOd5uSa7mYm54Q-ff4DyqqdeHghbolQ/exec";
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (isSubmitting) return;
     setIsSubmitting(true);
@@ -70,7 +70,16 @@ export function FBLead() {
       platform: "website",
     });
 
-    navigator.sendBeacon(GOOGLE_SHEET_URL, payload);
+    try {
+      await fetch(GOOGLE_SHEET_URL, {
+        method: "POST",
+        mode: "no-cors",
+        body: payload,
+      });
+    } catch (err) {
+      console.error("Form submission failed:", err);
+    }
+
     if (typeof window.fbq === "function") {
       window.fbq("track", "Lead", {
         content_name: formData.businessName,
