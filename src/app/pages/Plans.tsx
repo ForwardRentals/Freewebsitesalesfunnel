@@ -12,9 +12,13 @@ import {
   TrendingUp,
   FileCode,
   Mail,
-  Clock,
   Sparkles,
   Star,
+  ShoppingCart,
+  Camera,
+  Film,
+  Search,
+  Rocket,
 } from "lucide-react";
 import { Button } from "../components/ui/button";
 
@@ -36,6 +40,7 @@ const plans = [
       "Security monitoring & automated backups",
       "Basic performance monitoring",
       "Phone & email support",
+      "Small 'Built by FreeSiteCompany.com' footer credit on your site",
     ],
     bestFor: "Solo operators, portfolios, simple service sites",
   },
@@ -53,8 +58,11 @@ const plans = [
     features: [
       "Everything in Starter, plus:",
       "Free website build (3 revisions included)",
+      "No FreeSiteCompany.com branding — it's 100% yours",
+      "Custom email address included (you@yourbusiness.com)",
       "Minor content changes included",
       "Speed optimization",
+      "Advanced analytics & conversion tracking",
       "Monthly site health check & fixes",
       "Plugin / CMS updates",
       "Priority support",
@@ -62,6 +70,31 @@ const plans = [
       "1 blog post per month (pre-written by you with imagery)",
     ],
     bestFor: "Local businesses, clinics, service providers",
+  },
+  {
+    name: "Commerce",
+    price: "$49",
+    priceDetail: "per month",
+    regularPrice: null,
+    annualPrice: "$449/year",
+    annualNote: "(Save $139/year!)",
+    color: "blue",
+    icon: ShoppingCart,
+    badge: "E-Commerce Ready",
+    description: "Built for businesses that sell online",
+    features: [
+      "Everything in Growth, plus:",
+      "No FreeSiteCompany.com branding — it's 100% yours",
+      "Full e-commerce store (products, cart, checkout)",
+      "Payment gateway integration (Stripe / PayPal)",
+      "Order management & inventory tracking",
+      "Custom back-end / admin dashboard",
+      "Custom email address included (you@yourbusiness.com)",
+      "Advanced analytics & conversion tracking",
+      "Abandoned cart recovery setup",
+      "Dedicated account manager",
+    ],
+    bestFor: "Online stores, product businesses, retail & D2C brands",
   },
 ];
 
@@ -76,7 +109,7 @@ const additionalServices = [
     icon: Mail,
     title: "Custom Email Address",
     price: "$15/month",
-    description: "Professional email with your domain (e.g., you@yourbusiness.com)",
+    description: "For Starter plan clients — add a professional email with your domain (e.g., you@yourbusiness.com). Included free with Growth & Commerce plans.",
   },
   {
     icon: Headphones,
@@ -84,29 +117,47 @@ const additionalServices = [
     price: "$399",
     description: "5 hours of dedicated help to set everything up for you to manage on your own",
   },
+  {
+    icon: Camera,
+    title: "Photography Services",
+    price: "Custom quote",
+    description: "Professional business photography — headshots, product shots, location & interior photography to make your website and brand look world-class",
+  },
+  {
+    icon: Film,
+    title: "Videography Services",
+    price: "Custom quote",
+    description: "Brand videos, promo reels, social media content, and business storytelling — everything you need to capture attention and convert customers",
+  },
+  {
+    icon: Search,
+    title: "Custom SEO Campaign",
+    price: "Custom quote",
+    description: "Full-service SEO strategy tailored to your business — keyword research, on-page optimization, link building, local SEO, and monthly reporting to grow your rankings over time",
+  },
 ];
 
 const promotions = [
   {
     icon: Sparkles,
-    title: "Refer & Earn",
-    description: "Get 1 month free for every business you refer that signs up!",
+    title: "Refer & Save",
+    description: "Refer a friend who signs up and get $1 off your monthly plan every month for a full year — that's up to $12 back per referral. Stack multiple referrals for even more savings.",
     link: "https://freesitecompany.com/refer?code=YOUR_UNIQUE_CODE",
     buttonText: "Get Your Referral Link",
   },
   {
     icon: Star,
     title: "Annual Discount",
-    description: "Pay annually and save big! Starter: $89/yr, Growth: $199/yr",
+    description: "Pay annually and save big! Starter: $89/yr, Growth: $199/yr, Commerce: $449/yr",
     link: "/plans#annual",
     buttonText: "View Annual Plans",
   },
   {
-    icon: Clock,
-    title: "First Month Free",
-    description: "Try any plan risk-free for 30 days",
+    icon: Rocket,
+    title: "Free Boosted SEO",
+    description: "Fill out the form in February and we'll include a free boosted SEO package with your website build — extra keyword targeting, meta optimization, and local SEO setup at no charge.",
     link: "/get-started",
-    buttonText: "Start Free Trial",
+    buttonText: "Claim Free SEO Boost",
   },
 ];
 
@@ -192,8 +243,24 @@ export function Plans() {
             </p>
           </motion.div>
 
+          {/* Satisfaction Guarantee Banner */}
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.2 }}
+            className="mb-12 p-6 sm:p-8 bg-gradient-to-r from-emerald-500/10 via-cyan-500/10 to-emerald-500/10 border border-emerald-500/30 rounded-2xl text-center"
+          >
+            <div className="flex items-center justify-center gap-3 mb-2">
+              <Shield className="h-6 w-6 text-emerald-400 flex-shrink-0" />
+              <h2 className="text-xl sm:text-2xl font-bold text-white">You Pay Nothing Until You're Satisfied</h2>
+            </div>
+            <p className="text-zinc-400 max-w-2xl mx-auto text-sm sm:text-base">
+              We build your website first. You review it, request changes, and only start paying once you love what you see. No credit card required upfront — zero risk to you.
+            </p>
+          </motion.div>
+
           {/* Plans Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20">
             {plans.map((plan, index) => (
               <motion.div
                 key={plan.name}

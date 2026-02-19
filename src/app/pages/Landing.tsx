@@ -20,6 +20,9 @@ import {
   Layers,
   Globe,
   FileText,
+  Camera,
+  Film,
+  Megaphone,
 } from "lucide-react";
 
 const features = [
@@ -540,6 +543,78 @@ export function Landing() {
         </div>
       </section>
 
+      {/* Growth Services Section */}
+      <section className="py-12 sm:py-24 px-4 sm:px-6">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-center mb-10 sm:mb-16"
+          >
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4">
+              We Help You{" "}
+              <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
+                Grow Beyond the Website
+              </span>
+            </h2>
+            <p className="text-base sm:text-xl text-zinc-400 max-w-3xl mx-auto">
+              A great website is just the start. We offer everything you need to look professional, attract customers, and scale your business.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
+            {[
+              {
+                icon: Camera,
+                title: "Photography",
+                description: "Professional business photography — headshots, product shots, and location photography that makes your brand look world-class online and off.",
+              },
+              {
+                icon: Film,
+                title: "Videography",
+                description: "Brand videos, promo reels, and social media content built to stop the scroll. Tell your story in a way that text and photos never could.",
+              },
+              {
+                icon: Megaphone,
+                title: "Growth Services & More",
+                description: "From SEO campaigns to social media content strategy, we connect you with the tools and services to keep growing long after launch.",
+              },
+            ].map((item, index) => (
+              <motion.div
+                key={item.title}
+                initial={{ y: 20, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                whileHover={{ y: -5 }}
+                className="relative group"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/10 to-cyan-500/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="relative p-8 bg-zinc-900/50 border border-zinc-800 rounded-2xl hover:border-emerald-500/50 transition-all h-full">
+                  <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-emerald-500/20 to-cyan-500/20 rounded-xl mb-4">
+                    <item.icon className="h-6 w-6 text-emerald-400" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">{item.title}</h3>
+                  <p className="text-zinc-400">{item.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            className="mt-10 text-center"
+          >
+            <p className="text-zinc-500 text-sm">
+              Ask us about photography, video, and growth services when you get started — we'll put together a custom package for your business.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
       {/* How It Works */}
       <section className="py-12 sm:py-24 px-4 sm:px-6 bg-zinc-900/50">
         <div className="max-w-7xl mx-auto">
@@ -572,7 +647,7 @@ export function Landing() {
               {
                 step: "03",
                 title: "Launch & Decide",
-                description: "Get your codebase OR choose a plan for hosting, updates, and support — starting at just $9.99/month, or $89/yr (special annual rate!)",
+                description: "Love your site before you pay a cent. Then get your codebase OR choose a plan for hosting, updates, and support — starting at just $9.99/month.",
               },
             ].map((item, index) => (
               <motion.div
@@ -594,6 +669,46 @@ export function Landing() {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Referral Program Section */}
+      <section className="py-12 sm:py-24 px-4 sm:px-6">
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            initial={{ scale: 0.95, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            viewport={{ once: true }}
+            className="relative overflow-hidden bg-gradient-to-br from-emerald-500/10 via-cyan-500/10 to-blue-500/10 border border-emerald-500/30 rounded-2xl p-8 sm:p-12 text-center"
+          >
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+              <div className="absolute -top-20 -right-20 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl" />
+              <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl" />
+            </div>
+            <div className="relative z-10">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-emerald-500/20 to-cyan-500/20 rounded-full mb-6">
+                <Users className="h-8 w-8 text-emerald-400" />
+              </div>
+              <h2 className="text-2xl sm:text-4xl font-bold mb-4">
+                Know Someone Who Needs a Website?
+              </h2>
+              <p className="text-base sm:text-xl text-zinc-400 mb-3 max-w-2xl mx-auto">
+                Refer a friend and get{" "}
+                <span className="text-emerald-400 font-bold">$1 off every month for a full year</span>
+                {" "}— for every person you send our way who signs up.
+              </p>
+              <p className="text-sm text-zinc-500 mb-8">
+                Refer 3 friends? That's $3 off every month for 12 months. Stack it up.
+              </p>
+              <Link
+                to="/get-started"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-emerald-500 to-cyan-500 text-white rounded-lg font-bold text-lg hover:shadow-2xl hover:shadow-emerald-500/50 transition-all hover:scale-105"
+              >
+                Get Your Referral Link
+                <ArrowRight className="h-5 w-5" />
+              </Link>
+            </div>
+          </motion.div>
         </div>
       </section>
 
