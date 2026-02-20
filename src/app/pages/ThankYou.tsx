@@ -1,8 +1,10 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router";
 import { motion } from "motion/react";
 import { Navigation } from "../components/Navigation";
 import { Footer } from "../components/Footer";
+import { ReferralWidget } from "../components/ReferralWidget";
+import { useReferral, ReferralStatus } from "../hooks/useReferral";
 import {
   CheckCircle2,
   Mail,
@@ -16,8 +18,19 @@ import {
 import { Button } from "../components/ui/button";
 
 export function ThankYou() {
+  const { initReferral, getPendingEmail, clearPendingEmail } = useReferral();
+  const [referralStatus, setReferralStatus] = useState<ReferralStatus | null>(null);
+
   useEffect(() => {
     document.title = "Thank You | FreeSiteCompany";
+
+    const email = getPendingEmail();
+    if (email) {
+      initReferral(email).then((status) => {
+        if (status) setReferralStatus(status);
+        clearPendingEmail();
+      });
+    }
   }, []);
 
   return (
@@ -154,6 +167,11 @@ export function ThankYou() {
               </p>
             </div>
           </motion.div>
+
+          {/* Referral Widget */}
+          {referralStatus && (
+            <ReferralWidget status={referralStatus} animationDelay={0.65} />
+          )}
 
           {/* Contact & Schedule */}
           <motion.div

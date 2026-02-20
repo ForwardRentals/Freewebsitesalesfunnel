@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useReferral } from "../hooks/useReferral";
 import { Link, useNavigate } from "react-router";
 import { motion } from "motion/react";
 import { Navigation } from "../components/Navigation";
@@ -18,6 +19,8 @@ import { Textarea } from "../components/ui/textarea";
 import { Label } from "../components/ui/label";
 
 export function GetStarted() {
+  const { recordSignup, savePendingEmail, getStoredRef } = useReferral();
+
   useEffect(() => {
     document.title = "Get Your Free Website — Hire a Web Designer Today | FreeSiteCompany";
   }, []);
@@ -100,6 +103,7 @@ export function GetStarted() {
       monthly_budget: formData.monthlyBudget,
       is_organic: "true",
       platform: "website",
+      referral_token: getStoredRef() ?? "",
     });
 
     try {
@@ -111,6 +115,10 @@ export function GetStarted() {
     } catch (err) {
       console.error("Form submission failed:", err);
     }
+
+    // Save email for the Thank You page referral widget, and credit the referrer
+    savePendingEmail(formData.email);
+    await recordSignup(formData.email);
 
     if (typeof window.fbq === "function") {
       window.fbq("track", "Lead", {
