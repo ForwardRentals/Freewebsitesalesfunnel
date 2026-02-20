@@ -210,7 +210,7 @@ export function ThankYou() {
                   Book a 30-min consultation
                 </p>
                 <a
-                  href="https://calendar.google.com/calendar/appointments/schedules/YOUR_SCHEDULE_ID"
+                  href="https://calendar.app.google/L4ok6TnfC8njfXXy6"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-cyan-500/50 transition-all"

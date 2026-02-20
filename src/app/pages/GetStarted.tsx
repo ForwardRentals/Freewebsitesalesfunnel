@@ -460,6 +460,19 @@ export function GetStarted() {
                       <li>• Choose to manage it yourself or pick a support plan</li>
                     </ul>
                   </div>
+
+                  <div className="bg-zinc-800/50 border border-zinc-700 rounded-lg p-6 text-center">
+                    <h3 className="font-semibold text-white mb-1">Prefer to talk it through first?</h3>
+                    <p className="text-sm text-zinc-400 mb-4">Book a free 30-minute call with us — no pressure, just a conversation.</p>
+                    <a
+                      href="https://calendar.app.google/L4ok6TnfC8njfXXy6"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-emerald-500 to-cyan-500 text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-emerald-500/50 transition-all hover:scale-105"
+                    >
+                      Book a Call
+                    </a>
+                  </div>
                 </div>
               )}
 
