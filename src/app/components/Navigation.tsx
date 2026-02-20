@@ -41,6 +41,14 @@ export function Navigation() {
           >
             Plans
           </Link>
+          <a
+            href="https://calendar.app.google/L4ok6TnfC8njfXXy6"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-zinc-300 hover:text-emerald-400 transition-colors"
+          >
+            Book a Call
+          </a>
           <Link
             to="/get-started"
             className="px-6 py-2.5 bg-gradient-to-r from-emerald-500 to-cyan-500 text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-emerald-500/50 transition-all hover:scale-105"
@@ -84,6 +92,14 @@ export function Navigation() {
               >
                 Plans
               </Link>
+              <a
+                href="https://calendar.app.google/L4ok6TnfC8njfXXy6"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-zinc-300 hover:text-emerald-400 transition-colors"
+              >
+                Book a Call
+              </a>
               <Link
                 to="/get-started"
                 onClick={() => setMobileOpen(false)}

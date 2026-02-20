@@ -340,7 +340,7 @@ export function Landing() {
               <span className="text-emerald-400 font-semibold">
                 {" "}Perfect for restaurants, salons, contractors, clinics & service businesses.
               </span>{" "}
-              <span className="hidden sm:inline">You own the code. No platform lock-in. No monthly builder fees.</span>
+              <span className="hidden sm:inline">You own the code. No platform lock-in.</span>
             </motion.p>
 
             <motion.p
@@ -371,6 +371,14 @@ export function Landing() {
               >
                 View Plans
               </Link>
+              <a
+                href="https://calendar.app.google/L4ok6TnfC8njfXXy6"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto text-center px-6 py-3 sm:px-8 sm:py-4 bg-zinc-800/50 border border-zinc-700 text-white rounded-lg font-semibold text-base sm:text-lg hover:bg-zinc-800 transition-all"
+              >
+                Book a Call
+              </a>
             </motion.div>
           </div>
         </div>
