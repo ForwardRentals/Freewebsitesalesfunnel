@@ -461,16 +461,40 @@ export function GetStarted() {
                     </ul>
                   </div>
 
-                  <div className="bg-zinc-800/50 border border-zinc-700 rounded-lg p-6 text-center">
-                    <h3 className="font-semibold text-white mb-1">Prefer to talk it through first?</h3>
-                    <p className="text-sm text-zinc-400 mb-4">Book a free 30-minute call with us — no pressure, just a conversation.</p>
+                  <div className="bg-zinc-800/50 border border-zinc-700 rounded-lg p-6">
+                    <div className="flex items-center justify-between mb-4">
+                      <h3 className="font-semibold text-white">Book a Call</h3>
+                      <span className="text-xs text-emerald-400 font-medium">30 min · Free</span>
+                    </div>
+                    <p className="text-xs text-zinc-500 mb-4">Available slots this week</p>
+                    <div className="grid grid-cols-2 gap-2 mb-4">
+                      {[
+                        { day: "Today", time: "2:00 PM" },
+                        { day: "Today", time: "4:30 PM" },
+                        { day: "Tomorrow", time: "10:00 AM" },
+                        { day: "Tomorrow", time: "1:00 PM" },
+                        { day: "Thu", time: "11:00 AM" },
+                        { day: "Thu", time: "3:30 PM" },
+                      ].map((slot) => (
+                        <a
+                          key={slot.day + slot.time}
+                          href="https://calendar.app.google/L4ok6TnfC8njfXXy6"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex flex-col items-center py-2.5 px-3 bg-zinc-900 border border-zinc-700 rounded-lg hover:border-emerald-500/60 hover:bg-emerald-500/5 transition-all text-center"
+                        >
+                          <span className="text-xs text-zinc-400">{slot.day}</span>
+                          <span className="text-sm font-semibold text-white">{slot.time}</span>
+                        </a>
+                      ))}
+                    </div>
                     <a
                       href="https://calendar.app.google/L4ok6TnfC8njfXXy6"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-emerald-500 to-cyan-500 text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-emerald-500/50 transition-all hover:scale-105"
+                      className="block w-full text-center py-2.5 bg-gradient-to-r from-emerald-500 to-cyan-500 text-white rounded-lg font-semibold text-sm hover:shadow-lg hover:shadow-emerald-500/50 transition-all"
                     >
-                      Book a Call
+                      See All Availability
                     </a>
                   </div>
                 </div>
