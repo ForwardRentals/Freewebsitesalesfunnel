@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const WORKER_URL = import.meta.env.VITE_REFERRAL_WORKER_URL ?? "https://fsc-referral.YOUR_SUBDOMAIN.workers.dev";
+const WORKER_URL = "https://fsc-referral.thefulltimehobby.workers.dev";
 const KEY_REF = "fsc_ref";
 const KEY_TOKEN = "fsc_my_token";
 const KEY_EMAIL = "fsc_pending_email";

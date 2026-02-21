@@ -97,7 +97,7 @@ export function GetStarted() {
   const [uploadStatus, setUploadStatus] = useState<"idle" | "uploading" | "done" | "error">("idle");
 
   const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbyf2n_cRhou3C45Vz-mTUqg7VoFK_Tjczbxu-UwOd5uSa7mYm54Q-ff4DyqqdeHghbolQ/exec";
-  const WORKER_URL = import.meta.env.VITE_REFERRAL_WORKER_URL ?? "https://fsc-referral.YOUR_SUBDOMAIN.workers.dev";
+  const WORKER_URL = "https://fsc-referral.thefulltimehobby.workers.dev";
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
