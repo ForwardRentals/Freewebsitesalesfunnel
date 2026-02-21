@@ -79,11 +79,31 @@ export function GetStarted() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbyf2n_cRhou3C45Vz-mTUqg7VoFK_Tjczbxu-UwOd5uSa7mYm54Q-ff4DyqqdeHghbolQ/exec";
+  const WORKER_URL = import.meta.env.VITE_REFERRAL_WORKER_URL ?? "https://fsc-referral.YOUR_SUBDOMAIN.workers.dev";
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (isSubmitting) return;
     setIsSubmitting(true);
+
+    // Upload files to R2 first if any were selected
+    let fileKeys = "";
+    if (uploadedFiles.length > 0) {
+      try {
+        const submissionId = `${formData.businessName.replace(/[^a-zA-Z0-9]/g, "-")}-${Date.now()}`;
+        const uploadData = new FormData();
+        uploadData.append("submission_id", submissionId);
+        uploadedFiles.forEach((file) => uploadData.append("files", file));
+        const uploadRes = await fetch(`${WORKER_URL}/api/upload`, {
+          method: "POST",
+          body: uploadData,
+        });
+        const uploadResult = await uploadRes.json();
+        fileKeys = (uploadResult.files ?? []).map((f: { key: string }) => f.key).join(", ");
+      } catch (uploadErr) {
+        console.error("File upload failed:", uploadErr);
+      }
+    }
 
     const payload = new URLSearchParams({
       form_name: "GetStarted",
@@ -101,6 +121,7 @@ export function GetStarted() {
       sample_websites: formData.sampleWebsites,
       additional_info: formData.additionalInfo,
       monthly_budget: formData.monthlyBudget,
+      file_uploads: fileKeys,
       is_organic: "true",
       platform: "website",
       referral_token: getStoredRef() ?? "",

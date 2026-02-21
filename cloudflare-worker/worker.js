@@ -1,38 +1,52 @@
 /**
- * FreeSite Company — Referral Worker
- * Cloudflare Worker + KV
+ * FreeSite Company — Referral + Upload Worker
+ * Cloudflare Worker + KV + R2
  *
  * Endpoints:
  *   POST /api/referral/create   — generate a referral token for a customer
  *   POST /api/referral/click    — log a referral link click
  *   POST /api/referral/signup   — record a new signup via referral
  *   GET  /api/referral/status   — get referral stats for a token or email
+ *   POST /api/upload            — upload files to R2 (multipart/form-data)
+ *   GET  /api/file/*            — serve a file from R2
  *
  * KV Keys:
  *   ref:{token}    → { token, email, createdAt, referrals: [], discount }
  *   email:{email}  → token  (reverse lookup)
+ *
+ * R2 Keys:
+ *   uploads/{submissionId}/{filename}
  */
 
-const CORS = {
-  'Access-Control-Allow-Origin': 'https://freesitecompany.com',
-  'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-  'Access-Control-Allow-Headers': 'Content-Type',
-};
+const ALLOWED_ORIGINS = [
+  'https://freesitecompany.com',
+  'http://localhost:5173',
+];
 
 const MAX_DISCOUNT = 5;   // $5/month max
 const PER_REFERRAL = 1;   // $1 off per referral
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
-function json(data, status = 200) {
+function getCors(request) {
+  const origin = request.headers.get('Origin') ?? '';
+  const allowed = ALLOWED_ORIGINS.includes(origin) ? origin : ALLOWED_ORIGINS[0];
+  return {
+    'Access-Control-Allow-Origin': allowed,
+    'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type',
+  };
+}
+
+function json(data, status = 200, cors = {}) {
   return new Response(JSON.stringify(data), {
     status,
-    headers: { 'Content-Type': 'application/json', ...CORS },
+    headers: { 'Content-Type': 'application/json', ...cors },
   });
 }
 
-function err(msg, status = 400) {
-  return json({ error: msg }, status);
+function err(msg, status = 400, cors = {}) {
+  return json({ error: msg }, status, cors);
 }
 
 function generateToken() {
@@ -53,22 +67,67 @@ export default {
     const url = new URL(request.url);
     const path = url.pathname;
     const method = request.method;
+    const CORS = getCors(request);
 
     // Preflight
     if (method === 'OPTIONS') {
       return new Response(null, { headers: CORS });
     }
 
+    // POST /api/upload
+    // Body: multipart/form-data with files[] and submission_id
+    // Returns: { files: [{ name, key }] }
+    if (path === '/api/upload' && method === 'POST') {
+      let formData;
+      try {
+        formData = await request.formData();
+      } catch {
+        return err('Invalid form data', 400, CORS);
+      }
+
+      const submissionId = (formData.get('submission_id') ?? `upload-${Date.now()}`)
+        .toString()
+        .replace(/[^a-zA-Z0-9._-]/g, '-')
+        .slice(0, 80);
+
+      const files = formData.getAll('files');
+      if (!files.length) return err('No files provided', 400, CORS);
+
+      const uploaded = [];
+      for (const file of files) {
+        if (!(file instanceof File)) continue;
+        const safeName = file.name.replace(/[^a-zA-Z0-9._-]/g, '_');
+        const key = `uploads/${submissionId}/${Date.now()}-${safeName}`;
+        await env.UPLOADS.put(key, file.stream(), {
+          httpMetadata: { contentType: file.type },
+        });
+        uploaded.push({ name: file.name, key });
+      }
+
+      return json({ files: uploaded }, 200, CORS);
+    }
+
+    // GET /api/file/*  — serve a file from R2
+    if (path.startsWith('/api/file/') && method === 'GET') {
+      const key = decodeURIComponent(path.slice('/api/file/'.length));
+      if (!key) return err('No file key provided', 400, CORS);
+
+      const object = await env.UPLOADS.get(key);
+      if (!object) return err('File not found', 404, CORS);
+
+      const headers = new Headers(CORS);
+      object.writeHttpMetadata(headers);
+      headers.set('etag', object.httpEtag);
+      return new Response(object.body, { headers });
+    }
+
     // POST /api/referral/create
-    // Body: { email }
-    // Returns: { token, referralUrl, discount, referrals }
     if (path === '/api/referral/create' && method === 'POST') {
       const body = await request.json().catch(() => null);
-      if (!body?.email) return err('email is required');
+      if (!body?.email) return err('email is required', 400, CORS);
 
       const email = normalizeEmail(body.email);
 
-      // Check if this email already has a token
       const existingToken = await env.REFERRALS.get(`email:${email}`);
       if (existingToken) {
         const record = JSON.parse(await env.REFERRALS.get(`ref:${existingToken}`));
@@ -77,10 +136,9 @@ export default {
           referralUrl: `https://freesitecompany.com?ref=${existingToken}`,
           discount: record.discount,
           referrals: record.referrals.length,
-        });
+        }, 200, CORS);
       }
 
-      // Create new record
       const token = generateToken();
       const record = {
         token,
@@ -98,57 +156,42 @@ export default {
         referralUrl: `https://freesitecompany.com?ref=${token}`,
         discount: 0,
         referrals: 0,
-      });
+      }, 200, CORS);
     }
 
     // POST /api/referral/click
-    // Body: { ref }  — just logs a click on a referral link
     if (path === '/api/referral/click' && method === 'POST') {
       const body = await request.json().catch(() => null);
-      if (!body?.ref) return err('ref token is required');
+      if (!body?.ref) return err('ref token is required', 400, CORS);
 
       const raw = await env.REFERRALS.get(`ref:${body.ref}`);
-      if (!raw) return err('Invalid referral token', 404);
+      if (!raw) return err('Invalid referral token', 404, CORS);
 
-      // We don't need to do anything here beyond confirming it's valid.
-      // The client stores the ref in localStorage and sends it on signup.
-      return json({ valid: true });
+      return json({ valid: true }, 200, CORS);
     }
 
     // POST /api/referral/signup
-    // Body: { email, ref }  — called when a referred user completes signup
-    // Gives the referrer $1 off (up to $5/month max)
     if (path === '/api/referral/signup' && method === 'POST') {
       const body = await request.json().catch(() => null);
-      if (!body?.email || !body?.ref) return err('email and ref are required');
+      if (!body?.email || !body?.ref) return err('email and ref are required', 400, CORS);
 
       const newEmail = normalizeEmail(body.email);
       const ref = body.ref;
 
-      // Look up referrer
       const referrerRaw = await env.REFERRALS.get(`ref:${ref}`);
-      if (!referrerRaw) return err('Invalid referral token', 404);
+      if (!referrerRaw) return err('Invalid referral token', 404, CORS);
       const referrer = JSON.parse(referrerRaw);
 
-      // Don't allow self-referral
-      if (referrer.email === newEmail) return err('Cannot refer yourself');
+      if (referrer.email === newEmail) return err('Cannot refer yourself', 400, CORS);
 
-      // Don't allow duplicate referrals from same email
       const alreadyReferred = referrer.referrals.some(r => r.email === newEmail);
-      if (alreadyReferred) return err('This email was already referred');
+      if (alreadyReferred) return err('This email was already referred', 400, CORS);
 
-      // Record referral
-      referrer.referrals.push({
-        email: newEmail,
-        date: new Date().toISOString(),
-      });
-
-      // Calculate new discount (cap at MAX_DISCOUNT)
+      referrer.referrals.push({ email: newEmail, date: new Date().toISOString() });
       referrer.discount = Math.min(referrer.referrals.length * PER_REFERRAL, MAX_DISCOUNT);
 
       await env.REFERRALS.put(`ref:${ref}`, JSON.stringify(referrer));
 
-      // Also create a referral record for the new signup so they get their own link
       const newToken = generateToken();
       const newRecord = {
         token: newToken,
@@ -167,7 +210,7 @@ export default {
         referrerReferrals: referrer.referrals.length,
         newUserToken: newToken,
         newUserReferralUrl: `https://freesitecompany.com?ref=${newToken}`,
-      });
+      }, 200, CORS);
     }
 
     // GET /api/referral/status?token=TOKEN  or  ?email=EMAIL
@@ -179,10 +222,10 @@ export default {
         token = await env.REFERRALS.get(`email:${normalizeEmail(email)}`);
       }
 
-      if (!token) return err('token or email is required');
+      if (!token) return err('token or email is required', 400, CORS);
 
       const raw = await env.REFERRALS.get(`ref:${token}`);
-      if (!raw) return err('Referral record not found', 404);
+      if (!raw) return err('Referral record not found', 404, CORS);
 
       const record = JSON.parse(raw);
 
@@ -193,9 +236,9 @@ export default {
         discount: record.discount,
         maxDiscount: MAX_DISCOUNT,
         spotsLeft: Math.max(0, MAX_DISCOUNT - record.referrals.length),
-      });
+      }, 200, CORS);
     }
 
-    return err('Not found', 404);
+    return err('Not found', 404, CORS);
   },
 };
