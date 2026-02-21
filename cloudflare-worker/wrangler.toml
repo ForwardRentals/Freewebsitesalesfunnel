@@ -4,7 +4,7 @@ compatibility_date = "2024-01-01"
 
 [[kv_namespaces]]
 binding = "REFERRALS"
-id = "REPLACE_WITH_YOUR_KV_NAMESPACE_ID"
+id = "21f3f83b64554fedb19b22161600451b"
 
 [[r2_buckets]]
 binding = "UPLOADS"
