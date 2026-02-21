@@ -20,6 +20,7 @@
 
 const ALLOWED_ORIGINS = [
   'https://freesitecompany.com',
+  'https://www.freesitecompany.com',
   'http://localhost:5173',
 ];
 

@@ -77,6 +77,7 @@ export function GetStarted() {
   };
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [uploadStatus, setUploadStatus] = useState<"idle" | "uploading" | "done" | "error">("idle");
 
   const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbyf2n_cRhou3C45Vz-mTUqg7VoFK_Tjczbxu-UwOd5uSa7mYm54Q-ff4DyqqdeHghbolQ/exec";
   const WORKER_URL = import.meta.env.VITE_REFERRAL_WORKER_URL ?? "https://fsc-referral.YOUR_SUBDOMAIN.workers.dev";
@@ -89,6 +90,7 @@ export function GetStarted() {
     // Upload files to R2 first if any were selected
     let fileKeys = "";
     if (uploadedFiles.length > 0) {
+      setUploadStatus("uploading");
       try {
         const submissionId = `${formData.businessName.replace(/[^a-zA-Z0-9]/g, "-")}-${Date.now()}`;
         const uploadData = new FormData();
@@ -100,8 +102,10 @@ export function GetStarted() {
         });
         const uploadResult = await uploadRes.json();
         fileKeys = (uploadResult.files ?? []).map((f: { key: string }) => f.key).join(", ");
+        setUploadStatus("done");
       } catch (uploadErr) {
         console.error("File upload failed:", uploadErr);
+        setUploadStatus("error");
       }
     }
 
@@ -555,14 +559,25 @@ export function GetStarted() {
                     <ArrowRight className="h-4 w-4 ml-2" />
                   </Button>
                 ) : (
-                  <Button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="bg-gradient-to-r from-emerald-500 to-cyan-500 text-white hover:shadow-lg hover:shadow-emerald-500/50 disabled:opacity-50"
-                  >
-                    {isSubmitting ? "Submitting..." : "Submit Request"}
-                    <CheckCircle2 className="h-4 w-4 ml-2" />
-                  </Button>
+                  <div className="flex flex-col items-end gap-2">
+                    {uploadStatus === "uploading" && (
+                      <span className="text-xs text-emerald-400 animate-pulse">Uploading files...</span>
+                    )}
+                    {uploadStatus === "done" && (
+                      <span className="text-xs text-emerald-400">Files uploaded ✓</span>
+                    )}
+                    {uploadStatus === "error" && (
+                      <span className="text-xs text-red-400">File upload failed — form will still submit</span>
+                    )}
+                    <Button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="bg-gradient-to-r from-emerald-500 to-cyan-500 text-white hover:shadow-lg hover:shadow-emerald-500/50 disabled:opacity-50"
+                    >
+                      {isSubmitting ? "Submitting..." : "Submit Request"}
+                      <CheckCircle2 className="h-4 w-4 ml-2" />
+                    </Button>
+                  </div>
                 )}
               </div>
             </form>
