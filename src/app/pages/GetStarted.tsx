@@ -53,17 +53,27 @@ export function GetStarted() {
   
   const [uploadedFiles, setUploadedFiles] = useState<File[]>([]);
 
+  const [isDragging, setIsDragging] = useState(false);
+
   const updateField = (field: string, value: string) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
   };
-  
-  const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files) {
-      const newFiles = Array.from(e.target.files);
-      setUploadedFiles((prev) => [...prev, ...newFiles]);
-    }
+
+  const addFiles = (files: File[]) => {
+    setUploadedFiles((prev) => [...prev, ...files]);
   };
-  
+
+  const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files) addFiles(Array.from(e.target.files));
+  };
+
+  const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    setIsDragging(false);
+    const files = Array.from(e.dataTransfer.files).filter((f) => f.type.startsWith("image/"));
+    if (files.length) addFiles(files);
+  };
+
   const removeFile = (index: number) => {
     setUploadedFiles((prev) => prev.filter((_, i) => i !== index));
   };
@@ -74,6 +84,13 @@ export function GetStarted() {
 
   const prevStep = () => {
     if (step > 1) setStep(step - 1);
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLFormElement>) => {
+    if (e.key === "Enter" && e.target instanceof HTMLElement && e.target.tagName !== "TEXTAREA") {
+      e.preventDefault();
+      if (step < 4) nextStep();
+    }
   };
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -205,7 +222,7 @@ export function GetStarted() {
             transition={{ duration: 0.3 }}
             className="bg-zinc-900/50 border border-zinc-800 rounded-2xl p-5 sm:p-8 md:p-12"
           >
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} onKeyDown={handleKeyDown}>
               {/* Step 1: Basic Information */}
               {step === 1 && (
                 <div className="space-y-6">
@@ -383,22 +400,29 @@ export function GetStarted() {
                       Logo & Photos (Upload Here)
                     </Label>
                     <div className="space-y-4">
-                      <label className="block border-2 border-dashed border-zinc-700 rounded-lg p-8 text-center hover:border-emerald-500/50 transition-colors cursor-pointer">
-                        <input
-                          type="file"
-                          multiple
-                          accept="image/*"
-                          onChange={handleFileUpload}
-                          className="hidden"
-                        />
-                        <Upload className="h-8 w-8 text-zinc-500 mx-auto mb-3" />
-                        <p className="text-zinc-400 mb-1">
-                          Click to upload logo and photos
-                        </p>
-                        <p className="text-sm text-zinc-500">
-                          (Transparent PNG for logo preferred. Max 10MB per file)
-                        </p>
-                      </label>
+                      <div
+                        onDragOver={(e) => { e.preventDefault(); setIsDragging(true); }}
+                        onDragLeave={() => setIsDragging(false)}
+                        onDrop={handleDrop}
+                        className={`relative rounded-lg border-2 border-dashed transition-colors ${isDragging ? "border-emerald-400 bg-emerald-500/10" : "border-zinc-700 hover:border-emerald-500/50"}`}
+                      >
+                        <label className="block p-8 text-center cursor-pointer">
+                          <input
+                            type="file"
+                            multiple
+                            accept="image/*"
+                            onChange={handleFileUpload}
+                            className="hidden"
+                          />
+                          <Upload className={`h-8 w-8 mx-auto mb-3 ${isDragging ? "text-emerald-400" : "text-zinc-500"}`} />
+                          <p className="text-zinc-400 mb-1">
+                            {isDragging ? "Drop files here" : "Drag & drop or click to upload"}
+                          </p>
+                          <p className="text-sm text-zinc-500">
+                            (Transparent PNG for logo preferred. Max 10MB per file)
+                          </p>
+                        </label>
+                      </div>
 
                       {uploadedFiles.length > 0 && (
                         <div className="space-y-2">
