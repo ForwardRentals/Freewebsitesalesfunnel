@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useReferral } from "../hooks/useReferral";
-import { Link, useNavigate } from "react-router";
+import { useNavigate } from "react-router";
 import { motion } from "motion/react";
 import { Navigation } from "../components/Navigation";
 import { Footer } from "../components/Footer";
@@ -562,15 +562,7 @@ export function GetStarted() {
                     Back
                   </Button>
                 ) : (
-                  <Link to="/">
-                    <Button
-                      type="button"
-                      className="bg-gradient-to-r from-emerald-500 to-cyan-500 text-white hover:shadow-lg hover:shadow-emerald-500/50"
-                    >
-                      <ArrowLeft className="h-4 w-4 mr-2" />
-                      Back to Home
-                    </Button>
-                  </Link>
+                  <div />
                 )}
 
                 {step < 4 ? (
