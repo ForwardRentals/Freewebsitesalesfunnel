@@ -532,7 +532,7 @@ export function GetStarted() {
                     type="button"
                     onClick={prevStep}
                     variant="outline"
-                    className="border-zinc-700 text-white hover:bg-zinc-800"
+                    className="border-zinc-700 bg-zinc-900 text-white hover:bg-zinc-800"
                   >
                     <ArrowLeft className="h-4 w-4 mr-2" />
                     Back
