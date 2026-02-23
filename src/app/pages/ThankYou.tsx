@@ -75,20 +75,31 @@ export function ThankYou() {
               <p className="text-xl text-zinc-400 mb-8">
                 We've received your request and are excited to build your website!
               </p>
-              <a
-                href={
-                  billingCycle === "monthly"
-                    ? "https://buy.stripe.com/9B68wR5G48KK66qa841ck01"
-                    : "https://buy.stripe.com/14AbJ38Sg5yycuO9401ck02"
-                }
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button className="px-8 py-5 bg-gradient-to-r from-emerald-500 to-cyan-500 text-white text-lg hover:shadow-2xl hover:shadow-emerald-500/50 hover:scale-105 transition-all">
-                  Subscribe Now
-                  <ArrowRight className="h-5 w-5 ml-2" />
-                </Button>
-              </a>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a
+                  href="https://buy.stripe.com/14AbJ38Sg5yycuO9401ck02"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button className="px-10 py-6 bg-gradient-to-r from-yellow-500 to-amber-500 text-white text-lg font-bold hover:shadow-2xl hover:shadow-yellow-500/50 hover:scale-105 transition-all relative">
+                    Subscribe Yearly — Save More
+                    <ArrowRight className="h-5 w-5 ml-2" />
+                    <span className="absolute -top-3 -right-3 px-2 py-0.5 bg-red-500 text-white text-xs font-bold rounded-full">
+                      BEST DEAL
+                    </span>
+                  </Button>
+                </a>
+                <a
+                  href="https://buy.stripe.com/9B68wR5G48KK66qa841ck01"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button variant="outline" className="px-8 py-5 border-zinc-600 text-zinc-300 hover:bg-zinc-800 text-base transition-all">
+                    Subscribe Monthly
+                    <ArrowRight className="h-4 w-4 ml-2" />
+                  </Button>
+                </a>
+              </div>
             </motion.div>
           </motion.div>
 

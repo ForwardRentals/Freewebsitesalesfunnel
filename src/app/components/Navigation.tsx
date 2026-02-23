@@ -55,6 +55,14 @@ export function Navigation() {
           >
             Get Started Free
           </Link>
+          <a
+            href="https://buy.stripe.com/14AbJ38Sg5yycuO9401ck02"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-6 py-2.5 bg-gradient-to-r from-yellow-500 to-amber-500 text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-yellow-500/50 transition-all hover:scale-105"
+          >
+            Subscribe Now
+          </a>
         </div>
 
         {/* Mobile hamburger */}
@@ -107,6 +115,15 @@ export function Navigation() {
               >
                 Get Started Free
               </Link>
+              <a
+                href="https://buy.stripe.com/14AbJ38Sg5yycuO9401ck02"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMobileOpen(false)}
+                className="inline-block text-center px-6 py-2.5 bg-gradient-to-r from-yellow-500 to-amber-500 text-white rounded-lg font-semibold"
+              >
+                Subscribe Now
+              </a>
             </div>
           </motion.div>
         )}
