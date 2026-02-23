@@ -14,12 +14,14 @@ import {
   PartyPopper,
   Phone,
   Calendar,
+  CreditCard,
 } from "lucide-react";
 import { Button } from "../components/ui/button";
 
 export function ThankYou() {
   const { initReferral, getPendingEmail, clearPendingEmail } = useReferral();
   const [referralStatus, setReferralStatus] = useState<ReferralStatus | null>(null);
+  const [billingCycle, setBillingCycle] = useState<"monthly" | "annual">("monthly");
 
   useEffect(() => {
     document.title = "Thank You | FreeSiteCompany";
@@ -70,9 +72,23 @@ export function ThankYou() {
                 You're All Set!{" "}
                 <PartyPopper className="inline-block h-12 w-12 text-emerald-400" />
               </h1>
-              <p className="text-xl text-zinc-400 mb-12">
+              <p className="text-xl text-zinc-400 mb-8">
                 We've received your request and are excited to build your website!
               </p>
+              <a
+                href={
+                  billingCycle === "monthly"
+                    ? "https://buy.stripe.com/9B68wR5G48KK66qa841ck01"
+                    : "https://buy.stripe.com/14AbJ38Sg5yycuO9401ck02"
+                }
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button className="px-8 py-5 bg-gradient-to-r from-emerald-500 to-cyan-500 text-white text-lg hover:shadow-2xl hover:shadow-emerald-500/50 hover:scale-105 transition-all">
+                  Subscribe Now
+                  <ArrowRight className="h-5 w-5 ml-2" />
+                </Button>
+              </a>
             </motion.div>
           </motion.div>
 
@@ -140,6 +156,70 @@ export function ThankYou() {
                 </div>
               </div>
             </div>
+          </motion.div>
+
+          {/* Pay Now CTA */}
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.55 }}
+            className="bg-gradient-to-r from-emerald-500/10 via-cyan-500/10 to-emerald-500/10 border border-emerald-500/30 rounded-2xl p-8 md:p-10 mb-8 text-center"
+          >
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-emerald-500/20 to-cyan-500/20 rounded-full mb-4">
+              <CreditCard className="h-8 w-8 text-emerald-400" />
+            </div>
+            <h2 className="text-2xl md:text-3xl font-bold mb-3">
+              Ready to Subscribe?
+            </h2>
+            <p className="text-zinc-400 mb-6 max-w-lg mx-auto">
+              Already know which plan you want? Choose your billing cycle and
+              secure your spot through our secure checkout.
+            </p>
+
+            {/* Billing Toggle */}
+            <div className="inline-flex items-center bg-zinc-900 border border-zinc-700 rounded-full p-1 mb-6">
+              <button
+                onClick={() => setBillingCycle("monthly")}
+                className={`px-6 py-2 rounded-full text-sm font-semibold transition-all ${
+                  billingCycle === "monthly"
+                    ? "bg-gradient-to-r from-emerald-500 to-cyan-500 text-white"
+                    : "text-zinc-400 hover:text-white"
+                }`}
+              >
+                Monthly
+              </button>
+              <button
+                onClick={() => setBillingCycle("annual")}
+                className={`px-6 py-2 rounded-full text-sm font-semibold transition-all ${
+                  billingCycle === "annual"
+                    ? "bg-gradient-to-r from-emerald-500 to-cyan-500 text-white"
+                    : "text-zinc-400 hover:text-white"
+                }`}
+              >
+                Annual
+                <span className="ml-1 text-xs opacity-75">(Save more)</span>
+              </button>
+            </div>
+
+            <div>
+              <a
+                href={
+                  billingCycle === "monthly"
+                    ? "https://buy.stripe.com/9B68wR5G48KK66qa841ck01"
+                    : "https://buy.stripe.com/14AbJ38Sg5yycuO9401ck02"
+                }
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button className="px-10 py-6 bg-gradient-to-r from-emerald-500 to-cyan-500 text-white text-lg hover:shadow-2xl hover:shadow-emerald-500/50 hover:scale-105 transition-all">
+                  Pay Now — {billingCycle === "monthly" ? "Monthly" : "Annual"} Plan
+                  <ArrowRight className="h-5 w-5 ml-2" />
+                </Button>
+              </a>
+            </div>
+            <p className="text-zinc-500 text-xs mt-4">
+              Powered by Stripe — secure, encrypted checkout
+            </p>
           </motion.div>
 
           {/* Important Info */}
