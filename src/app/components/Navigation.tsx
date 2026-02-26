@@ -3,6 +3,12 @@ import { Link } from "react-router";
 import { motion, AnimatePresence } from "motion/react";
 import { Phone, Menu, X } from "lucide-react";
 import { Logo } from "./Logo";
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+} from "./ui/dropdown-menu";
 
 export function Navigation() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -55,14 +61,25 @@ export function Navigation() {
           >
             Get Started Free
           </Link>
-          <a
-            href="https://buy.stripe.com/14AbJ38Sg5yycuO9401ck02"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-6 py-2.5 bg-gradient-to-r from-yellow-500 to-amber-500 text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-yellow-500/50 transition-all hover:scale-105"
-          >
-            Subscribe Now
-          </a>
+          <DropdownMenu>
+            <DropdownMenuTrigger className="px-6 py-2.5 bg-gradient-to-r from-yellow-500 to-amber-500 text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-yellow-500/50 transition-all hover:scale-105 cursor-pointer">
+              Subscribe Now
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="bg-zinc-900 border-zinc-700 text-white">
+              <DropdownMenuItem
+                className="cursor-pointer focus:bg-zinc-800 focus:text-white"
+                onSelect={() => window.open("https://buy.stripe.com/9B68wR5G48KK66qa841ck01", "_blank", "noopener,noreferrer")}
+              >
+                Monthly Plan
+              </DropdownMenuItem>
+              <DropdownMenuItem
+                className="cursor-pointer focus:bg-zinc-800 focus:text-white"
+                onSelect={() => window.open("https://buy.stripe.com/14AbJ38Sg5yycuO9401ck02", "_blank", "noopener,noreferrer")}
+              >
+                Annual Plan — Save More!
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
 
         {/* Mobile hamburger */}
@@ -115,15 +132,31 @@ export function Navigation() {
               >
                 Get Started Free
               </Link>
-              <a
-                href="https://buy.stripe.com/14AbJ38Sg5yycuO9401ck02"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => setMobileOpen(false)}
-                className="inline-block text-center px-6 py-2.5 bg-gradient-to-r from-yellow-500 to-amber-500 text-white rounded-lg font-semibold"
-              >
-                Subscribe Now
-              </a>
+              <DropdownMenu>
+                <DropdownMenuTrigger className="inline-block text-center w-full px-6 py-2.5 bg-gradient-to-r from-yellow-500 to-amber-500 text-white rounded-lg font-semibold cursor-pointer">
+                  Subscribe Now
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="bg-zinc-900 border-zinc-700 text-white">
+                  <DropdownMenuItem
+                    className="cursor-pointer focus:bg-zinc-800 focus:text-white"
+                    onSelect={() => {
+                      window.open("https://buy.stripe.com/9B68wR5G48KK66qa841ck01", "_blank", "noopener,noreferrer");
+                      setMobileOpen(false);
+                    }}
+                  >
+                    Monthly Plan
+                  </DropdownMenuItem>
+                  <DropdownMenuItem
+                    className="cursor-pointer focus:bg-zinc-800 focus:text-white"
+                    onSelect={() => {
+                      window.open("https://buy.stripe.com/14AbJ38Sg5yycuO9401ck02", "_blank", "noopener,noreferrer");
+                      setMobileOpen(false);
+                    }}
+                  >
+                    Annual Plan — Save More!
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
             </div>
           </motion.div>
         )}
