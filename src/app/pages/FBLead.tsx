@@ -31,6 +31,14 @@ const businessTypes = [
 export function FBLead() {
   useEffect(() => {
     document.title = "Claim Your Free Website | FreeSiteCompany";
+
+    // Fire ViewContent so Meta can build a PageView → ViewContent → Lead funnel
+    if (typeof window.fbq === "function") {
+      window.fbq("track", "ViewContent", {
+        content_name: "FB Landing Page",
+        content_category: "Free Website Offer",
+      });
+    }
   }, []);
 
   const [selectedType, setSelectedType] = useState("");
