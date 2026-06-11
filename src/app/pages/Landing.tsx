@@ -247,48 +247,14 @@ function Counter({ value, suffix = "" }: { value: number; suffix?: string }) {
   );
 }
 
-/* Fictional mini-sites the hero browser flicks through — pure CSS mockups. */
+/* Fictional designer mockups the hero browser flicks through — designed at
+   full resolution and rendered to images so they look like real sites. */
 const heroMockups = [
-  {
-    domain: "timberandstone.ca",
-    kind: "contractor" as const,
-    bg: "#23201c",
-    accent: "#d7a04a",
-    name: "TIMBER & STONE",
-    tagline: "Custom homes, built right.",
-    sub: "Squamish · Licensed & insured",
-    cta: "Get a quote",
-  },
-  {
-    domain: "thecopperkettle.ca",
-    kind: "cafe" as const,
-    bg: "#f7f1e7",
-    accent: "#b4552d",
-    name: "The Copper Kettle",
-    tagline: "Slow mornings, good coffee.",
-    sub: "Open daily 7am – 4pm",
-    cta: "See the menu",
-  },
-  {
-    domain: "alpineglowspa.ca",
-    kind: "spa" as const,
-    bg: "#eef0ea",
-    accent: "#5f7d62",
-    name: "Alpine Glow",
-    tagline: "Take an hour for yourself.",
-    sub: "Massage · Facials · Sauna",
-    cta: "Book now",
-  },
-  {
-    domain: "summitphysio.ca",
-    kind: "physio" as const,
-    bg: "#101d2c",
-    accent: "#6db3d6",
-    name: "SUMMIT PHYSIO",
-    tagline: "Move like yourself again.",
-    sub: "Direct billing · Same-week visits",
-    cta: "Book assessment",
-  },
+  { domain: "howesoundcharters.ca", img: "/portfolio/hero-charter.jpg", label: "Boat tours" },
+  { domain: "thecopperkettle.ca", img: "/portfolio/hero-cafe.jpg", label: "Café & roastery" },
+  { domain: "alpineglowspa.ca", img: "/portfolio/hero-spa.jpg", label: "Spa" },
+  { domain: "ravenridgeadventures.ca", img: "/portfolio/hero-adventure.jpg", label: "Adventure tours" },
+  { domain: "timberandstone.ca", img: "/portfolio/hero-contractor.jpg", label: "Contractor" },
 ];
 
 function HeroBrowser() {
@@ -301,9 +267,6 @@ function HeroBrowser() {
     return () => clearInterval(id);
   }, []);
   const site = heroMockups[i % heroMockups.length];
-  const dark = site.kind === "contractor" || site.kind === "physio";
-  const ink = dark ? "#ffffff" : "#26231e";
-  const soft = dark ? "rgba(255,255,255,0.65)" : "rgba(38,35,30,0.6)";
 
   return (
     <div className="relative">
@@ -331,285 +294,19 @@ function HeroBrowser() {
             </motion.div>
           </AnimatePresence>
         </div>
-        {/* beautiful fictional mockup — crossfade only, no zoom */}
-        <div className="aspect-[16/10] relative overflow-hidden">
+        {/* designer mockup image — crossfade only, no zoom */}
+        <div className="aspect-[16/10] relative overflow-hidden bg-[#1b1a17]">
           <AnimatePresence mode="wait">
-            <motion.div
-              key={site.domain + "-page"}
+            <motion.img
+              key={site.domain}
+              src={site.img}
+              alt={`${site.label} website mockup by FreeSite Company`}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.45 }}
-              className="absolute inset-0 flex flex-col p-5 sm:p-6 overflow-hidden"
-              style={{ background: site.bg, color: ink }}
-            >
-              {/* ------------------------- CONTRACTOR: rugged split hero */}
-              {site.kind === "contractor" && (
-                <>
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="text-[11px] sm:text-xs font-bold tracking-[0.22em]">
-                      {site.name}
-                    </span>
-                    <span
-                      className="text-[10px] sm:text-[11px] font-bold px-3 py-1.5"
-                      style={{ background: site.accent, color: "#1b1a17" }}
-                    >
-                      (604) 555-0142
-                    </span>
-                  </div>
-                  <div className="flex-1 grid grid-cols-5 gap-4 items-center">
-                    <div className="col-span-3">
-                      <motion.h3
-                        initial={{ x: -16, opacity: 0 }}
-                        animate={{ x: 0, opacity: 1 }}
-                        transition={{ delay: 0.15 }}
-                        className="font-display text-2xl sm:text-4xl font-bold uppercase leading-[1.05] mb-3"
-                      >
-                        Custom homes,
-                        <br />
-                        <span style={{ color: site.accent }}>built right.</span>
-                      </motion.h3>
-                      <motion.span
-                        initial={{ x: -12, opacity: 0 }}
-                        animate={{ x: 0, opacity: 1 }}
-                        transition={{ delay: 0.3 }}
-                        className="inline-block text-[11px] sm:text-xs font-bold px-4 py-2"
-                        style={{ background: site.accent, color: "#1b1a17" }}
-                      >
-                        GET A QUOTE →
-                      </motion.span>
-                    </div>
-                    <motion.div
-                      initial={{ opacity: 0, x: 16 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.25 }}
-                      className="col-span-2 h-[85%] relative"
-                      style={{
-                        background:
-                          "linear-gradient(160deg,#4a3d2c,#8a6f4d 60%,#b08d5f)",
-                      }}
-                    >
-                      <div
-                        className="absolute -left-2 top-3 bottom-3 w-1"
-                        style={{ background: site.accent }}
-                      />
-                    </motion.div>
-                  </div>
-                  <div
-                    className="flex justify-between pt-3 mt-1 border-t text-center"
-                    style={{ borderColor: "rgba(255,255,255,0.15)" }}
-                  >
-                    {[
-                      ["120+", "projects"],
-                      ["15 yrs", "in business"],
-                      ["5.0★", "on Google"],
-                    ].map(([v, l], k) => (
-                      <motion.div
-                        key={l}
-                        initial={{ y: 10, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        transition={{ delay: 0.4 + k * 0.1 }}
-                      >
-                        <span className="font-display font-bold text-sm sm:text-lg" style={{ color: site.accent }}>
-                          {v}
-                        </span>
-                        <span className="block text-[9px] sm:text-[10px]" style={{ color: soft }}>
-                          {l}
-                        </span>
-                      </motion.div>
-                    ))}
-                  </div>
-                </>
-              )}
-
-              {/* ------------------------------ CAFE: centered menu card */}
-              {site.kind === "cafe" && (
-                <div className="flex-1 flex flex-col items-center justify-center text-center">
-                  <motion.div
-                    initial={{ scale: 0.8, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 1 }}
-                    transition={{ delay: 0.1 }}
-                    className="w-10 h-10 sm:w-12 sm:h-12 rounded-full mb-2 flex items-center justify-center font-display text-lg sm:text-xl text-white"
-                    style={{ background: site.accent }}
-                  >
-                    ☕
-                  </motion.div>
-                  <motion.h3
-                    initial={{ y: 12, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ delay: 0.2 }}
-                    className="font-display italic text-2xl sm:text-4xl mb-1"
-                  >
-                    {site.name}
-                  </motion.h3>
-                  <motion.p
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.3 }}
-                    className="text-[10px] sm:text-xs tracking-[0.3em] uppercase mb-4 sm:mb-5"
-                    style={{ color: soft }}
-                  >
-                    est. 2021 · Squamish
-                  </motion.p>
-                  <div className="w-full max-w-[260px] sm:max-w-[300px] space-y-2">
-                    {[
-                      ["Flat white", "4.50"],
-                      ["Morning bun", "5.25"],
-                      ["Breakfast skillet", "14"],
-                    ].map(([item, price], k) => (
-                      <motion.div
-                        key={item}
-                        initial={{ y: 10, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        transition={{ delay: 0.35 + k * 0.12 }}
-                        className="flex items-baseline gap-2 text-[11px] sm:text-sm"
-                      >
-                        <span className="font-semibold">{item}</span>
-                        <span
-                          className="flex-1 border-b border-dotted translate-y-[-3px]"
-                          style={{ borderColor: soft }}
-                        />
-                        <span style={{ color: site.accent }} className="font-bold">
-                          {price}
-                        </span>
-                      </motion.div>
-                    ))}
-                  </div>
-                  <motion.span
-                    initial={{ y: 10, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ delay: 0.75 }}
-                    className="mt-4 sm:mt-5 text-[10px] sm:text-xs font-bold tracking-widest uppercase border-b-2 pb-0.5"
-                    style={{ borderColor: site.accent, color: site.accent }}
-                  >
-                    Full menu
-                  </motion.span>
-                </div>
-              )}
-
-              {/* ----------------------------- SPA: airy arches, minimal */}
-              {site.kind === "spa" && (
-                <>
-                  <div className="text-center mb-3">
-                    <span className="text-[10px] sm:text-xs font-semibold tracking-[0.45em] uppercase">
-                      {site.name}
-                    </span>
-                  </div>
-                  <div className="flex-1 grid grid-cols-3 gap-3 items-end px-2 sm:px-6">
-                    {[0.85, 1, 0.7].map((h, k) => (
-                      <motion.div
-                        key={k}
-                        initial={{ y: 24, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        transition={{ delay: 0.15 + k * 0.15, duration: 0.6 }}
-                        className="rounded-t-full w-full"
-                        style={{
-                          height: `${h * 100}%`,
-                          background: `linear-gradient(180deg, ${
-                            ["#aebfa5", "#8da883", "#c8d4bd"][k]
-                          }, ${["#7d9474", "#5f7d62", "#9fb394"][k]})`,
-                        }}
-                      />
-                    ))}
-                  </div>
-                  <div className="text-center mt-3">
-                    <motion.p
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ delay: 0.55 }}
-                      className="font-display italic text-lg sm:text-2xl mb-2"
-                    >
-                      Take an hour for yourself.
-                    </motion.p>
-                    <motion.span
-                      initial={{ opacity: 0, y: 8 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.7 }}
-                      className="inline-block rounded-full border px-4 sm:px-5 py-1.5 text-[10px] sm:text-xs font-semibold tracking-widest uppercase"
-                      style={{ borderColor: site.accent, color: site.accent }}
-                    >
-                      Book now
-                    </motion.span>
-                  </div>
-                </>
-              )}
-
-              {/* ----------------------- PHYSIO: clinical booking layout */}
-              {site.kind === "physio" && (
-                <>
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="flex items-center gap-1.5 text-[11px] sm:text-xs font-bold tracking-wider">
-                      <span
-                        className="inline-block w-3 h-3 rounded-sm rotate-45"
-                        style={{ background: site.accent }}
-                      />
-                      {site.name}
-                    </span>
-                    <span className="flex gap-3 text-[10px] sm:text-[11px]" style={{ color: soft }}>
-                      <span>Services</span>
-                      <span>Team</span>
-                      <span>FAQ</span>
-                    </span>
-                  </div>
-                  <div className="flex-1 grid grid-cols-2 gap-4 sm:gap-5 items-center">
-                    <div>
-                      <motion.h3
-                        initial={{ y: 14, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        transition={{ delay: 0.15 }}
-                        className="font-display text-xl sm:text-3xl font-semibold leading-tight mb-3"
-                      >
-                        Move like
-                        <br />
-                        <span style={{ color: site.accent }}>yourself</span> again.
-                      </motion.h3>
-                      <div className="space-y-1.5">
-                        {["Direct billing", "Same-week visits", "ICBC claims"].map(
-                          (b, k) => (
-                            <motion.p
-                              key={b}
-                              initial={{ x: -10, opacity: 0 }}
-                              animate={{ x: 0, opacity: 1 }}
-                              transition={{ delay: 0.3 + k * 0.1 }}
-                              className="flex items-center gap-1.5 text-[10px] sm:text-xs"
-                              style={{ color: soft }}
-                            >
-                              <span style={{ color: site.accent }}>✓</span> {b}
-                            </motion.p>
-                          ),
-                        )}
-                      </div>
-                    </div>
-                    <motion.div
-                      initial={{ y: 18, opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      transition={{ delay: 0.35 }}
-                      className="rounded-xl bg-white p-3 sm:p-4 shadow-xl"
-                    >
-                      <p className="text-[10px] sm:text-[11px] font-bold text-[#101d2c] mb-2">
-                        Book an assessment
-                      </p>
-                      {[0, 1].map((k) => (
-                        <div
-                          key={k}
-                          className="h-6 sm:h-7 rounded-md bg-[#eef2f6] mb-1.5 px-2 flex items-center"
-                        >
-                          <span className="text-[9px] sm:text-[10px] text-[#8fa1b3]">
-                            {k === 0 ? "Your name" : "Phone number"}
-                          </span>
-                        </div>
-                      ))}
-                      <div
-                        className="h-6 sm:h-7 rounded-md flex items-center justify-center text-[10px] sm:text-[11px] font-bold text-white"
-                        style={{ background: site.accent }}
-                      >
-                        Find a time →
-                      </div>
-                    </motion.div>
-                  </div>
-                </>
-              )}
-            </motion.div>
+              transition={{ duration: 0.5 }}
+              className="absolute inset-0 h-full w-full object-cover"
+            />
           </AnimatePresence>
         </div>
       </motion.div>
@@ -1122,12 +819,12 @@ export function Landing() {
               </p>
               <div className="relative flex items-center gap-4">
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#166b45] font-display text-xl font-semibold text-white">
-                  F
+                  J
                 </div>
                 <div>
-                  <p className="font-semibold">FreeSite Company</p>
+                  <p className="font-semibold">Jeremy</p>
                   <p className="text-sm text-[#6b675e]">
-                    Founder & web designer — Squamish, BC
+                    Founder & web designer, FreeSite Company — Squamish, BC
                   </p>
                 </div>
               </div>
