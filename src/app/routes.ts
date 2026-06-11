@@ -1,12 +1,10 @@
 import { createBrowserRouter } from "react-router";
 import { Landing } from "./pages/Landing";
-import { GetStarted } from "./pages/GetStarted";
-import { Plans } from "./pages/Plans";
-import { ThankYou } from "./pages/ThankYou";
-import { FBLead } from "./pages/FBLead";
 
 const basename = import.meta.env.BASE_URL;
 
+// Landing loads eagerly (it's the entry); everything else is code-split so
+// the first paint isn't paying for form wizards and pricing pages.
 export const router = createBrowserRouter(
   [
     {
@@ -15,19 +13,27 @@ export const router = createBrowserRouter(
     },
     {
       path: "/get-started",
-      Component: GetStarted,
+      lazy: async () => ({
+        Component: (await import("./pages/GetStarted")).GetStarted,
+      }),
     },
     {
       path: "/plans",
-      Component: Plans,
+      lazy: async () => ({
+        Component: (await import("./pages/Plans")).Plans,
+      }),
     },
     {
       path: "/thank-you",
-      Component: ThankYou,
+      lazy: async () => ({
+        Component: (await import("./pages/ThankYou")).ThankYou,
+      }),
     },
     {
       path: "/fb",
-      Component: FBLead,
+      lazy: async () => ({
+        Component: (await import("./pages/FBLead")).FBLead,
+      }),
     },
   ],
   { basename },

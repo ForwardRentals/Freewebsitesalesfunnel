@@ -9,6 +9,7 @@ import {
 } from "motion/react";
 import { Navigation } from "../components/Navigation";
 import { Footer } from "../components/Footer";
+import { Globe } from "../components/Globe";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -28,48 +29,54 @@ const showcase = [
     domain: "squamishwatertaxi.com",
     url: "https://squamishwatertaxi.com",
     tag: "Marine charter",
+    img: "/portfolio/card-squamishwatertaxi.jpg",
     from: "#0b3954",
     to: "#1d7fa3",
-  },
-  {
-    name: "Sea to Sky Trails",
-    domain: "seatoskytrails.com",
-    url: "https://seatoskytrails.com",
-    tag: "Outdoor guide",
-    from: "#1f4a2e",
-    to: "#5a8f5f",
   },
   {
     name: "Squamish Canoe Rental",
     domain: "squamishcanoerental.com",
     url: "https://squamishcanoerental.com",
     tag: "Rentals & tours",
+    img: "/portfolio/card-squamishcanoerental.jpg",
     from: "#22262b",
     to: "#4a5560",
   },
   {
-    name: "The Glacier Project",
-    domain: "theglacierproject.com",
-    url: "https://theglacierproject.com",
-    tag: "Adventure brand",
-    from: "#274060",
-    to: "#7da2c1",
+    name: "Sea to Sky Trails",
+    domain: "seatoskytrails.com",
+    url: "https://seatoskytrails.com",
+    tag: "Outdoor guide",
+    img: "",
+    from: "#1f4a2e",
+    to: "#5a8f5f",
   },
   {
-    name: "Shred Shed Repairs",
-    domain: "Squamish, BC",
-    url: "",
-    tag: "Motorsport repair",
+    name: "The Full Time Hobby",
+    domain: "thefulltimehobby.com",
+    url: "https://thefulltimehobby.com",
+    tag: "Photo & video",
+    img: "/portfolio/card-thefulltimehobby.jpg",
+    from: "#3b2a4f",
+    to: "#7e5aa2",
+  },
+  {
+    name: "Jay Dobson",
+    domain: "jaydobson.com",
+    url: "https://jaydobson.com",
+    tag: "Portfolio",
+    img: "/portfolio/card-jaydobson.jpg",
     from: "#5c2018",
     to: "#a44a3f",
   },
   {
-    name: "Little Miss Mortgage",
-    domain: "BRX Mortgage",
-    url: "",
-    tag: "Personal brand",
-    from: "#6d3b6e",
-    to: "#b07bac",
+    name: "The Endless Passport",
+    domain: "endlesspassport.com",
+    url: "https://endlesspassport.com",
+    tag: "Travel",
+    img: "/portfolio/card-endlesspassport.jpg",
+    from: "#274060",
+    to: "#7da2c1",
   },
 ];
 
@@ -472,8 +479,9 @@ export function Landing() {
               transition={{ delay: 0.8, duration: 0.6 }}
               className="text-lg sm:text-xl text-[#6b675e] leading-relaxed mb-8 max-w-xl"
             >
-              I'm a real web designer — not a template, not an AI page builder.
-              I hand-code your small business a custom website for{" "}
+              I'm a real web designer in Squamish, BC — no cookie-cutter
+              templates, no DIY builders eating your weekends. I build your
+              small business a custom website for{" "}
               <strong className="text-[#1b1a17]">$0</strong>, with two rounds of
               revisions. You only pay if you keep it:{" "}
               <strong className="text-[#1b1a17]">$9.99/month</strong> for
@@ -593,33 +601,44 @@ export function Landing() {
                   whileHover={{ y: -8, rotate: i % 2 ? 0.6 : -0.6 }}
                   className="group rounded-2xl border border-[#e7e1d6] bg-white overflow-hidden shadow-sm hover:shadow-[0_24px_60px_-20px_rgba(27,26,23,0.25)] transition-shadow"
                 >
-                  <div
-                    className="aspect-[16/10] p-5 flex flex-col justify-between"
-                    style={{
-                      background: `linear-gradient(150deg, ${site.from}, ${site.to})`,
-                    }}
-                  >
-                    <div className="flex items-center justify-between">
-                      <div className="h-2.5 w-20 rounded-full bg-white/80" />
-                      <div className="flex gap-1.5">
-                        <div className="h-2 w-8 rounded-full bg-white/40" />
-                        <div className="h-2 w-8 rounded-full bg-white/40" />
+                  {site.img ? (
+                    <div className="aspect-[16/10] overflow-hidden">
+                      <img
+                        src={site.img}
+                        alt={`${site.name} — website by FreeSite Company`}
+                        loading="lazy"
+                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                      />
+                    </div>
+                  ) : (
+                    <div
+                      className="aspect-[16/10] p-5 flex flex-col justify-between"
+                      style={{
+                        background: `linear-gradient(150deg, ${site.from}, ${site.to})`,
+                      }}
+                    >
+                      <div className="flex items-center justify-between">
+                        <div className="h-2.5 w-20 rounded-full bg-white/80" />
+                        <div className="flex gap-1.5">
+                          <div className="h-2 w-8 rounded-full bg-white/40" />
+                          <div className="h-2 w-8 rounded-full bg-white/40" />
+                        </div>
+                      </div>
+                      <div>
+                        <div className="h-4 w-3/5 rounded-md bg-white/90 mb-2" />
+                        <div className="h-3 w-2/5 rounded-md bg-white/50" />
+                      </div>
+                      <div className="flex gap-2">
+                        {[0, 1, 2].map((k) => (
+                          <div
+                            key={k}
+                            className="h-8 flex-1 rounded-md bg-white/25 transition-transform duration-300 group-hover:-translate-y-1"
+                            style={{ transitionDelay: `${k * 60}ms` }}
+                          />
+                        ))}
                       </div>
                     </div>
-                    <div>
-                      <div className="h-4 w-3/5 rounded-md bg-white/90 mb-2" />
-                      <div className="h-3 w-2/5 rounded-md bg-white/50" />
-                    </div>
-                    <div className="flex gap-2">
-                      {[0, 1, 2].map((k) => (
-                        <div
-                          key={k}
-                          className="h-8 flex-1 rounded-md bg-white/25 transition-transform duration-300 group-hover:-translate-y-1"
-                          style={{ transitionDelay: `${k * 60}ms` }}
-                        />
-                      ))}
-                    </div>
-                  </div>
+                  )}
                   <div className="flex items-center justify-between px-5 py-4">
                     <div>
                       <p className="font-semibold">{site.name}</p>
@@ -649,6 +668,68 @@ export function Landing() {
               );
             })}
           </div>
+        </div>
+      </section>
+
+      {/* =========================================================== GLOBE */}
+      <section className="py-16 sm:py-24 px-4 sm:px-6 bg-[#10140f] text-[#faf7f2] overflow-hidden">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+          <FadeUp>
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#7fc8a4] mb-3">
+              Live on the web, right now
+            </p>
+            <h2 className="font-display text-3xl sm:text-5xl font-semibold tracking-tight mb-6">
+              Built in Squamish.{" "}
+              <span className="italic text-[#7fc8a4]">
+                Working around the clock.
+              </span>
+            </h2>
+            <p className="text-lg text-[#faf7f2]/60 leading-relaxed mb-8 max-w-md">
+              Every site below is online this very second — fast, secure, and
+              earning for its owner while they work, sleep, or get out on the
+              water.
+            </p>
+            <ul className="space-y-1">
+              {showcase.map((s, i) => (
+                <motion.li
+                  key={s.domain}
+                  initial={{ x: -20, opacity: 0 }}
+                  whileInView={{ x: 0, opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.08 }}
+                >
+                  <a
+                    href={s.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex items-center justify-between gap-4 rounded-xl px-4 py-3 transition-colors hover:bg-white/5"
+                  >
+                    <span className="flex items-center gap-3">
+                      <span className="relative flex h-2 w-2">
+                        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#7fc8a4] opacity-60" />
+                        <span className="relative inline-flex h-2 w-2 rounded-full bg-[#7fc8a4]" />
+                      </span>
+                      <span className="font-medium">{s.domain}</span>
+                    </span>
+                    <span className="flex items-center gap-2 text-sm text-[#faf7f2]/40 group-hover:text-[#7fc8a4] transition-colors">
+                      {s.tag}
+                      <ArrowUpRight className="h-4 w-4" />
+                    </span>
+                  </a>
+                </motion.li>
+              ))}
+            </ul>
+          </FadeUp>
+          <FadeUp delay={0.15} className="relative mx-auto w-full max-w-[480px]">
+            <Globe />
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-0 rounded-full"
+              style={{
+                boxShadow: "inset 0 0 80px 20px #10140f",
+              }}
+            />
+          </FadeUp>
         </div>
       </section>
 
