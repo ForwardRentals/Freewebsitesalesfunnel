@@ -247,14 +247,64 @@ function Counter({ value, suffix = "" }: { value: number; suffix?: string }) {
   );
 }
 
-/* Animated mini-browser that cycles through stylized client sites. */
+/* Fictional mini-sites the hero browser flicks through — pure CSS mockups. */
+const heroMockups = [
+  {
+    domain: "timberandstone.ca",
+    kind: "contractor" as const,
+    bg: "#23201c",
+    accent: "#d7a04a",
+    name: "TIMBER & STONE",
+    tagline: "Custom homes, built right.",
+    sub: "Squamish · Licensed & insured",
+    cta: "Get a quote",
+  },
+  {
+    domain: "thecopperkettle.ca",
+    kind: "cafe" as const,
+    bg: "#f7f1e7",
+    accent: "#b4552d",
+    name: "The Copper Kettle",
+    tagline: "Slow mornings, good coffee.",
+    sub: "Open daily 7am – 4pm",
+    cta: "See the menu",
+  },
+  {
+    domain: "alpineglowspa.ca",
+    kind: "spa" as const,
+    bg: "#eef0ea",
+    accent: "#5f7d62",
+    name: "Alpine Glow",
+    tagline: "Take an hour for yourself.",
+    sub: "Massage · Facials · Sauna",
+    cta: "Book now",
+  },
+  {
+    domain: "summitphysio.ca",
+    kind: "physio" as const,
+    bg: "#101d2c",
+    accent: "#6db3d6",
+    name: "SUMMIT PHYSIO",
+    tagline: "Move like yourself again.",
+    sub: "Direct billing · Same-week visits",
+    cta: "Book assessment",
+  },
+];
+
 function HeroBrowser() {
   const [i, setI] = useState(0);
   useEffect(() => {
-    const id = setInterval(() => setI((v) => (v + 1) % showcase.length), 3600);
+    const id = setInterval(
+      () => setI((v) => (v + 1) % heroMockups.length),
+      3600,
+    );
     return () => clearInterval(id);
   }, []);
-  const site = showcase[i];
+  const site = heroMockups[i % heroMockups.length];
+  const dark = site.kind === "contractor" || site.kind === "physio";
+  const ink = dark ? "#ffffff" : "#26231e";
+  const soft = dark ? "rgba(255,255,255,0.65)" : "rgba(38,35,30,0.6)";
+  const card = dark ? "rgba(255,255,255,0.08)" : "rgba(38,35,30,0.06)";
 
   return (
     <div className="relative">
@@ -278,38 +328,100 @@ function HeroBrowser() {
               transition={{ duration: 0.3 }}
               className="ml-3 flex-1 rounded-md bg-[#f4f0e8] px-3 py-1 text-xs text-[#6b675e] font-medium truncate"
             >
-              {site.url ? site.domain : site.name}
+              {site.domain}
             </motion.div>
           </AnimatePresence>
         </div>
-        {/* real site screenshot with a slow ken-burns drift */}
-        <div className="aspect-[16/10] relative overflow-hidden bg-[#1b1a17]">
+        {/* beautiful fictional mockup — crossfade only, no zoom */}
+        <div className="aspect-[16/10] relative overflow-hidden">
           <AnimatePresence mode="wait">
-            <motion.img
-              key={site.name}
-              src={site.img}
-              alt={`${site.name} — live website built by FreeSite Company`}
-              initial={{ opacity: 0, scale: 1.04 }}
-              animate={{ opacity: 1, scale: 1.1 }}
+            <motion.div
+              key={site.domain + "-page"}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{
-                opacity: { duration: 0.5 },
-                scale: { duration: 3.4, ease: "linear" },
-              }}
-              className="absolute inset-0 h-full w-full object-cover object-top"
-            />
+              transition={{ duration: 0.45 }}
+              className="absolute inset-0 flex flex-col p-5 sm:p-7"
+              style={{ background: site.bg, color: ink }}
+            >
+              {/* mock nav */}
+              <div className="flex items-center justify-between mb-auto">
+                <span
+                  className={
+                    "text-[11px] sm:text-xs font-bold tracking-[0.18em] " +
+                    (site.kind === "cafe" || site.kind === "spa"
+                      ? "font-display normal-case tracking-tight text-base sm:text-lg"
+                      : "")
+                  }
+                >
+                  {site.name}
+                </span>
+                <span className="flex items-center gap-3 text-[10px] sm:text-[11px] font-medium" style={{ color: soft }}>
+                  <span>Services</span>
+                  <span>About</span>
+                  <span
+                    className="rounded-full px-2.5 py-1 font-semibold"
+                    style={{ background: site.accent, color: dark ? "#1b1a17" : "#fff" }}
+                  >
+                    Contact
+                  </span>
+                </span>
+              </div>
+
+              {/* mock hero */}
+              <div className="my-auto">
+                <motion.p
+                  initial={{ y: 14, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: 0.15, duration: 0.5 }}
+                  className="text-[10px] sm:text-[11px] font-bold tracking-[0.2em] uppercase mb-2"
+                  style={{ color: site.accent }}
+                >
+                  {site.sub}
+                </motion.p>
+                <motion.h3
+                  initial={{ y: 16, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: 0.25, duration: 0.5 }}
+                  className="font-display text-2xl sm:text-4xl font-semibold leading-tight mb-4"
+                >
+                  {site.tagline}
+                </motion.h3>
+                <motion.span
+                  initial={{ y: 12, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: 0.4, duration: 0.4 }}
+                  className="inline-block rounded-full px-4 py-2 text-[11px] sm:text-xs font-bold"
+                  style={{ background: site.accent, color: dark ? "#1b1a17" : "#fff" }}
+                >
+                  {site.cta} →
+                </motion.span>
+              </div>
+
+              {/* mock content cards */}
+              <div className="grid grid-cols-3 gap-2.5 sm:gap-3">
+                {[0, 1, 2].map((k) => (
+                  <motion.div
+                    key={site.domain + k}
+                    initial={{ y: 14, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 0.45 + k * 0.1, duration: 0.4 }}
+                    className="rounded-lg p-2.5 sm:p-3"
+                    style={{ background: card }}
+                  >
+                    <div
+                      className="h-1.5 w-8 rounded-full mb-1.5"
+                      style={{ background: site.accent }}
+                    />
+                    <div
+                      className="h-1.5 w-full rounded-full"
+                      style={{ background: soft, opacity: 0.4 }}
+                    />
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
           </AnimatePresence>
-          <motion.div
-            key={site.domain + "-bar"}
-            className="absolute bottom-0 left-0 right-0 flex items-center justify-between px-4 py-2.5 bg-gradient-to-t from-black/70 to-transparent"
-          >
-            <span className="text-white text-sm font-semibold drop-shadow">
-              {site.name}
-            </span>
-            <span className="text-white/80 text-xs font-medium">
-              live · {site.tag.toLowerCase()}
-            </span>
-          </motion.div>
         </div>
       </motion.div>
 
