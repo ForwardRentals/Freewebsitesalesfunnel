@@ -1,0 +1,32 @@
+/* Fonts are loaded via <link> in index.html (preconnect + swap) so they
+   don't block the CSS render path. */
+
+:root {
+  --paper: #faf7f2;
+  --ink: #1b1a17;
+  --ink-muted: #6b675e;
+  --line: #e7e1d6;
+  --pine: #166b45;
+  --pine-dark: #0f5434;
+  --cream: #fffefb;
+}
+
+.font-display {
+  font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+/* Infinite marquee for the client-site strip */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 28s linear infinite;
+}
+.animate-marquee:hover {
+  animation-play-state: paused;
+}

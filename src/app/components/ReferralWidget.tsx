@@ -37,18 +37,20 @@ export function ReferralWidget({ status, animationDelay = 0.65 }: Props) {
       initial={{ y: 20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ delay: animationDelay }}
-      className="bg-gradient-to-br from-emerald-500/10 to-cyan-500/10 border border-emerald-500/20 rounded-2xl p-8 md:p-10 mb-8"
+      className="bg-white border border-[#e7e1d6] rounded-2xl p-8 md:p-10 mb-8 shadow-sm"
     >
       {/* Header */}
       <div className="flex items-center gap-3 mb-2">
-        <Users className="h-6 w-6 text-emerald-400" />
-        <h2 className="text-2xl font-bold">Refer a Friend, Save Money</h2>
+        <Users className="h-6 w-6 text-[#166b45]" />
+        <h2 className="font-display text-2xl font-semibold text-[#1b1a17]">
+          Refer a Friend, Save Money
+        </h2>
       </div>
-      <p className="text-zinc-400 mb-8">
+      <p className="text-[#6b675e] mb-8">
         Get{" "}
-        <span className="text-emerald-400 font-semibold">$1 off/month</span>{" "}
+        <span className="text-[#166b45] font-semibold">$1 off/month</span>{" "}
         for every friend who signs up — up to{" "}
-        <span className="font-semibold text-white">$5/month</span> off your
+        <span className="font-semibold text-[#1b1a17]">$5/month</span> off your
         hosting.
       </p>
 
@@ -64,8 +66,8 @@ export function ReferralWidget({ status, animationDelay = 0.65 }: Props) {
               transition={{ delay: animationDelay + 0.05 * i }}
               className={`flex items-center justify-center w-10 h-10 rounded-full text-sm font-bold transition-all ${
                 earned
-                  ? "bg-gradient-to-br from-emerald-500 to-cyan-500 text-white shadow-lg shadow-emerald-500/30"
-                  : "bg-zinc-800 text-zinc-600 border border-zinc-700"
+                  ? "bg-[#166b45] text-white shadow-lg shadow-[#166b45]/30"
+                  : "bg-[#faf7f2] text-[#6b675e] border border-[#e7e1d6]"
               }`}
             >
               {earned ? (
@@ -77,9 +79,9 @@ export function ReferralWidget({ status, animationDelay = 0.65 }: Props) {
           );
         })}
       </div>
-      <p className="text-sm text-zinc-400 mb-8">
+      <p className="text-sm text-[#6b675e] mb-8">
         {referrals} of {MAX_REFERRALS} referrals ·{" "}
-        <span className="text-emerald-400 font-semibold">
+        <span className="text-[#166b45] font-semibold">
           ${discount}/month saved
         </span>
         {spotsLeft > 0
@@ -88,18 +90,18 @@ export function ReferralWidget({ status, animationDelay = 0.65 }: Props) {
       </p>
 
       {/* Referral link */}
-      <p className="text-sm font-semibold text-zinc-300 mb-3">
+      <p className="text-sm font-semibold text-[#1b1a17] mb-3">
         Your referral link:
       </p>
       <div className="flex gap-3 mb-6">
         <input
           readOnly
           value={referralUrl}
-          className="flex-1 bg-zinc-800/80 border border-zinc-700 rounded-lg px-4 py-3 text-sm text-zinc-300 outline-none min-w-0"
+          className="flex-1 bg-[#faf7f2] border border-[#e7e1d6] rounded-xl px-4 py-3 text-sm text-[#1b1a17] outline-none min-w-0"
         />
         <Button
           onClick={copy}
-          className="bg-gradient-to-r from-emerald-500 to-cyan-500 text-white hover:shadow-lg hover:shadow-emerald-500/50 gap-2 shrink-0"
+          className="rounded-full bg-[#166b45] text-white hover:bg-[#0f5434] gap-2 shrink-0"
         >
           {copied ? (
             <Check className="h-4 w-4" />
@@ -116,7 +118,7 @@ export function ReferralWidget({ status, animationDelay = 0.65 }: Props) {
           href={`https://twitter.com/intent/tweet?text=${tweetText}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex-1 text-center py-3 rounded-lg bg-black text-white text-sm font-bold hover:bg-zinc-900 transition-colors"
+          className="flex-1 text-center py-3 rounded-full bg-[#1b1a17] text-white text-sm font-bold hover:bg-black transition-colors"
         >
           Share on X
         </a>
@@ -124,7 +126,7 @@ export function ReferralWidget({ status, animationDelay = 0.65 }: Props) {
           href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(referralUrl)}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex-1 text-center py-3 rounded-lg bg-[#1877f2] text-white text-sm font-bold hover:bg-blue-700 transition-colors"
+          className="flex-1 text-center py-3 rounded-full bg-[#1877f2] text-white text-sm font-bold hover:bg-blue-700 transition-colors"
         >
           Share on Facebook
         </a>

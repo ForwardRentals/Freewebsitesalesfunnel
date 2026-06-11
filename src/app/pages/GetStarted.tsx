@@ -18,6 +18,9 @@ import { Input } from "../components/ui/input";
 import { Textarea } from "../components/ui/textarea";
 import { Label } from "../components/ui/label";
 
+const inputClasses =
+  "bg-white border-[#e7e1d6] rounded-xl text-[#1b1a17] placeholder:text-[#6b675e]/60 focus-visible:border-[#166b45] focus-visible:ring-[#166b45]/15";
+
 export function GetStarted() {
   const { recordSignup, savePendingEmail, getStoredRef } = useReferral();
 
@@ -33,24 +36,24 @@ export function GetStarted() {
     currentWebsite: "",
     email: "",
     phone: "",
-    
+
     // Current Setup
     currentHost: "",
     launchDate: "",
-    
+
     // Website Details
     location: "",
     services: "",
     pagesNeeded: "",
-    
+
     // Design Preferences
     sampleWebsites: "",
     additionalInfo: "",
-    
+
     // Budget
     monthlyBudget: "",
   });
-  
+
   const [uploadedFiles, setUploadedFiles] = useState<File[]>([]);
 
   const [isDragging, setIsDragging] = useState(false);
@@ -173,10 +176,10 @@ export function GetStarted() {
   const progress = (step / 4) * 100;
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-white">
+    <div className="min-h-screen bg-[#faf7f2] text-[#1b1a17] selection:bg-[#166b45] selection:text-white">
       <Navigation />
 
-      <div className="pt-24 pb-20 px-4 sm:px-6">
+      <div className="pt-24 sm:pt-28 pb-20 px-4 sm:px-6">
         <div className="max-w-3xl mx-auto">
           {/* Header */}
           <motion.div
@@ -184,31 +187,29 @@ export function GetStarted() {
             animate={{ y: 0, opacity: 1 }}
             className="text-center mb-12"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-500/10 border border-emerald-500/20 rounded-full mb-6">
-              <Sparkles className="h-4 w-4 text-emerald-400" />
-              <span className="text-emerald-400 font-semibold">
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#e7e1d6] bg-white px-4 py-1.5 mb-6">
+              <Sparkles className="h-4 w-4 text-[#166b45]" />
+              <span className="text-sm font-medium text-[#6b675e]">
                 Step {step} of 4
               </span>
             </div>
-            <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold mb-4">
+            <h1 className="font-display text-2xl sm:text-4xl md:text-5xl font-semibold tracking-tight mb-4">
               Let's Build Your{" "}
-              <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
-                Free Website
-              </span>
+              <span className="italic text-[#166b45]">Free Website</span>
             </h1>
-            <p className="text-xl text-zinc-400">
+            <p className="text-xl text-[#6b675e]">
               Tell us about your business so we can create the perfect site for you
             </p>
           </motion.div>
 
           {/* Progress Bar */}
           <div className="mb-12">
-            <div className="h-2 bg-zinc-800 rounded-full overflow-hidden">
+            <div className="h-2 bg-[#e7e1d6] rounded-full overflow-hidden">
               <motion.div
                 initial={{ width: 0 }}
                 animate={{ width: `${progress}%` }}
                 transition={{ duration: 0.3 }}
-                className="h-full bg-gradient-to-r from-emerald-500 to-cyan-500"
+                className="h-full bg-[#166b45] rounded-full"
               />
             </div>
           </div>
@@ -220,19 +221,19 @@ export function GetStarted() {
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: -20, opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="bg-zinc-900/50 border border-zinc-800 rounded-2xl p-5 sm:p-8 md:p-12"
+            className="rounded-2xl border border-[#e7e1d6] bg-white shadow-sm p-5 sm:p-8 md:p-12"
           >
             <form onSubmit={handleSubmit} onKeyDown={handleKeyDown}>
               {/* Step 1: Basic Information */}
               {step === 1 && (
                 <div className="space-y-6">
-                  <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
-                    <CheckCircle2 className="h-6 w-6 text-emerald-400" />
+                  <h2 className="font-display text-2xl font-semibold tracking-tight mb-6 flex items-center gap-2">
+                    <CheckCircle2 className="h-6 w-6 text-[#166b45]" />
                     Basic Information
                   </h2>
 
                   <div>
-                    <Label htmlFor="businessName" className="text-zinc-300 mb-2 block">
+                    <Label htmlFor="businessName" className="font-medium text-[#1b1a17] mb-2 block">
                       Business Name *
                     </Label>
                     <Input
@@ -241,12 +242,12 @@ export function GetStarted() {
                       value={formData.businessName}
                       onChange={(e) => updateField("businessName", e.target.value)}
                       placeholder="Enter your business name"
-                      className="bg-zinc-800/50 border-zinc-700 text-white placeholder:text-zinc-500"
+                      className={inputClasses}
                     />
                   </div>
 
                   <div>
-                    <Label htmlFor="email" className="text-zinc-300 mb-2 block">
+                    <Label htmlFor="email" className="font-medium text-[#1b1a17] mb-2 block">
                       Email Address *
                     </Label>
                     <Input
@@ -256,12 +257,12 @@ export function GetStarted() {
                       value={formData.email}
                       onChange={(e) => updateField("email", e.target.value)}
                       placeholder="your@email.com"
-                      className="bg-zinc-800/50 border-zinc-700 text-white placeholder:text-zinc-500"
+                      className={inputClasses}
                     />
                   </div>
 
                   <div>
-                    <Label htmlFor="phone" className="text-zinc-300 mb-2 block">
+                    <Label htmlFor="phone" className="font-medium text-[#1b1a17] mb-2 block">
                       Phone Number *
                     </Label>
                     <Input
@@ -271,12 +272,12 @@ export function GetStarted() {
                       value={formData.phone}
                       onChange={(e) => updateField("phone", e.target.value)}
                       placeholder="(604) 849-8898"
-                      className="bg-zinc-800/50 border-zinc-700 text-white placeholder:text-zinc-500"
+                      className={inputClasses}
                     />
                   </div>
 
                   <div>
-                    <Label htmlFor="location" className="text-zinc-300 mb-2 block">
+                    <Label htmlFor="location" className="font-medium text-[#1b1a17] mb-2 block">
                       Business Location *
                     </Label>
                     <Input
@@ -285,7 +286,7 @@ export function GetStarted() {
                       value={formData.location}
                       onChange={(e) => updateField("location", e.target.value)}
                       placeholder="City, State/Province"
-                      className="bg-zinc-800/50 border-zinc-700 text-white placeholder:text-zinc-500"
+                      className={inputClasses}
                     />
                   </div>
                 </div>
@@ -294,13 +295,13 @@ export function GetStarted() {
               {/* Step 2: Current Setup */}
               {step === 2 && (
                 <div className="space-y-6">
-                  <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
-                    <CheckCircle2 className="h-6 w-6 text-emerald-400" />
+                  <h2 className="font-display text-2xl font-semibold tracking-tight mb-6 flex items-center gap-2">
+                    <CheckCircle2 className="h-6 w-6 text-[#166b45]" />
                     Current Setup & Timeline
                   </h2>
 
                   <div>
-                    <Label htmlFor="currentWebsite" className="text-zinc-300 mb-2 block">
+                    <Label htmlFor="currentWebsite" className="font-medium text-[#1b1a17] mb-2 block">
                       Current Website Name (if any)
                     </Label>
                     <Input
@@ -308,12 +309,12 @@ export function GetStarted() {
                       value={formData.currentWebsite}
                       onChange={(e) => updateField("currentWebsite", e.target.value)}
                       placeholder="www.yoursite.com"
-                      className="bg-zinc-800/50 border-zinc-700 text-white placeholder:text-zinc-500"
+                      className={inputClasses}
                     />
                   </div>
 
                   <div>
-                    <Label htmlFor="currentHost" className="text-zinc-300 mb-2 block">
+                    <Label htmlFor="currentHost" className="font-medium text-[#1b1a17] mb-2 block">
                       Current Hosting Provider (if any)
                     </Label>
                     <Input
@@ -321,12 +322,12 @@ export function GetStarted() {
                       value={formData.currentHost}
                       onChange={(e) => updateField("currentHost", e.target.value)}
                       placeholder="GoDaddy, HostPapa, etc."
-                      className="bg-zinc-800/50 border-zinc-700 text-white placeholder:text-zinc-500"
+                      className={inputClasses}
                     />
                   </div>
 
                   <div>
-                    <Label htmlFor="launchDate" className="text-zinc-300 mb-2 block">
+                    <Label htmlFor="launchDate" className="font-medium text-[#1b1a17] mb-2 block">
                       When do you want this launched? *
                     </Label>
                     <Input
@@ -335,12 +336,12 @@ export function GetStarted() {
                       value={formData.launchDate}
                       onChange={(e) => updateField("launchDate", e.target.value)}
                       placeholder="e.g., ASAP, 2 weeks, by March 1st"
-                      className="bg-zinc-800/50 border-zinc-700 text-white placeholder:text-zinc-500"
+                      className={inputClasses}
                     />
                   </div>
 
                   <div>
-                    <Label htmlFor="monthlyBudget" className="text-zinc-300 mb-2 block">
+                    <Label htmlFor="monthlyBudget" className="font-medium text-[#1b1a17] mb-2 block">
                       Monthly Budget (Optional)
                     </Label>
                     <Input
@@ -348,9 +349,9 @@ export function GetStarted() {
                       value={formData.monthlyBudget}
                       onChange={(e) => updateField("monthlyBudget", e.target.value)}
                       placeholder="e.g., $9.99-$50/month"
-                      className="bg-zinc-800/50 border-zinc-700 text-white placeholder:text-zinc-500"
+                      className={inputClasses}
                     />
-                    <p className="text-sm text-zinc-500 mt-2">
+                    <p className="text-sm text-[#6b675e] mt-2">
                       This helps us recommend the best plan for you
                     </p>
                   </div>
@@ -360,13 +361,13 @@ export function GetStarted() {
               {/* Step 3: Website Details */}
               {step === 3 && (
                 <div className="space-y-6">
-                  <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
-                    <CheckCircle2 className="h-6 w-6 text-emerald-400" />
+                  <h2 className="font-display text-2xl font-semibold tracking-tight mb-6 flex items-center gap-2">
+                    <CheckCircle2 className="h-6 w-6 text-[#166b45]" />
                     Website Details
                   </h2>
 
                   <div>
-                    <Label htmlFor="services" className="text-zinc-300 mb-2 block">
+                    <Label htmlFor="services" className="font-medium text-[#1b1a17] mb-2 block">
                       What services do you offer? *
                     </Label>
                     <Textarea
@@ -376,12 +377,12 @@ export function GetStarted() {
                       onChange={(e) => updateField("services", e.target.value)}
                       placeholder="Describe your products or services..."
                       rows={4}
-                      className="bg-zinc-800/50 border-zinc-700 text-white placeholder:text-zinc-500"
+                      className={inputClasses}
                     />
                   </div>
 
                   <div>
-                    <Label htmlFor="pagesNeeded" className="text-zinc-300 mb-2 block">
+                    <Label htmlFor="pagesNeeded" className="font-medium text-[#1b1a17] mb-2 block">
                       Which pages do you need? *
                     </Label>
                     <Textarea
@@ -391,12 +392,12 @@ export function GetStarted() {
                       onChange={(e) => updateField("pagesNeeded", e.target.value)}
                       placeholder="e.g., Home, About, Services, Contact, Booking, Gallery..."
                       rows={3}
-                      className="bg-zinc-800/50 border-zinc-700 text-white placeholder:text-zinc-500"
+                      className={inputClasses}
                     />
                   </div>
 
                   <div>
-                    <Label className="text-zinc-300 mb-2 block">
+                    <Label className="font-medium text-[#1b1a17] mb-2 block">
                       Logo & Photos (Upload Here)
                     </Label>
                     <div className="space-y-4">
@@ -404,7 +405,7 @@ export function GetStarted() {
                         onDragOver={(e) => { e.preventDefault(); setIsDragging(true); }}
                         onDragLeave={() => setIsDragging(false)}
                         onDrop={handleDrop}
-                        className={`relative rounded-lg border-2 border-dashed transition-colors ${isDragging ? "border-emerald-400 bg-emerald-500/10" : "border-zinc-700 hover:border-emerald-500/50"}`}
+                        className={`relative rounded-xl border-2 border-dashed transition-colors ${isDragging ? "border-[#166b45] bg-[#166b45]/[0.06]" : "border-[#e7e1d6] bg-[#faf7f2] hover:border-[#166b45]/50"}`}
                       >
                         <label className="block p-8 text-center cursor-pointer">
                           <input
@@ -414,11 +415,11 @@ export function GetStarted() {
                             onChange={handleFileUpload}
                             className="hidden"
                           />
-                          <Upload className={`h-8 w-8 mx-auto mb-3 ${isDragging ? "text-emerald-400" : "text-zinc-500"}`} />
-                          <p className="text-zinc-400 mb-1">
+                          <Upload className={`h-8 w-8 mx-auto mb-3 ${isDragging ? "text-[#166b45]" : "text-[#6b675e]"}`} />
+                          <p className="text-[#1b1a17] font-medium mb-1">
                             {isDragging ? "Drop files here" : "Drag & drop or click to upload"}
                           </p>
-                          <p className="text-sm text-zinc-500">
+                          <p className="text-sm text-[#6b675e]">
                             (Transparent PNG for logo preferred. Max 10MB per file)
                           </p>
                         </label>
@@ -426,27 +427,27 @@ export function GetStarted() {
 
                       {uploadedFiles.length > 0 && (
                         <div className="space-y-2">
-                          <p className="text-sm text-zinc-400">
+                          <p className="text-sm text-[#6b675e]">
                             Uploaded files ({uploadedFiles.length}):
                           </p>
                           {uploadedFiles.map((file, index) => (
                             <div
                               key={index}
-                              className="flex items-center gap-3 bg-zinc-800/50 rounded-lg p-3 border border-zinc-700"
+                              className="flex items-center gap-3 bg-[#faf7f2] rounded-xl p-3 border border-[#e7e1d6]"
                             >
-                              <FileImage className="h-5 w-5 text-emerald-400 flex-shrink-0" />
-                              <span className="text-sm text-zinc-300 flex-1 truncate">
+                              <FileImage className="h-5 w-5 text-[#166b45] flex-shrink-0" />
+                              <span className="text-sm text-[#1b1a17] flex-1 truncate">
                                 {file.name}
                               </span>
-                              <span className="text-xs text-zinc-500">
+                              <span className="text-xs text-[#6b675e]">
                                 {(file.size / 1024 / 1024).toFixed(2)} MB
                               </span>
                               <button
                                 type="button"
                                 onClick={() => removeFile(index)}
-                                className="p-1 hover:bg-zinc-700 rounded transition-colors"
+                                className="p-1 hover:bg-[#efe9de] rounded transition-colors"
                               >
-                                <X className="h-4 w-4 text-zinc-400 hover:text-red-400" />
+                                <X className="h-4 w-4 text-[#6b675e] hover:text-red-500" />
                               </button>
                             </div>
                           ))}
@@ -460,13 +461,13 @@ export function GetStarted() {
               {/* Step 4: Design Preferences */}
               {step === 4 && (
                 <div className="space-y-6">
-                  <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
-                    <CheckCircle2 className="h-6 w-6 text-emerald-400" />
+                  <h2 className="font-display text-2xl font-semibold tracking-tight mb-6 flex items-center gap-2">
+                    <CheckCircle2 className="h-6 w-6 text-[#166b45]" />
                     Design Preferences
                   </h2>
 
                   <div>
-                    <Label htmlFor="sampleWebsites" className="text-zinc-300 mb-2 block">
+                    <Label htmlFor="sampleWebsites" className="font-medium text-[#1b1a17] mb-2 block">
                       Sample Websites You Like *
                     </Label>
                     <Textarea
@@ -476,15 +477,15 @@ export function GetStarted() {
                       onChange={(e) => updateField("sampleWebsites", e.target.value)}
                       placeholder="Share URLs of websites whose style you love. This helps us understand your vision!"
                       rows={4}
-                      className="bg-zinc-800/50 border-zinc-700 text-white placeholder:text-zinc-500"
+                      className={inputClasses}
                     />
-                    <p className="text-sm text-zinc-500 mt-2">
+                    <p className="text-sm text-[#6b675e] mt-2">
                       Include links and mention what you like about them
                     </p>
                   </div>
 
                   <div>
-                    <Label htmlFor="additionalInfo" className="text-zinc-300 mb-2 block">
+                    <Label htmlFor="additionalInfo" className="font-medium text-[#1b1a17] mb-2 block">
                       Anything else we should know?
                     </Label>
                     <Textarea
@@ -493,15 +494,15 @@ export function GetStarted() {
                       onChange={(e) => updateField("additionalInfo", e.target.value)}
                       placeholder="Special features, color preferences, specific requirements..."
                       rows={4}
-                      className="bg-zinc-800/50 border-zinc-700 text-white placeholder:text-zinc-500"
+                      className={inputClasses}
                     />
                   </div>
 
-                  <div className="bg-emerald-500/10 border border-emerald-500/20 rounded-lg p-6">
-                    <h3 className="font-semibold text-emerald-400 mb-2">
-                      📧 What happens next?
+                  <div className="bg-[#166b45]/[0.06] border border-[#166b45]/20 rounded-xl p-6">
+                    <h3 className="font-semibold text-[#166b45] mb-2">
+                      What happens next?
                     </h3>
-                    <ul className="text-sm text-zinc-300 space-y-2">
+                    <ul className="text-sm text-[#1b1a17]/80 space-y-2">
                       <li>• We'll review your information within 24 hours</li>
                       <li>• You'll receive an email to send your logo and photos</li>
                       <li>• We'll start building your custom website</li>
@@ -510,12 +511,12 @@ export function GetStarted() {
                     </ul>
                   </div>
 
-                  <div className="bg-zinc-800/50 border border-zinc-700 rounded-lg p-6">
+                  <div className="bg-[#faf7f2] border border-[#e7e1d6] rounded-xl p-6">
                     <div className="flex items-center justify-between mb-4">
-                      <h3 className="font-semibold text-white">Book a Call</h3>
-                      <span className="text-xs text-emerald-400 font-medium">30 min · Free</span>
+                      <h3 className="font-display font-semibold text-[#1b1a17]">Book a Call</h3>
+                      <span className="text-xs text-[#166b45] font-medium">30 min · Free</span>
                     </div>
-                    <p className="text-xs text-zinc-500 mb-4">Available slots this week</p>
+                    <p className="text-xs text-[#6b675e] mb-4">Available slots this week</p>
                     <div className="grid grid-cols-2 gap-2 mb-4">
                       {[
                         { day: "Today", time: "2:00 PM" },
@@ -530,10 +531,10 @@ export function GetStarted() {
                           href="https://calendar.app.google/L4ok6TnfC8njfXXy6"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex flex-col items-center py-2.5 px-3 bg-zinc-900 border border-zinc-700 rounded-lg hover:border-emerald-500/60 hover:bg-emerald-500/5 transition-all text-center"
+                          className="flex flex-col items-center py-2.5 px-3 bg-white border border-[#e7e1d6] rounded-xl hover:border-[#166b45]/60 hover:bg-[#166b45]/[0.04] transition-all text-center"
                         >
-                          <span className="text-xs text-zinc-400">{slot.day}</span>
-                          <span className="text-sm font-semibold text-white">{slot.time}</span>
+                          <span className="text-xs text-[#6b675e]">{slot.day}</span>
+                          <span className="text-sm font-semibold text-[#1b1a17]">{slot.time}</span>
                         </a>
                       ))}
                     </div>
@@ -541,7 +542,7 @@ export function GetStarted() {
                       href="https://calendar.app.google/L4ok6TnfC8njfXXy6"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block w-full text-center py-2.5 bg-gradient-to-r from-emerald-500 to-cyan-500 text-white rounded-lg font-semibold text-sm hover:shadow-lg hover:shadow-emerald-500/50 transition-all"
+                      className="block w-full text-center py-2.5 rounded-full bg-[#166b45] text-white font-semibold text-sm transition-all hover:bg-[#0f5434] hover:-translate-y-0.5"
                     >
                       See All Availability
                     </a>
@@ -550,13 +551,13 @@ export function GetStarted() {
               )}
 
               {/* Navigation Buttons */}
-              <div className="flex items-center justify-between mt-10 pt-8 border-t border-zinc-800">
+              <div className="flex items-center justify-between mt-10 pt-8 border-t border-[#e7e1d6]">
                 {step > 1 ? (
                   <Button
                     type="button"
                     onClick={prevStep}
                     variant="outline"
-                    className="border-zinc-700 bg-zinc-900 text-white hover:bg-zinc-800"
+                    className="rounded-full border-[#1b1a17]/15 bg-white text-[#1b1a17] hover:border-[#1b1a17]/40 hover:bg-white hover:-translate-y-0.5"
                   >
                     <ArrowLeft className="h-4 w-4 mr-2" />
                     Back
@@ -569,7 +570,7 @@ export function GetStarted() {
                   <Button
                     type="button"
                     onClick={nextStep}
-                    className="bg-gradient-to-r from-emerald-500 to-cyan-500 text-white hover:shadow-lg hover:shadow-emerald-500/50"
+                    className="rounded-full bg-[#166b45] font-semibold text-white transition-all hover:bg-[#0f5434] hover:-translate-y-0.5 hover:shadow-[0_12px_40px_-8px_rgba(22,107,69,0.5)]"
                   >
                     Continue
                     <ArrowRight className="h-4 w-4 ml-2" />
@@ -577,18 +578,18 @@ export function GetStarted() {
                 ) : (
                   <div className="flex flex-col items-end gap-2">
                     {uploadStatus === "uploading" && (
-                      <span className="text-xs text-emerald-400 animate-pulse">Uploading files...</span>
+                      <span className="text-xs text-[#166b45] animate-pulse">Uploading files...</span>
                     )}
                     {uploadStatus === "done" && (
-                      <span className="text-xs text-emerald-400">Files uploaded ✓</span>
+                      <span className="text-xs text-[#166b45]">Files uploaded ✓</span>
                     )}
                     {uploadStatus === "error" && (
-                      <span className="text-xs text-red-400">File upload failed — form will still submit</span>
+                      <span className="text-xs text-red-500">File upload failed — form will still submit</span>
                     )}
                     <Button
                       type="submit"
                       disabled={isSubmitting}
-                      className="bg-gradient-to-r from-emerald-500 to-cyan-500 text-white hover:shadow-lg hover:shadow-emerald-500/50 disabled:opacity-50"
+                      className="rounded-full bg-[#166b45] font-semibold text-white transition-all hover:bg-[#0f5434] hover:-translate-y-0.5 hover:shadow-[0_12px_40px_-8px_rgba(22,107,69,0.5)] disabled:opacity-50"
                     >
                       {isSubmitting ? "Submitting..." : "Submit Request"}
                       <CheckCircle2 className="h-4 w-4 ml-2" />
@@ -604,10 +605,10 @@ export function GetStarted() {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.3 }}
-            className="mt-12 text-center text-zinc-500 text-sm"
+            className="mt-12 text-center text-[#6b675e] text-sm"
           >
             <p>
-              🔒 Your information is secure and will only be used to build your website.
+              Your information is secure and will only be used to build your website.
             </p>
           </motion.div>
         </div>
