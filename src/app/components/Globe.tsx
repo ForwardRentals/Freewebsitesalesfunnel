@@ -36,9 +36,10 @@ export function Globe({ className = "" }: { className?: string }) {
         diffuse: 1.2,
         mapSamples: 16000,
         mapBrightness: 6,
-        baseColor: [0.3, 0.42, 0.35],
-        markerColor: [0.31, 0.78, 0.51],
-        glowColor: [0.85, 0.95, 0.88],
+        // Endless Passport-style: gold land (#E8A838) on a near-black sphere
+        baseColor: [0.91, 0.66, 0.22],
+        markerColor: [1, 0.85, 0.55],
+        glowColor: [0.9, 0.76, 0.5],
         markers: [
           { location: [49.7016, -123.1558], size: 0.1 }, // Squamish
           { location: [49.2827, -123.1207], size: 0.06 }, // Vancouver
@@ -80,9 +81,9 @@ export function Globe({ className = "" }: { className?: string }) {
             inset: "4%",
             borderRadius: "50%",
             background:
-              "radial-gradient(circle at 36% 32%, #2e4a3a 0%, #1c2e24 45%, #0f1813 80%)",
+              "radial-gradient(circle at 36% 32%, #4a3a1c 0%, #2e2414 45%, #181208 80%)",
             boxShadow:
-              "inset -30px -24px 60px rgba(0,0,0,0.55), 0 0 60px rgba(127,200,164,0.18)",
+              "inset -30px -24px 60px rgba(0,0,0,0.55), 0 0 60px rgba(232,168,56,0.20)",
             overflow: "hidden",
           }}
         >
@@ -95,7 +96,7 @@ export function Globe({ className = "" }: { className?: string }) {
                 right: "-10%",
                 top: `${top}%`,
                 height: 1,
-                background: "rgba(127,200,164,0.16)",
+                background: "rgba(232,168,56,0.18)",
                 borderRadius: "50%",
               }}
             />
@@ -109,7 +110,7 @@ export function Globe({ className = "" }: { className?: string }) {
                 bottom: "-6%",
                 left: `${left}%`,
                 width: 1,
-                background: "rgba(127,200,164,0.14)",
+                background: "rgba(232,168,56,0.16)",
               }}
             />
           ))}
@@ -122,7 +123,7 @@ export function Globe({ className = "" }: { className?: string }) {
               width: 12,
               height: 12,
               borderRadius: "50%",
-              background: "#7fc8a4",
+              background: "#ffd98e",
               opacity: 0.7,
             }}
           />
@@ -134,7 +135,7 @@ export function Globe({ className = "" }: { className?: string }) {
               width: 12,
               height: 12,
               borderRadius: "50%",
-              background: "#7fc8a4",
+              background: "#ffd98e",
             }}
           />
         </div>

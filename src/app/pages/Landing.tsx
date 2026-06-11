@@ -700,7 +700,7 @@ export function Landing() {
               className="absolute inset-[-12%] rounded-full"
               style={{
                 background:
-                  "radial-gradient(circle, rgba(127,200,164,0.18) 0%, rgba(127,200,164,0.05) 45%, transparent 70%)",
+                  "radial-gradient(circle, rgba(232,168,56,0.20) 0%, rgba(232,168,56,0.06) 45%, transparent 70%)",
               }}
             />
             {/* slow counter-rotating dashed orbit */}
@@ -708,7 +708,7 @@ export function Landing() {
               aria-hidden
               animate={{ rotate: -360 }}
               transition={{ duration: 90, repeat: Infinity, ease: "linear" }}
-              className="pointer-events-none absolute inset-[-5%] rounded-full border border-dashed border-[#7fc8a4]/25"
+              className="pointer-events-none absolute inset-[-5%] rounded-full border border-dashed border-[#e8a838]/30"
             />
             <Globe />
             <p className="mt-4 text-center text-sm text-[#faf7f2]/40">
