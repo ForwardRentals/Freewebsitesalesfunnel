@@ -697,7 +697,7 @@ export function Landing() {
             {/* soft glow behind the globe */}
             <div
               aria-hidden
-              className="absolute inset-[-12%] rounded-full"
+              className="pointer-events-none absolute inset-[-12%] rounded-full"
               style={{
                 background:
                   "radial-gradient(circle, rgba(232,168,56,0.20) 0%, rgba(232,168,56,0.06) 45%, transparent 70%)",

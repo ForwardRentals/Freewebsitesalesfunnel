@@ -171,6 +171,9 @@ export function Globe({ className = "" }: { className?: string }) {
         cursor: "grab",
         opacity: 0,
         transition: "opacity 1.2s ease",
+        touchAction: "none",
+        position: "relative",
+        zIndex: 1,
       }}
       aria-label="Interactive globe — drag to spin. Markers show the Sea to Sky corridor."
     />
