@@ -47,7 +47,7 @@ const showcase = [
     domain: "seatoskytrails.com",
     url: "https://seatoskytrails.com",
     tag: "Outdoor guide",
-    img: "",
+    img: "/portfolio/card-seatoskytrails.jpg",
     from: "#1f4a2e",
     to: "#5a8f5f",
   },
@@ -61,11 +61,11 @@ const showcase = [
     to: "#7e5aa2",
   },
   {
-    name: "Jay Dobson",
-    domain: "jaydobson.com",
-    url: "https://jaydobson.com",
-    tag: "Portfolio",
-    img: "/portfolio/card-jaydobson.jpg",
+    name: "Jack Dobson Fine Art",
+    domain: "jdobsonfineart.com",
+    url: "https://jdobsonfineart.com",
+    tag: "Artist portfolio",
+    img: "/portfolio/card-jdobsonfineart.jpg",
     from: "#5c2018",
     to: "#a44a3f",
   },
@@ -251,7 +251,7 @@ function Counter({ value, suffix = "" }: { value: number; suffix?: string }) {
 function HeroBrowser() {
   const [i, setI] = useState(0);
   useEffect(() => {
-    const id = setInterval(() => setI((v) => (v + 1) % 4), 3200);
+    const id = setInterval(() => setI((v) => (v + 1) % showcase.length), 3600);
     return () => clearInterval(id);
   }, []);
   const site = showcase[i];
@@ -282,60 +282,35 @@ function HeroBrowser() {
             </motion.div>
           </AnimatePresence>
         </div>
-        {/* fake page */}
-        <AnimatePresence mode="wait">
+        {/* real site screenshot with a slow ken-burns drift */}
+        <div className="aspect-[16/10] relative overflow-hidden bg-[#1b1a17]">
+          <AnimatePresence mode="wait">
+            <motion.img
+              key={site.name}
+              src={site.img}
+              alt={`${site.name} — live website built by FreeSite Company`}
+              initial={{ opacity: 0, scale: 1.04 }}
+              animate={{ opacity: 1, scale: 1.1 }}
+              exit={{ opacity: 0 }}
+              transition={{
+                opacity: { duration: 0.5 },
+                scale: { duration: 3.4, ease: "linear" },
+              }}
+              className="absolute inset-0 h-full w-full object-cover object-top"
+            />
+          </AnimatePresence>
           <motion.div
-            key={site.name}
-            initial={{ opacity: 0, scale: 1.02 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.45 }}
-            className="aspect-[16/11] p-5 sm:p-6 flex flex-col"
-            style={{
-              background: `linear-gradient(150deg, ${site.from}, ${site.to})`,
-            }}
+            key={site.domain + "-bar"}
+            className="absolute bottom-0 left-0 right-0 flex items-center justify-between px-4 py-2.5 bg-gradient-to-t from-black/70 to-transparent"
           >
-            <div className="flex items-center justify-between">
-              <div className="h-3 w-24 rounded-full bg-white/80" />
-              <div className="flex gap-2">
-                <div className="h-2.5 w-10 rounded-full bg-white/40" />
-                <div className="h-2.5 w-10 rounded-full bg-white/40" />
-                <div className="h-2.5 w-14 rounded-full bg-white/90" />
-              </div>
-            </div>
-            <div className="flex-1 flex flex-col justify-center gap-3">
-              <motion.div
-                initial={{ width: 0 }}
-                animate={{ width: "70%" }}
-                transition={{ delay: 0.2, duration: 0.6 }}
-                className="h-6 sm:h-8 rounded-lg bg-white/90"
-              />
-              <motion.div
-                initial={{ width: 0 }}
-                animate={{ width: "45%" }}
-                transition={{ delay: 0.35, duration: 0.6 }}
-                className="h-6 sm:h-8 rounded-lg bg-white/60"
-              />
-              <motion.div
-                initial={{ opacity: 0, y: 8 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6 }}
-                className="mt-2 h-8 w-28 rounded-full bg-white"
-              />
-            </div>
-            <div className="grid grid-cols-3 gap-3">
-              {[0, 1, 2].map((k) => (
-                <motion.div
-                  key={k}
-                  initial={{ y: 16, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ delay: 0.5 + k * 0.12 }}
-                  className="h-10 sm:h-14 rounded-lg bg-white/25 backdrop-blur"
-                />
-              ))}
-            </div>
+            <span className="text-white text-sm font-semibold drop-shadow">
+              {site.name}
+            </span>
+            <span className="text-white/80 text-xs font-medium">
+              live · {site.tag.toLowerCase()}
+            </span>
           </motion.div>
-        </AnimatePresence>
+        </div>
       </motion.div>
 
       {/* floating badges */}
@@ -720,15 +695,101 @@ export function Landing() {
               ))}
             </ul>
           </FadeUp>
-          <FadeUp delay={0.15} className="relative mx-auto w-full max-w-[480px]">
-            <Globe />
+          <FadeUp delay={0.15} className="relative mx-auto w-full max-w-[500px]">
+            {/* soft glow behind the globe */}
             <div
               aria-hidden
-              className="pointer-events-none absolute inset-0 rounded-full"
+              className="absolute inset-[-12%] rounded-full"
               style={{
-                boxShadow: "inset 0 0 80px 20px #10140f",
+                background:
+                  "radial-gradient(circle, rgba(127,200,164,0.18) 0%, rgba(127,200,164,0.05) 45%, transparent 70%)",
               }}
             />
+            {/* slow counter-rotating dashed orbit */}
+            <motion.div
+              aria-hidden
+              animate={{ rotate: -360 }}
+              transition={{ duration: 90, repeat: Infinity, ease: "linear" }}
+              className="pointer-events-none absolute inset-[-5%] rounded-full border border-dashed border-[#7fc8a4]/25"
+            />
+            <Globe />
+            <p className="mt-4 text-center text-sm text-[#faf7f2]/40">
+              Go ahead — grab it and give it a spin.
+            </p>
+          </FadeUp>
+        </div>
+      </section>
+
+      {/* ====================================================== YES SECTION */}
+      <section className="py-20 sm:py-32 px-4 sm:px-6 bg-[#10140f] text-[#faf7f2] border-t border-white/5 overflow-hidden">
+        <div className="max-w-5xl mx-auto text-center">
+          <motion.p
+            initial={{ scale: 0.6, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ type: "spring", stiffness: 200, damping: 14 }}
+            className="font-display text-7xl sm:text-9xl font-bold text-[#7fc8a4] mb-6"
+          >
+            YES,
+          </motion.p>
+          <h2 className="font-display text-3xl sm:text-6xl font-semibold tracking-tight leading-tight mb-8">
+            {"we can build any kind of website —".split(" ").map((w, i) => (
+              <motion.span
+                key={w + i}
+                initial={{ y: 30, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true, margin: "-80px" }}
+                transition={{ delay: 0.2 + i * 0.07, duration: 0.5 }}
+                className="inline-block mr-[0.28em]"
+              >
+                {w}
+              </motion.span>
+            ))}
+            <motion.span
+              initial={{ y: 30, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ delay: 0.85, duration: 0.5 }}
+              className="inline-block italic text-[#ffd98e]"
+            >
+              as dynamic as you want.
+            </motion.span>
+          </h2>
+          <FadeUp delay={0.4}>
+            <div className="flex flex-wrap justify-center gap-3 mb-10">
+              {[
+                "Smooth animations",
+                "Online booking",
+                "E-commerce",
+                "Photo galleries",
+                "Interactive maps",
+                "Spinning globes — obviously",
+              ].map((chip, i) => (
+                <motion.span
+                  key={chip}
+                  initial={{ scale: 0, opacity: 0 }}
+                  whileInView={{ scale: 1, opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    delay: 0.5 + i * 0.08,
+                    type: "spring",
+                    stiffness: 260,
+                    damping: 16,
+                  }}
+                  whileHover={{ y: -4, scale: 1.05 }}
+                  className="rounded-full border border-[#7fc8a4]/30 bg-[#7fc8a4]/10 px-5 py-2.5 font-medium text-[#7fc8a4]"
+                >
+                  {chip}
+                </motion.span>
+              ))}
+            </div>
+            <Link
+              to="/get-started"
+              className="group inline-flex items-center gap-2 rounded-full bg-[#7fc8a4] px-9 py-4 text-lg font-semibold text-[#10140f] transition-all hover:bg-white hover:-translate-y-0.5"
+            >
+              Dream it up — we'll build it free
+              <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+            </Link>
           </FadeUp>
         </div>
       </section>
