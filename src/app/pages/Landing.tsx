@@ -1,101 +1,134 @@
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router";
-import { motion } from "motion/react";
+import {
+  motion,
+  AnimatePresence,
+  useInView,
+  useScroll,
+  useTransform,
+} from "motion/react";
 import { Navigation } from "../components/Navigation";
 import { Footer } from "../components/Footer";
 import {
-  Sparkles,
-  Code,
-  Zap,
-  Shield,
-  Rocket,
-  CheckCircle2,
   ArrowRight,
-  TrendingUp,
-  Users,
-  Clock,
-  Search,
-  PenTool,
-  BarChart3,
-  Layers,
-  Globe,
-  FileText,
+  ArrowUpRight,
+  Check,
+  Phone,
+  Plus,
   Camera,
   Film,
   Megaphone,
 } from "lucide-react";
 
-const features = [
+/* ------------------------------------------------------------------ data */
+
+const showcase = [
   {
-    icon: Code,
-    title: "Real Web Designer, Not a Template",
-    description: "Every website is custom-coded by a professional web developer — no drag-and-drop builders, no cookie-cutter themes",
+    name: "Squamish Water Taxi",
+    domain: "squamishwatertaxi.com",
+    url: "https://squamishwatertaxi.com",
+    tag: "Marine charter",
+    from: "#0b3954",
+    to: "#1d7fa3",
   },
   {
-    icon: Zap,
-    title: "Faster Than Any Website Builder",
-    description: "Hand-coded sites load faster than Wix, Squarespace, or WordPress — better for SEO and your customers",
+    name: "Sea to Sky Trails",
+    domain: "seatoskytrails.com",
+    url: "https://seatoskytrails.com",
+    tag: "Outdoor guide",
+    from: "#1f4a2e",
+    to: "#5a8f5f",
   },
   {
-    icon: Shield,
-    title: "Secure & Backed Up",
-    description: "Automated security monitoring and daily backups included with every managed plan",
+    name: "Squamish Canoe Rental",
+    domain: "squamishcanoerental.com",
+    url: "https://squamishcanoerental.com",
+    tag: "Rentals & tours",
+    from: "#22262b",
+    to: "#4a5560",
   },
   {
-    icon: Rocket,
-    title: "Quick Turnaround",
-    description: "Get your professional website designed and launched faster than you think",
+    name: "The Glacier Project",
+    domain: "theglacierproject.com",
+    url: "https://theglacierproject.com",
+    tag: "Adventure brand",
+    from: "#274060",
+    to: "#7da2c1",
+  },
+  {
+    name: "Shred Shed Repairs",
+    domain: "Squamish, BC",
+    url: "",
+    tag: "Motorsport repair",
+    from: "#5c2018",
+    to: "#a44a3f",
+  },
+  {
+    name: "Little Miss Mortgage",
+    domain: "BRX Mortgage",
+    url: "",
+    tag: "Personal brand",
+    from: "#6d3b6e",
+    to: "#b07bac",
   },
 ];
 
-const benefits = [
-  "100% custom web design tailored to your brand",
-  "Mobile-responsive design for customers on-the-go",
-  "Local SEO optimized to rank on Google",
-  "Online booking & contact forms built-in",
-  "Showcase your menu, services, or portfolio",
-  "You own the complete codebase — no platform lock-in",
+const included = [
+  "100% custom design — never a template",
+  "Hand-coded, loads in under a second",
+  "Mobile-first, looks perfect on every phone",
+  "Local SEO: structured data, meta tags, sitemap",
+  "Online booking & contact forms built in",
+  "Google Analytics & pixel-ready from day one",
+  "Smooth animations & interactive touches",
+  "You own the complete codebase — forever",
 ];
 
-const buildIncludes = [
+const steps = [
   {
-    icon: Search,
-    title: "Powerful SEO Built-In",
-    description: "Every site ships with structured data, meta tags, open graph tags, sitemap, and semantic HTML — built to rank on Google from day one",
+    step: "1",
+    title: "Tell me about your business",
+    description:
+      "A five-minute form. What you do, who your customers are, the vibe you want. That's it.",
   },
   {
-    icon: FileText,
-    title: "Blog-Ready Architecture",
-    description: "Want to publish articles, news, or updates? We can build in a blog section so you can drive organic traffic and keep customers engaged",
+    step: "2",
+    title: "I build your site — free",
+    description:
+      "A fully custom, hand-coded website. Two full rounds of revisions included, no invoice in sight.",
   },
   {
-    icon: Layers,
-    title: "Dynamic & Interactive Builds",
-    description: "Smooth animations, interactive elements, and dynamic content — not a static page. Your site feels alive and professional",
-  },
-  {
-    icon: BarChart3,
-    title: "Analytics-Ready",
-    description: "Pre-wired for Google Analytics, Meta Pixel, and conversion tracking so you can measure what matters from launch day",
-  },
-  {
-    icon: Globe,
-    title: "Blazing Fast Performance",
-    description: "Optimized images, lazy loading, and clean code means your site scores 90+ on Google PageSpeed — faster than WordPress or Wix",
-  },
-  {
-    icon: PenTool,
-    title: "Designed to Convert",
-    description: "Every layout is crafted to guide visitors toward booking, calling, or contacting you — not just looking pretty",
+    step: "3",
+    title: "Love it, then decide",
+    description:
+      "See the finished site before you pay a cent. Keep the code outright, or let me host and maintain it from $9.99/month.",
   },
 ];
 
-const stats = [
-  { icon: Users, value: "50+", label: "Small Businesses Served" },
-  { icon: TrendingUp, value: "100%", label: "Custom Built - No Templates" },
-  { icon: Clock, value: "24hr", label: "Average Response Time" },
-  { icon: Shield, value: "100%", label: "Made in Canada" },
+const faqs = [
+  {
+    q: "How is this actually free?",
+    a: "Simple math: I'd rather earn $9.99 a month from a hundred happy local businesses than charge one of them $5,000 up front. I build your site free, and if you love it, you stay for the hosting and support. If you don't, you walk away owing nothing.",
+  },
+  {
+    q: "Is there a catch?",
+    a: "No. The build is free and includes two full rounds of revisions. You only ever pay if you choose a hosting plan ($9.99/month) — and there's no contract, so you can leave any time and take your code with you.",
+  },
+  {
+    q: "Do I own the website?",
+    a: "100%. Unlike Wix or Squarespace, you get the complete source code. Host it anywhere, edit it, or hand it to another developer — it's yours.",
+  },
+  {
+    q: "How fast will it be live?",
+    a: "Most sites are designed, built, and launched within days, not months. You'll see a live preview link while I work.",
+  },
+  {
+    q: "What kinds of businesses do you build for?",
+    a: "Restaurants, salons, contractors, clinics, guides, rental companies, personal brands — any small business that needs to look great online. Based in Squamish, BC, serving all of Canada and the US.",
+  },
 ];
+
+/* ----------------------------------------------------- structured data --- */
 
 const structuredData = [
   {
@@ -107,10 +140,12 @@ const structuredData = [
     url: "https://freesitecompany.com",
     telephone: "+1-604-849-8898",
     email: "freesitecompanycanada@gmail.com",
-    description: "Professional web designer and website builder for small businesses. We build custom-coded websites for free — no templates, no page builders. Hand-coded web design for restaurants, salons, contractors, clinics, and service businesses.",
+    description:
+      "Professional web designer and website builder for small businesses. We build custom-coded websites for free — no templates, no page builders. Hand-coded web design for restaurants, salons, contractors, clinics, and service businesses.",
     image: "https://freesitecompany.com/og-image.png",
     address: {
       "@type": "PostalAddress",
+      addressLocality: "Squamish",
       addressRegion: "BC",
       addressCountry: "CA",
     },
@@ -135,7 +170,8 @@ const structuredData = [
     "@type": "WebSite",
     name: "FreeSiteCompany — Free Web Designer for Small Business",
     url: "https://freesitecompany.com",
-    description: "Free custom web design and development for small businesses. Professional web designer offering hand-coded websites with no templates.",
+    description:
+      "Free custom web design and development for small businesses. Professional web designer offering hand-coded websites with no templates.",
     potentialAction: {
       "@type": "SearchAction",
       target: "https://freesitecompany.com/get-started",
@@ -144,127 +180,207 @@ const structuredData = [
   },
   {
     "@context": "https://schema.org",
-    "@type": "Service",
-    name: "Free Website Design & Development",
-    serviceType: "Web Design",
-    provider: {
-      "@type": "Organization",
-      name: "FreeSiteCompany",
-      url: "https://freesitecompany.com",
-    },
-    description: "Professional web designer builds your small business website for free. Custom-coded, mobile-responsive web design with 2 rounds of revisions included. No templates, no website builders — real hand-coded development.",
-    areaServed: [
-      { "@type": "Country", name: "Canada" },
-      { "@type": "Country", name: "United States" },
-    ],
-    hasOfferCatalog: {
-      "@type": "OfferCatalog",
-      name: "Web Design Services",
-      itemListElement: [
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "Free Custom Website Build",
-            description: "Complete custom-coded website designed and built for free. Includes 2 revision rounds. You own the full codebase.",
-          },
-          price: "0",
-          priceCurrency: "CAD",
-        },
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "Website Hosting & Support — Starter",
-            description: "Managed hosting, security monitoring, backups, and phone/email support for your website.",
-          },
-          price: "9.99",
-          priceCurrency: "CAD",
-          priceSpecification: {
-            "@type": "UnitPriceSpecification",
-            price: "9.99",
-            priceCurrency: "CAD",
-            unitText: "MONTH",
-          },
-        },
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "Website Hosting & Support — Growth",
-            description: "Everything in Starter plus content updates, speed optimization, SEO hygiene, priority support, and monthly blog posting.",
-          },
-          price: "19.99",
-          priceCurrency: "CAD",
-          priceSpecification: {
-            "@type": "UnitPriceSpecification",
-            price: "19.99",
-            priceCurrency: "CAD",
-            unitText: "MONTH",
-          },
-        },
-      ],
-    },
-  },
-  {
-    "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: [
-      {
-        "@type": "Question",
-        name: "How much does a web designer cost?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "At FreeSiteCompany, our web design service is completely free. We hand-code a custom website for your business at no cost. If you want ongoing hosting and support, plans start at $9.99/month.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "Can I get a website built for free?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Yes! FreeSiteCompany builds custom-coded websites for small businesses completely free. Unlike template-based website builders, every site is hand-coded by a real developer. You receive the full codebase and own it outright.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "What is the best website builder for small business?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "While drag-and-drop website builders like Wix or Squarespace are popular, they limit your control and performance. FreeSiteCompany offers a better alternative: a professional web designer builds your site with custom code for free. You get a faster, more flexible website that you fully own.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "How do I find a web designer near me?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "FreeSiteCompany serves small businesses across Canada and the US remotely. You don't need a local web designer — we handle everything online. Fill out our simple form, and our team will design and build your custom website for free.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "Do I own the website code?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Yes, 100%. Unlike most website builders that lock you into their platform, FreeSiteCompany gives you the complete source code. You can host it anywhere, modify it, or hand it to another developer.",
-        },
-      },
-    ],
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
   },
 ];
 
-export function Landing() {
+/* -------------------------------------------------------------- helpers */
+
+function FadeUp({
+  children,
+  delay = 0,
+  className = "",
+}: {
+  children: React.ReactNode;
+  delay?: number;
+  className?: string;
+}) {
+  return (
+    <motion.div
+      initial={{ y: 32, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      viewport={{ once: true, margin: "-80px" }}
+      transition={{ duration: 0.7, delay, ease: [0.21, 0.6, 0.35, 1] }}
+      className={className}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
+function Counter({ value, suffix = "" }: { value: number; suffix?: string }) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const inView = useInView(ref, { once: true, margin: "-40px" });
+  const [n, setN] = useState(0);
+
   useEffect(() => {
-    document.title = "Free Web Designer for Small Business | Custom Website Builder | FreeSiteCompany";
+    if (!inView) return;
+    const start = performance.now();
+    const dur = 1400;
+    let raf: number;
+    const tick = (t: number) => {
+      const p = Math.min((t - start) / dur, 1);
+      setN(Math.round(value * (1 - Math.pow(1 - p, 3))));
+      if (p < 1) raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, [inView, value]);
+
+  return (
+    <span ref={ref}>
+      {n}
+      {suffix}
+    </span>
+  );
+}
+
+/* Animated mini-browser that cycles through stylized client sites. */
+function HeroBrowser() {
+  const [i, setI] = useState(0);
+  useEffect(() => {
+    const id = setInterval(() => setI((v) => (v + 1) % 4), 3200);
+    return () => clearInterval(id);
+  }, []);
+  const site = showcase[i];
+
+  return (
+    <div className="relative">
+      <motion.div
+        initial={{ y: 40, opacity: 0, rotate: 1.5 }}
+        animate={{ y: 0, opacity: 1, rotate: 0 }}
+        transition={{ delay: 0.5, duration: 0.9, ease: [0.21, 0.6, 0.35, 1] }}
+        className="rounded-2xl border border-[#e7e1d6] bg-white shadow-[0_24px_80px_-24px_rgba(27,26,23,0.25)] overflow-hidden"
+      >
+        {/* chrome */}
+        <div className="flex items-center gap-2 px-4 py-3 border-b border-[#efe9de] bg-[#fffefb]">
+          <span className="h-3 w-3 rounded-full bg-[#f4b8ae]" />
+          <span className="h-3 w-3 rounded-full bg-[#f3d9a4]" />
+          <span className="h-3 w-3 rounded-full bg-[#b7d9b9]" />
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={site.domain}
+              initial={{ y: 8, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: -8, opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="ml-3 flex-1 rounded-md bg-[#f4f0e8] px-3 py-1 text-xs text-[#6b675e] font-medium truncate"
+            >
+              {site.url ? site.domain : site.name}
+            </motion.div>
+          </AnimatePresence>
+        </div>
+        {/* fake page */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={site.name}
+            initial={{ opacity: 0, scale: 1.02 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.45 }}
+            className="aspect-[16/11] p-5 sm:p-6 flex flex-col"
+            style={{
+              background: `linear-gradient(150deg, ${site.from}, ${site.to})`,
+            }}
+          >
+            <div className="flex items-center justify-between">
+              <div className="h-3 w-24 rounded-full bg-white/80" />
+              <div className="flex gap-2">
+                <div className="h-2.5 w-10 rounded-full bg-white/40" />
+                <div className="h-2.5 w-10 rounded-full bg-white/40" />
+                <div className="h-2.5 w-14 rounded-full bg-white/90" />
+              </div>
+            </div>
+            <div className="flex-1 flex flex-col justify-center gap-3">
+              <motion.div
+                initial={{ width: 0 }}
+                animate={{ width: "70%" }}
+                transition={{ delay: 0.2, duration: 0.6 }}
+                className="h-6 sm:h-8 rounded-lg bg-white/90"
+              />
+              <motion.div
+                initial={{ width: 0 }}
+                animate={{ width: "45%" }}
+                transition={{ delay: 0.35, duration: 0.6 }}
+                className="h-6 sm:h-8 rounded-lg bg-white/60"
+              />
+              <motion.div
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6 }}
+                className="mt-2 h-8 w-28 rounded-full bg-white"
+              />
+            </div>
+            <div className="grid grid-cols-3 gap-3">
+              {[0, 1, 2].map((k) => (
+                <motion.div
+                  key={k}
+                  initial={{ y: 16, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: 0.5 + k * 0.12 }}
+                  className="h-10 sm:h-14 rounded-lg bg-white/25 backdrop-blur"
+                />
+              ))}
+            </div>
+          </motion.div>
+        </AnimatePresence>
+      </motion.div>
+
+      {/* floating badges */}
+      <motion.div
+        animate={{ y: [0, -10, 0] }}
+        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute -left-4 sm:-left-8 -bottom-6 rounded-xl border border-[#e7e1d6] bg-white px-4 py-3 shadow-lg"
+      >
+        <p className="text-xs text-[#6b675e]">Build cost</p>
+        <p className="font-display text-2xl font-semibold text-[#166b45]">$0</p>
+      </motion.div>
+      <motion.div
+        animate={{ y: [0, 10, 0] }}
+        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+        className="absolute -right-3 sm:-right-6 -top-6 rounded-xl border border-[#e7e1d6] bg-white px-4 py-3 shadow-lg"
+      >
+        <p className="text-xs text-[#6b675e]">Hosting & support</p>
+        <p className="font-display text-2xl font-semibold text-[#1b1a17]">
+          $9.99<span className="text-sm text-[#6b675e]">/mo</span>
+        </p>
+      </motion.div>
+    </div>
+  );
+}
+
+/* ---------------------------------------------------------------- page */
+
+export function Landing() {
+  const heroRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ["start start", "end start"],
+  });
+  const heroDrift = useTransform(scrollYProgress, [0, 1], [0, 80]);
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
+
+  useEffect(() => {
+    document.title =
+      "Free Web Designer for Small Business | Custom Website Builder | FreeSiteCompany";
     const meta = document.querySelector('meta[name="description"]');
     if (meta) {
-      meta.setAttribute("content", "Looking for a web designer? Get a free custom-coded website for your small business. No templates, no page builders. Professional web design & development — hand-built by real developers. Restaurants, salons, contractors & more.");
+      meta.setAttribute(
+        "content",
+        "Looking for a web designer? Get a free custom-coded website for your small business. No templates, no page builders. Professional web design & development — hand-built by real developers. Restaurants, salons, contractors & more.",
+      );
     }
   }, []);
 
+  const heroWords = ["Beautiful", "websites,", "built", "by", "hand."];
+
   return (
-    <div className="min-h-screen bg-zinc-950 text-white overflow-x-hidden">
+    <div className="min-h-screen bg-[#faf7f2] text-[#1b1a17] overflow-x-hidden selection:bg-[#166b45] selection:text-white">
       {structuredData.map((data, i) => (
         <script
           key={i}
@@ -273,479 +389,572 @@ export function Landing() {
         />
       ))}
       <Navigation />
-      
-      {/* Hero Section */}
-      <section className="relative pt-24 sm:pt-32 pb-12 sm:pb-20 px-4 sm:px-6 overflow-hidden">
-        {/* Animated background elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          <motion.div
-            animate={{
-              scale: [1, 1.2, 1],
-              rotate: [0, 90, 0],
-            }}
-            transition={{
-              duration: 20,
-              repeat: Infinity,
-              ease: "linear",
-            }}
-            className="absolute top-1/4 left-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl"
-          />
-          <motion.div
-            animate={{
-              scale: [1.2, 1, 1.2],
-              rotate: [90, 0, 90],
-            }}
-            transition={{
-              duration: 15,
-              repeat: Infinity,
-              ease: "linear",
-            }}
-            className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"
-          />
-        </div>
 
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center max-w-4xl mx-auto">
-            <motion.div
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-emerald-500/10 border border-emerald-500/20 rounded-full mb-4 sm:mb-8"
-            >
-              <Sparkles className="h-4 w-4 text-emerald-400" />
-              <span className="text-emerald-400 font-semibold">Limited Time Offer</span>
-            </motion.div>
+      {/* ============================================================ HERO */}
+      <section
+        ref={heroRef}
+        className="relative pt-28 sm:pt-36 pb-16 sm:pb-24 px-4 sm:px-6"
+      >
+        {/* drifting backdrop texture */}
+        <motion.div
+          style={{ y: heroDrift }}
+          aria-hidden
+          className="pointer-events-none absolute inset-0"
+        >
+          <div className="absolute top-20 right-[8%] h-72 w-72 rounded-full bg-[#166b45]/[0.06] blur-3xl" />
+          <div className="absolute bottom-0 left-[5%] h-80 w-80 rounded-full bg-[#d7a04a]/[0.08] blur-3xl" />
+        </motion.div>
 
-            <motion.h1
-              initial={{ y: 20, opacity: 0 }}
+        <div className="max-w-7xl mx-auto relative z-10 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div>
+            <motion.p
+              initial={{ y: 16, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.2, duration: 0.6 }}
-              className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-4 sm:mb-6 leading-tight"
+              transition={{ duration: 0.6 }}
+              className="inline-flex items-center gap-2 rounded-full border border-[#e7e1d6] bg-white px-4 py-1.5 text-sm font-medium text-[#6b675e] mb-6"
             >
-              Need a{" "}
-              <span className="bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent">
-                FREE*
-              </span>{" "}
-              Custom Built Website?
-            </motion.h1>
+              <span className="h-2 w-2 rounded-full bg-[#166b45] animate-pulse" />
+              Squamish, BC · Serving Canada & the US
+            </motion.p>
+
+            <h1 className="font-display text-[2.6rem] leading-[1.05] sm:text-6xl lg:text-7xl font-semibold tracking-tight mb-6">
+              {heroWords.map((w, i) => (
+                <motion.span
+                  key={w}
+                  initial={{ y: 40, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{
+                    delay: 0.15 + i * 0.09,
+                    duration: 0.7,
+                    ease: [0.21, 0.6, 0.35, 1],
+                  }}
+                  className={
+                    "inline-block mr-[0.28em] " +
+                    (w === "hand." ? "italic text-[#166b45]" : "")
+                  }
+                >
+                  {w}
+                </motion.span>
+              ))}
+              <motion.span
+                initial={{ y: 40, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.65, duration: 0.7 }}
+                className="block"
+              >
+                Yours{" "}
+                <span className="relative inline-block">
+                  free
+                  <motion.svg
+                    viewBox="0 0 120 12"
+                    className="absolute -bottom-1 left-0 w-full"
+                    initial={{ pathLength: 0 }}
+                  >
+                    <motion.path
+                      d="M3 9 Q 40 2 117 6"
+                      fill="none"
+                      stroke="#d7a04a"
+                      strokeWidth="4"
+                      strokeLinecap="round"
+                      initial={{ pathLength: 0 }}
+                      animate={{ pathLength: 1 }}
+                      transition={{ delay: 1.1, duration: 0.6 }}
+                    />
+                  </motion.svg>
+                </span>
+                .
+              </motion.span>
+            </h1>
 
             <motion.p
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.4, duration: 0.6 }}
-              className="text-sm sm:text-xl md:text-2xl text-zinc-400 mb-4 sm:mb-8 leading-relaxed"
+              transition={{ delay: 0.8, duration: 0.6 }}
+              className="text-lg sm:text-xl text-[#6b675e] leading-relaxed mb-8 max-w-xl"
             >
-              Skip the website builders. Get a professional web designer to hand-code your site — for free.
-              <br className="hidden sm:block" />
-              <span className="text-emerald-400 font-semibold">
-                {" "}Perfect for restaurants, salons, contractors, clinics & service businesses.
-              </span>{" "}
-              <span className="hidden sm:inline">You own the code. No platform lock-in.</span>
+              I'm a real web designer — not a template, not an AI page builder.
+              I hand-code your small business a custom website for{" "}
+              <strong className="text-[#1b1a17]">$0</strong>, with two rounds of
+              revisions. You only pay if you keep it:{" "}
+              <strong className="text-[#1b1a17]">$9.99/month</strong> for
+              hosting and support. No contracts. You own the code.
             </motion.p>
+
+            <motion.div
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.95, duration: 0.6 }}
+              className="flex flex-col sm:flex-row gap-3"
+            >
+              <Link
+                to="/get-started"
+                className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#166b45] px-8 py-4 text-lg font-semibold text-white transition-all hover:bg-[#0f5434] hover:shadow-[0_12px_40px_-8px_rgba(22,107,69,0.5)] hover:-translate-y-0.5"
+              >
+                Get your free website
+                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+              </Link>
+              <a
+                href="tel:+16048498898"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-[#1b1a17]/15 bg-white px-8 py-4 text-lg font-semibold transition-all hover:border-[#1b1a17]/40 hover:-translate-y-0.5"
+              >
+                <Phone className="h-5 w-5" />
+                (604) 849-8898
+              </a>
+            </motion.div>
 
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.5, duration: 0.6 }}
-              className="hidden sm:block text-sm text-zinc-500 mb-8 max-w-2xl mx-auto"
+              transition={{ delay: 1.2 }}
+              className="mt-5 text-sm text-[#6b675e]"
             >
-              * We will build your website, then do 2 full rounds of revisions included
+              Free build includes 2 full rounds of revisions · See it live
+              before you pay anything
             </motion.p>
+          </div>
 
-            <motion.div
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.6, duration: 0.6 }}
-              className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center"
+          <HeroBrowser />
+        </div>
+      </section>
+
+      {/* ======================================================== MARQUEE */}
+      <section className="border-y border-[#e7e1d6] bg-[#fffefb] py-5 overflow-hidden">
+        <div className="flex w-max animate-marquee gap-12 px-6">
+          {[0, 1].map((dup) => (
+            <div key={dup} className="flex items-center gap-12 shrink-0">
+              {showcase.map((s) => (
+                <span
+                  key={s.name + dup}
+                  className="flex items-center gap-3 text-[#6b675e] font-medium whitespace-nowrap"
+                >
+                  <span
+                    className="h-2.5 w-2.5 rounded-full"
+                    style={{ background: s.from }}
+                  />
+                  {s.name}
+                </span>
+              ))}
+              <span className="font-display italic text-[#166b45] whitespace-nowrap">
+                hand-coded in Squamish, BC
+              </span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* =========================================================== STATS */}
+      <section className="py-14 sm:py-20 px-4 sm:px-6">
+        <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
+          {[
+            { v: 50, suffix: "+", label: "small businesses served" },
+            { v: 100, suffix: "%", label: "custom built — zero templates" },
+            { v: 24, suffix: "hr", label: "average response time" },
+            { v: 100, suffix: "%", label: "made in Canada" },
+          ].map((s, i) => (
+            <FadeUp key={s.label} delay={i * 0.08} className="text-center">
+              <p className="font-display text-4xl sm:text-5xl font-semibold text-[#166b45]">
+                <Counter value={s.v} suffix={s.suffix} />
+              </p>
+              <p className="mt-2 text-sm sm:text-base text-[#6b675e]">
+                {s.label}
+              </p>
+            </FadeUp>
+          ))}
+        </div>
+      </section>
+
+      {/* ======================================================== PORTFOLIO */}
+      <section className="py-14 sm:py-24 px-4 sm:px-6">
+        <div className="max-w-7xl mx-auto">
+          <FadeUp className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10 sm:mb-14">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#166b45] mb-3">
+                Real work, live right now
+              </p>
+              <h2 className="font-display text-3xl sm:text-5xl font-semibold tracking-tight">
+                Sites I've built for businesses{" "}
+                <span className="italic text-[#166b45]">like yours</span>
+              </h2>
+            </div>
+            <p className="text-[#6b675e] max-w-sm">
+              Every one hand-coded, mobile-first, and live on its own domain.
+              Click through and see for yourself.
+            </p>
+          </FadeUp>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {showcase.map((site, i) => {
+              const Card = (
+                <motion.div
+                  initial={{ y: 32, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  viewport={{ once: true, margin: "-60px" }}
+                  transition={{ delay: (i % 3) * 0.1, duration: 0.6 }}
+                  whileHover={{ y: -8, rotate: i % 2 ? 0.6 : -0.6 }}
+                  className="group rounded-2xl border border-[#e7e1d6] bg-white overflow-hidden shadow-sm hover:shadow-[0_24px_60px_-20px_rgba(27,26,23,0.25)] transition-shadow"
+                >
+                  <div
+                    className="aspect-[16/10] p-5 flex flex-col justify-between"
+                    style={{
+                      background: `linear-gradient(150deg, ${site.from}, ${site.to})`,
+                    }}
+                  >
+                    <div className="flex items-center justify-between">
+                      <div className="h-2.5 w-20 rounded-full bg-white/80" />
+                      <div className="flex gap-1.5">
+                        <div className="h-2 w-8 rounded-full bg-white/40" />
+                        <div className="h-2 w-8 rounded-full bg-white/40" />
+                      </div>
+                    </div>
+                    <div>
+                      <div className="h-4 w-3/5 rounded-md bg-white/90 mb-2" />
+                      <div className="h-3 w-2/5 rounded-md bg-white/50" />
+                    </div>
+                    <div className="flex gap-2">
+                      {[0, 1, 2].map((k) => (
+                        <div
+                          key={k}
+                          className="h-8 flex-1 rounded-md bg-white/25 transition-transform duration-300 group-hover:-translate-y-1"
+                          style={{ transitionDelay: `${k * 60}ms` }}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between px-5 py-4">
+                    <div>
+                      <p className="font-semibold">{site.name}</p>
+                      <p className="text-sm text-[#6b675e]">
+                        {site.tag} · {site.domain}
+                      </p>
+                    </div>
+                    {site.url && (
+                      <span className="rounded-full border border-[#e7e1d6] p-2 text-[#166b45] transition-all group-hover:bg-[#166b45] group-hover:text-white group-hover:border-[#166b45]">
+                        <ArrowUpRight className="h-4 w-4" />
+                      </span>
+                    )}
+                  </div>
+                </motion.div>
+              );
+              return site.url ? (
+                <a
+                  key={site.name}
+                  href={site.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {Card}
+                </a>
+              ) : (
+                <div key={site.name}>{Card}</div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ===================================================== FOUNDER NOTE */}
+      <section className="py-14 sm:py-24 px-4 sm:px-6">
+        <div className="max-w-4xl mx-auto">
+          <FadeUp>
+            <div className="relative rounded-3xl border border-[#e7e1d6] bg-[#fffefb] p-8 sm:p-14 shadow-sm overflow-hidden">
+              <span
+                aria-hidden
+                className="absolute -top-6 left-8 font-display text-[10rem] leading-none text-[#166b45]/10 select-none"
+              >
+                "
+              </span>
+              <p className="relative font-display text-2xl sm:text-4xl leading-snug font-medium mb-8">
+                Why free? Because I'd rather earn{" "}
+                <span className="italic text-[#166b45]">$9.99 a month</span>{" "}
+                from a hundred happy local businesses than charge one of them
+                $5,000 up front.
+              </p>
+              <p className="relative text-lg text-[#6b675e] leading-relaxed mb-6">
+                Big agencies charge thousands and disappear. DIY builders eat
+                your weekends and still look like everyone else. I do it
+                differently: I build your site by hand, show you the finished
+                thing, and you decide if it's worth ten bucks a month to keep
+                it online, secure, and supported. That's the whole business
+                model.
+              </p>
+              <div className="relative flex items-center gap-4">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#166b45] font-display text-xl font-semibold text-white">
+                  F
+                </div>
+                <div>
+                  <p className="font-semibold">FreeSite Company</p>
+                  <p className="text-sm text-[#6b675e]">
+                    Founder & web designer — Squamish, BC
+                  </p>
+                </div>
+              </div>
+            </div>
+          </FadeUp>
+        </div>
+      </section>
+
+      {/* ====================================================== HOW IT WORKS */}
+      <section
+        id="how-it-works"
+        className="py-14 sm:py-24 px-4 sm:px-6 bg-[#1b1a17] text-[#faf7f2]"
+      >
+        <div className="max-w-7xl mx-auto">
+          <FadeUp className="text-center mb-12 sm:mb-20">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#7fc8a4] mb-3">
+              How it works
+            </p>
+            <h2 className="font-display text-3xl sm:text-5xl font-semibold tracking-tight">
+              Three steps. Zero risk.{" "}
+              <span className="italic text-[#7fc8a4]">Zero dollars down.</span>
+            </h2>
+          </FadeUp>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
+            {steps.map((item, index) => (
+              <FadeUp key={item.step} delay={index * 0.15} className="relative">
+                <p className="font-display text-7xl sm:text-8xl font-semibold text-[#7fc8a4]/20 mb-4">
+                  {item.step}
+                </p>
+                <h3 className="font-display text-2xl font-semibold mb-3">
+                  {item.title}
+                </h3>
+                <p className="text-[#faf7f2]/65 text-lg leading-relaxed">
+                  {item.description}
+                </p>
+                {index < 2 && (
+                  <motion.div
+                    initial={{ scaleX: 0 }}
+                    whileInView={{ scaleX: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.4 + index * 0.2, duration: 0.8 }}
+                    className="hidden md:block absolute top-12 left-full w-2/3 h-px bg-gradient-to-r from-[#7fc8a4]/50 to-transparent origin-left"
+                  />
+                )}
+              </FadeUp>
+            ))}
+          </div>
+
+          <FadeUp delay={0.3} className="mt-14 text-center">
+            <Link
+              to="/get-started"
+              className="group inline-flex items-center gap-2 rounded-full bg-[#7fc8a4] px-8 py-4 text-lg font-semibold text-[#1b1a17] transition-all hover:bg-white hover:-translate-y-0.5"
             >
+              Start step one — it takes 5 minutes
+              <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </FadeUp>
+        </div>
+      </section>
+
+      {/* ======================================================== INCLUDED */}
+      <section className="py-14 sm:py-24 px-4 sm:px-6">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-start">
+          <FadeUp className="lg:sticky lg:top-28">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#166b45] mb-3">
+              What's included
+            </p>
+            <h2 className="font-display text-3xl sm:text-5xl font-semibold tracking-tight mb-6">
+              Not a landing page.{" "}
+              <span className="italic text-[#166b45]">
+                A conversion machine.
+              </span>
+            </h2>
+            <p className="text-lg text-[#6b675e] leading-relaxed mb-8">
+              Every free build ships with the things agencies upsell: SEO
+              foundations, analytics wiring, booking forms, and performance
+              that scores 90+ on Google PageSpeed — faster than WordPress or
+              Wix.
+            </p>
+            <Link
+              to="/plans"
+              className="inline-flex items-center gap-2 font-semibold text-[#166b45] hover:gap-3 transition-all"
+            >
+              See hosting plans <ArrowRight className="h-4 w-4" />
+            </Link>
+          </FadeUp>
+
+          <div className="grid sm:grid-cols-2 gap-3">
+            {included.map((item, i) => (
+              <motion.div
+                key={item}
+                initial={{ x: 24, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ delay: i * 0.06, duration: 0.5 }}
+                whileHover={{ x: 4 }}
+                className="flex items-start gap-3 rounded-xl border border-[#e7e1d6] bg-white p-4"
+              >
+                <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#166b45]">
+                  <Check className="h-3 w-3 text-white" />
+                </span>
+                <span className="font-medium">{item}</span>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ========================================================== GROWTH */}
+      <section className="py-14 sm:py-20 px-4 sm:px-6 bg-[#fffefb] border-y border-[#e7e1d6]">
+        <div className="max-w-7xl mx-auto">
+          <FadeUp className="text-center mb-10">
+            <h2 className="font-display text-3xl sm:text-4xl font-semibold tracking-tight">
+              Need more than a website?
+            </h2>
+            <p className="mt-3 text-lg text-[#6b675e]">
+              Photography, video, and growth services — all under one roof.
+            </p>
+          </FadeUp>
+          <div className="grid sm:grid-cols-3 gap-6">
+            {[
+              {
+                icon: Camera,
+                title: "Photography",
+                text: "Headshots, products, and locations that make your brand look world-class.",
+              },
+              {
+                icon: Film,
+                title: "Videography",
+                text: "Brand videos and social reels built to stop the scroll.",
+              },
+              {
+                icon: Megaphone,
+                title: "Growth services",
+                text: "SEO campaigns and content strategy to keep growing after launch.",
+              },
+            ].map((s, i) => (
+              <FadeUp key={s.title} delay={i * 0.1}>
+                <div className="group rounded-2xl border border-[#e7e1d6] bg-[#faf7f2] p-7 h-full transition-all hover:border-[#166b45]/40 hover:-translate-y-1">
+                  <s.icon className="h-7 w-7 text-[#166b45] mb-4 transition-transform group-hover:scale-110" />
+                  <h3 className="font-display text-xl font-semibold mb-2">
+                    {s.title}
+                  </h3>
+                  <p className="text-[#6b675e]">{s.text}</p>
+                </div>
+              </FadeUp>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ======================================================== REFERRAL */}
+      <section className="py-14 sm:py-24 px-4 sm:px-6">
+        <div className="max-w-5xl mx-auto">
+          <FadeUp>
+            <div className="relative overflow-hidden rounded-3xl bg-[#166b45] p-8 sm:p-14 text-white">
+              <motion.div
+                aria-hidden
+                animate={{ rotate: 360 }}
+                transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+                className="absolute -top-32 -right-32 h-80 w-80 rounded-full border-[30px] border-white/10"
+              />
+              <div className="relative z-10 max-w-2xl">
+                <h2 className="font-display text-3xl sm:text-4xl font-semibold mb-4">
+                  Know someone who needs a website?
+                </h2>
+                <p className="text-lg text-white/85 mb-2">
+                  Refer a friend and get{" "}
+                  <span className="font-bold text-[#ffd98e]">
+                    $1 off every month for a full year
+                  </span>{" "}
+                  — for every person who signs up.
+                </p>
+                <p className="text-white/60 mb-8">
+                  Refer 3 friends? That's $3 off every month for 12 months.
+                  Stack it up.
+                </p>
+                <Link
+                  to="/get-started"
+                  className="group inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 text-lg font-semibold text-[#166b45] transition-all hover:-translate-y-0.5 hover:shadow-xl"
+                >
+                  Get your referral link
+                  <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </div>
+            </div>
+          </FadeUp>
+        </div>
+      </section>
+
+      {/* ============================================================= FAQ */}
+      <section className="py-14 sm:py-24 px-4 sm:px-6">
+        <div className="max-w-3xl mx-auto">
+          <FadeUp className="text-center mb-10">
+            <h2 className="font-display text-3xl sm:text-5xl font-semibold tracking-tight">
+              Fair questions,{" "}
+              <span className="italic text-[#166b45]">honest answers</span>
+            </h2>
+          </FadeUp>
+          <div className="space-y-3">
+            {faqs.map((f, i) => (
+              <FadeUp key={f.q} delay={i * 0.05}>
+                <div className="rounded-2xl border border-[#e7e1d6] bg-white overflow-hidden">
+                  <button
+                    onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                    className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left font-semibold text-lg"
+                  >
+                    {f.q}
+                    <motion.span
+                      animate={{ rotate: openFaq === i ? 45 : 0 }}
+                      className="shrink-0 text-[#166b45]"
+                    >
+                      <Plus className="h-5 w-5" />
+                    </motion.span>
+                  </button>
+                  <AnimatePresence initial={false}>
+                    {openFaq === i && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <p className="px-6 pb-6 text-[#6b675e] leading-relaxed">
+                          {f.a}
+                        </p>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              </FadeUp>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================================= CTA */}
+      <section className="py-16 sm:py-28 px-4 sm:px-6">
+        <div className="max-w-4xl mx-auto text-center">
+          <FadeUp>
+            <h2 className="font-display text-4xl sm:text-6xl font-semibold tracking-tight mb-6">
+              Your competitors' websites are{" "}
+              <span className="italic text-[#166b45]">bad</span>. Yours doesn't
+              have to be.
+            </h2>
+            <p className="text-xl text-[#6b675e] mb-10">
+              Free to build. Free to see. $9.99/month only if you love it.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Link
                 to="/get-started"
-                className="group w-full sm:w-auto text-center px-6 py-3 sm:px-8 sm:py-4 bg-gradient-to-r from-emerald-500 to-cyan-500 text-white rounded-lg font-bold text-base sm:text-lg hover:shadow-2xl hover:shadow-emerald-500/50 transition-all hover:scale-105 flex items-center justify-center gap-2"
+                className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#166b45] px-10 py-5 text-xl font-semibold text-white transition-all hover:bg-[#0f5434] hover:shadow-[0_12px_40px_-8px_rgba(22,107,69,0.5)] hover:-translate-y-0.5"
               >
-                Get Started Free
-                <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
-              <Link
-                to="/plans"
-                className="w-full sm:w-auto text-center px-6 py-3 sm:px-8 sm:py-4 bg-zinc-800/50 border border-zinc-700 text-white rounded-lg font-semibold text-base sm:text-lg hover:bg-zinc-800 transition-all"
-              >
-                View Plans
+                Claim your free website
+                <ArrowRight className="h-6 w-6 transition-transform group-hover:translate-x-1" />
               </Link>
               <a
                 href="https://calendar.app.google/L4ok6TnfC8njfXXy6"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto text-center px-6 py-3 sm:px-8 sm:py-4 bg-zinc-800/50 border border-zinc-700 text-white rounded-lg font-semibold text-base sm:text-lg hover:bg-zinc-800 transition-all"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-[#1b1a17]/15 bg-white px-10 py-5 text-xl font-semibold transition-all hover:border-[#1b1a17]/40 hover:-translate-y-0.5"
               >
-                Book a Call
+                Book a call
               </a>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Stats Section */}
-      <section className="py-8 sm:py-12 px-4 sm:px-6 border-y border-zinc-800/50">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8">
-            {stats.map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ y: 20, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="text-center"
-              >
-                <stat.icon className="h-6 w-6 sm:h-8 sm:w-8 text-emerald-400 mx-auto mb-2 sm:mb-3" />
-                <div className="text-2xl sm:text-4xl font-bold bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent mb-1 sm:mb-2">
-                  {stat.value}
-                </div>
-                <div className="text-xs sm:text-base text-zinc-400">{stat.label}</div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Features Section */}
-      <section className="py-12 sm:py-24 px-4 sm:px-6">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ y: 20, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-center mb-10 sm:mb-16"
-          >
-            <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4">
-              Why Hire Our Web Designers?
-            </h2>
-            <p className="text-base sm:text-xl text-zinc-400">
-              Better than any website builder — real developers, real custom code
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8">
-            {features.map((feature, index) => (
-              <motion.div
-                key={feature.title}
-                initial={{ y: 20, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ y: -5 }}
-                className="relative group"
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/10 to-cyan-500/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
-                <div className="relative p-8 bg-zinc-900/50 border border-zinc-800 rounded-2xl hover:border-emerald-500/50 transition-all">
-                  <feature.icon className="h-12 w-12 text-emerald-400 mb-4" />
-                  <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
-                  <p className="text-zinc-400">{feature.description}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Benefits Section */}
-      <section className="py-12 sm:py-24 px-4 sm:px-6 bg-zinc-900/50">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
-            <motion.div
-              initial={{ x: -50, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
-                What's Included in Your{" "}
-                <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
-                  Free Website
-                </span>
-              </h2>
-              <p className="text-base sm:text-xl text-zinc-400 mb-6 sm:mb-8">
-                No gimmicks. No hidden fees for the initial build. You get a fully
-                functional, professional website completely free.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ x: 50, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              className="space-y-4"
-            >
-              {benefits.map((benefit, index) => (
-                <motion.div
-                  key={benefit}
-                  initial={{ x: 20, opacity: 0 }}
-                  whileInView={{ x: 0, opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="flex items-start gap-3 p-4 bg-zinc-800/50 rounded-lg border border-zinc-700/50 hover:border-emerald-500/50 transition-all"
-                >
-                  <CheckCircle2 className="h-6 w-6 text-emerald-400 flex-shrink-0 mt-0.5" />
-                  <span className="text-lg">{benefit}</span>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Every Build Comes Loaded */}
-      <section className="py-12 sm:py-24 px-4 sm:px-6">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ y: 20, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-center mb-10 sm:mb-16"
-          >
-            <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4">
-              Every Build Comes{" "}
-              <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
-                Loaded
-              </span>
-            </h2>
-            <p className="text-base sm:text-xl text-zinc-400 max-w-3xl mx-auto">
-              This isn't a basic landing page. Every website we build is a dynamic, SEO-powered,
-              conversion-optimized machine — ready to grow your business.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
-            {buildIncludes.map((item, index) => (
-              <motion.div
-                key={item.title}
-                initial={{ y: 20, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ y: -5 }}
-                className="relative group"
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/10 to-cyan-500/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
-                <div className="relative p-8 bg-zinc-900/50 border border-zinc-800 rounded-2xl hover:border-emerald-500/50 transition-all h-full">
-                  <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-emerald-500/20 to-cyan-500/20 rounded-xl mb-4">
-                    <item.icon className="h-6 w-6 text-emerald-400" />
-                  </div>
-                  <h3 className="text-xl font-bold mb-3">{item.title}</h3>
-                  <p className="text-zinc-400">{item.description}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          <motion.div
-            initial={{ y: 20, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: true }}
-            className="mt-12 text-center"
-          >
-            <p className="text-zinc-500 text-sm max-w-2xl mx-auto">
-              Blog functionality, extra pages, and advanced integrations available as add-ons.
-              Every build starts with a rock-solid foundation — you decide how far to take it.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Growth Services Section */}
-      <section className="py-12 sm:py-24 px-4 sm:px-6">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ y: 20, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-center mb-10 sm:mb-16"
-          >
-            <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4">
-              We Help You{" "}
-              <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
-                Grow Beyond the Website
-              </span>
-            </h2>
-            <p className="text-base sm:text-xl text-zinc-400 max-w-3xl mx-auto">
-              A great website is just the start. We offer everything you need to look professional, attract customers, and scale your business.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
-            {[
-              {
-                icon: Camera,
-                title: "Photography",
-                description: "Professional business photography — headshots, product shots, and location photography that makes your brand look world-class online and off.",
-              },
-              {
-                icon: Film,
-                title: "Videography",
-                description: "Brand videos, promo reels, and social media content built to stop the scroll. Tell your story in a way that text and photos never could.",
-              },
-              {
-                icon: Megaphone,
-                title: "Growth Services & More",
-                description: "From SEO campaigns to social media content strategy, we connect you with the tools and services to keep growing long after launch.",
-              },
-            ].map((item, index) => (
-              <motion.div
-                key={item.title}
-                initial={{ y: 20, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ y: -5 }}
-                className="relative group"
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/10 to-cyan-500/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
-                <div className="relative p-8 bg-zinc-900/50 border border-zinc-800 rounded-2xl hover:border-emerald-500/50 transition-all h-full">
-                  <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-emerald-500/20 to-cyan-500/20 rounded-xl mb-4">
-                    <item.icon className="h-6 w-6 text-emerald-400" />
-                  </div>
-                  <h3 className="text-xl font-bold mb-3">{item.title}</h3>
-                  <p className="text-zinc-400">{item.description}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          <motion.div
-            initial={{ y: 20, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: true }}
-            className="mt-10 text-center"
-          >
-            <p className="text-zinc-500 text-sm">
-              Ask us about photography, video, and growth services when you get started — we'll put together a custom package for your business.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* How It Works */}
-      <section className="py-12 sm:py-24 px-4 sm:px-6 bg-zinc-900/50">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ y: 20, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-center mb-10 sm:mb-16"
-          >
-            <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4">
-              Simple Process, Amazing Results
-            </h2>
-            <p className="text-base sm:text-xl text-zinc-400">
-              Get your website in 3 easy steps
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                step: "01",
-                title: "Fill Out the Form",
-                description: "Tell us about your business, style preferences, and what you need",
-              },
-              {
-                step: "02",
-                title: "We Build It",
-                description: "Our team creates your custom website with modern design and technology",
-              },
-              {
-                step: "03",
-                title: "Launch & Decide",
-                description: "Love your site before you pay a cent. Then get your codebase OR choose a plan for hosting, updates, and support — starting at just $9.99/month.",
-              },
-            ].map((item, index) => (
-              <motion.div
-                key={item.step}
-                initial={{ y: 20, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.2 }}
-                className="relative text-center"
-              >
-                <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-emerald-500 to-cyan-500 rounded-full text-3xl font-bold mb-6">
-                  {item.step}
-                </div>
-                <h3 className="text-2xl font-bold mb-3">{item.title}</h3>
-                <p className="text-zinc-400 text-lg">{item.description}</p>
-                {index < 2 && (
-                  <div className="hidden md:block absolute top-10 left-full w-full h-0.5 bg-gradient-to-r from-emerald-500/50 to-transparent -z-10" />
-                )}
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Referral Program Section */}
-      <section className="py-12 sm:py-24 px-4 sm:px-6">
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial={{ scale: 0.95, opacity: 0 }}
-            whileInView={{ scale: 1, opacity: 1 }}
-            viewport={{ once: true }}
-            className="relative overflow-hidden bg-gradient-to-br from-emerald-500/10 via-cyan-500/10 to-blue-500/10 border border-emerald-500/30 rounded-2xl p-8 sm:p-12 text-center"
-          >
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-              <div className="absolute -top-20 -right-20 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl" />
-              <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl" />
             </div>
-            <div className="relative z-10">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-emerald-500/20 to-cyan-500/20 rounded-full mb-6">
-                <Users className="h-8 w-8 text-emerald-400" />
-              </div>
-              <h2 className="text-2xl sm:text-4xl font-bold mb-4">
-                Know Someone Who Needs a Website?
-              </h2>
-              <p className="text-base sm:text-xl text-zinc-400 mb-3 max-w-2xl mx-auto">
-                Refer a friend and get{" "}
-                <span className="text-emerald-400 font-bold">$1 off every month for a full year</span>
-                {" "}— for every person you send our way who signs up.
-              </p>
-              <p className="text-sm text-zinc-500 mb-8">
-                Refer 3 friends? That's $3 off every month for 12 months. Stack it up.
-              </p>
-              <Link
-                to="/get-started"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-emerald-500 to-cyan-500 text-white rounded-lg font-bold text-lg hover:shadow-2xl hover:shadow-emerald-500/50 transition-all hover:scale-105"
-              >
-                Get Your Referral Link
-                <ArrowRight className="h-5 w-5" />
-              </Link>
-            </div>
-          </motion.div>
+          </FadeUp>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-12 sm:py-24 px-4 sm:px-6 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/10 via-cyan-500/10 to-blue-500/10" />
-        <motion.div
-          initial={{ scale: 0.9, opacity: 0 }}
-          whileInView={{ scale: 1, opacity: 1 }}
-          viewport={{ once: true }}
-          className="max-w-4xl mx-auto text-center relative z-10"
-        >
-          <h2 className="text-2xl sm:text-4xl md:text-6xl font-bold mb-4 sm:mb-6">
-            Ready to Get Started?
-          </h2>
-          <p className="text-xl text-zinc-400 mb-10">
-            Join hundreds of businesses who've already claimed their free website
-          </p>
-          <Link
-            to="/get-started"
-            className="inline-flex items-center gap-2 px-10 py-5 bg-gradient-to-r from-emerald-500 to-cyan-500 text-white rounded-lg font-bold text-xl hover:shadow-2xl hover:shadow-emerald-500/50 transition-all hover:scale-105"
-          >
-            Get Your Free Website Now
-            <ArrowRight className="h-6 w-6" />
-          </Link>
-        </motion.div>
-      </section>
-
-      {/* Footer */}
       <Footer />
     </div>
   );
