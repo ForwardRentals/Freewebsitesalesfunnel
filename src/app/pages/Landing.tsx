@@ -9,6 +9,7 @@ import {
 } from "motion/react";
 import { Navigation } from "../components/Navigation";
 import { Footer } from "../components/Footer";
+import { QuickApplyForm } from "../components/QuickApplyForm";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -93,9 +94,9 @@ const included = [
 const steps = [
   {
     step: "1",
-    title: "Tell me about your business",
+    title: "Apply in 2 minutes",
     description:
-      "A five-minute form. What you do, who your customers are, the vibe you want. That's it.",
+      "A two-minute application. I'll call or email within 24 hours to hear what you do and the look you want.",
   },
   {
     step: "2",
@@ -127,6 +128,10 @@ const faqs = [
   {
     q: "How fast will it be live?",
     a: "Most sites are designed, built, and launched within days, not months. You'll see a live preview link while I work.",
+  },
+  {
+    q: "Who gets accepted?",
+    a: "Any real small business or solo operator that needs a website and will actually use it. Because I build every site by hand, I only take on a few new builds each month. Apply now and I'll tell you within 24 hours if there's a spot.",
   },
   {
     q: "What kinds of businesses do you build for?",
@@ -246,6 +251,80 @@ function Counter({ value, suffix = "" }: { value: number; suffix?: string }) {
   );
 }
 
+/* Every CTA on the page scrolls back to the hero form rather than sending
+   people to the long /get-started wizard. */
+function scrollToApply() {
+  document.getElementById("apply")?.scrollIntoView({ behavior: "smooth", block: "center" });
+}
+
+function ApplyButton({
+  label = "Apply in 2 minutes",
+  dark = false,
+}: {
+  label?: string;
+  dark?: boolean;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={scrollToApply}
+      className={
+        "group inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 text-lg font-semibold transition-all hover:-translate-y-0.5 " +
+        (dark
+          ? "bg-[#7fc8a4] text-[#1b1a17] hover:bg-white"
+          : "bg-[#166b45] text-white hover:bg-[#0f5434] hover:shadow-[0_12px_40px_-8px_rgba(22,107,69,0.5)]")
+      }
+    >
+      {label}
+      <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+    </button>
+  );
+}
+
+function CtaBand({ line }: { line: string }) {
+  return (
+    <FadeUp className="mt-12 sm:mt-16 flex flex-col items-center gap-3 text-center">
+      <ApplyButton />
+      <p className="text-sm text-[#6b675e]">{line}</p>
+    </FadeUp>
+  );
+}
+
+/* Shows once the hero form has scrolled off-screen, so there's always a
+   one-tap way back to it on phones. */
+function StickyApplyBar() {
+  const [show, setShow] = useState(false);
+  useEffect(() => {
+    const form = document.getElementById("apply");
+    if (!form) return;
+    const io = new IntersectionObserver(([e]) =>
+      setShow(!e.isIntersecting && e.boundingClientRect.top < 0),
+    );
+    io.observe(form);
+    return () => io.disconnect();
+  }, []);
+  return (
+    <AnimatePresence>
+      {show && (
+        <motion.div
+          initial={{ y: 100 }}
+          animate={{ y: 0 }}
+          exit={{ y: 100 }}
+          className="fixed bottom-0 inset-x-0 z-50 border-t border-[#e7e1d6] bg-[#fffefb]/95 backdrop-blur px-4 py-3 sm:hidden"
+        >
+          <button
+            type="button"
+            onClick={scrollToApply}
+            className="w-full rounded-full bg-[#166b45] py-3.5 text-base font-semibold text-white"
+          >
+            Apply for a free website →
+          </button>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+}
+
 /* Fictional designer mockups the hero browser flicks through — designed at
    full resolution and rendered to images so they look like real sites. */
 const heroMockups = [
@@ -356,7 +435,7 @@ export function Landing() {
     }
   }, []);
 
-  const heroWords = ["Beautiful", "websites,", "built", "by", "hand."];
+  const heroWords = ["Get", "a", "professional", "website"];
 
   return (
     <div className="min-h-screen bg-[#faf7f2] text-[#1b1a17] overflow-x-hidden selection:bg-[#166b45] selection:text-white">
@@ -393,10 +472,10 @@ export function Landing() {
               className="inline-flex items-center gap-2 rounded-full border border-[#e7e1d6] bg-white px-4 py-1.5 text-sm font-medium text-[#6b675e] mb-6"
             >
               <span className="h-2 w-2 rounded-full bg-[#166b45] animate-pulse" />
-              Squamish, BC · Serving Canada & the US
+              Free website program · Limited spots each month
             </motion.p>
 
-            <h1 className="font-display text-[2.6rem] leading-[1.05] sm:text-6xl lg:text-7xl font-semibold tracking-tight mb-6">
+            <h1 className="font-display text-[2.6rem] leading-[1.05] sm:text-6xl font-semibold tracking-tight mb-6">
               {heroWords.map((w, i) => (
                 <motion.span
                   key={w}
@@ -409,7 +488,7 @@ export function Landing() {
                   }}
                   className={
                     "inline-block mr-[0.28em] " +
-                    (w === "hand." ? "italic text-[#166b45]" : "")
+                    (w === "website" ? "italic text-[#166b45]" : "")
                   }
                 >
                   {w}
@@ -421,7 +500,7 @@ export function Landing() {
                 transition={{ delay: 0.65, duration: 0.7 }}
                 className="block"
               >
-                Yours{" "}
+                built for you,{" "}
                 <span className="relative inline-block">
                   free
                   <motion.svg
@@ -451,13 +530,12 @@ export function Landing() {
               transition={{ delay: 0.8, duration: 0.6 }}
               className="text-lg sm:text-xl text-[#6b675e] leading-relaxed mb-8 max-w-xl"
             >
-              I'm a real web designer in Squamish, BC — no cookie-cutter
-              templates, no DIY builders eating your weekends. I build your
-              small business a custom website for{" "}
+              Agencies charge $3,000–$10,000 for a custom website. I'm a real
+              web designer in Squamish, BC, and I'll build yours for{" "}
               <strong className="text-[#1b1a17]">$0</strong>, with two rounds of
               revisions. You only pay if you keep it:{" "}
               <strong className="text-[#1b1a17]">$9.99/month</strong> for
-              hosting and support. No contracts. You own the code.
+              hosting and support. No contract. You own the code.
             </motion.p>
 
             <motion.div
@@ -466,13 +544,9 @@ export function Landing() {
               transition={{ delay: 0.95, duration: 0.6 }}
               className="flex flex-col sm:flex-row gap-3"
             >
-              <Link
-                to="/get-started"
-                className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#166b45] px-8 py-4 text-lg font-semibold text-white transition-all hover:bg-[#0f5434] hover:shadow-[0_12px_40px_-8px_rgba(22,107,69,0.5)] hover:-translate-y-0.5"
-              >
-                Get your free website
-                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-              </Link>
+              <span className="lg:hidden">
+                <ApplyButton />
+              </span>
               <a
                 href="tel:+16048498898"
                 className="inline-flex items-center justify-center gap-2 rounded-full border border-[#1b1a17]/15 bg-white px-8 py-4 text-lg font-semibold transition-all hover:border-[#1b1a17]/40 hover:-translate-y-0.5"
@@ -493,7 +567,13 @@ export function Landing() {
             </motion.p>
           </div>
 
-          <HeroBrowser />
+          <motion.div
+            initial={{ y: 40, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.4, duration: 0.8, ease: [0.21, 0.6, 0.35, 1] }}
+          >
+            <QuickApplyForm />
+          </motion.div>
         </div>
       </section>
 
@@ -540,6 +620,57 @@ export function Landing() {
               </p>
             </FadeUp>
           ))}
+        </div>
+      </section>
+
+      {/* ========================================================= THE MATH */}
+      <section className="py-14 sm:py-24 px-4 sm:px-6 bg-[#fffefb] border-y border-[#e7e1d6]">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <FadeUp>
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#166b45] mb-3">
+              The math
+            </p>
+            <h2 className="font-display text-3xl sm:text-5xl font-semibold tracking-tight mb-8">
+              Same custom website.{" "}
+              <span className="italic text-[#166b45]">None of the invoice.</span>
+            </h2>
+            <div className="space-y-3">
+              {[
+                { who: "Web agency", cost: "$3,000–$10,000", note: "up front, plus monthly fees", strike: true },
+                { who: "DIY builder (Wix, Squarespace)", cost: "$20–$50/mo", note: "plus your weekends, and it looks like a template", strike: true },
+                { who: "FreeSite Company", cost: "$0 to build", note: "$9.99/mo only if you keep it", strike: false },
+              ].map((row) => (
+                <div
+                  key={row.who}
+                  className={
+                    "flex items-center justify-between gap-4 rounded-2xl border p-5 " +
+                    (row.strike
+                      ? "border-[#e7e1d6] bg-white"
+                      : "border-[#166b45] bg-[#166b45]/[0.06] shadow-[0_12px_40px_-16px_rgba(22,107,69,0.4)]")
+                  }
+                >
+                  <div>
+                    <p className="font-semibold">{row.who}</p>
+                    <p className="text-sm text-[#6b675e]">{row.note}</p>
+                  </div>
+                  <p
+                    className={
+                      "font-display text-xl sm:text-2xl font-semibold whitespace-nowrap " +
+                      (row.strike ? "text-[#6b675e] line-through decoration-[#d7a04a] decoration-2" : "text-[#166b45]")
+                    }
+                  >
+                    {row.cost}
+                  </p>
+                </div>
+              ))}
+            </div>
+            <div className="mt-8">
+              <ApplyButton />
+            </div>
+          </FadeUp>
+          <FadeUp delay={0.15}>
+            <HeroBrowser />
+          </FadeUp>
         </div>
       </section>
 
@@ -640,6 +771,7 @@ export function Landing() {
               );
             })}
           </div>
+          <CtaBand line="Your business could be next. Free to build, free to see." />
         </div>
       </section>
 
@@ -681,6 +813,7 @@ export function Landing() {
               </div>
             </div>
           </FadeUp>
+          <CtaBand line="Every site is built by hand, so I only take on a few new builds each month." />
         </div>
       </section>
 
@@ -726,13 +859,7 @@ export function Landing() {
           </div>
 
           <FadeUp delay={0.3} className="mt-14 text-center">
-            <Link
-              to="/get-started"
-              className="group inline-flex items-center gap-2 rounded-full bg-[#7fc8a4] px-8 py-4 text-lg font-semibold text-[#1b1a17] transition-all hover:bg-white hover:-translate-y-0.5"
-            >
-              Start step one — it takes 5 minutes
-              <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-            </Link>
+            <ApplyButton label="Start step one: apply in 2 minutes" dark />
           </FadeUp>
         </div>
       </section>
@@ -756,12 +883,15 @@ export function Landing() {
               that scores 90+ on Google PageSpeed — faster than WordPress or
               Wix.
             </p>
-            <Link
-              to="/plans"
-              className="inline-flex items-center gap-2 font-semibold text-[#166b45] hover:gap-3 transition-all"
-            >
-              See hosting plans <ArrowRight className="h-4 w-4" />
-            </Link>
+            <div className="flex flex-wrap items-center gap-6">
+              <ApplyButton />
+              <Link
+                to="/plans"
+                className="inline-flex items-center gap-2 font-semibold text-[#166b45] hover:gap-3 transition-all"
+              >
+                See hosting plans <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
           </FadeUp>
 
           <div className="grid sm:grid-cols-2 gap-3">
@@ -910,6 +1040,7 @@ export function Landing() {
               </FadeUp>
             ))}
           </div>
+          <CtaBand line="Still unsure? Apply anyway. There's no obligation, ever." />
         </div>
       </section>
 
@@ -926,18 +1057,12 @@ export function Landing() {
               Free to build. Free to see. $9.99/month only if you love it.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Link
-                to="/get-started"
-                className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#166b45] px-10 py-5 text-xl font-semibold text-white transition-all hover:bg-[#0f5434] hover:shadow-[0_12px_40px_-8px_rgba(22,107,69,0.5)] hover:-translate-y-0.5"
-              >
-                Claim your free website
-                <ArrowRight className="h-6 w-6 transition-transform group-hover:translate-x-1" />
-              </Link>
+              <ApplyButton label="Apply for your free website" />
               <a
                 href="https://calendar.app.google/L4ok6TnfC8njfXXy6"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-[#1b1a17]/15 bg-white px-10 py-5 text-xl font-semibold transition-all hover:border-[#1b1a17]/40 hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-[#1b1a17]/15 bg-white px-8 py-4 text-lg font-semibold transition-all hover:border-[#1b1a17]/40 hover:-translate-y-0.5"
               >
                 Book a call
               </a>
@@ -947,6 +1072,7 @@ export function Landing() {
       </section>
 
       <Footer />
+      <StickyApplyBar />
     </div>
   );
 }
