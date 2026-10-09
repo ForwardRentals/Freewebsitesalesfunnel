@@ -433,6 +433,11 @@ export function Landing() {
         "Looking for a web designer? Get a free custom-coded website for your small business. No templates, no page builders. Professional web design & development — hand-built by real developers. Restaurants, salons, contractors & more.",
       );
     }
+    // The static SEO pages link here as /#apply; wait for the hero to mount.
+    if (window.location.hash === "#apply") {
+      const t = setTimeout(scrollToApply, 400);
+      return () => clearTimeout(t);
+    }
   }, []);
 
   const heroWords = ["Get", "a", "professional", "website"];

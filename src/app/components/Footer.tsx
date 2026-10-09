@@ -61,15 +61,72 @@ export function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="font-bold mb-4">Web Design Services</h3>
-            <ul className="space-y-3 text-[#faf7f2]/60">
-              <li>Free Custom Website Design</li>
-              <li>Small Business Web Development</li>
-              <li>Mobile-Responsive Web Design</li>
-              <li>Website Hosting & Management</li>
-              <li>SEO & Google Optimization</li>
-              <li>Photography & Videography</li>
-              <li>Ongoing Website Support</li>
+            <h3 className="font-bold mb-4">Free Websites For</h3>
+            <ul className="space-y-3">
+              <li>
+                <a
+                  href="/free-website-for-small-business"
+                  className="text-[#faf7f2]/60 hover:text-[#7fc8a4] transition-colors"
+                >
+                  Websites by business type
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/free-website-for-restaurants"
+                  className="text-[#faf7f2]/60 hover:text-[#7fc8a4] transition-colors"
+                >
+                  Restaurants &amp; cafés
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/free-website-for-contractors"
+                  className="text-[#faf7f2]/60 hover:text-[#7fc8a4] transition-colors"
+                >
+                  Contractors &amp; builders
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/free-website-for-tour-operators"
+                  className="text-[#faf7f2]/60 hover:text-[#7fc8a4] transition-colors"
+                >
+                  Tours &amp; rentals
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/web-design-bc"
+                  className="text-[#faf7f2]/60 hover:text-[#7fc8a4] transition-colors"
+                >
+                  Web design across BC
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/web-design-squamish"
+                  className="text-[#faf7f2]/60 hover:text-[#7fc8a4] transition-colors"
+                >
+                  Web design in Squamish
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/web-design-whistler"
+                  className="text-[#faf7f2]/60 hover:text-[#7fc8a4] transition-colors"
+                >
+                  Web design in Whistler
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/web-design-vancouver"
+                  className="text-[#faf7f2]/60 hover:text-[#7fc8a4] transition-colors"
+                >
+                  Web design in Vancouver
+                </a>
+              </li>
             </ul>
           </div>
 
