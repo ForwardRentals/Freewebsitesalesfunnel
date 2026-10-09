@@ -65,7 +65,7 @@ export function Footer() {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="/free-website-for-small-business"
+                  href="/free-website-for-small-business/"
                   className="text-[#faf7f2]/60 hover:text-[#7fc8a4] transition-colors"
                 >
                   Websites by business type
@@ -73,7 +73,7 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="/free-website-for-restaurants"
+                  href="/free-website-for-restaurants/"
                   className="text-[#faf7f2]/60 hover:text-[#7fc8a4] transition-colors"
                 >
                   Restaurants &amp; cafés
@@ -81,7 +81,7 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="/free-website-for-contractors"
+                  href="/free-website-for-contractors/"
                   className="text-[#faf7f2]/60 hover:text-[#7fc8a4] transition-colors"
                 >
                   Contractors &amp; builders
@@ -89,7 +89,7 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="/free-website-for-tour-operators"
+                  href="/free-website-for-tour-operators/"
                   className="text-[#faf7f2]/60 hover:text-[#7fc8a4] transition-colors"
                 >
                   Tours &amp; rentals
@@ -97,7 +97,7 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="/web-design-bc"
+                  href="/web-design-bc/"
                   className="text-[#faf7f2]/60 hover:text-[#7fc8a4] transition-colors"
                 >
                   Web design across BC
@@ -105,7 +105,7 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="/web-design-squamish"
+                  href="/web-design-squamish/"
                   className="text-[#faf7f2]/60 hover:text-[#7fc8a4] transition-colors"
                 >
                   Web design in Squamish
@@ -113,7 +113,7 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="/web-design-whistler"
+                  href="/web-design-whistler/"
                   className="text-[#faf7f2]/60 hover:text-[#7fc8a4] transition-colors"
                 >
                   Web design in Whistler
@@ -121,7 +121,7 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="/web-design-vancouver"
+                  href="/web-design-vancouver/"
                   className="text-[#faf7f2]/60 hover:text-[#7fc8a4] transition-colors"
                 >
                   Web design in Vancouver

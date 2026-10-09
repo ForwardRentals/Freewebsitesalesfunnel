@@ -126,7 +126,7 @@ footer .logo{color:#faf7f2}
 `;
 
 function layout({ path, title, description, body, jsonld }) {
-  const url = `${SITE}/${path}`;
+  const url = `${SITE}/${path}/`;
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -169,8 +169,8 @@ ${footer()}
 function footer() {
   return `<footer><div class="wrap">
 <div><a class="logo" href="/">FreeSite Company.</a><p>A real web designer in Squamish, BC. Free custom websites for small businesses across BC and Canada. You own the code.</p></div>
-<div><h3>Websites for</h3><ul>${industries.slice(0, 6).map((i) => `<li><a href="/${industryPath(i)}">${esc(i.label)}</a></li>`).join("")}<li><a href="/${INDUSTRY_HUB}">All business types →</a></li></ul></div>
-<div><h3>Web design in</h3><ul>${cities.slice(0, 6).map((c) => `<li><a href="/${cityPath(c)}">${esc(cap(c.name))}</a></li>`).join("")}<li><a href="/${CITY_HUB}">All areas →</a></li></ul></div>
+<div><h3>Websites for</h3><ul>${industries.slice(0, 6).map((i) => `<li><a href="/${industryPath(i)}/">${esc(i.label)}</a></li>`).join("")}<li><a href="/${INDUSTRY_HUB}/">All business types →</a></li></ul></div>
+<div><h3>Web design in</h3><ul>${cities.slice(0, 6).map((c) => `<li><a href="/${cityPath(c)}/">${esc(cap(c.name))}</a></li>`).join("")}<li><a href="/${CITY_HUB}/">All areas →</a></li></ul></div>
 <div><h3>Get in touch</h3><ul><li><a href="tel:${PHONE_TEL}">${PHONE}</a></li><li><a href="mailto:freesitecompanycanada@gmail.com">freesitecompanycanada@gmail.com</a></li><li>Squamish, BC</li><li><a href="/#apply">Apply for a free website →</a></li></ul></div>
 </div></footer>`;
 }
@@ -210,7 +210,7 @@ function serviceLd({ name, description, path, area }) {
     "@type": "Service",
     name,
     description,
-    url: `${SITE}/${path}`,
+    url: `${SITE}/${path}/`,
     serviceType: "Web design",
     provider: { "@type": "ProfessionalService", "@id": `${SITE}/#organization`, name: "FreeSiteCompany", url: SITE, telephone: "+1-604-849-8898" },
     areaServed: area,
@@ -296,7 +296,7 @@ for (const ind of industries) {
   const path = industryPath(ind);
   const faqs = [...ind.faqs, ...sharedFaqs];
   const description = `${ind.title}: a custom, hand-coded website for your ${ind.noun}, built free by a real web designer in BC. Only $9.99/month if you keep it. No contract.`;
-  const trail = [["Home", "/"], ["Websites for small business", `/${INDUSTRY_HUB}`], [ind.label, `/${path}`]];
+  const trail = [["Home", "/"], ["Websites for small business", `/${INDUSTRY_HUB}/`], [ind.label, `/${path}`]];
   const body = `${crumbs(trail)}
 ${hero({ eyebrow: `Free websites for ${ind.label.toLowerCase()}`, h1: esc(ind.h1).replace(/free website/, "<em>free website</em>").replace(/free portfolio website/, "<em>free portfolio website</em>"), intro: ind.intro })}
 <section class="band"><div class="wrap">
@@ -309,8 +309,8 @@ ${workSection(ind.work)}
 ${mathSection()}
 ${stepsSection()}
 ${faqSection(faqs)}
-${linksSection("Web design near you", cities.map((c) => [cap(c.name), `/${cityPath(c)}`]))}
-${linksSection("Other businesses I build for", industries.filter((x) => x !== ind).map((x) => [x.label, `/${industryPath(x)}`]))}
+${linksSection("Web design near you", cities.map((c) => [cap(c.name), `/${cityPath(c)}/`]))}
+${linksSection("Other businesses I build for", industries.filter((x) => x !== ind).map((x) => [x.label, `/${industryPath(x)}/`]))}
 ${finalCta(`Your ${esc(ind.noun)} deserves a <em>better website.</em>`)}`;
   write(path, layout({
     path,
@@ -319,7 +319,7 @@ ${finalCta(`Your ${esc(ind.noun)} deserves a <em>better website.</em>`)}`;
     body,
     jsonld: [serviceLd({ name: ind.title, description, path, area: { "@type": "Country", name: "Canada" } }), breadcrumbLd(trail), faqLd(faqs)],
   }));
-  pages.push({ path, priority: "0.8" });
+  pages.push({ path: `${path}/`, priority: "0.8" });
 }
 
 for (const city of cities) {
@@ -329,7 +329,7 @@ for (const city of cities) {
     ...sharedFaqs,
   ];
   const description = `Web design in ${city.name}, ${city.region.split(", ").pop()}: a custom, hand-coded website for your small business, built free by a BC web designer. $9.99/month only if you keep it.`;
-  const trail = [["Home", "/"], ["Web design in BC", `/${CITY_HUB}`], [cap(city.name), `/${path}`]];
+  const trail = [["Home", "/"], ["Web design in BC", `/${CITY_HUB}/`], [cap(city.name), `/${path}`]];
   const body = `${crumbs(trail)}
 ${hero({ eyebrow: `${cap(city.name)} · ${city.region}`, h1: esc(city.h1).replace(/Free to build\./, "<em>Free to build.</em>"), intro: city.intro })}
 <section class="band"><div class="wrap">
@@ -342,8 +342,8 @@ ${workSection(city.work)}
 ${mathSection()}
 ${stepsSection()}
 ${faqSection(cityFaqs)}
-${linksSection(`Websites for ${city.name} businesses`, industries.map((x) => [x.label, `/${industryPath(x)}`]))}
-${linksSection("Nearby areas", city.near.map((s) => cities.find((c) => c.slug === s)).map((c) => [cap(c.name), `/${cityPath(c)}`]))}
+${linksSection(`Websites for ${city.name} businesses`, industries.map((x) => [x.label, `/${industryPath(x)}/`]))}
+${linksSection("Nearby areas", city.near.map((s) => cities.find((c) => c.slug === s)).map((c) => [cap(c.name), `/${cityPath(c)}/`]))}
 ${finalCta(`A better website for your <em>${esc(city.name)}</em> business.`)}`;
   write(path, layout({
     path,
@@ -352,39 +352,39 @@ ${finalCta(`A better website for your <em>${esc(city.name)}</em> business.`)}`;
     body,
     jsonld: [serviceLd({ name: `Web design in ${cap(city.name)}`, description, path, area: { "@type": "City", name: city.name.replace(/^the /, "") } }), breadcrumbLd(trail), faqLd(cityFaqs)],
   }));
-  pages.push({ path, priority: "0.8" });
+  pages.push({ path: `${path}/`, priority: "0.8" });
 }
 
 // Hubs
 {
-  const trail = [["Home", "/"], ["Websites for small business", `/${INDUSTRY_HUB}`]];
+  const trail = [["Home", "/"], ["Websites for small business", `/${INDUSTRY_HUB}/`]];
   const description = "Free custom websites for restaurants, salons, contractors, trades, clinics, gyms, tour operators and more. Built by a real web designer in BC. $9.99/month only if you keep it.";
   const body = `${crumbs(trail)}
 ${hero({ eyebrow: "Free website program", h1: "A <em>free website</em> for your small business", intro: "Every business needs something different from its website. A restaurant needs its menu, a contractor needs a project gallery, a clinic needs online booking. Pick your business type to see what I'd build for you, for free." })}
 <section class="band"><div class="wrap">
 <p class="label">Pick your business type</p>
-<div class="needs">${industries.map((i) => `<a class="need" style="text-decoration:none" href="/${industryPath(i)}"><h3>${esc(i.label)} →</h3><p>${esc(i.needs.slice(0, 3).map((n) => n[0]).join(" · "))}</p></a>`).join("")}</div>
+<div class="needs">${industries.map((i) => `<a class="need" style="text-decoration:none" href="/${industryPath(i)}/"><h3>${esc(i.label)} →</h3><p>${esc(i.needs.slice(0, 3).map((n) => n[0]).join(" · "))}</p></a>`).join("")}</div>
 </div></section>
 ${workSection(["watertaxi", "canoe", "dobson"])}
 ${mathSection()}
 ${finalCta("Don't see your business? <em>Apply anyway.</em>")}`;
   write(INDUSTRY_HUB, layout({ path: INDUSTRY_HUB, title: "Free Websites for Small Businesses | FreeSiteCompany", description, body, jsonld: [breadcrumbLd(trail)] }));
-  pages.push({ path: INDUSTRY_HUB, priority: "0.9" });
+  pages.push({ path: `${INDUSTRY_HUB}/`, priority: "0.9" });
 }
 {
-  const trail = [["Home", "/"], ["Web design in BC", `/${CITY_HUB}`]];
+  const trail = [["Home", "/"], ["Web design in BC", `/${CITY_HUB}/`]];
   const description = "Free custom web design for small businesses across BC: Squamish, Whistler, Vancouver, the North Shore, Victoria, Kelowna and more. $9.99/month only if you keep it.";
   const body = `${crumbs(trail)}
 ${hero({ eyebrow: "Based in Squamish · Serving all of BC", h1: "Web design across <em>British Columbia</em>", intro: "I'm a web designer in Squamish, and I build small businesses across BC custom websites for free. You only pay $9.99/month if you keep it. Pick your area to learn more." })}
 <section class="band"><div class="wrap">
 <p class="label">Pick your area</p>
-<div class="needs">${cities.map((c) => `<a class="need" style="text-decoration:none" href="/${cityPath(c)}"><h3>${esc(cap(c.name))} →</h3><p>${esc(c.region)}</p></a>`).join("")}</div>
+<div class="needs">${cities.map((c) => `<a class="need" style="text-decoration:none" href="/${cityPath(c)}/"><h3>${esc(cap(c.name))} →</h3><p>${esc(c.region)}</p></a>`).join("")}</div>
 </div></section>
 ${workSection(["watertaxi", "canoe", "trails"])}
 ${mathSection()}
 ${finalCta("Outside BC? <em>Apply anyway.</em>")}`;
   write(CITY_HUB, layout({ path: CITY_HUB, title: "Web Design in BC | Free Custom Websites | FreeSiteCompany", description, body, jsonld: [breadcrumbLd(trail)] }));
-  pages.push({ path: CITY_HUB, priority: "0.9" });
+  pages.push({ path: `${CITY_HUB}/`, priority: "0.9" });
 }
 
 const urls = [
