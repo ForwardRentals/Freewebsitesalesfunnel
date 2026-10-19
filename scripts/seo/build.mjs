@@ -140,7 +140,9 @@ function layout({ path, title, description, body, jsonld }) {
 <link rel="canonical" href="${url}">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="theme-color" content="#166b45">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:url" content="${url}">
 <meta property="og:site_name" content="FreeSiteCompany">
