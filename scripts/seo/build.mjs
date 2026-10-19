@@ -4,6 +4,7 @@
 import { mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { industries, cities, portfolio } from "./data.mjs";
+import { posts } from "./blog.mjs";
 
 const SITE = "https://freesitecompany.com";
 const OUT = "dist";
@@ -124,6 +125,24 @@ footer ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}
 footer a{text-decoration:none}
 footer a:hover{color:var(--mint)}
 footer .logo{color:#fff}footer .logo b span{color:#c5f06a}footer .logo small{color:rgba(255,255,255,.8)}
+.post{max-width:720px;margin:0 auto;padding:24px 20px 56px}
+.post h1{font-size:clamp(2rem,5vw,3rem);margin:16px 0 12px}
+.post .meta{color:var(--muted);font-size:15px;margin:0 0 28px}
+.post h2{font-family:Fraunces,Georgia,serif;font-weight:600;font-size:1.6rem;line-height:1.2;margin:40px 0 12px}
+.post h3{font-size:1.1rem;margin:28px 0 8px}
+.post p,.post li{color:#34322c}
+.post ul{padding-left:22px}.post li{margin-bottom:8px}
+.post a{color:var(--green)}
+.table{overflow-x:auto}.post table{width:100%;border-collapse:collapse;font-size:15px;margin:12px 0}
+.post th,.post td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+.post th{font-weight:700}
+.cta-box{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:24px;margin-top:40px}
+.cta-box p{margin:0 0 16px}
+.posts{display:grid;gap:16px;list-style:none;padding:0;margin:0}
+.posts a{display:block;background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;text-decoration:none;color:inherit}
+.posts a:hover{border-color:var(--green)}
+.posts h2{font-family:Fraunces,Georgia,serif;font-size:1.4rem;line-height:1.2;margin:0 0 8px}
+.posts p{margin:0;color:var(--muted);font-size:16px}
 @media (max-width:640px){.nav .tel,.nav .plain{display:none}.hero{padding-block:40px 40px}section{padding-block:44px}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 `;
@@ -176,7 +195,7 @@ function footer() {
 <div><a class="logo" href="/" aria-label="FreeSite Company"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#166b45"/><path d="M16 15a2 2 0 0 1 2-2h28a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H25v6.5h11a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H25V49a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2Z" fill="#fff"/><path d="M38 36v20l4.6-4.4 3.6 7.6 3.4-1.6-3.6-7.4 6.4-.4Z" fill="#c5f06a"/></svg><span><b>Free<span>Site</span></b><small>COMPANY</small></span></a><p>A real web designer in Squamish, BC. Free custom websites for small businesses across BC and Canada. You own the code.</p></div>
 <div><h3>Websites for</h3><ul>${industries.slice(0, 6).map((i) => `<li><a href="/${industryPath(i)}/">${esc(i.label)}</a></li>`).join("")}<li><a href="/${INDUSTRY_HUB}/">All business types →</a></li></ul></div>
 <div><h3>Web design in</h3><ul>${cities.slice(0, 6).map((c) => `<li><a href="/${cityPath(c)}/">${esc(cap(c.name))}</a></li>`).join("")}<li><a href="/${CITY_HUB}/">All areas →</a></li></ul></div>
-<div><h3>Get in touch</h3><ul><li><a href="tel:${PHONE_TEL}">${PHONE}</a></li><li><a href="mailto:freesitecompanycanada@gmail.com">freesitecompanycanada@gmail.com</a></li><li>Squamish, BC</li><li><a href="/#apply">Apply for a free website →</a></li></ul></div>
+<div><h3>Get in touch</h3><ul><li><a href="tel:${PHONE_TEL}">${PHONE}</a></li><li><a href="mailto:freesitecompanycanada@gmail.com">freesitecompanycanada@gmail.com</a></li><li>Squamish, BC</li><li><a href="/blog/">Blog</a></li><li><a href="/#apply">Apply for a free website →</a></li></ul></div>
 </div></footer>`;
 }
 
@@ -390,6 +409,55 @@ ${mathSection()}
 ${finalCta("Outside BC? <em>Apply anyway.</em>")}`;
   write(CITY_HUB, layout({ path: CITY_HUB, title: "Web Design in BC | Free Custom Websites | FreeSiteCompany", description, body, jsonld: [breadcrumbLd(trail)] }));
   pages.push({ path: `${CITY_HUB}/`, priority: "0.9" });
+}
+
+// Blog
+{
+  const fmt = (d) => new Date(d + "T12:00:00Z").toLocaleDateString("en-CA", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" });
+  for (const post of posts) {
+    const path = `blog/${post.slug}`;
+    const trail = [["Home", "/"], ["Blog", "/blog/"], [post.title, `/${path}`]];
+    const body = `${crumbs(trail)}
+<article class="post">
+<h1 class="d">${esc(post.title)}</h1>
+<p class="meta">By Jeremy, FreeSite Company · ${fmt(post.date)}</p>
+${post.body}
+<div class="cta-box"><p><b>Want a custom website without the up-front cost?</b> I'll build it free. You only pay $9.99/month if you keep it.</p><div class="ctas"><a class="btn" href="/#apply">Apply in 2 minutes →</a><a class="btn ghost" href="tel:${PHONE_TEL}">${PHONE}</a></div></div>
+</article>
+${linksSection("More from the blog", posts.filter((p) => p !== post).map((p) => [p.title, `/blog/${p.slug}/`]))}`;
+    write(path, layout({
+      path,
+      title: `${post.title} | FreeSiteCompany`,
+      description: post.description,
+      body,
+      jsonld: [
+        {
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          headline: post.title,
+          description: post.description,
+          datePublished: post.date,
+          dateModified: post.date,
+          url: `${SITE}/${path}/`,
+          image: `${SITE}/og-image.png`,
+          author: { "@type": "Person", name: "Jeremy" },
+          publisher: { "@type": "Organization", name: "FreeSiteCompany", url: SITE, logo: { "@type": "ImageObject", url: `${SITE}/icon-512.png` } },
+        },
+        breadcrumbLd(trail),
+      ],
+    }));
+    pages.push({ path: `${path}/`, priority: "0.6" });
+  }
+  const trail = [["Home", "/"], ["Blog", "/blog/"]];
+  const body = `${crumbs(trail)}
+<section class="hero"><div class="wrap">
+<h1 class="d">Small business <em>website advice</em></h1>
+<p class="lead">Straight answers on websites, costs and getting found on Google, from a web designer in Squamish, BC.</p>
+<ul class="posts">${posts.map((p) => `<li><a href="/blog/${p.slug}/"><h2>${esc(p.title)}</h2><p>${esc(p.excerpt)}</p></a></li>`).join("")}</ul>
+</div></section>
+${finalCta("Ready for a better website? <em>It's free to build.</em>")}`;
+  write("blog", layout({ path: "blog", title: "Blog | Small Business Website Advice | FreeSiteCompany", description: "Straight answers on small business websites, costs and local SEO from a web designer in Squamish, BC.", body, jsonld: [breadcrumbLd(trail)] }));
+  pages.push({ path: "blog/", priority: "0.7" });
 }
 
 const urls = [

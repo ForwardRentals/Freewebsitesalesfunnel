@@ -49,6 +49,14 @@ export function Footer() {
               </li>
               <li>
                 <a
+                  href="/blog/"
+                  className="text-[#faf7f2]/60 hover:text-[#7fc8a4] transition-colors"
+                >
+                  Blog
+                </a>
+              </li>
+              <li>
+                <a
                   href="#how-it-works"
                   className="text-[#faf7f2]/60 hover:text-[#7fc8a4] transition-colors"
                 >
