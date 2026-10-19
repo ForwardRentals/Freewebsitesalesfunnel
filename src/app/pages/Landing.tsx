@@ -609,9 +609,14 @@ export function Landing() {
 
       {/* ======================================================== MARQUEE */}
       <section className="border-y border-[#e7e1d6] bg-[#fffefb] py-5 overflow-hidden">
-        <div className="flex w-max animate-marquee gap-12 px-6">
-          {[0, 1].map((dup) => (
-            <div key={dup} className="flex items-center gap-12 shrink-0">
+        {/* 4 identical copies, each carrying its own trailing gap, so -50% lands exactly on copy #3 */}
+        <div className="flex w-max animate-marquee">
+          {[0, 1, 2, 3].map((dup) => (
+            <div
+              key={dup}
+              aria-hidden={dup > 0}
+              className="flex items-center gap-12 pr-12 shrink-0"
+            >
               {showcase.map((s) => (
                 <span
                   key={s.name + dup}
