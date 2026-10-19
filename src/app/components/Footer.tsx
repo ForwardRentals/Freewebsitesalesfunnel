@@ -1,5 +1,6 @@
 import { Link } from "react-router";
 import { Mail, Phone, MapPin } from "lucide-react";
+import { Logo } from "./Logo";
 
 export function Footer() {
   return (
@@ -9,9 +10,7 @@ export function Footer() {
           {/* Company Info */}
           <div className="lg:col-span-1">
             <Link to="/" className="inline-block mb-4">
-              <span className="font-display text-2xl font-semibold tracking-tight">
-                FreeSite Company<span className="text-[#7fc8a4]">.</span>
-              </span>
+              <Logo dark />
             </Link>
             <p className="text-[#faf7f2]/60">
               A real web designer in Squamish, BC. Free custom website design

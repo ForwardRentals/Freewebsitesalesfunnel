@@ -8,6 +8,7 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
 } from "./ui/dropdown-menu";
+import { Logo } from "./Logo";
 
 export function Navigation() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -22,9 +23,7 @@ export function Navigation() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
         <Link to="/" className="group">
-          <span className="font-display text-xl sm:text-2xl font-semibold tracking-tight text-[#1b1a17]">
-            FreeSite Company<span className="text-[#166b45]">.</span>
-          </span>
+          <Logo />
         </Link>
 
         {/* Desktop nav */}

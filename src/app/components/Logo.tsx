@@ -1,33 +1,32 @@
-export function Logo({ className = "h-8 w-8" }: { className?: string }) {
+// F + cursor mark ("04 / F Cursor"); keep in sync with public/favicon.svg
+export function LogoMark({ className = "h-9 w-9" }: { className?: string }) {
   return (
-    <svg
-      viewBox="0 0 100 100"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className={className}
-    >
-      {/* House body */}
+    <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" className={className} aria-hidden="true">
+      <rect width="64" height="64" rx="14" fill="#166b45" />
       <path
-        d="M15 45 L15 82 C15 86 18 88 22 88 L78 88 C82 88 85 86 85 82 L85 45 Z"
-        fill="#2dd4a8"
+        d="M16 15a2 2 0 0 1 2-2h28a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H25v6.5h11a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H25V49a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2Z"
+        fill="#fff"
       />
-      {/* Roof */}
-      <path
-        d="M50 12 L90 45 L10 45 Z"
-        fill="#2dd4a8"
-      />
-      {/* Left eye */}
-      <circle cx="38" cy="58" r="5" fill="white" />
-      {/* Right eye */}
-      <circle cx="62" cy="58" r="5" fill="white" />
-      {/* Smile */}
-      <path
-        d="M36 70 Q50 82 64 70"
-        stroke="white"
-        strokeWidth="4"
-        strokeLinecap="round"
-        fill="none"
-      />
+      <path d="M38 36v20l4.6-4.4 3.6 7.6 3.4-1.6-3.6-7.4 6.4-.4Z" fill="#c5f06a" />
     </svg>
+  );
+}
+
+export function Logo({ dark = false }: { dark?: boolean }) {
+  return (
+    <span className="inline-flex items-center gap-2.5" aria-label="FreeSite Company">
+      <LogoMark className="h-9 w-9 sm:h-10 sm:w-10 shrink-0" />
+      <span className="flex flex-col leading-none" aria-hidden="true">
+        <span className="text-[1.35rem] sm:text-2xl font-extrabold tracking-[-0.04em]">
+          <span className={dark ? "text-white" : "text-[#10261b]"}>Free</span>
+          <span className={dark ? "text-[#c5f06a]" : "text-[#166b45]"}>Site</span>
+        </span>
+        <span
+          className={`mt-1 text-[0.6rem] font-semibold tracking-[0.32em] ${dark ? "text-white/80" : "text-[#4a5650]"}`}
+        >
+          COMPANY
+        </span>
+      </span>
+    </span>
   );
 }
