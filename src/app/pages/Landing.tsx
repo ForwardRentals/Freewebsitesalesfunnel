@@ -440,7 +440,7 @@ export function Landing() {
     }
   }, []);
 
-  const heroWords = ["Get", "a", "professional", "website"];
+  const heroWords = ["Your", "business", "needs", "a", "website."];
 
   return (
     <div className="min-h-screen bg-[#faf7f2] text-[#1b1a17] overflow-x-hidden selection:bg-[#166b45] selection:text-white">
@@ -493,7 +493,7 @@ export function Landing() {
                   }}
                   className={
                     "inline-block mr-[0.28em] " +
-                    (w === "website" ? "italic text-[#166b45]" : "")
+                    (w === "website." ? "italic text-[#166b45]" : "")
                   }
                 >
                   {w}
@@ -505,7 +505,7 @@ export function Landing() {
                 transition={{ delay: 0.65, duration: 0.7 }}
                 className="block"
               >
-                built for you,{" "}
+                We'll build it for{" "}
                 <span className="relative inline-block">
                   free
                   <motion.svg
@@ -535,13 +535,38 @@ export function Landing() {
               transition={{ delay: 0.8, duration: 0.6 }}
               className="text-lg sm:text-xl text-[#6b675e] leading-relaxed mb-8 max-w-xl"
             >
-              Agencies charge $3,000–$10,000 for a custom website. I'm a real
-              web designer in Squamish, BC, and I'll build yours for{" "}
+              Agencies charge $3,000–$10,000 for a custom website. We're real
+              web designers in Squamish, BC, and we'll build yours for{" "}
               <strong className="text-[#1b1a17]">$0</strong>, with two rounds of
               revisions. You only pay if you keep it:{" "}
               <strong className="text-[#1b1a17]">$9.99/month</strong> for
               hosting and support. No contract. You own the code.
             </motion.p>
+
+            <motion.div
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.9, duration: 0.6 }}
+              className="flex items-center gap-5 sm:gap-6 mb-8 max-w-xl"
+            >
+              <img
+                src="/portfolio/sign-photo.jpg"
+                alt="Holding a sign that reads: Your business needs a website. We will build it for free."
+                width={640}
+                height={800}
+                className="w-28 sm:w-36 shrink-0 rounded-2xl border-4 border-white shadow-[0_18px_40px_-18px_rgba(27,26,23,0.45)] -rotate-2"
+              />
+              <div>
+                <p className="font-display text-lg sm:text-xl font-semibold leading-snug">
+                  Why free?
+                </p>
+                <p className="mt-1 text-sm sm:text-base text-[#6b675e] leading-relaxed">
+                  We'd rather earn $9.99 a month from a hundred happy local
+                  businesses than charge one of them $5,000 up front. Don't love
+                  the site? Walk away owing nothing.
+                </p>
+              </div>
+            </motion.div>
 
             <motion.div
               initial={{ y: 20, opacity: 0 }}
@@ -611,7 +636,7 @@ export function Landing() {
       <section className="py-14 sm:py-20 px-4 sm:px-6">
         <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
           {[
-            { v: 50, suffix: "+", label: "small businesses served" },
+            { v: 2, suffix: "", label: "full rounds of revisions, free" },
             { v: 100, suffix: "%", label: "custom built — zero templates" },
             { v: 24, suffix: "hr", label: "average response time" },
             { v: 100, suffix: "%", label: "made in Canada" },

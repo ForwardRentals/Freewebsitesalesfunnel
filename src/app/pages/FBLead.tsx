@@ -277,7 +277,7 @@ export function FBLead() {
                 <span className="text-[#e7e1d6]">|</span>
                 <div className="flex items-center gap-1.5">
                   <CheckCircle2 className="h-3 w-3 text-[#166b45]" />
-                  <span>50+ built</span>
+                  <span>You own the code</span>
                 </div>
               </div>
             </motion.div>

@@ -97,7 +97,7 @@ export function QuickApplyForm({ formName = "HomeQuickApply" }: { formName?: str
           Apply for your free website
         </p>
         <p className="text-sm text-[#6b675e] mt-1">
-          Takes 2 minutes. I'll reply within 24 hours.
+          Takes 2 minutes. We'll reply within 24 hours.
         </p>
       </div>
       <form onSubmit={handleSubmit} className="space-y-4">
