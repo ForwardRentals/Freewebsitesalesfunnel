@@ -2,6 +2,174 @@
 // Keep claims honest: no invented stats, testimonials or client numbers.
 export const posts = [
   {
+    slug: "what-pages-does-a-small-business-website-need",
+    title: "What Pages Does a Small Business Website Need?",
+    description:
+      "The pages every small business website needs, and the ones you can skip: home, services, about, contact, reviews, FAQ and more, with what to put on each.",
+    date: "2026-10-21",
+    excerpt:
+      "Most small business sites need five or six pages, not twenty. Here's what each one is for, what to put on it, and which pages you can safely skip.",
+    body: `
+<p>One of the first things people ask when we start a build is "how many pages do I need?" For most small businesses the answer is fewer than you think. A tight, five-page site that answers your customers' questions beats a sprawling one that nobody finishes reading.</p>
+
+<h2>1. Home</h2>
+<p>Your homepage has one job: tell someone in a few seconds what you do, where you do it, and how to get started. That means:</p>
+<ul>
+<li>A clear headline that says what you do and where ("Emergency plumbing in Squamish", not "Welcome to our website").</li>
+<li>A button to the main action: call, book, get a quote or order.</li>
+<li>A short list of your main services, each linking to more detail.</li>
+<li>Something that builds trust: real reviews, photos of your actual work, or how long you've been around.</li>
+</ul>
+
+<h2>2. Services (or Menu, or Shop)</h2>
+<p>This is where people decide whether you do what they need. If you offer a few distinct services, give each one its own page. It's better for customers, and it's better for Google, because each page can target the way people actually search ("deck builder Squamish", "brake repair Whistler"). Include what's included, who it's for, and prices or a starting price if you can.</p>
+
+<h2>3. About</h2>
+<p>People buy from people. A short, honest About page with a real photo of you or your team does more than a paragraph of buzzwords. Say who you are, how you got started, where you work, and why someone should trust you.</p>
+
+<h2>4. Contact</h2>
+<p>Make it impossible to miss:</p>
+<ul>
+<li>A phone number that's tappable on a phone.</li>
+<li>A short form (name, email or phone, message). The fewer fields, the more people finish it.</li>
+<li>Your address and a map if customers come to you, or the areas you serve if you go to them.</li>
+<li>Your hours.</li>
+</ul>
+<p>Put your phone number and a contact button in the header of every page, too.</p>
+
+<h2>5. Reviews or Work</h2>
+<p>Real reviews from real customers, or photos of real jobs, are the most persuasive thing on any small business site. Pull reviews from Google with the customer's name, and keep them honest. Never make them up. For trades, landscapers and contractors, a gallery of finished projects does the same job.</p>
+
+<h2>6. FAQ (optional, but worth it)</h2>
+<p>Every question you answer on the phone is a candidate: Do you serve my area? How much does it cost? How long does it take? Do you direct-bill? A good FAQ saves you time, helps customers decide, and can show up directly in Google results.</p>
+
+<h2>Pages you can probably skip</h2>
+<ul>
+<li><strong>A blog you won't update.</strong> A blog with one post from 2021 looks abandoned. Only start one if you'll keep it going.</li>
+<li><strong>A "News" page.</strong> Same problem.</li>
+<li><strong>Separate pages for every staff member</strong>, unless you're a clinic or salon where people book a specific person.</li>
+<li><strong>A "Testimonials" page nobody visits.</strong> Put reviews where people are deciding, on your home and service pages.</li>
+</ul>
+
+<h2>Pages you might need</h2>
+<ul>
+<li><strong>Service area pages</strong> if you work in several towns and want to show up in each.</li>
+<li><strong>Booking</strong> if you take appointments, ideally built into the site rather than a link to a separate app.</li>
+<li><strong>Privacy policy</strong> if you collect personal information through forms or run ads.</li>
+</ul>
+
+<h2>Want it built for you?</h2>
+<p>Every FreeSite Company build includes the pages your business actually needs, written in plain language and set up for local search. The build is free, you see it before you pay anything, and you only pay $9.99 a month if you keep it.</p>
+`,
+  },
+  {
+    slug: "why-is-my-website-slow-on-phones",
+    title: "Why Is My Website Slow on Phones? (And How to Fix It)",
+    description:
+      "A slow website loses customers before they see your prices. The most common reasons small business sites are slow on phones, how to test yours, and how to fix it.",
+    date: "2026-10-21",
+    excerpt:
+      "Huge photos, too many apps and bloated templates: the usual reasons a small business site crawls on a phone, how to test yours for free, and what actually fixes it.",
+    body: `
+<p>Most people visiting a small business website are on their phone, often on a patchy mobile connection. If your site takes ages to load, a lot of them leave before they see what you do. Here's why sites get slow, and what to do about it.</p>
+
+<h2>First, test it</h2>
+<p>Google's free <strong>PageSpeed Insights</strong> tool tests your site on a simulated phone and tells you what's slowing it down. Run your homepage and your most important service page. Don't obsess over the score; look at the list of problems it gives you. And try your own site on your own phone, on mobile data, not your office Wi-Fi.</p>
+
+<h2>Reason 1: Huge photos</h2>
+<p>This is the number one cause we see. A photo straight off a modern phone or camera can be several megabytes. Uploaded as-is, one hero image can weigh more than the rest of the site combined.</p>
+<p><strong>The fix:</strong> resize photos to the size they're actually shown (rarely more than about 2000 pixels wide), compress them, and use modern formats like WebP. Images below the first screen should be "lazy loaded" so they only download when someone scrolls to them.</p>
+
+<h2>Reason 2: Too many plugins, widgets and apps</h2>
+<p>Every chat bubble, pop-up, social feed, review widget and tracking pixel adds code the phone has to download and run. Individually they're small. Together they add up, and some load more code from other servers.</p>
+<p><strong>The fix:</strong> audit what's on the site. If you can't say what a plugin does for your business, remove it. Embed a few reviews directly instead of loading a live widget.</p>
+
+<h2>Reason 3: A heavy template</h2>
+<p>Many off-the-shelf themes are built to do everything: sliders, animations, ten font weights, page builders. Your site only uses a fraction of that, but the visitor's phone downloads all of it.</p>
+<p><strong>The fix:</strong> a simpler theme, or a site built for what you actually need. Hand-coded sites tend to be much lighter for this reason.</p>
+
+<h2>Reason 4: Video backgrounds</h2>
+<p>A full-screen video behind your headline looks great on a desktop and can be painful on a phone.</p>
+<p><strong>The fix:</strong> show a still image on mobile, or compress the video heavily and keep it short.</p>
+
+<h2>Reason 5: Slow or overloaded hosting</h2>
+<p>Cheap shared hosting can make every page wait before it even starts loading.</p>
+<p><strong>The fix:</strong> good hosting with a content delivery network (CDN), which serves your site from servers close to your visitors.</p>
+
+<h2>Reason 6: Fonts</h2>
+<p>Loading several custom fonts and weights can delay your text from appearing.</p>
+<p><strong>The fix:</strong> stick to one or two fonts and only the weights you use.</p>
+
+<h2>Why it matters beyond impatience</h2>
+<p>Speed affects how Google sees your site too. Google measures real-world loading experience (its "Core Web Vitals") and uses page experience as one of many signals. A fast site won't rank on speed alone, but a slow one makes everything else harder.</p>
+
+<h2>The quick checklist</h2>
+<ul>
+<li>Resize and compress every image. Use WebP where you can.</li>
+<li>Lazy-load images below the fold.</li>
+<li>Remove plugins and widgets you don't need.</li>
+<li>Swap video backgrounds for images on mobile.</li>
+<li>Use one or two fonts.</li>
+<li>Host on a fast server with a CDN.</li>
+</ul>
+
+<h2>Or let us handle it</h2>
+<p>Every FreeSite Company site is hand-coded, with compressed images and fast hosting, so it loads quickly on a phone from day one. The build is free, and you only pay $9.99 a month if you keep it.</p>
+`,
+  },
+  {
+    slug: "do-i-need-a-website-if-i-have-facebook-instagram",
+    title: "Do I Need a Website If I Already Have Facebook or Instagram?",
+    description:
+      "Is a Facebook page or Instagram account enough for a small business? What social media does well, where it falls short, and why most businesses still need a website.",
+    date: "2026-10-21",
+    excerpt:
+      "Social media is great for showing off your work. But you don't own it, Google barely sees it, and not every customer is on it. Here's how they work together.",
+    body: `
+<p>Plenty of small businesses run entirely on a Facebook page or an Instagram account, and it works, up to a point. Social media is a great tool. It's just not a replacement for a website. Here's an honest look at why.</p>
+
+<h2>What social media does well</h2>
+<ul>
+<li><strong>Showing your work.</strong> Photos and short videos of real jobs, dishes or haircuts are perfect for Instagram.</li>
+<li><strong>Staying in touch.</strong> Regulars see your updates, specials and news.</li>
+<li><strong>It's free and fast.</strong> You can post from your phone in a minute.</li>
+</ul>
+<p>Keep doing all of that. The question is what happens when someone new is looking for a business like yours.</p>
+
+<h2>Where social media falls short</h2>
+
+<h3>1. Google doesn't show it like a website</h3>
+<p>When someone searches "electrician near me" or "best brunch in Squamish", Google shows Business Profiles and websites. Social pages rarely rank for those searches, and a lot of what's on them isn't easily searchable at all.</p>
+
+<h3>2. You don't own it</h3>
+<p>Your page lives on someone else's platform, under their rules. Accounts get hacked, locked or suspended, and algorithm changes can cut how many people see your posts overnight. Your website and domain are yours.</p>
+
+<h3>3. Not everyone is on it</h3>
+<p>Some of your best potential customers don't have Facebook or Instagram, or won't log in to see your page. A website works for everyone with a browser.</p>
+
+<h3>4. Key information gets buried</h3>
+<p>Your prices, service area, hours and how to book are scattered across old posts. On a website, they're one tap away, every time.</p>
+
+<h3>5. It looks less established</h3>
+<p>Fair or not, many people see a business with only a Facebook page as smaller or riskier, especially for bigger jobs like renovations, or anything involving their home or health.</p>
+
+<h2>How they work together</h2>
+<p>The best setup is both:</p>
+<ul>
+<li><strong>Your website</strong> is home base: what you do, where, prices, reviews, and how to book or contact you.</li>
+<li><strong>Your Google Business Profile</strong> gets you on the map and links to your website.</li>
+<li><strong>Social media</strong> shows off your work and sends people to your website to book.</li>
+</ul>
+<p>Put your website link in your Instagram bio and on your Facebook page, and link your social accounts from your website. Each one makes the others stronger.</p>
+
+<h2>"But a website is expensive"</h2>
+<p>It doesn't have to be. A simple, fast site with the pages you actually need (see <a href="/blog/what-pages-does-a-small-business-website-need/">what pages a small business website needs</a>) is enough for most businesses. And it's one of the few marketing tools that keeps working while you sleep.</p>
+
+<h2>Where we fit</h2>
+<p>FreeSite Company builds small businesses a custom website for free. You see the finished site before you pay anything, and if you keep it, hosting and support is $9.99 a month. If you don't love it, you walk away and owe nothing.</p>
+`,
+  },
+  {
     slug: "how-much-does-a-small-business-website-cost-canada",
     title: "How Much Does a Small Business Website Cost in Canada?",
     description:
