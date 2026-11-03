@@ -202,6 +202,9 @@ export function QuickApplyForm({ formName = "HomeQuickApply" }: { formName?: str
             </>
           )}
         </Button>
+        <p className="text-center text-xs leading-relaxed text-[#6b675e]">
+          After you submit, we'll reach out by <span className="font-semibold text-[#1b1a17]">text, phone call, or email</span> to get your free website started.
+        </p>
       </form>
 
       <div className="mt-5 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs text-[#6b675e]">

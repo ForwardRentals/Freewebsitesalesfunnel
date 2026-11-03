@@ -597,6 +597,11 @@ export function GetStarted() {
                   </div>
                 )}
               </div>
+              <div className="mt-6">
+                <p className="text-center text-xs leading-relaxed text-[#6b675e]">
+                  After you submit, we'll reach out by <span className="font-semibold text-[#1b1a17]">text, phone call, or email</span> to get your free website started.
+                </p>
+              </div>
             </form>
           </motion.div>
 
