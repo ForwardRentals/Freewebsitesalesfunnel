@@ -17,6 +17,7 @@ import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
 import { Textarea } from "../components/ui/textarea";
 import { Label } from "../components/ui/label";
+import { sendToHermes } from "../lib/hermes";
 
 const inputClasses =
   "bg-white border-[#e7e1d6] rounded-xl text-[#1b1a17] placeholder:text-[#6b675e]/60 focus-visible:border-[#166b45] focus-visible:ring-[#166b45]/15";
@@ -150,6 +151,8 @@ export function GetStarted() {
       platform: "website",
       referral_token: getStoredRef() ?? "",
     });
+
+    sendToHermes(payload);
 
     try {
       await fetch(GOOGLE_SHEET_URL, {

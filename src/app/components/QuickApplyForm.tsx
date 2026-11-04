@@ -5,6 +5,7 @@ import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
 import { useReferral } from "../hooks/useReferral";
+import { sendToHermes } from "../lib/hermes";
 
 const businessTypes = [
   "Restaurant / Cafe",
@@ -57,6 +58,8 @@ export function QuickApplyForm({ formName = "HomeQuickApply" }: { formName?: str
       platform: "website",
       referral_token: getStoredRef() ?? "",
     });
+
+    sendToHermes(payload);
 
     try {
       await fetch(GOOGLE_SHEET_URL, {

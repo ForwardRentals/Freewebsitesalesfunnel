@@ -16,6 +16,7 @@ import {
 import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
 import { Label } from "../components/ui/label";
+import { sendToHermes } from "../lib/hermes";
 
 const businessTypes = [
   "Restaurant / Cafe",
@@ -77,6 +78,8 @@ export function FBLead() {
       is_organic: "true",
       platform: "website",
     });
+
+    sendToHermes(payload);
 
     try {
       await fetch(GOOGLE_SHEET_URL, {
