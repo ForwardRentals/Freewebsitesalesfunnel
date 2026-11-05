@@ -18,9 +18,7 @@ export function PriceFootnote({
         className
       }
     >
-      *$9.99/month for your first 3 months, then $13.99/month (Starter plan).
-      Free builds are for basic business websites only, not e-commerce or
-      online stores.{" "}
+      *$9.99/month for your first 3 months, then $13.99/month (Starter plan).{" "}
       <Link
         to="/custom"
         className={
@@ -28,7 +26,7 @@ export function PriceFootnote({
           (dark ? "text-[#7fc8a4]" : "text-[#166b45]")
         }
       >
-        Need more? Ask about a custom build.
+        Planning an online store or something bigger? Ask about a custom build.
       </Link>
     </p>
   );

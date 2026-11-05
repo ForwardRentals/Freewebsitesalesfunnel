@@ -83,7 +83,7 @@ const plans = [
     badge: "E-Commerce Ready",
     description: "Hosting & support for online stores",
     features: [
-      "Store build is a paid custom project, quoted separately",
+      "Store build quoted as a custom project",
       "Everything in Growth, plus:",
       "No FreeSiteCompany.com branding — it's 100% yours",
       "Full e-commerce store (products, cart, checkout)",
@@ -241,10 +241,9 @@ export function Plans() {
               updates, and support. Perfect for small businesses ready to grow online!
             </p>
             <p className="mt-4 text-sm sm:text-base text-[#6b675e] max-w-2xl mx-auto">
-              Free builds are for basic business websites, by application only.
-              Online stores and custom features are{" "}
+              Planning an online store or a bigger project?{" "}
               <Link to="/custom" className="font-semibold text-[#166b45] underline underline-offset-2">
-                paid custom builds
+                Ask about a custom build
               </Link>
               .
             </p>

@@ -132,15 +132,11 @@ const faqs = [
   },
   {
     q: "Who gets accepted?",
-    a: "Not everyone, and that's on purpose. I build every site by hand, so I only take on a few free builds each month. I review every application and pick real small businesses that need a basic website and will actually use it. Apply and I'll tell you within 24 hours if you're in.",
-  },
-  {
-    q: "What counts as a basic website?",
-    a: "The free build is a clean, custom site that tells people who you are and gets them to contact you: home, services, about, gallery, and contact pages, plus contact or quote forms and a link to the booking tool you already use. It does not include online stores, e-commerce checkouts, member logins, or custom web apps.",
+    a: "Not everyone, and that's on purpose. I build every site by hand, so I only take on a few free builds each month. I review every application and pick real small businesses that need a great website and will actually use it. Apply and I'll tell you within 24 hours if you're in.",
   },
   {
     q: "Do you build online stores or bigger custom sites?",
-    a: "Yes, as paid projects. E-commerce stores, custom booking systems, web apps, and more intricate designs are quoted individually. Send an inquiry on the Custom Builds page and I'll get back to you with next steps.",
+    a: "Yes. For online stores, custom booking systems, web apps, and more intricate builds, I put together a custom quote. Send an inquiry on the Custom Builds page and I'll get back to you with next steps.",
   },
   {
     q: "What kinds of businesses do you build for?",
@@ -898,12 +894,7 @@ export function Landing() {
               Every free build ships with the things agencies upsell: SEO
               foundations, analytics wiring, contact and quote forms, and
               performance that scores 90+ on Google PageSpeed — faster than
-              WordPress or Wix. Free builds are basic business websites.
-              Online stores and custom features are{" "}
-              <Link to="/custom" className="font-semibold text-[#166b45] underline underline-offset-4">
-                paid custom builds
-              </Link>
-              .
+              WordPress or Wix.
             </p>
             <div className="flex flex-wrap items-center gap-6">
               <ApplyButton />
@@ -992,10 +983,10 @@ export function Landing() {
               <span className="italic text-[#7fc8a4]">intricate?</span>
             </h2>
             <p className="text-lg text-[#faf7f2]/70 leading-relaxed mb-8">
-              The free program covers basic business websites. When you need
-              an online store, a custom booking system, or a site that's built
-              to stop people in their tracks, that's a paid custom build. Same
-              hand-coded craft, no limits on scope.
+              Online stores, custom booking systems, web apps, or a site
+              that's built to stop people in their tracks. Tell me what you're
+              planning and I'll put together a custom quote. Same hand-coded
+              craft, no limits on scope.
             </p>
             <Link
               to="/custom"

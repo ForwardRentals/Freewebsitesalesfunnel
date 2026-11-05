@@ -204,7 +204,7 @@ export function CustomBuilds() {
             className="inline-flex items-center gap-2 rounded-full border border-[#faf7f2]/15 px-4 py-1.5 text-sm font-medium text-[#faf7f2]/70 mb-6"
           >
             <span className="h-2 w-2 rounded-full bg-[#7fc8a4]" />
-            Paid custom projects · Quoted individually
+            Custom projects · Quoted individually
           </motion.p>
           <motion.h1
             initial={{ y: 30, opacity: 0 }}
@@ -221,10 +221,9 @@ export function CustomBuilds() {
             transition={{ delay: 0.25 }}
             className="text-lg sm:text-xl text-[#faf7f2]/70 leading-relaxed max-w-2xl mx-auto mb-8"
           >
-            Our free program covers basic business websites. When your project
-            needs an online store, a booking system, a web app, or a design
-            that's truly one of a kind, we build it as a paid custom project,
-            hand-coded from scratch with no templates.
+            When your project needs an online store, a booking system, a web
+            app, or a design that's truly one of a kind, we build it as a
+            custom project, hand-coded from scratch with no templates.
           </motion.p>
           <motion.div
             initial={{ y: 20, opacity: 0 }}
@@ -256,8 +255,8 @@ export function CustomBuilds() {
               What we build
             </p>
             <h2 className="font-display text-3xl sm:text-5xl font-semibold tracking-tight">
-              When a basic site{" "}
-              <span className="italic text-[#166b45]">isn't enough</span>
+              Built for{" "}
+              <span className="italic text-[#166b45]">bigger ideas</span>
             </h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -290,7 +289,7 @@ export function CustomBuilds() {
               <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#6b675e] mb-2">
                 Free program
               </p>
-              <p className="font-display text-2xl font-semibold mb-4">Basic business website</p>
+              <p className="font-display text-2xl font-semibold mb-4">A custom website for your business</p>
               <ul className="space-y-2.5 text-[#6b675e]">
                 {[
                   "Home, services, about, gallery and contact pages",

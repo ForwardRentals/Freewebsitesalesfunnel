@@ -198,7 +198,7 @@ function footer() {
 <div><h3>Websites for</h3><ul>${industries.slice(0, 6).map((i) => `<li><a href="/${industryPath(i)}/">${esc(i.label)}</a></li>`).join("")}<li><a href="/${INDUSTRY_HUB}/">All business types →</a></li></ul></div>
 <div><h3>Web design in</h3><ul>${cities.slice(0, 6).map((c) => `<li><a href="/${cityPath(c)}/">${esc(cap(c.name))}</a></li>`).join("")}<li><a href="/${CITY_HUB}/">All areas →</a></li></ul></div>
 <div><h3>Get in touch</h3><ul><li><a href="tel:${PHONE_TEL}">${PHONE}</a></li><li><a href="mailto:freesitecompanycanada@gmail.com">freesitecompanycanada@gmail.com</a></li><li>Squamish, BC</li><li><a href="/blog/">Blog</a></li><li><a href="/custom">Custom builds (stores, booking, apps)</a></li><li><a href="/#apply">Apply for a free website →</a></li></ul></div>
-<p class="fine">*$9.99/month for your first 3 months, then $13.99/month (Starter plan). Free builds are for basic business websites only, by application, not e-commerce or online stores. <a href="/custom">Need more? Ask about a custom build.</a></p>
+<p class="fine">*$9.99/month for your first 3 months, then $13.99/month (Starter plan). <a href="/custom">Planning an online store or something bigger? Ask about a custom build.</a></p>
 </div></footer>`;
 }
 
