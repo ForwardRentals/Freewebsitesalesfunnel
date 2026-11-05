@@ -21,7 +21,7 @@ const esc = (s) =>
   String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 
 const sharedFaqs = [
-  ["How is the website actually free?", "I'd rather earn $9.99 a month from a hundred happy local businesses than charge one of them $5,000 up front. I build your site for free with two rounds of revisions. If you love it, you keep it online for $9.99/month. If you don't, you owe nothing."],
+  ["How is the website actually free?", "I'd rather earn $9.99 a month from a hundred happy local businesses than charge one of them $5,000 up front. I build your site for free with two rounds of revisions. If you love it, you keep it online for $9.99/month. If you don't, you owe nothing. I love building sites for free, and a lot of those clients come back to me when they're ready for something bigger, like an online store or a custom build."],
   ["Do I own the website?", "Yes. You get the complete source code. Host it anywhere, change it, or hand it to another developer. Unlike Wix or Squarespace, nothing is locked to my service."],
   ["How long does it take?", "Most sites are designed, built and launched within days, not months. You'll get a live preview link while I work."],
 ];

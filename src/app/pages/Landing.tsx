@@ -116,7 +116,7 @@ const steps = [
 const faqs = [
   {
     q: "How is this actually free?",
-    a: "Simple math: I'd rather earn a small monthly fee from a hundred happy local businesses than charge one of them $5,000 up front. I build your site free, and if you love it, you stay for the hosting and support. If you don't, you walk away owing nothing.",
+    a: "Simple math: I'd rather earn a small monthly fee from a hundred happy local businesses than charge one of them $5,000 up front. I build your site free, and if you love it, you stay for the hosting and support. If you don't, you walk away owing nothing. Honestly, I love that I get to do this. A lot of the businesses I build for free end up coming back when they're ready for something bigger, like an online store or a custom booking system.",
   },
   {
     q: "Is there a catch?",
@@ -811,6 +811,13 @@ export function Landing() {
                 thing, and you decide if it's worth ten bucks a month to keep
                 it online, secure, and supported. That's the whole business
                 model.
+              </p>
+              <p className="relative text-lg text-[#6b675e] leading-relaxed mb-6">
+                And honestly? I love that I get to build websites for free. It
+                means I get to help a lot more local businesses, and a lot of
+                them come back to me when they're ready for something bigger,
+                like an online store or a custom build. A free site is how
+                most of my best client relationships start.
               </p>
               <PriceFootnote className="relative mb-6" />
               <div className="relative flex items-center gap-4">
