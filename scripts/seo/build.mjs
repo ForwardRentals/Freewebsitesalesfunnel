@@ -123,6 +123,8 @@ footer .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr
 footer h3{color:#faf7f2;font-size:16px;margin:0 0 12px}
 footer ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}
 footer a{text-decoration:none}
+footer .fine{grid-column:1/-1;margin:8px 0 0;font-size:13px;line-height:1.6;color:rgba(250,247,242,.55)}
+footer .fine a{text-decoration:underline;color:#7fc8a4}
 footer a:hover{color:var(--mint)}
 footer .logo{color:#fff}footer .logo b span{color:#c5f06a}footer .logo small{color:rgba(255,255,255,.8)}
 .post{max-width:720px;margin:0 auto;padding:24px 20px 56px}
@@ -179,10 +181,10 @@ ${jsonld.map((j) => `<script type="application/ld+json">${JSON.stringify(j)}</sc
 <body>
 <header><div class="wrap">
 <a class="logo" href="/" aria-label="FreeSite Company"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#166b45"/><path d="M16 15a2 2 0 0 1 2-2h28a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H25v6.5h11a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H25V49a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2Z" fill="#fff"/><path d="M38 36v20l4.6-4.4 3.6 7.6 3.4-1.6-3.6-7.4 6.4-.4Z" fill="#c5f06a"/></svg><span><b>Free<span>Site</span></b><small>COMPANY</small></span></a>
-<nav class="nav"><a class="tel" href="tel:${PHONE_TEL}">${PHONE}</a><a class="plain" href="/plans">Plans</a><a class="btn sm" href="/#apply">Apply free</a></nav>
+<nav class="nav"><a class="tel" href="tel:${PHONE_TEL}">${PHONE}</a><a class="plain" href="/plans">Plans</a><a class="plain" href="/custom">Custom builds</a><a class="btn sm" href="/#apply">Apply free</a></nav>
 </div></header>
 <main>
-${body}
+${starPrices(body)}
 </main>
 ${footer()}
 </body>
@@ -195,8 +197,14 @@ function footer() {
 <div><a class="logo" href="/" aria-label="FreeSite Company"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#166b45"/><path d="M16 15a2 2 0 0 1 2-2h28a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H25v6.5h11a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H25V49a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2Z" fill="#fff"/><path d="M38 36v20l4.6-4.4 3.6 7.6 3.4-1.6-3.6-7.4 6.4-.4Z" fill="#c5f06a"/></svg><span><b>Free<span>Site</span></b><small>COMPANY</small></span></a><p>A real web designer in Squamish, BC. Free custom websites for small businesses across BC and Canada. You own the code.</p></div>
 <div><h3>Websites for</h3><ul>${industries.slice(0, 6).map((i) => `<li><a href="/${industryPath(i)}/">${esc(i.label)}</a></li>`).join("")}<li><a href="/${INDUSTRY_HUB}/">All business types →</a></li></ul></div>
 <div><h3>Web design in</h3><ul>${cities.slice(0, 6).map((c) => `<li><a href="/${cityPath(c)}/">${esc(cap(c.name))}</a></li>`).join("")}<li><a href="/${CITY_HUB}/">All areas →</a></li></ul></div>
-<div><h3>Get in touch</h3><ul><li><a href="tel:${PHONE_TEL}">${PHONE}</a></li><li><a href="mailto:freesitecompanycanada@gmail.com">freesitecompanycanada@gmail.com</a></li><li>Squamish, BC</li><li><a href="/blog/">Blog</a></li><li><a href="/#apply">Apply for a free website →</a></li></ul></div>
+<div><h3>Get in touch</h3><ul><li><a href="tel:${PHONE_TEL}">${PHONE}</a></li><li><a href="mailto:freesitecompanycanada@gmail.com">freesitecompanycanada@gmail.com</a></li><li>Squamish, BC</li><li><a href="/blog/">Blog</a></li><li><a href="/custom">Custom builds (stores, booking, apps)</a></li><li><a href="/#apply">Apply for a free website →</a></li></ul></div>
+<p class="fine">*$9.99/month for your first 3 months, then $13.99/month (Starter plan). Free builds are for basic business websites only, by application, not e-commerce or online stores. <a href="/custom">Need more? Ask about a custom build.</a></p>
 </div></footer>`;
+}
+
+// Every visible "$9.99/month" gets the asterisk that the footer note explains.
+function starPrices(html) {
+  return html.replace(/\$9\.99(\/month|\/mo|\s+a\s+month)(?!\*)/g, "$$9.99$1*");
 }
 
 const cap = (s) => s.charAt(0).toUpperCase() + s.slice(1);
@@ -463,6 +471,7 @@ ${finalCta("Ready for a better website? <em>It's free to build.</em>")}`;
 const urls = [
   { path: "", priority: "1.0" },
   { path: "plans", priority: "0.9" },
+  { path: "custom", priority: "0.8" },
   { path: "get-started", priority: "0.8" },
   ...pages,
 ];

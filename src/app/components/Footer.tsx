@@ -41,6 +41,14 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  to="/custom"
+                  className="text-[#faf7f2]/60 hover:text-[#7fc8a4] transition-colors"
+                >
+                  Custom Builds
+                </Link>
+              </li>
+              <li>
+                <Link
                   to="/get-started"
                   className="text-[#faf7f2]/60 hover:text-[#7fc8a4] transition-colors"
                 >

@@ -9,6 +9,7 @@ import {
 } from "motion/react";
 import { Navigation } from "../components/Navigation";
 import { Footer } from "../components/Footer";
+import { PriceFootnote } from "../components/PriceFootnote";
 import { QuickApplyForm } from "../components/QuickApplyForm";
 import {
   ArrowRight,
@@ -85,7 +86,7 @@ const included = [
   "Hand-coded, loads in under a second",
   "Mobile-first, looks perfect on every phone",
   "Local SEO: structured data, meta tags, sitemap",
-  "Online booking & contact forms built in",
+  "Contact & quote forms built in",
   "Google Analytics & pixel-ready from day one",
   "Smooth animations & interactive touches",
   "You own the complete codebase — forever",
@@ -108,18 +109,18 @@ const steps = [
     step: "3",
     title: "Love it, then decide",
     description:
-      "See the finished site before you pay a cent. Keep the code outright, or let me host and maintain it from $9.99/month.",
+      "See the finished site before you pay a cent. Keep the code outright, or let me host and maintain it from $9.99/month.*",
   },
 ];
 
 const faqs = [
   {
     q: "How is this actually free?",
-    a: "Simple math: I'd rather earn $9.99 a month from a hundred happy local businesses than charge one of them $5,000 up front. I build your site free, and if you love it, you stay for the hosting and support. If you don't, you walk away owing nothing.",
+    a: "Simple math: I'd rather earn a small monthly fee from a hundred happy local businesses than charge one of them $5,000 up front. I build your site free, and if you love it, you stay for the hosting and support. If you don't, you walk away owing nothing.",
   },
   {
     q: "Is there a catch?",
-    a: "No. The build is free and includes two full rounds of revisions. You only ever pay if you choose a hosting plan ($9.99/month) — and there's no contract, so you can leave any time and take your code with you.",
+    a: "No. The build is free and includes two full rounds of revisions. You only ever pay if you choose a hosting plan: $9.99/month for your first 3 months, then $13.99/month. There's no contract, so you can leave any time and take your code with you.",
   },
   {
     q: "Do I own the website?",
@@ -131,7 +132,15 @@ const faqs = [
   },
   {
     q: "Who gets accepted?",
-    a: "Any real small business or solo operator that needs a website and will actually use it. Because I build every site by hand, I only take on a few new builds each month. Apply now and I'll tell you within 24 hours if there's a spot.",
+    a: "Not everyone, and that's on purpose. I build every site by hand, so I only take on a few free builds each month. I review every application and pick real small businesses that need a basic website and will actually use it. Apply and I'll tell you within 24 hours if you're in.",
+  },
+  {
+    q: "What counts as a basic website?",
+    a: "The free build is a clean, custom site that tells people who you are and gets them to contact you: home, services, about, gallery, and contact pages, plus contact or quote forms and a link to the booking tool you already use. It does not include online stores, e-commerce checkouts, member logins, or custom web apps.",
+  },
+  {
+    q: "Do you build online stores or bigger custom sites?",
+    a: "Yes, as paid projects. E-commerce stores, custom booking systems, web apps, and more intricate designs are quoted individually. Send an inquiry on the Custom Builds page and I'll get back to you with next steps.",
   },
   {
     q: "What kinds of businesses do you build for?",
@@ -164,7 +173,7 @@ const structuredData = [
       { "@type": "Country", name: "Canada" },
       { "@type": "Country", name: "United States" },
     ],
-    priceRange: "Free - $27.99/mo",
+    priceRange: "Free - $$$",
     knowsAbout: [
       "Web Design",
       "Web Development",
@@ -405,7 +414,7 @@ function HeroBrowser() {
       >
         <p className="text-xs text-[#6b675e]">Hosting & support</p>
         <p className="font-display text-2xl font-semibold text-[#1b1a17]">
-          $9.99<span className="text-sm text-[#6b675e]">/mo</span>
+          $9.99<span className="text-sm text-[#6b675e]">/mo*</span>
         </p>
       </motion.div>
     </div>
@@ -477,7 +486,7 @@ export function Landing() {
               className="inline-flex items-center gap-2 rounded-full border border-[#e7e1d6] bg-white px-4 py-1.5 text-sm font-medium text-[#6b675e] mb-6"
             >
               <span className="h-2 w-2 rounded-full bg-[#166b45] animate-pulse" />
-              Free website program · Limited spots each month
+              Free website program · By application only
             </motion.p>
 
             <h1 className="font-display text-[2.6rem] leading-[1.05] sm:text-6xl font-semibold tracking-tight mb-6">
@@ -539,7 +548,7 @@ export function Landing() {
               web designer in Squamish, BC, and I'll build yours for{" "}
               <strong className="text-[#1b1a17]">$0</strong>, with two rounds of
               revisions. You only pay if you keep it:{" "}
-              <strong className="text-[#1b1a17]">$9.99/month</strong> for
+              <strong className="text-[#1b1a17]">$9.99/month*</strong> for
               hosting and support. No contract. You own the code.
             </motion.p>
 
@@ -570,6 +579,7 @@ export function Landing() {
               Free build includes 2 full rounds of revisions · See it live
               before you pay anything
             </motion.p>
+            <PriceFootnote className="mt-3" />
           </div>
 
           <motion.div
@@ -643,7 +653,7 @@ export function Landing() {
               {[
                 { who: "Web agency", cost: "$3,000–$10,000", note: "up front, plus monthly fees", strike: true },
                 { who: "DIY builder (Wix, Squarespace)", cost: "$20–$50/mo", note: "plus your weekends, and it looks like a template", strike: true },
-                { who: "FreeSite Company", cost: "$0 to build", note: "$9.99/mo only if you keep it", strike: false },
+                { who: "FreeSite Company", cost: "$0 to build", note: "$9.99/mo* only if you keep it", strike: false },
               ].map((row) => (
                 <div
                   key={row.who}
@@ -669,6 +679,7 @@ export function Landing() {
                 </div>
               ))}
             </div>
+            <PriceFootnote className="mt-4" />
             <div className="mt-8">
               <ApplyButton />
             </div>
@@ -793,7 +804,7 @@ export function Landing() {
               </span>
               <p className="relative font-display text-2xl sm:text-4xl leading-snug font-medium mb-8">
                 Why free? Because I'd rather earn{" "}
-                <span className="italic text-[#166b45]">$9.99 a month</span>{" "}
+                <span className="italic text-[#166b45]">$9.99 a month*</span>{" "}
                 from a hundred happy local businesses than charge one of them
                 $5,000 up front.
               </p>
@@ -805,6 +816,7 @@ export function Landing() {
                 it online, secure, and supported. That's the whole business
                 model.
               </p>
+              <PriceFootnote className="relative mb-6" />
               <div className="relative flex items-center gap-4">
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#166b45] font-display text-xl font-semibold text-white">
                   J
@@ -884,9 +896,14 @@ export function Landing() {
             </h2>
             <p className="text-lg text-[#6b675e] leading-relaxed mb-8">
               Every free build ships with the things agencies upsell: SEO
-              foundations, analytics wiring, booking forms, and performance
-              that scores 90+ on Google PageSpeed — faster than WordPress or
-              Wix.
+              foundations, analytics wiring, contact and quote forms, and
+              performance that scores 90+ on Google PageSpeed — faster than
+              WordPress or Wix. Free builds are basic business websites.
+              Online stores and custom features are{" "}
+              <Link to="/custom" className="font-semibold text-[#166b45] underline underline-offset-4">
+                paid custom builds
+              </Link>
+              .
             </p>
             <div className="flex flex-wrap items-center gap-6">
               <ApplyButton />
@@ -960,6 +977,51 @@ export function Landing() {
               </FadeUp>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ==================================================== CUSTOM BUILDS */}
+      <section className="py-14 sm:py-24 px-4 sm:px-6 bg-[#1b1a17] text-[#faf7f2]">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+          <FadeUp>
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#7fc8a4] mb-3">
+              Custom builds
+            </p>
+            <h2 className="font-display text-3xl sm:text-5xl font-semibold tracking-tight mb-6">
+              Need something more{" "}
+              <span className="italic text-[#7fc8a4]">intricate?</span>
+            </h2>
+            <p className="text-lg text-[#faf7f2]/70 leading-relaxed mb-8">
+              The free program covers basic business websites. When you need
+              an online store, a custom booking system, or a site that's built
+              to stop people in their tracks, that's a paid custom build. Same
+              hand-coded craft, no limits on scope.
+            </p>
+            <Link
+              to="/custom"
+              className="group inline-flex items-center gap-2 rounded-full bg-[#faf7f2] px-8 py-4 text-lg font-semibold text-[#1b1a17] transition-all hover:-translate-y-0.5 hover:shadow-xl"
+            >
+              Inquire about a custom build
+              <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </FadeUp>
+          <FadeUp delay={0.15}>
+            <div className="grid grid-cols-2 gap-3">
+              {[
+                "E-commerce & online stores",
+                "Custom booking systems",
+                "Web apps & client portals",
+                "Premium brand sites",
+              ].map((t) => (
+                <div
+                  key={t}
+                  className="rounded-2xl border border-[#faf7f2]/10 bg-[#faf7f2]/[0.04] p-5 font-medium"
+                >
+                  {t}
+                </div>
+              ))}
+            </div>
+          </FadeUp>
         </div>
       </section>
 
@@ -1059,7 +1121,7 @@ export function Landing() {
               have to be.
             </h2>
             <p className="text-xl text-[#6b675e] mb-10">
-              Free to build. Free to see. $9.99/month only if you love it.
+              Free to build. Free to see. $9.99/month* only if you love it.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <ApplyButton label="Apply for your free website" />
@@ -1072,6 +1134,7 @@ export function Landing() {
                 Book a call
               </a>
             </div>
+            <PriceFootnote className="mt-8 max-w-2xl mx-auto" />
           </FadeUp>
         </div>
       </section>

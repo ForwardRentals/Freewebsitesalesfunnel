@@ -17,6 +17,7 @@ import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
 import { Label } from "../components/ui/label";
 import { sendToHermes } from "../lib/hermes";
+import { PriceFootnote } from "../components/PriceFootnote";
 
 const businessTypes = [
   "Restaurant / Cafe",
@@ -24,7 +25,7 @@ const businessTypes = [
   "Contractor / Trades",
   "Health / Wellness Clinic",
   "Real Estate",
-  "Retail / E-Commerce",
+  "Retail",
   "Fitness / Gym",
   "Photography / Creative",
   "Other",
@@ -149,9 +150,10 @@ export function FBLead() {
               </p>
               <p className="text-[#6b675e] text-sm md:text-base mt-3 max-w-md mx-auto leading-relaxed">
                 No catch, no credit card, no commitment. The website build
-                is completely free — you only pay for hosting at just $9.99/month
+                is completely free — you only pay for hosting at just $9.99/month*
                 when you're ready to go live. Fill out the form and we'll be in touch.
               </p>
+              <PriceFootnote className="mt-3 max-w-md mx-auto" />
             </motion.div>
 
             {/* Form card */}

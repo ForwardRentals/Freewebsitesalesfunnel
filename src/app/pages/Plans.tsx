@@ -81,8 +81,9 @@ const plans = [
     featured: false,
     icon: ShoppingCart,
     badge: "E-Commerce Ready",
-    description: "Built for businesses that sell online",
+    description: "Hosting & support for online stores",
     features: [
+      "Store build is a paid custom project, quoted separately",
       "Everything in Growth, plus:",
       "No FreeSiteCompany.com branding — it's 100% yours",
       "Full e-commerce store (products, cart, checkout)",
@@ -238,6 +239,14 @@ export function Plans() {
             <p className="text-base sm:text-xl text-[#6b675e] max-w-2xl mx-auto">
               Start with a free website build, then choose a plan if you want hosting,
               updates, and support. Perfect for small businesses ready to grow online!
+            </p>
+            <p className="mt-4 text-sm sm:text-base text-[#6b675e] max-w-2xl mx-auto">
+              Free builds are for basic business websites, by application only.
+              Online stores and custom features are{" "}
+              <Link to="/custom" className="font-semibold text-[#166b45] underline underline-offset-2">
+                paid custom builds
+              </Link>
+              .
             </p>
           </motion.div>
 
@@ -409,7 +418,7 @@ export function Plans() {
                       </p>
                     </div>
 
-                    <Link to="/get-started">
+                    <Link to={plan.name === "Commerce" ? "/custom" : "/get-started"}>
                       <Button
                         className={`w-full h-11 rounded-full font-semibold transition-all hover:-translate-y-0.5 ${
                           plan.featured
@@ -417,7 +426,7 @@ export function Plans() {
                             : "bg-[#166b45] text-white hover:bg-[#0f5434] hover:shadow-[0_12px_40px_-8px_rgba(22,107,69,0.5)]"
                         }`}
                       >
-                        Get Started Free
+                        {plan.name === "Commerce" ? "Inquire About a Store" : "Get Started Free"}
                         <ArrowRight className="h-4 w-4 ml-2" />
                       </Button>
                     </Link>
