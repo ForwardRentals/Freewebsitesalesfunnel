@@ -18,6 +18,7 @@ import { Input } from "../components/ui/input";
 import { Label } from "../components/ui/label";
 import { sendToHermes } from "../lib/hermes";
 import { PriceFootnote } from "../components/PriceFootnote";
+import { MockupNudge } from "../components/MockupNudge";
 
 const businessTypes = [
   "Restaurant / Cafe",
@@ -166,6 +167,7 @@ export function FBLead() {
               <p className="text-center text-sm text-[#6b675e] mb-5 font-medium">
                 Takes 30 seconds — we'll handle the rest
               </p>
+              <MockupNudge className="mb-5" />
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="grid grid-cols-2 gap-4">
                   <div>

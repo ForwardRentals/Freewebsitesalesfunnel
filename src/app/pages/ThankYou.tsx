@@ -74,10 +74,18 @@ export function ThankYou() {
                 We know how important your online presence is, and we can't
                 wait to build something you'll be proud to show off.
               </p>
-              <p className="text-[#6b675e] text-base max-w-md mx-auto">
-                A real person from our team will reach out within 24 hours to
-                learn more about your vision and get started. This is going to be great.
-              </p>
+              {typeof window !== "undefined" && new URLSearchParams(window.location.search).has("draft") ? (
+                <p className="text-[#6b675e] text-base max-w-md mx-auto">
+                  <span className="font-semibold text-[#1b1a17]">Watch your inbox:</span> a first draft of
+                  your website is on its way, usually within 15 minutes. Reply to that email with any
+                  changes and we'll make it yours.
+                </p>
+              ) : (
+                <p className="text-[#6b675e] text-base max-w-md mx-auto">
+                  A real person from our team will reach out within 24 hours to
+                  learn more about your vision and get started. This is going to be great.
+                </p>
+              )}
             </motion.div>
           </motion.div>
 

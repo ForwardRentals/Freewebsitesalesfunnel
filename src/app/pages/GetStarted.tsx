@@ -173,7 +173,7 @@ export function GetStarted() {
         content_name: formData.businessName,
       });
     }
-    window.location.href = "/thank-you";
+    window.location.href = "/thank-you?draft=1";
   };
 
   const progress = (step / 4) * 100;
@@ -202,6 +202,9 @@ export function GetStarted() {
             </h1>
             <p className="text-xl text-[#6b675e]">
               Tell us about your business so we can create the perfect site for you
+            </p>
+            <p className="mt-3 inline-flex items-center gap-2 rounded-full bg-[#166b45]/[0.08] px-4 py-1.5 text-sm font-semibold text-[#166b45]">
+              Finish this form and see a first draft of your website in about 15 minutes
             </p>
           </motion.div>
 

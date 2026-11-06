@@ -6,6 +6,7 @@ import { Input } from "./ui/input";
 import { Label } from "./ui/label";
 import { useReferral } from "../hooks/useReferral";
 import { sendToHermes } from "../lib/hermes";
+import { MockupNudge } from "./MockupNudge";
 
 const businessTypes = [
   "Restaurant / Cafe",
@@ -103,6 +104,7 @@ export function QuickApplyForm({ formName = "HomeQuickApply" }: { formName?: str
           Takes 2 minutes. I'll reply within 24 hours.
         </p>
       </div>
+      <MockupNudge className="mb-5" />
       <form onSubmit={handleSubmit} className="space-y-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
