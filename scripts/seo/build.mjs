@@ -5,6 +5,7 @@ import { mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { industries, cities, portfolio } from "./data.mjs";
 import { posts } from "./blog.mjs";
+import { solutions, addons } from "./solutions.mjs";
 
 const SITE = "https://freesitecompany.com";
 const OUT = "dist";
@@ -145,6 +146,13 @@ footer .logo{color:#fff}footer .logo b span{color:#c5f06a}footer .logo small{col
 .posts a:hover{border-color:var(--green)}
 .posts h2{font-family:Fraunces,Georgia,serif;font-size:1.4rem;line-height:1.2;margin:0 0 8px}
 .posts p{margin:0;color:var(--muted);font-size:16px}
+.cmp{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;font-size:16px}
+.cmp th,.cmp td{text-align:left;padding:14px 16px;border-bottom:1px solid var(--line);vertical-align:top}
+.cmp thead th{background:var(--paper);font-size:14px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+.cmp td.us{color:var(--green-dark);font-weight:600}
+.cmp-wrap{overflow-x:auto}
+.addon .price{display:inline-block;margin:2px 0 10px;font-size:14px;font-weight:700;color:var(--green)}
+.addon a{font-weight:600;color:var(--green);text-decoration:none}
 @media (max-width:640px){.nav .tel,.nav .plain{display:none}.hero{padding-block:40px 40px}section{padding-block:44px}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 `;
@@ -181,7 +189,7 @@ ${jsonld.map((j) => `<script type="application/ld+json">${JSON.stringify(j)}</sc
 <body>
 <header><div class="wrap">
 <a class="logo" href="/" aria-label="FreeSite Company"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#166b45"/><path d="M16 15a2 2 0 0 1 2-2h28a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H25v6.5h11a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H25V49a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2Z" fill="#fff"/><path d="M38 36v20l4.6-4.4 3.6 7.6 3.4-1.6-3.6-7.4 6.4-.4Z" fill="#c5f06a"/></svg><span><b>Free<span>Site</span></b><small>COMPANY</small></span></a>
-<nav class="nav"><a class="tel" href="tel:${PHONE_TEL}">${PHONE}</a><a class="plain" href="/plans">Plans</a><a class="plain" href="/custom">Custom builds</a><a class="btn sm" href="/#apply">Apply free</a></nav>
+<nav class="nav"><a class="tel" href="tel:${PHONE_TEL}">${PHONE}</a><a class="plain" href="/plans">Plans</a><a class="plain" href="/add-ons/">Add-ons</a><a class="plain" href="/custom">Custom builds</a><a class="btn sm" href="/#apply">Apply free</a></nav>
 </div></header>
 <main>
 ${starPrices(body)}
@@ -197,6 +205,7 @@ function footer() {
 <div><a class="logo" href="/" aria-label="FreeSite Company"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#166b45"/><path d="M16 15a2 2 0 0 1 2-2h28a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H25v6.5h11a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H25V49a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2Z" fill="#fff"/><path d="M38 36v20l4.6-4.4 3.6 7.6 3.4-1.6-3.6-7.4 6.4-.4Z" fill="#c5f06a"/></svg><span><b>Free<span>Site</span></b><small>COMPANY</small></span></a><p>A real web designer in Squamish, BC. Free custom websites for small businesses across BC and Canada. You own the code.</p></div>
 <div><h3>Websites for</h3><ul>${industries.slice(0, 6).map((i) => `<li><a href="/${industryPath(i)}/">${esc(i.label)}</a></li>`).join("")}<li><a href="/${INDUSTRY_HUB}/">All business types →</a></li></ul></div>
 <div><h3>Web design in</h3><ul>${cities.slice(0, 6).map((c) => `<li><a href="/${cityPath(c)}/">${esc(cap(c.name))}</a></li>`).join("")}<li><a href="/${CITY_HUB}/">All areas →</a></li></ul></div>
+<div><h3>Features</h3><ul>${solutions.map((x) => `<li><a href="/${x.slug}/">${esc(x.label)}</a></li>`).join("")}<li><a href="/add-ons/">All add-ons →</a></li></ul></div>
 <div><h3>Get in touch</h3><ul><li><a href="tel:${PHONE_TEL}">${PHONE}</a></li><li><a href="mailto:freesitecompanycanada@gmail.com">freesitecompanycanada@gmail.com</a></li><li>Squamish, BC</li><li><a href="/blog/">Blog</a></li><li><a href="/custom">Custom builds (stores, booking, apps)</a></li><li><a href="/#apply">Apply for a free website →</a></li></ul></div>
 <p class="fine">*$9.99/month for your first 3 months, then $13.99/month (Starter plan). <a href="/custom">Planning an online store or something bigger? Ask about a custom build.</a></p>
 </div></footer>`;
@@ -352,6 +361,63 @@ ${finalCta(`Your ${esc(ind.noun)} deserves a <em>better website.</em>`)}`;
     jsonld: [serviceLd({ name: ind.title, description, path, area: { "@type": "Country", name: "Canada" } }), breadcrumbLd(trail), faqLd(faqs)],
   }));
   pages.push({ path: `${path}/`, priority: "0.8" });
+}
+
+// Feature and comparison pages
+for (const sol of solutions) {
+  const path = sol.slug;
+  const faqs = [...sol.faqs, ...sharedFaqs];
+  const description = `${sol.title}: ${sol.intro.split(". ")[0]}. Built by a real web designer in BC.`.slice(0, 300);
+  const trail = [["Home", "/"], ["Add-ons", "/add-ons/"], [sol.label, `/${path}`]];
+  const compare = sol.compare
+    ? `<section><div class="wrap">
+<p class="label">Side by side</p>
+<h2 class="d">How it <em>compares</em></h2>
+<div class="cmp-wrap"><table class="cmp"><thead><tr><th></th><th>${esc(sol.label.replace(/ alternative$/i, ""))}</th><th>FreeSite Company</th></tr></thead><tbody>${sol.compare
+        .map(([k, a, b]) => `<tr><th scope="row">${esc(k)}</th><td>${esc(a)}</td><td class="us">${esc(b)}</td></tr>`)
+        .join("")}</tbody></table></div>
+<p class="fine">Competitor prices are approximate, vary by plan and change over time. Squarespace and Wix are trademarks of their respective owners.</p>
+</div></section>`
+    : "";
+  const body = `${crumbs(trail)}
+${hero({ eyebrow: sol.eyebrow, h1: sol.h1, intro: sol.intro })}
+${compare}
+<section class="band"><div class="wrap">
+<p class="label">What you get</p>
+<h2 class="d">Built for how your customers <em>actually buy</em></h2>
+<div class="needs">${sol.needs.map(([h, p]) => `<div class="need"><h3>${esc(h)}</h3><p>${esc(p)}</p></div>`).join("")}</div>
+</div></section>
+${includedSection()}
+${workSection(sol.work)}
+${stepsSection()}
+${faqSection(faqs)}
+${linksSection("More ways to grow", solutions.filter((x) => x !== sol).map((x) => [x.label, `/${x.slug}/`]).concat([["All add-ons", "/add-ons/"]]))}
+${linksSection("Websites for", industries.map((x) => [x.label, `/${industryPath(x)}/`]))}
+${finalCta(sol.cta)}`;
+  write(path, layout({
+    path,
+    title: `${sol.title} | FreeSiteCompany`,
+    description,
+    body,
+    jsonld: [serviceLd({ name: sol.title, description, path, area: { "@type": "Country", name: "Canada" } }), breadcrumbLd(trail), faqLd(faqs)],
+  }));
+  pages.push({ path: `${path}/`, priority: "0.8" });
+}
+
+// Add-ons hub
+{
+  const trail = [["Home", "/"], ["Add-ons", "/add-ons/"]];
+  const description = "Add-ons for your FreeSite Company website: built-in CRM, online booking, online store, AI chat, email at your domain, Google Business Profile setup, SEO blog posts and photography.";
+  const body = `${crumbs(trail)}
+${hero({ eyebrow: "Add-ons", h1: "Start free. <em>Add what you need.</em>", intro: "Every website starts free. When you're ready for more, add the tools that bring in and keep track of customers: a CRM, online booking, a store, an AI chat assistant and more. Each one is built into your site, not bolted on." })}
+<section class="band"><div class="wrap">
+<div class="needs">${addons.map((a) => `<div class="need addon" id="${a.id}"><h3>${esc(a.name)}</h3><span class="price">${esc(a.price)}</span><p>${esc(a.blurb)}</p>${a.page ? `<p style="margin-top:12px"><a href="/${a.page}/">Learn more →</a></p>` : ""}</div>`).join("")}</div>
+<p class="fine" style="margin-top:20px">Prices in Canadian dollars. Anything quoted is approved by you before any paid work starts.</p>
+</div></section>
+${stepsSection()}
+${finalCta("Start with a free website. <em>Grow from there.</em>")}`;
+  write("add-ons", layout({ path: "add-ons", title: "Website Add-ons: CRM, Booking, Online Store & More | FreeSiteCompany", description, body, jsonld: [breadcrumbLd(trail)] }));
+  pages.push({ path: "add-ons/", priority: "0.8" });
 }
 
 for (const city of cities) {

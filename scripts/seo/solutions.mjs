@@ -1,0 +1,221 @@
+// Feature / comparison landing pages and the add-ons list, rendered by build.mjs.
+// Keep every claim true: no invented stats, client counts or reviews. h1 is trusted HTML.
+
+export const addons = [
+  {
+    id: "crm",
+    name: "Built-in CRM",
+    price: "Ask for a price",
+    blurb: "Every form fill, quote request and chat lead lands in one inbox. Move leads through stages, add notes and tasks, share documents, and give your team their own logins.",
+    page: "website-with-crm",
+  },
+  {
+    id: "booking",
+    name: "Online booking",
+    price: "Ask for a price",
+    blurb: "Customers pick a time (or a date range for rentals), pay or leave a deposit, and get a confirmation email with a calendar invite. Built into your site, not a link out to another app.",
+    page: "online-booking-website",
+  },
+  {
+    id: "store",
+    name: "Online store",
+    price: "Commerce plan, $49/month",
+    blurb: "Products, variants, stock, cart and card checkout, with pickup, local delivery or shipping. Orders come to you by email with a simple dashboard to fulfil them.",
+    page: "ecommerce-website-canada",
+  },
+  {
+    id: "chat",
+    name: "AI chat assistant",
+    price: "Ask for a price",
+    blurb: "A chat bubble trained on your services, prices and FAQs. It answers questions at 11pm and hands real leads to you (and your CRM) with their contact details.",
+  },
+  {
+    id: "email",
+    name: "Email at your domain",
+    price: "$15/month (free on Growth and Commerce)",
+    blurb: "you@yourbusiness.com instead of a Gmail address, so every quote you send looks like it came from a real business.",
+  },
+  {
+    id: "gbp",
+    name: "Google Business Profile setup",
+    price: "Ask for a price",
+    blurb: "Your Maps listing filled out properly: categories, services, hours, photos and products that match your website, so you show up for \"near me\" searches.",
+  },
+  {
+    id: "blog",
+    name: "Monthly SEO blog posts",
+    price: "1/month on Growth, more on request",
+    blurb: "Useful posts that answer what your customers search for, written for your town and trade and linked to the right pages on your site.",
+  },
+  {
+    id: "photo",
+    name: "Photography and video",
+    price: "Custom quote",
+    blurb: "I'm a working photographer and videographer in Squamish. Headshots, products, your space and your team, shot for the web.",
+  },
+  {
+    id: "setup",
+    name: "Run-it-yourself setup",
+    price: "$399 one time",
+    blurb: "Five hours of hands-on help to host and manage the site yourself, on whatever provider you like. It's your code.",
+  },
+  {
+    id: "dev",
+    name: "Custom development",
+    price: "$35/hour",
+    blurb: "New pages, integrations, member logins, calculators, anything bigger. Always quoted and approved before any paid work starts.",
+  },
+];
+
+export const solutions = [
+  {
+    slug: "ecommerce-website-canada",
+    label: "Online stores",
+    eyebrow: "E-commerce for Canadian small businesses",
+    title: "E-commerce Website for Canadian Small Businesses",
+    h1: "An online store, <em>built in Canada</em>, priced in dollars that make sense",
+    intro:
+      "Selling online shouldn't mean a $39 USD monthly platform fee, a theme you fight with, and a pile of paid apps. I build Canadian small businesses a custom online store with card checkout, stock tracking and pickup, local delivery or shipping. You see it working before you commit.",
+    needs: [
+      ["Products that sell on a phone", "Big photos, clear prices, sizes and colours as variants, and an Add to cart button that's always in reach."],
+      ["Card checkout without the redirect", "Customers pay by card right on your site through Stripe, in Canadian dollars, with GST/PST handled the way you set it up."],
+      ["Pickup, delivery or shipping", "Offer local pickup, a flat local delivery fee, flat-rate shipping, or free shipping over a set amount. Mix and match."],
+      ["Stock that counts itself", "Inventory goes down when an order is paid, so you don't sell what you don't have."],
+      ["Orders in your inbox", "Every order emails you and the customer. Mark it shipped with a tracking number and the customer is told automatically."],
+      ["Found on Google", "Product pages with proper titles, descriptions and schema, so people searching for what you sell can find it."],
+    ],
+    faqs: [
+      ["Is the store free to build like your other sites?", "The main website is free to build. A store is quoted as a custom project because there's more to set up, then it's hosted on the Commerce plan at $49/month. You'll get a clear price before any paid work starts."],
+      ["What does it cost per sale?", "Card payments go through Stripe at their standard rates. There's no extra platform subscription stacked on top like you'd pay with most store builders."],
+      ["Can I add a store to the site you already built me?", "Yes. It can live on its own page, or be dropped into any page of your existing site."],
+      ["Can you move my products over from Shopify, Wix or Squarespace?", "Yes. Send me an export or your store link and I'll bring your products, photos and descriptions across."],
+    ],
+    work: ["canoe", "watertaxi", "dobson"],
+    cta: "Ready to <em>sell online?</em>",
+  },
+  {
+    slug: "online-booking-website",
+    label: "Online booking",
+    eyebrow: "Websites with online booking",
+    title: "Website With Online Booking for Small Businesses",
+    h1: "A website that <em>takes bookings</em> while you work",
+    intro:
+      "Every phone call that's really just \"are you free Thursday?\" is time you're not billing. I build small businesses a custom website with booking built right in: appointments by the hour, or daily and weekly rentals. Customers pick a time, pay or leave a deposit, and get a confirmation with a calendar invite.",
+    needs: [
+      ["Appointments or rentals", "Time slots for services like treatments, lessons and consultations, or a date-range calendar for gear, equipment and space rentals."],
+      ["Payment up front", "Take full payment or a deposit by card when they book, so no-shows cost them, not you."],
+      ["Confirmation and calendar invite", "Customers get an email with everything they need and an invite that drops into their calendar."],
+      ["Block off your own time", "Holidays, maintenance days and personal time stay off the calendar."],
+      ["Cancellation rules", "Set a cutoff, and refunds follow your policy automatically."],
+      ["Already use Square, Fresha or Jane?", "No problem. I'll embed or link the system you already have so nothing changes for your staff."],
+    ],
+    faqs: [
+      ["Do my customers need to make an account?", "No. They pick a time, enter their details and pay. That's it."],
+      ["Can it handle rentals by the day or week?", "Yes. Set a daily price, an optional weekly rate and a minimum number of days."],
+      ["What if I already pay for a booking app?", "I can connect it to your new site, or move you onto booking built into the site so you can drop the extra subscription. Your call."],
+    ],
+    work: ["canoe", "watertaxi", "trails"],
+    cta: "Let your website <em>fill your calendar.</em>",
+  },
+  {
+    slug: "website-with-crm",
+    label: "Website + CRM",
+    eyebrow: "Small business CRM, built into your site",
+    title: "Small Business Website With a Built-in CRM",
+    h1: "Stop losing leads in <em>five different inboxes</em>",
+    intro:
+      "Quote forms in Gmail, Facebook messages, a sticky note from a phone call. Leads slip through, and the ones you do answer, you answer late. I connect your website to a simple CRM so every enquiry lands in one place, with who they are, what they asked for and what happens next.",
+    needs: [
+      ["One inbox for every lead", "Contact forms, quote requests and chat conversations from your site all land in the same list, automatically. Duplicates are merged by email or phone."],
+      ["A pipeline you can see", "Move each lead from New to Quoted to Won (or Lost), so you always know what needs a follow-up."],
+      ["Notes and history", "Every call, note and stage change is logged on the lead, so anyone on your team can pick it up."],
+      ["Tasks and reminders", "\"Call back Tuesday\" becomes a task with a due date instead of something you hope you remember."],
+      ["Document portals", "Share quotes, contracts and photos with a client in one place instead of digging through email threads."],
+      ["Team logins", "Give staff their own access with the right permissions, and see who did what."],
+    ],
+    faqs: [
+      ["Is this like Salesforce or HubSpot?", "It's much simpler on purpose. It does the handful of things a small business actually uses (leads, stages, notes, tasks, documents) without a monthly per-seat bill or a week of training."],
+      ["Does it work with my existing website?", "If I built your site, it's a quick hookup. If someone else did, I can usually connect your forms anyway. Ask me."],
+      ["Where is my data stored?", "In your own private workspace that only you and the people you invite can sign in to. You can export it any time."],
+    ],
+    work: ["watertaxi", "canoe", "passport"],
+    cta: "Never miss <em>another lead.</em>",
+  },
+  {
+    slug: "squarespace-alternative-canada",
+    label: "Squarespace alternative",
+    eyebrow: "Squarespace alternative for Canadian businesses",
+    title: "Squarespace Alternative for Canadian Small Businesses",
+    h1: "Leaving Squarespace? <em>I'll rebuild your site for free.</em>",
+    intro:
+      "Squarespace's annual plans run roughly US$16 to $52 a month, and a lot of Canadian businesses end up paying $300 to $500 a year, in US dollars, for a template they built themselves. Send me your Squarespace link and I'll rebuild it as a custom site, for free. Keep it online for $9.99/month, billed in Canadian dollars.",
+    compare: [
+      ["Cost per year", "Roughly US$190–630 on annual plans", "$0 to build, then from $89/year on the annual Starter plan"],
+      ["Currency", "Usually billed in US dollars", "Canadian dollars"],
+      ["Who builds it", "You do, from a template", "I do, custom for your business"],
+      ["Who owns the code", "Squarespace; your design can't leave", "You do, host it anywhere"],
+      ["Speed on phones", "Depends on the template and its scripts", "Hand-coded and light"],
+    ],
+    needs: [
+      ["Everything moves with you", "Your text, photos, pages and blog posts come across. I keep your page addresses where I can so Google rankings carry over."],
+      ["Your domain stays yours", "I'll help you point your domain to the new site, with no downtime."],
+      ["No gap in service", "Your Squarespace site stays up until the new one is live and you're happy with it."],
+    ],
+    faqs: [
+      ["Will I lose my Google rankings?", "Not if it's done right. I keep the same page addresses where possible, and set up redirects for any that change."],
+      ["Can I still edit my site myself?", "Yes. Send me changes by email and they're done as part of your plan, or I can set you up to make edits yourself."],
+      ["When should I cancel Squarespace?", "Only after your new site is live on your domain and you've signed off on it. Check your Squarespace renewal date so you're not charged for another year."],
+    ],
+    work: ["hobby", "dobson", "passport"],
+    cta: "Send me your link. <em>I'll rebuild it free.</em>",
+  },
+  {
+    slug: "wix-alternative-canada",
+    label: "Wix alternative",
+    eyebrow: "Wix alternative for Canadian businesses",
+    title: "Wix Alternative for Canadian Small Businesses",
+    h1: "Done with Wix? <em>Get a custom site, free.</em>",
+    intro:
+      "Wix makes it easy to start and hard to leave: sites can't be exported, the premium plans add up, and pages can get heavy on phones. I'll rebuild your Wix site as a fast, custom site you own, for free. Then it's $9.99/month in Canadian dollars to keep it online, with no contract.",
+    compare: [
+      ["Cost per year", "Premium plans, often billed in US dollars, plus apps", "$0 to build, then from $89/year on the annual Starter plan"],
+      ["Can you move it?", "No, Wix sites can't be exported", "Yes, you get the full source code"],
+      ["Who builds it", "You do, with the editor", "I do, custom for your business"],
+      ["Speed on phones", "Often slowed by editor scripts and apps", "Hand-coded and light"],
+    ],
+    needs: [
+      ["I do the moving", "Send me your Wix link. I bring over your words, photos and pages and rebuild them properly."],
+      ["Keep your domain", "Your domain points to the new site when it's ready. If it was bought through Wix, I'll walk you through moving it."],
+      ["Forms that actually reach you", "Contact and quote forms go to your inbox (and your CRM, if you want one), not a dashboard you forget to check."],
+    ],
+    faqs: [
+      ["Why can't I just export my Wix site?", "Wix doesn't offer a way to export a site to another host. Rebuilding is the only way out, which is exactly what I do for free."],
+      ["What happens to my Wix apps?", "Most have a simpler replacement, like booking, forms, galleries or a store. Tell me what you use and I'll match it."],
+      ["Do I keep my Google reviews?", "Yes. Reviews live on your Google Business Profile, not on Wix, so they aren't affected."],
+    ],
+    work: ["hobby", "canoe", "trails"],
+    cta: "Leave Wix <em>without starting over.</em>",
+  },
+  {
+    slug: "rental-business-website",
+    label: "Rental businesses",
+    eyebrow: "Websites for rental businesses",
+    title: "Website for Rental Businesses (Gear, Equipment & Space)",
+    h1: "A rental website that <em>books and takes payment</em> for you",
+    intro:
+      "I run a canoe rental business myself, so I know the drill: availability questions at all hours, deposits, waivers and \"is it free this weekend?\" I build rental businesses a custom website where customers check dates, book and pay online, so your phone stops being your booking system.",
+    needs: [
+      ["Live availability", "A date-range calendar shows what's free, so customers book instead of asking."],
+      ["Day and week pricing", "Set a daily rate, a weekly rate and a minimum rental length."],
+      ["Payment and deposits", "Take payment by card when they book, with your cancellation policy built in."],
+      ["Pickup details that get read", "Directions, what to bring and safety info in the confirmation email, right when they need it."],
+      ["Local SEO for rentals", "Pages written for searches like \"kayak rental near me\" and \"equipment rental [your town]\"."],
+    ],
+    faqs: [
+      ["Do you actually know rentals?", "Yes. I own and run Squamish Canoe Rental, and I built its website and booking flow."],
+      ["Can it handle more than one item?", "Yes. Each item or package gets its own price, rules and availability."],
+    ],
+    work: ["canoe", "watertaxi", "trails"],
+    cta: "Let customers <em>book without calling.</em>",
+  },
+];
