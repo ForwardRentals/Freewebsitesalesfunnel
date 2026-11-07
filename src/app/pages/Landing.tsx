@@ -295,6 +295,63 @@ function CtaBand({ line }: { line: string }) {
   );
 }
 
+/* Canadian maple leaf, used for the "Built in Canada" branding. */
+function MapleLeaf({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 512 512" aria-hidden className={className}>
+      <path fill="currentColor" d="M383 359l-6-22 93-82-21-10c-7-4-11-11-9-19l18-55-53 11c-7 2-15-2-17-9l-10-22-56 59c-8 8-21 1-19-10l27-140-43 25c-7 4-17 2-21-6l-38-73-38 73c-4 8-14 10-21 6l-43-25 27 140c2 11-11 18-19 10l-56-59-10 22c-2 7-10 11-17 9l-53-11 18 55c2 8-2 15-9 19l-21 10 93 82-6 22c-2 7 4 14 11 13l114-14v104h24V407l114 14c7 1 13-6 11-13z" />
+    </svg>
+  );
+}
+
+function BuiltInCanada() {
+  const points = [
+    ["Designed and coded in Squamish, BC", "Every site is built by hand here in BC, not outsourced overseas."],
+    ["Billed in Canadian dollars", "No US-dollar invoices and no exchange-rate surprises on your card."],
+    ["Your money stays in Canada", "You're supporting a Canadian small business, not a Silicon Valley platform."],
+    ["A real person on Pacific time", "Call, text or email Jeremy directly. No ticket queues."],
+  ];
+  return (
+    <section className="relative overflow-hidden py-14 sm:py-24 px-4 sm:px-6 bg-[#f6f2ea] border-y border-[#e7e1d6]">
+      <div aria-hidden className="absolute top-0 left-[6%] h-2.5 w-24 sm:w-40 bg-[#c8102e]" />
+      <div aria-hidden className="absolute top-0 right-[6%] h-2.5 w-24 sm:w-40 bg-[#c8102e]" />
+      <MapleLeaf className="pointer-events-none absolute -right-16 -top-6 h-72 w-72 sm:h-[26rem] sm:w-[26rem] text-[#c8102e] opacity-[0.08]" />
+      <div className="relative max-w-6xl mx-auto grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+        <FadeUp>
+          <p className="inline-flex items-center gap-2 rounded-full border border-[#e2dccf] bg-white px-4 py-1.5 text-sm font-semibold text-[#1b1a17] mb-6">
+            <MapleLeaf className="h-4 w-4 text-[#c8102e]" /> Proudly Canadian
+          </p>
+          <h2 className="font-display text-4xl sm:text-6xl font-semibold tracking-tight leading-[1.05] mb-5">
+            Built in Canada. <span className="italic text-[#166b45]">Billed in Canadian dollars.</span>
+          </h2>
+          <p className="text-lg sm:text-xl text-[#6b675e] leading-relaxed mb-8 max-w-xl">
+            Stop sending your website money to US platforms. Your site is designed, coded and supported by a Canadian
+            small business, for Canadian small businesses.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3">
+            <ApplyButton label="Keep it Canadian" />
+            <a
+              href="/squarespace-alternative-canada/"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-[#1b1a17]/15 bg-white px-8 py-4 text-lg font-semibold transition-all hover:border-[#1b1a17]/40 hover:-translate-y-0.5"
+            >
+              Switching from a US platform? <ArrowUpRight className="h-5 w-5" />
+            </a>
+          </div>
+        </FadeUp>
+        <div className="grid sm:grid-cols-2 gap-4">
+          {points.map(([h, p], i) => (
+            <FadeUp key={h} delay={i * 0.08} className="rounded-2xl bg-white border border-[#e7e1d6] p-5 sm:p-6">
+              <MapleLeaf className="h-6 w-6 text-[#c8102e] mb-3" />
+              <h3 className="font-semibold text-lg leading-snug mb-1">{h}</h3>
+              <p className="text-[#6b675e] text-[15px] leading-relaxed">{p}</p>
+            </FadeUp>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* "What do you need?" — one button per path into the site. */
 const PATHS: { label: string; href: string; primary?: boolean }[] = [
   { label: "Get a free website", href: "#apply", primary: true },
@@ -554,10 +611,13 @@ export function Landing() {
               initial={{ y: 16, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 rounded-full border border-[#e7e1d6] bg-white px-4 py-1.5 text-sm font-medium text-[#6b675e] mb-6"
+              className="inline-flex flex-wrap items-center gap-x-2 gap-y-1 rounded-2xl sm:rounded-full border border-[#e7e1d6] bg-white px-4 py-1.5 text-sm font-medium text-[#6b675e] mb-6"
             >
               <span className="h-2 w-2 rounded-full bg-[#166b45] animate-pulse" />
               Free website program · By application only
+              <span className="mx-1 h-4 w-px bg-[#e7e1d6]" />
+              <MapleLeaf className="h-4 w-4 text-[#c8102e]" />
+              <span className="font-semibold text-[#1b1a17]">Built in Canada</span>
             </motion.p>
 
             <h1 className="font-display text-[2.6rem] leading-[1.05] sm:text-6xl font-semibold tracking-tight mb-6">
@@ -687,6 +747,8 @@ export function Landing() {
           ))}
         </div>
       </section>
+
+      <BuiltInCanada />
 
       {/* =========================================================== STATS */}
       <section className="py-14 sm:py-20 px-4 sm:px-6">

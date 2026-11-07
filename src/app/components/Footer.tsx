@@ -178,7 +178,7 @@ export function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-[#faf7f2]/40 text-sm">
               © 2026 FreeSiteCompany. Building the web, one free site at a
-              time. 100% Made in Canada.
+              time. 🍁 Proudly built in Canada.
             </p>
             <div className="flex gap-6 text-sm">
               <a
