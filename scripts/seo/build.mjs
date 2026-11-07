@@ -189,7 +189,7 @@ ${jsonld.map((j) => `<script type="application/ld+json">${JSON.stringify(j)}</sc
 <body>
 <header><div class="wrap">
 <a class="logo" href="/" aria-label="FreeSite Company"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#166b45"/><path d="M16 15a2 2 0 0 1 2-2h28a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H25v6.5h11a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H25V49a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2Z" fill="#fff"/><path d="M38 36v20l4.6-4.4 3.6 7.6 3.4-1.6-3.6-7.4 6.4-.4Z" fill="#c5f06a"/></svg><span><b>Free<span>Site</span></b><small>COMPANY</small></span></a>
-<nav class="nav"><a class="tel" href="tel:${PHONE_TEL}">${PHONE}</a><a class="plain" href="/plans">Plans</a><a class="plain" href="/add-ons/">Add-ons</a><a class="plain" href="/custom">Custom builds</a><a class="btn sm" href="/#apply">Apply free</a></nav>
+<nav class="nav"><a class="tel" href="tel:${PHONE_TEL}">${PHONE}</a><a class="plain" href="/plans">Plans</a><a class="plain" href="/add-ons/">Add-ons</a><a class="plain" href="/domains">Domains</a><a class="plain" href="/custom">Custom builds</a><a class="btn sm" href="/#apply">Apply free</a></nav>
 </div></header>
 <main>
 ${starPrices(body)}

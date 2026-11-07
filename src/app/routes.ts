@@ -24,6 +24,12 @@ export const router = createBrowserRouter(
       }),
     },
     {
+      path: "/domains",
+      lazy: async () => ({
+        Component: (await import("./pages/Domains")).Domains,
+      }),
+    },
+    {
       path: "/custom",
       lazy: async () => ({
         Component: (await import("./pages/CustomBuilds")).CustomBuilds,

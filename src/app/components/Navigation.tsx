@@ -47,6 +47,12 @@ export function Navigation() {
           >
             Custom Builds
           </Link>
+          <Link
+            to="/domains"
+            className="font-medium text-[#6b675e] hover:text-[#1b1a17] transition-colors"
+          >
+            Domains
+          </Link>
           <a
             href="https://calendar.app.google/L4ok6TnfC8njfXXy6"
             target="_blank"
@@ -136,6 +142,16 @@ export function Navigation() {
               >
                 Custom Builds
               </Link>
+              <Link
+                to="/domains"
+                onClick={() => setMobileOpen(false)}
+                className="font-medium text-[#6b675e]"
+              >
+                Domains
+              </Link>
+              <a href="/add-ons/" className="font-medium text-[#6b675e]">
+                Add-ons
+              </a>
               <a
                 href="https://calendar.app.google/L4ok6TnfC8njfXXy6"
                 target="_blank"

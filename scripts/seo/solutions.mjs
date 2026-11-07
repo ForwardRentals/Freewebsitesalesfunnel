@@ -234,14 +234,15 @@ export const solutions = [
     intro:
       "Your domain is your address online, and losing it to a missed renewal or a confusing registrar dashboard is a nightmare. For $18 a year I'll register your domain (or move over the one you already have), keep it renewed, and point it at your website and email. One flat price, billed in Canadian dollars, with a real person to call.",
     needs: [
-      [".ca or .com, your choice", "Register a new domain, or transfer the one you already own from GoDaddy, Wix, Squarespace or anywhere else. It stays registered in your name."],
+      [".ca or .com, your choice", "Register a new domain, or transfer the one you already own from GoDaddy, Wix, Squarespace or anywhere else. It sits on FreeSite Company’s Cloudflare account, managed for you."],
       ["Renewals handled", "Your domain renews every year so it never lapses, and you're never surprised by a renewal bill at a higher price."],
       ["Pointed at everything", "Website, email, Google verification and any other records set up correctly, so things just work."],
       ["No upsells", "No paid add-on checkboxes at checkout and no first-year teaser price that jumps at renewal."],
+      ["Search for yours now", "Use the domain search at freesitecompany.com/domains to see what's available, then claim it in a minute."],
       ["Help when you need it", "Changing email providers or adding a new service? Send me a message and I'll update the settings."],
     ],
     faqs: [
-      ["Do I still own my domain?", "Yes. It's registered in your name or your business's name, and you can move it to another provider any time."],
+      ["Can I move my domain later?", "Yes. If you ever want it on your own account or another provider, ask and I'll transfer it to you. Keep your plan current, though: if it lapses for two months in a row the domain can be released."],
       ["Do I need a website from you to use this?", "No. Domain hosting works on its own, though it's simplest when your site is with me too."],
       ["What does it cost?", "$18 a year per domain, in Canadian dollars. Premium domains, if you pick one, are priced separately and I'll tell you before you buy."],
     ],

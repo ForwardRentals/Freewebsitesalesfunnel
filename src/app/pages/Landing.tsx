@@ -295,6 +295,81 @@ function CtaBand({ line }: { line: string }) {
   );
 }
 
+/* "What do you need?" — one button per path into the site. */
+const PATHS: { label: string; href: string; primary?: boolean }[] = [
+  { label: "Get a free website", href: "#apply", primary: true },
+  { label: "Switch from Squarespace", href: "/squarespace-alternative-canada/" },
+  { label: "Switch from Wix", href: "/wix-alternative-canada/" },
+  { label: "Sell online", href: "/ecommerce-website-canada/" },
+  { label: "Take bookings", href: "/online-booking-website/" },
+  { label: "Add a CRM", href: "/website-with-crm/" },
+  { label: "Find a domain", href: "/domains" },
+  { label: "See all add-ons", href: "/add-ons/" },
+];
+
+function PathPicker() {
+  return (
+    <section className="pb-14 sm:pb-20 px-4 sm:px-6">
+      <FadeUp className="max-w-5xl mx-auto text-center">
+        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#166b45] mb-3">What do you need?</p>
+        <h2 className="font-display text-3xl sm:text-5xl font-semibold tracking-tight mb-8">
+          Pick your <span className="italic text-[#166b45]">starting point</span>
+        </h2>
+        <div className="flex flex-wrap justify-center gap-3">
+          {PATHS.map((p) =>
+            p.href === "#apply" ? (
+              <button
+                key={p.label}
+                type="button"
+                onClick={scrollToApply}
+                className="group inline-flex items-center gap-2 rounded-full bg-[#166b45] px-6 py-3.5 text-base sm:text-lg font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-[#0f5434]"
+              >
+                {p.label} <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+              </button>
+            ) : (
+              <a
+                key={p.label}
+                href={p.href}
+                className="group inline-flex items-center gap-2 rounded-full border border-[#1b1a17]/15 bg-white px-6 py-3.5 text-base sm:text-lg font-semibold transition-all hover:-translate-y-0.5 hover:border-[#166b45] hover:text-[#166b45]"
+              >
+                {p.label} <ArrowUpRight className="h-4 w-4" />
+              </a>
+            ),
+          )}
+        </div>
+      </FadeUp>
+    </section>
+  );
+}
+
+/* Compact CTA row dropped between sections. */
+function CtaStrip({ line }: { line: string }) {
+  return (
+    <section className="py-10 sm:py-14 px-4 sm:px-6">
+      <FadeUp className="max-w-4xl mx-auto flex flex-col items-center gap-4 text-center">
+        <p className="font-display text-2xl sm:text-3xl font-semibold tracking-tight">{line}</p>
+        <div className="flex flex-col sm:flex-row gap-3">
+          <ApplyButton />
+          <a
+            href="https://calendar.app.google/L4ok6TnfC8njfXXy6"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 rounded-full border border-[#1b1a17]/15 bg-white px-8 py-4 text-lg font-semibold transition-all hover:border-[#1b1a17]/40 hover:-translate-y-0.5"
+          >
+            Book a call
+          </a>
+          <a
+            href="tel:+16048498898"
+            className="inline-flex items-center justify-center gap-2 rounded-full border border-[#1b1a17]/15 bg-white px-8 py-4 text-lg font-semibold transition-all hover:border-[#1b1a17]/40 hover:-translate-y-0.5"
+          >
+            <Phone className="h-5 w-5" /> Call or text
+          </a>
+        </div>
+      </FadeUp>
+    </section>
+  );
+}
+
 /* Shows once the hero form has scrolled off-screen, so there's always a
    one-tap way back to it on phones. */
 function StickyApplyBar() {
@@ -634,6 +709,8 @@ export function Landing() {
         </div>
       </section>
 
+      <PathPicker />
+
       {/* ========================================================= THE MATH */}
       <section className="py-14 sm:py-24 px-4 sm:px-6 bg-[#fffefb] border-y border-[#e7e1d6]">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -685,6 +762,8 @@ export function Landing() {
           </FadeUp>
         </div>
       </section>
+
+      <CtaStrip line="Agency quality, $0 to build. Ready when you are." />
 
       {/* ======================================================== PORTFOLIO */}
       <section className="py-14 sm:py-24 px-4 sm:px-6">
@@ -935,6 +1014,8 @@ export function Landing() {
         </div>
       </section>
 
+      <CtaStrip line="All of that, free to build. Keep it for $9/month*." />
+
       {/* ========================================================== GROWTH */}
       <section className="py-14 sm:py-20 px-4 sm:px-6 bg-[#fffefb] border-y border-[#e7e1d6]">
         <div className="max-w-7xl mx-auto">
@@ -1022,6 +1103,8 @@ export function Landing() {
           </FadeUp>
         </div>
       </section>
+
+      <PathPicker />
 
       {/* ======================================================== REFERRAL */}
       <section className="py-14 sm:py-24 px-4 sm:px-6">
