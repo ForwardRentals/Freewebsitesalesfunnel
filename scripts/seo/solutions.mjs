@@ -5,21 +5,21 @@ export const addons = [
   {
     id: "crm",
     name: "Built-in CRM",
-    price: "Ask for a price",
+    price: "From $3/month",
     blurb: "Every form fill, quote request and chat lead lands in one inbox. Move leads through stages, add notes and tasks, share documents, and give your team their own logins.",
     page: "website-with-crm",
   },
   {
     id: "booking",
     name: "Online booking",
-    price: "Ask for a price",
+    price: "7% per booking (less at higher volume)",
     blurb: "Customers pick a time (or a date range for rentals), pay or leave a deposit, and get a confirmation email with a calendar invite. Built into your site, not a link out to another app.",
     page: "online-booking-website",
   },
   {
     id: "store",
     name: "Online store",
-    price: "Commerce plan, $49/month",
+    price: "7% per sale (less at higher volume)",
     blurb: "Products, variants, stock, cart and card checkout, with pickup, local delivery or shipping. Orders come to you by email with a simple dashboard to fulfil them.",
     page: "ecommerce-website-canada",
   },
@@ -63,7 +63,7 @@ export const addons = [
   {
     id: "gbp",
     name: "Google Business Profile setup",
-    price: "Ask for a price",
+    price: "$19 one time",
     blurb: "Your Maps listing filled out properly: categories, services, hours, photos and products that match your website, so you show up for \"near me\" searches.",
   },
   {
@@ -110,8 +110,8 @@ export const solutions = [
       ["Found on Google", "Product pages with proper titles, descriptions and schema, so people searching for what you sell can find it."],
     ],
     faqs: [
-      ["Is the store free to build like your other sites?", "The main website is free to build. A store is quoted as a custom project because there's more to set up, then it's hosted on the Commerce plan at $49/month. You'll get a clear price before any paid work starts."],
-      ["What does it cost per sale?", "Card payments go through Stripe at their standard rates. There's no extra platform subscription stacked on top like you'd pay with most store builders."],
+      ["Is the store free to build like your other sites?", "The website is free to build, and there's no monthly store subscription. You pay 7% per sale, and the rate goes down as your volume grows. Anything custom beyond a standard store is quoted and approved before any paid work starts."],
+      ["What does it cost per sale?", "7% per sale, less at higher volume. Payments go through Stripe. No monthly store fee and no paid apps stacked on top like most store builders."],
       ["Can I add a store to the site you already built me?", "Yes. It can live on its own page, or be dropped into any page of your existing site."],
       ["Can you move my products over from Shopify, Wix or Squarespace?", "Yes. Send me an export or your store link and I'll bring your products, photos and descriptions across."],
     ],
@@ -135,6 +135,7 @@ export const solutions = [
       ["Already use Square, Fresha or Jane?", "No problem. I'll embed or link the system you already have so nothing changes for your staff."],
     ],
     faqs: [
+      ["What does online booking cost?", "No monthly fee. It's 7% per paid booking, and the rate goes down as your volume grows."],
       ["Do my customers need to make an account?", "No. They pick a time, enter their details and pay. That's it."],
       ["Can it handle rentals by the day or week?", "Yes. Set a daily price, an optional weekly rate and a minimum number of days."],
       ["What if I already pay for a booking app?", "I can connect it to your new site, or move you onto booking built into the site so you can drop the extra subscription. Your call."],
@@ -159,6 +160,7 @@ export const solutions = [
       ["Team logins", "Give staff their own access with the right permissions, and see who did what."],
     ],
     faqs: [
+      ["How much is the CRM?", "From $3 a month for the base version."],
       ["Is this like Salesforce or HubSpot?", "It's much simpler on purpose. It does the handful of things a small business actually uses (leads, stages, notes, tasks, documents) without a monthly per-seat bill or a week of training."],
       ["Does it work with my existing website?", "If I built your site, it's a quick hookup. If someone else did, I can usually connect your forms anyway. Ask me."],
       ["Where is my data stored?", "In your own private workspace that only you and the people you invite can sign in to. You can export it any time."],

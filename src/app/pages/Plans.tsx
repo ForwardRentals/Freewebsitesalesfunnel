@@ -107,13 +107,13 @@ const additionalServices = [
   {
     icon: Users,
     title: "Built-in CRM",
-    price: "Ask for a price",
+    price: "From $3/month",
     description: "Every form fill, quote request and chat lead lands in one inbox. Move leads through stages, add notes and tasks, share documents, and give your team logins. ",
   },
   {
     icon: CalendarCheck,
     title: "Online Booking",
-    price: "Ask for a price",
+    price: "7% per booking",
     description: "Customers book appointments or daily/weekly rentals and pay right on your site, with email confirmations and calendar invites.",
   },
   {
@@ -121,6 +121,12 @@ const additionalServices = [
     title: "Domain Hosting",
     price: "$18/year",
     description: "Your .ca or .com registered (or moved over), renewed every year and pointed at your site and email.",
+  },
+  {
+    icon: Search,
+    title: "Google Business Profile Setup",
+    price: "$19 one time",
+    description: "Your Maps listing done properly: categories, services, hours, photos and products that match your new site.",
   },
   {
     icon: Palette,
