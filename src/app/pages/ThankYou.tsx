@@ -119,10 +119,10 @@ export function ThankYou() {
                   2
                 </div>
                 <div>
-                  <h3 className="font-semibold mb-2">Send Your Assets</h3>
+                  <h3 className="font-semibold mb-2">Send Your Assets (if you have them)</h3>
                   <p className="text-[#6b675e]">
-                    You'll receive an email with instructions to send us your logo
-                    (transparent PNG preferred), photos, and any additional materials
+                    Just reply to our email with your logo and photos. No logo? No problem:
+                    we'll mock some up for you to choose from.
                   </p>
                 </div>
               </div>
@@ -175,7 +175,7 @@ export function ThankYou() {
               <Sparkles className="h-8 w-8 text-[#d7a04a] mb-3" />
               <h3 className="font-semibold mb-2">Prepare Your Materials</h3>
               <p className="text-sm text-[#6b675e]">
-                Start gathering your logo, photos, and content. The more you provide,
+                Gather any photos you like. No logo? We'll mock some up for you. The more you provide,
                 the better your website will be!
               </p>
             </div>
@@ -194,7 +194,7 @@ export function ThankYou() {
             className="rounded-2xl border border-[#e7e1d6] bg-[#fffefb] shadow-sm p-8 mb-8"
           >
             <h2 className="font-display text-2xl font-semibold tracking-tight mb-6 text-center">
-              Want to Talk? <span className="italic text-[#166b45]">Let's Connect!</span>
+              No call needed. <span className="italic text-[#166b45]">But we're here if you want one.</span>
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -218,9 +218,9 @@ export function ThankYou() {
                 <div className="w-16 h-16 bg-[#166b45]/10 rounded-full flex items-center justify-center mb-4">
                   <Calendar className="h-8 w-8 text-[#166b45]" />
                 </div>
-                <h3 className="font-semibold mb-2">Schedule a Call</h3>
+                <h3 className="font-semibold mb-2">Optional: Book a Call</h3>
                 <p className="text-sm text-[#6b675e] mb-4">
-                  Book a 30-min consultation
+                  Only if you'd like to talk it through
                 </p>
                 <a
                   href="https://calendar.app.google/L4ok6TnfC8njfXXy6"
@@ -234,7 +234,7 @@ export function ThankYou() {
             </div>
 
             <p className="text-center text-[#6b675e] text-sm mt-6">
-              Prefer to schedule? Use our calendar to pick a time that works for you!
+              Most people never need a call. Everything can happen over email.
             </p>
           </motion.div>
 

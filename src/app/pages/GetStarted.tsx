@@ -48,6 +48,7 @@ export function GetStarted() {
     pagesNeeded: "",
 
     // Design Preferences
+    logoChoice: "",
     sampleWebsites: "",
     additionalInfo: "",
 
@@ -143,6 +144,7 @@ export function GetStarted() {
       launch_date: formData.launchDate,
       services: formData.services,
       pages_needed: formData.pagesNeeded,
+      logo: formData.logoChoice,
       sample_websites: formData.sampleWebsites,
       additional_info: formData.additionalInfo,
       monthly_budget: formData.monthlyBudget,
@@ -404,7 +406,34 @@ export function GetStarted() {
 
                   <div>
                     <Label className="font-medium text-[#1b1a17] mb-2 block">
-                      Logo & Photos (Upload Here)
+                      Do you have a logo?
+                    </Label>
+                    <div className="grid sm:grid-cols-3 gap-2">
+                      {[
+                        ["have", "Yes, I'll upload it"],
+                        ["mockup", "No logo? Mock some up for me!"],
+                        ["refresh", "I have one, but want fresh options"],
+                      ].map(([v, label]) => (
+                        <button
+                          key={v}
+                          type="button"
+                          onClick={() => updateField("logoChoice", v)}
+                          className={`rounded-xl border px-4 py-3 text-sm font-medium text-left transition-all ${formData.logoChoice === v ? "border-[#166b45] bg-[#166b45]/[0.06] text-[#166b45]" : "border-[#e7e1d6] bg-white text-[#1b1a17] hover:border-[#166b45]/50"}`}
+                        >
+                          {label}
+                        </button>
+                      ))}
+                    </div>
+                    {(formData.logoChoice === "mockup" || formData.logoChoice === "refresh") && (
+                      <p className="mt-2 text-sm text-[#166b45]">
+                        Done. We'll mock up a few logo options for you, free, and you pick your favourite.
+                      </p>
+                    )}
+                  </div>
+
+                  <div>
+                    <Label className="font-medium text-[#1b1a17] mb-2 block">
+                      {formData.logoChoice === "mockup" ? "Photos (optional)" : "Logo & Photos (optional, upload here)"}
                     </Label>
                     <div className="space-y-4">
                       <div
@@ -510,49 +539,26 @@ export function GetStarted() {
                     </h3>
                     <ul className="text-sm text-[#1b1a17]/80 space-y-2">
                       <li>• We'll review your information within 24 hours</li>
-                      <li>• You'll receive an email to send your logo and photos</li>
+                      <li>• No logo? We'll mock some up for you to pick from</li>
+                      <li>• Everything happens by email, no meetings needed</li>
                       <li>• We'll start building your custom website</li>
                       <li>• You'll get the complete codebase when it's ready</li>
                       <li>• Choose to manage it yourself or pick a support plan</li>
                     </ul>
                   </div>
 
-                  <div className="bg-[#faf7f2] border border-[#e7e1d6] rounded-xl p-6">
-                    <div className="flex items-center justify-between mb-4">
-                      <h3 className="font-display font-semibold text-[#1b1a17]">Book a Call</h3>
-                      <span className="text-xs text-[#166b45] font-medium">30 min · Free</span>
-                    </div>
-                    <p className="text-xs text-[#6b675e] mb-4">Available slots this week</p>
-                    <div className="grid grid-cols-2 gap-2 mb-4">
-                      {[
-                        { day: "Today", time: "2:00 PM" },
-                        { day: "Today", time: "4:30 PM" },
-                        { day: "Tomorrow", time: "10:00 AM" },
-                        { day: "Tomorrow", time: "1:00 PM" },
-                        { day: "Thu", time: "11:00 AM" },
-                        { day: "Thu", time: "3:30 PM" },
-                      ].map((slot) => (
-                        <a
-                          key={slot.day + slot.time}
-                          href="https://calendar.app.google/L4ok6TnfC8njfXXy6"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex flex-col items-center py-2.5 px-3 bg-white border border-[#e7e1d6] rounded-xl hover:border-[#166b45]/60 hover:bg-[#166b45]/[0.04] transition-all text-center"
-                        >
-                          <span className="text-xs text-[#6b675e]">{slot.day}</span>
-                          <span className="text-sm font-semibold text-[#1b1a17]">{slot.time}</span>
-                        </a>
-                      ))}
-                    </div>
+                  <p className="text-sm text-[#6b675e]">
+                    No call needed. We'll email you your draft. Rather talk it through first?{" "}
                     <a
                       href="https://calendar.app.google/L4ok6TnfC8njfXXy6"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block w-full text-center py-2.5 rounded-full bg-[#166b45] text-white font-semibold text-sm transition-all hover:bg-[#0f5434] hover:-translate-y-0.5"
+                      className="font-semibold text-[#166b45] underline underline-offset-2"
                     >
-                      See All Availability
+                      Book an optional call
                     </a>
-                  </div>
+                    .
+                  </p>
                 </div>
               )}
 
