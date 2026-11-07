@@ -151,6 +151,7 @@ footer .logo{color:#fff}footer .logo b span{color:#c5f06a}footer .logo small{col
 .cmp thead th{background:var(--paper);font-size:14px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
 .cmp td.us{color:var(--green-dark);font-weight:600}
 .cmp-wrap{overflow-x:auto}
+.promo{display:inline-block;margin:14px 0 0;padding:8px 14px;border-radius:14px;background:rgba(22,107,69,.08);border:1px solid rgba(22,107,69,.25);font-size:15px}
 .addon .price{display:inline-block;margin:2px 0 10px;font-size:14px;font-weight:700;color:var(--green)}
 .addon a{font-weight:600;color:var(--green);text-decoration:none}
 @media (max-width:640px){.nav .tel,.nav .plain{display:none}.hero{padding-block:40px 40px}section{padding-block:44px}}
@@ -266,6 +267,7 @@ const hero = ({ eyebrow, h1, intro }) => `
 <p class="lead">${esc(intro)}</p>
 <div class="ctas"><a class="btn" href="/#apply">Apply in 2 minutes →</a><a class="btn ghost" href="tel:${PHONE_TEL}">${PHONE}</a></div>
 <p class="fine">Free build with 2 rounds of revisions · See it live before you pay anything · Month-to-month, cancel any time</p>
+<p class="promo"><b>Promo:</b> free full SEO overhaul with every new site (usually <s>$59</s>)</p>
 </div></section>`;
 
 const workSection = (keys) => `

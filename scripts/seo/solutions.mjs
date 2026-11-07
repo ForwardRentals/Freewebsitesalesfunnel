@@ -30,6 +30,12 @@ export const addons = [
     blurb: "A chat bubble trained on your services, prices and FAQs. It answers questions at 11pm and hands real leads to you (and your CRM) with their contact details.",
   },
   {
+    id: "seo",
+    name: "Full SEO overhaul",
+    price: "FREE with a new site (usually $59)",
+    blurb: "Launch promo: once your site is built we tune it for Google: page titles and descriptions, local business schema, sitemap and Google Search Console setup, Google Business Profile alignment, image alt text and a speed check.",
+  },
+  {
     id: "logo",
     name: "Logo design",
     price: "$20 (mockups are free)",

@@ -701,6 +701,19 @@ export function Landing() {
               </a>
             </motion.div>
 
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.1 }}
+              className="mt-6 inline-flex flex-wrap items-center gap-x-2 gap-y-1 rounded-2xl border border-[#166b45]/25 bg-[#166b45]/[0.07] px-4 py-2.5 text-sm text-[#1b1a17]"
+            >
+              <span className="rounded-full bg-[#166b45] px-2 py-0.5 text-xs font-bold uppercase tracking-wide text-white">Promo</span>
+              <span>
+                <strong>Free full SEO overhaul</strong> with every new site{" "}
+                <span className="text-[#6b675e]">(usually <s>$59</s>)</span>
+              </span>
+            </motion.div>
+
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}

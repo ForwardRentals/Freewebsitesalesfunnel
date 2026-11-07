@@ -155,10 +155,10 @@ const promotions = [
   },
   {
     icon: Rocket,
-    title: "Free Boosted SEO",
-    description: "Fill out the form in February and we'll include a free boosted SEO package with your website build — extra keyword targeting, meta optimization, and local SEO setup at no charge.",
+    title: "Free SEO Overhaul (usually $59)",
+    description: "Launch promo: when your new site is built, we do a full SEO overhaul free of charge: page titles and descriptions, local business schema, sitemap and Google Search Console setup, Google Business Profile alignment, image alt text and a speed check.",
     link: "/get-started",
-    buttonText: "Claim Free SEO Boost",
+    buttonText: "Claim my free SEO overhaul",
   },
 ];
 
