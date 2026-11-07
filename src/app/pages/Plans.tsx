@@ -28,8 +28,8 @@ const plans = [
     price: "$9.99",
     priceDetail: "for first 3 months",
     regularPrice: "$13.99/mo after",
-    annualPrice: "$89/year",
-    annualNote: "(Special rate - save $78!)",
+    annualPrice: "$89.99/year",
+    annualNote: "(Special rate - save $77!)",
     featured: false,
     icon: Zap,
     badge: "Launch Special",
@@ -149,7 +149,7 @@ const promotions = [
   {
     icon: Star,
     title: "Annual Discount",
-    description: "Pay annually and save big! Starter: $89/yr, Growth: $199/yr, Commerce: $449/yr",
+    description: "Pay annually and save big! Starter: $89.99/yr, Growth: $199/yr, Commerce: $449/yr",
     link: "/plans#annual",
     buttonText: "View Annual Plans",
   },
@@ -167,7 +167,7 @@ export function Plans() {
     document.title = "Web Design Pricing — Free Website Build + Affordable Plans | FreeSiteCompany";
     const meta = document.querySelector('meta[name="description"]');
     if (meta) {
-      meta.setAttribute("content", "Affordable web design pricing for small businesses. Free custom website build included. Hosting & support from $9.99/mo. No contracts, no hidden fees. Compare to hiring a web designer or using a website builder.");
+      meta.setAttribute("content", "Affordable web design pricing for small businesses. Free custom website build included. Hosting & support from $9.99/mo. Month-to-month, no hidden fees. Compare to hiring a web designer or using a website builder.");
     }
   }, []);
 
@@ -204,7 +204,7 @@ export function Plans() {
         name: "Can I cancel anytime?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Yes! No long-term contracts. You can cancel your monthly plan anytime and keep your website code. No questions asked.",
+          text: "Yes. Plans are a simple month-to-month agreement. You can cancel any time and keep your website code. No questions asked.",
         },
       },
     ],
@@ -565,7 +565,7 @@ export function Plans() {
                   Can I cancel anytime?
                 </h3>
                 <p className="text-sm text-[#6b675e] leading-relaxed">
-                  Yes! No long-term contracts. You can cancel your monthly plan
+                  Yes. Plans are a simple month-to-month agreement. You can cancel
                   anytime and keep your website code. No questions asked.
                 </p>
               </div>

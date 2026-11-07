@@ -120,7 +120,7 @@ const faqs = [
   },
   {
     q: "Is there a catch?",
-    a: "No. The build is free and includes two full rounds of revisions. You only ever pay if you choose a hosting plan: $9.99/month for your first 3 months, then $13.99/month. There's no contract, so you can leave any time and take your code with you.",
+    a: "No. The build is free and includes two full rounds of revisions. You only ever pay if you choose a hosting plan: $9.99/month for your first 3 months, then $13.99/month. It's a simple month-to-month agreement, so you can cancel any time and take your code with you.",
   },
   {
     q: "Do I own the website?",
@@ -545,7 +545,7 @@ export function Landing() {
               <strong className="text-[#1b1a17]">$0</strong>, with two rounds of
               revisions. You only pay if you keep it:{" "}
               <strong className="text-[#1b1a17]">$9.99/month*</strong> for
-              hosting and support. No contract. You own the code.
+              hosting and support. Month-to-month, cancel any time. You own the code.
             </motion.p>
 
             <motion.div

@@ -265,7 +265,7 @@ const hero = ({ eyebrow, h1, intro }) => `
 <h1 class="d">${h1}</h1>
 <p class="lead">${esc(intro)}</p>
 <div class="ctas"><a class="btn" href="/#apply">Apply in 2 minutes →</a><a class="btn ghost" href="tel:${PHONE_TEL}">${PHONE}</a></div>
-<p class="fine">Free build with 2 rounds of revisions · See it live before you pay anything · No contract</p>
+<p class="fine">Free build with 2 rounds of revisions · See it live before you pay anything · Month-to-month, cancel any time</p>
 </div></section>`;
 
 const workSection = (keys) => `
@@ -336,7 +336,7 @@ const pages = [];
 for (const ind of industries) {
   const path = industryPath(ind);
   const faqs = [...ind.faqs, ...sharedFaqs];
-  const description = `${ind.title}: a custom, hand-coded website for your ${ind.noun}, built free by a real web designer in BC. Only $9.99/month if you keep it. No contract.`;
+  const description = `${ind.title}: a custom, hand-coded website for your ${ind.noun}, built free by a real web designer in BC. Only $9.99/month if you keep it. Month-to-month, cancel any time.`;
   const trail = [["Home", "/"], ["Websites for small business", `/${INDUSTRY_HUB}/`], [ind.label, `/${path}`]];
   const body = `${crumbs(trail)}
 ${hero({ eyebrow: `Free websites for ${ind.label.toLowerCase()}`, h1: esc(ind.h1).replace(/free website/, "<em>free website</em>").replace(/free portfolio website/, "<em>free portfolio website</em>"), intro: ind.intro })}

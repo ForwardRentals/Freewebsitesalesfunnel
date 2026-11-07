@@ -220,7 +220,7 @@ export function QuickApplyForm({ formName = "HomeQuickApply" }: { formName?: str
           <Clock className="h-3 w-3 text-[#166b45]" /> Reply within 24 hours
         </span>
         <span className="flex items-center gap-1.5">
-          <CheckCircle2 className="h-3 w-3 text-[#166b45]" /> No contract
+          <CheckCircle2 className="h-3 w-3 text-[#166b45]" /> Month-to-month
         </span>
       </div>
     </div>

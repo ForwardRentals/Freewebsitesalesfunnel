@@ -150,7 +150,7 @@ export const solutions = [
     intro:
       "Squarespace's annual plans run roughly US$16 to $52 a month, and a lot of Canadian businesses end up paying $300 to $500 a year, in US dollars, for a template they built themselves. Send me your Squarespace link and I'll rebuild it as a custom site, for free. Keep it online for $9.99/month, billed in Canadian dollars.",
     compare: [
-      ["Cost per year", "Roughly US$190–630 on annual plans", "$0 to build, then from $89/year on the annual Starter plan"],
+      ["Cost per year", "Roughly US$190–630 on annual plans", "$0 to build, then or $89.99/year on the annual Starter plan"],
       ["Currency", "Usually billed in US dollars", "Canadian dollars"],
       ["Who builds it", "You do, from a template", "I do, custom for your business"],
       ["Who owns the code", "Squarespace; your design can't leave", "You do, host it anywhere"],
@@ -176,9 +176,9 @@ export const solutions = [
     title: "Wix Alternative for Canadian Small Businesses",
     h1: "Done with Wix? <em>Get a custom site, free.</em>",
     intro:
-      "Wix makes it easy to start and hard to leave: sites can't be exported, the premium plans add up, and pages can get heavy on phones. I'll rebuild your Wix site as a fast, custom site you own, for free. Then it's $9.99/month in Canadian dollars to keep it online, with no contract.",
+      "Wix makes it easy to start and hard to leave: sites can't be exported, the premium plans add up, and pages can get heavy on phones. I'll rebuild your Wix site as a fast, custom site you own, for free. Then it's $9.99/month in Canadian dollars to keep it online, month-to-month, cancel any time.",
     compare: [
-      ["Cost per year", "Premium plans, often billed in US dollars, plus apps", "$0 to build, then from $89/year on the annual Starter plan"],
+      ["Cost per year", "Premium plans, often billed in US dollars, plus apps", "$0 to build, then or $89.99/year on the annual Starter plan"],
       ["Can you move it?", "No, Wix sites can't be exported", "Yes, you get the full source code"],
       ["Who builds it", "You do, with the editor", "I do, custom for your business"],
       ["Speed on phones", "Often slowed by editor scripts and apps", "Hand-coded and light"],
