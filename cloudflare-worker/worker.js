@@ -21,6 +21,8 @@
 const ALLOWED_ORIGINS = [
   'https://freesitecompany.com',
   'https://www.freesitecompany.com',
+  'https://gocanadian.ca',
+  'https://www.gocanadian.ca',
   'http://localhost:5173',
 ];
 
