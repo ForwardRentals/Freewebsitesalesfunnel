@@ -48,6 +48,30 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <a
+                  href="/website-with-crm/"
+                  className="text-[#faf7f2]/60 hover:text-[#7fc8a4] transition-colors"
+                >
+                  Website + CRM
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/add-ons/"
+                  className="text-[#faf7f2]/60 hover:text-[#7fc8a4] transition-colors"
+                >
+                  Add-ons
+                </a>
+              </li>
+              <li>
+                <Link
+                  to="/domains"
+                  className="text-[#faf7f2]/60 hover:text-[#7fc8a4] transition-colors"
+                >
+                  Domain Search
+                </Link>
+              </li>
+              <li>
                 <Link
                   to="/get-started"
                   className="text-[#faf7f2]/60 hover:text-[#7fc8a4] transition-colors"

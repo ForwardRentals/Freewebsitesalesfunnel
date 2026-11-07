@@ -19,6 +19,10 @@ import {
   Film,
   Search,
   Rocket,
+  Users,
+  CalendarCheck,
+  Globe,
+  Palette,
 } from "lucide-react";
 import { Button } from "../components/ui/button";
 
@@ -100,6 +104,30 @@ const plans = [
 ];
 
 const additionalServices = [
+  {
+    icon: Users,
+    title: "Built-in CRM",
+    price: "Ask for a price",
+    description: "Every form fill, quote request and chat lead lands in one inbox. Move leads through stages, add notes and tasks, share documents, and give your team logins. ",
+  },
+  {
+    icon: CalendarCheck,
+    title: "Online Booking",
+    price: "Ask for a price",
+    description: "Customers book appointments or daily/weekly rentals and pay right on your site, with email confirmations and calendar invites.",
+  },
+  {
+    icon: Globe,
+    title: "Domain Hosting",
+    price: "$18/year",
+    description: "Your .ca or .com registered (or moved over), renewed every year and pointed at your site and email.",
+  },
+  {
+    icon: Palette,
+    title: "Logo + Brand Guidelines",
+    price: "$20 each",
+    description: "Logo mockups are free to look at. Keep your favourite for $20. Add a one-page brand guide (colours, fonts, logo versions) for $20.",
+  },
   {
     icon: FileCode,
     title: "Custom Development",
