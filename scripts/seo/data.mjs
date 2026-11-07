@@ -19,7 +19,7 @@ export const industries = [
     title: "Free Website for Restaurants & Cafés",
     h1: "A free website for your restaurant or café",
     intro:
-      "Most people decide where to eat on their phone, in under a minute. They want your menu, your hours and a way to book, and if your site is slow or your menu is a blurry PDF they move on to the next place. I build restaurants a fast, custom website for free, and you only pay $9.99/month if you keep it.",
+      "Most people decide where to eat on their phone, in under a minute. They want your menu, your hours and a way to book, and if your site is slow or your menu is a blurry PDF they move on to the next place. I build restaurants a fast, custom website for free, and you only pay $9/month if you keep it.",
     needs: [
       ["A real menu, not a PDF", "Readable on a phone, easy for you to update when prices or specials change, and indexable by Google so people searching for a dish can find you."],
       ["Hours and location up top", "Today's hours, a tap-to-call number and a map link in the first screen, because that's what most visitors came for."],
@@ -40,7 +40,7 @@ export const industries = [
     title: "Free Website for Hair Salons & Barbershops",
     h1: "A free website for your salon or barbershop",
     intro:
-      "Your Instagram shows off the work, but a website is what turns a search for \"haircut near me\" into a booking. I build salons and barbershops a custom site with your services, prices and online booking front and centre. The build is free, and you only pay $9.99/month if you keep it.",
+      "Your Instagram shows off the work, but a website is what turns a search for \"haircut near me\" into a booking. I build salons and barbershops a custom site with your services, prices and online booking front and centre. The build is free, and you only pay $9/month if you keep it.",
     needs: [
       ["Book Now on every screen", "A booking button linked to Fresha, Square, Vagaro or whatever you use, visible without scrolling."],
       ["Services and prices", "A clean list clients can check before they book, so fewer of them call to ask."],
@@ -61,7 +61,7 @@ export const industries = [
     title: "Free Website for Contractors & Builders",
     h1: "A free website for your contracting business",
     intro:
-      "Homeowners check you out online before they ever call for a quote. A dead website, or none at all, makes a good builder look like a risky one. I build contractors a custom site that shows off finished projects and gets quote requests into your inbox. The build is free, and you only pay $9.99/month if you keep it.",
+      "Homeowners check you out online before they ever call for a quote. A dead website, or none at all, makes a good builder look like a risky one. I build contractors a custom site that shows off finished projects and gets quote requests into your inbox. The build is free, and you only pay $9/month if you keep it.",
     needs: [
       ["Project gallery", "Before-and-after photos organized by job type, so clients can see you've done work like theirs."],
       ["A quote request form", "The details you need up front (project type, timeline, budget, photos) so you can price jobs without a site visit."],
@@ -82,7 +82,7 @@ export const industries = [
     title: "Free Website for Plumbers, Electricians & HVAC",
     h1: "A free website for plumbers, electricians and HVAC techs",
     intro:
-      "When a pipe bursts or the power's out, people grab their phone and call the first trusted name that comes up. Your website's job is to be that name and make calling you a single tap. I build trades a fast, simple site that does exactly that. The build is free, and you only pay $9.99/month if you keep it.",
+      "When a pipe bursts or the power's out, people grab their phone and call the first trusted name that comes up. Your website's job is to be that name and make calling you a single tap. I build trades a fast, simple site that does exactly that. The build is free, and you only pay $9/month if you keep it.",
     needs: [
       ["Emergency number up top", "A big tap-to-call button and your availability (24/7, weekdays, same-day) right at the top."],
       ["Service list", "A short page for each service (drain cleaning, panel upgrades, furnace repair) so Google can match you to specific searches."],
@@ -103,7 +103,7 @@ export const industries = [
     title: "Free Website for Landscapers & Lawn Care",
     h1: "A free website for your landscaping business",
     intro:
-      "Landscaping is visual, and the best way to win a job is to show one you've finished. I build landscapers a custom site with a project gallery, a clear list of services and a quote form that collects the details you need. The build is free, and you only pay $9.99/month if you keep it.",
+      "Landscaping is visual, and the best way to win a job is to show one you've finished. I build landscapers a custom site with a project gallery, a clear list of services and a quote form that collects the details you need. The build is free, and you only pay $9/month if you keep it.",
     needs: [
       ["Seasonal services", "Spring cleanups, weekly maintenance, hardscaping and snow removal, each with its own section so you're found for all of them."],
       ["Before-and-after gallery", "Side-by-side photos that show what you can do with a tired yard."],
@@ -124,7 +124,7 @@ export const industries = [
     title: "Free Website for Cleaning Services",
     h1: "A free website for your cleaning business",
     intro:
-      "People are letting you into their home or office, so trust decides who they hire. A professional website with clear pricing, real reviews and an easy booking form gets you hired over the business with only a Facebook page. I build it for free, and you only pay $9.99/month if you keep it.",
+      "People are letting you into their home or office, so trust decides who they hire. A professional website with clear pricing, real reviews and an easy booking form gets you hired over the business with only a Facebook page. I build it for free, and you only pay $9/month if you keep it.",
     needs: [
       ["Clear pricing", "Flat rates or a simple price estimator, so visitors don't have to call just to find out what it costs."],
       ["Online booking", "A form or booking link for one-time, weekly and move-out cleans."],
@@ -145,7 +145,7 @@ export const industries = [
     title: "Free Website for Massage, Physio & Wellness Clinics",
     h1: "A free website for your clinic or wellness practice",
     intro:
-      "Patients want to know who they'll see, what you treat, whether you direct-bill, and how to book. A calm, clear website answers all of that before they pick up the phone. I build clinics and practitioners a custom site for free, and you only pay $9.99/month if you keep it.",
+      "Patients want to know who they'll see, what you treat, whether you direct-bill, and how to book. A calm, clear website answers all of that before they pick up the phone. I build clinics and practitioners a custom site for free, and you only pay $9/month if you keep it.",
     needs: [
       ["Online booking", "Linked to Jane, ClinicSense, Noterro or whatever you already use."],
       ["Practitioner profiles", "Credentials, specialties and a booking link for each person on your team."],
@@ -166,7 +166,7 @@ export const industries = [
     title: "Free Website for Gyms, Yoga & Fitness Studios",
     h1: "A free website for your gym or fitness studio",
     intro:
-      "Someone deciding where to train wants to see your schedule, your pricing and what a first class costs. If they can't find those in thirty seconds, they'll sign up somewhere else. I build gyms and studios a custom site with all of it up front. The build is free, and you only pay $9.99/month if you keep it.",
+      "Someone deciding where to train wants to see your schedule, your pricing and what a first class costs. If they can't find those in thirty seconds, they'll sign up somewhere else. I build gyms and studios a custom site with all of it up front. The build is free, and you only pay $9/month if you keep it.",
     needs: [
       ["Live class schedule", "Embedded from Mindbody, Momence, Glofox or your booking app, so it's always current."],
       ["Intro offer", "Your first-class deal or free trial, prominent on every page."],
@@ -187,7 +187,7 @@ export const industries = [
     title: "Free Website for Tour Operators & Rental Companies",
     h1: "A free website for your tour or rental business",
     intro:
-      "Visitors plan trips on their phones, and they book whoever makes it easiest. This is the kind of site I build most: I've built them for a water taxi, a canoe rental and an outdoor guide in Squamish. The build is free, and you only pay $9.99/month if you keep it.",
+      "Visitors plan trips on their phones, and they book whoever makes it easiest. This is the kind of site I build most: I've built them for a water taxi, a canoe rental and an outdoor guide in Squamish. The build is free, and you only pay $9/month if you keep it.",
     needs: [
       ["Book now, everywhere", "Linked to FareHarbor, Rezdy, Checkfront or your own booking system, one tap from every page."],
       ["Trips and pricing", "Each tour or rental with photos, duration, what's included and price, so people can choose without emailing."],
@@ -208,7 +208,7 @@ export const industries = [
     title: "Free Portfolio Website for Photographers & Artists",
     h1: "A free portfolio website for photographers and artists",
     intro:
-      "Your work should be the first thing people see, at full quality, on a site that doesn't look like everyone else's template. I'm a photographer myself, so I build portfolios the way I'd want mine built. The build is free, and you only pay $9.99/month if you keep it.",
+      "Your work should be the first thing people see, at full quality, on a site that doesn't look like everyone else's template. I'm a photographer myself, so I build portfolios the way I'd want mine built. The build is free, and you only pay $9/month if you keep it.",
     needs: [
       ["Fast, full-quality images", "Big, sharp photos and artwork that still load quickly, using modern image formats."],
       ["A design that suits your work", "A custom layout that fits your style instead of a template thousands of others use."],
@@ -229,7 +229,7 @@ export const industries = [
     title: "Free Website for Retail Stores & Boutiques",
     h1: "A free website for your shop or boutique",
     intro:
-      "Even if most of your sales happen at the till, customers check your website first: what you carry, whether you're open, and where to park. I build local shops a custom site that answers those questions and brings people through the door. The build is free, and you only pay $9.99/month if you keep it.",
+      "Even if most of your sales happen at the till, customers check your website first: what you carry, whether you're open, and where to park. I build local shops a custom site that answers those questions and brings people through the door. The build is free, and you only pay $9/month if you keep it.",
     needs: [
       ["What you carry", "Your categories, brands and best sellers, so people know it's worth the trip."],
       ["Hours, location and parking", "Up top on phones, with a map link."],
@@ -250,7 +250,7 @@ export const industries = [
     title: "Free Website for Auto Repair Shops & Detailers",
     h1: "A free website for your auto repair or detailing shop",
     intro:
-      "Drivers looking for a mechanic want to know three things: do you work on their car, what will it roughly cost, and can they trust you. A clear website answers all three before they call. I build shops a custom site for free, and you only pay $9.99/month if you keep it.",
+      "Drivers looking for a mechanic want to know three things: do you work on their car, what will it roughly cost, and can they trust you. A clear website answers all three before they call. I build shops a custom site for free, and you only pay $9/month if you keep it.",
     needs: [
       ["Services and makes", "What you fix and which makes you specialize in, each written so Google can match specific searches."],
       ["Book a service", "An appointment form or booking link, plus tap-to-call for the urgent stuff."],
@@ -274,7 +274,7 @@ export const cities = [
     title: "Web Design in Squamish, BC | Free Custom Websites",
     h1: "Web design in Squamish, BC. Free to build.",
     intro:
-      "I'm a web designer based right here in Squamish. I've built sites for local businesses like Squamish Water Taxi, Squamish Canoe Rental and Sea to Sky Trails. I'll build your Squamish business a custom website for free, and you only pay $9.99/month if you keep it.",
+      "I'm a web designer based right here in Squamish. I've built sites for local businesses like Squamish Water Taxi, Squamish Canoe Rental and Sea to Sky Trails. I'll build your Squamish business a custom website for free, and you only pay $9/month if you keep it.",
     local:
       "Squamish businesses serve two crowds: locals who've been here for years and visitors coming up the Sea-to-Sky for a weekend of climbing, biking or paddling. Your site has to work for both. That means fast on a phone at the base of the Chief, clear about booking and hours, and found for both \"near me\" and \"things to do in Squamish\" searches.",
     meet: "Because I'm local, we can meet in person. Coffee's on me.",
@@ -288,7 +288,7 @@ export const cities = [
     title: "Web Design in Whistler, BC | Free Custom Websites",
     h1: "Web design for Whistler businesses. Free to build.",
     intro:
-      "I'm a web designer based 45 minutes down the highway in Squamish. I build Whistler businesses custom websites for free, and you only pay $9.99/month if you keep it.",
+      "I'm a web designer based 45 minutes down the highway in Squamish. I build Whistler businesses custom websites for free, and you only pay $9/month if you keep it.",
     local:
       "Whistler runs on visitors from all over the world, often on two seasons a year. Your website might be the first thing someone sees from another country while planning a trip. It needs to look world-class, load fast on hotel Wi-Fi, make booking simple and change easily between winter and summer.",
     meet: "Whistler is an easy drive, so we can meet in person.",
@@ -302,7 +302,7 @@ export const cities = [
     title: "Web Design in Pemberton, BC | Free Custom Websites",
     h1: "Web design for Pemberton businesses. Free to build.",
     intro:
-      "I'm a Sea-to-Sky web designer based in Squamish, and I build Pemberton businesses custom websites for free. You only pay $9.99/month if you keep it.",
+      "I'm a Sea-to-Sky web designer based in Squamish, and I build Pemberton businesses custom websites for free. You only pay $9/month if you keep it.",
     local:
       "Pemberton's farms, guides, trades and small shops need to reach both the valley and the Whistler crowd just up the road. A good site lets people buy from the farm stand, book a ride or request a quote without driving out first.",
     meet: "Pemberton's a quick drive from me, so we can meet in person.",
@@ -316,7 +316,7 @@ export const cities = [
     title: "Web Design in Vancouver, BC | Free Custom Websites",
     h1: "Web design for Vancouver small businesses. Free to build.",
     intro:
-      "Vancouver agencies routinely charge $5,000 to $15,000 for a custom website. I'm an independent designer an hour up the Sea-to-Sky in Squamish, and I'll build yours for free. You only pay $9.99/month if you keep it.",
+      "Vancouver agencies routinely charge $5,000 to $15,000 for a custom website. I'm an independent designer an hour up the Sea-to-Sky in Squamish, and I'll build yours for free. You only pay $9/month if you keep it.",
     local:
       "In Vancouver you compete with dozens of businesses in your category within a few kilometres. A custom, fast site with strong local SEO for your neighbourhood (Kitsilano, Mount Pleasant, Commercial Drive) is how you stand out from the ones running on templates.",
     meet: "We can meet in person or on a video call, whichever suits you.",
@@ -330,7 +330,7 @@ export const cities = [
     title: "Web Design in North Vancouver & West Van | Free Custom Websites",
     h1: "Web design for North Shore businesses. Free to build.",
     intro:
-      "I'm a web designer in Squamish, just up the highway from the North Shore. I build North Vancouver and West Vancouver businesses custom websites for free, and you only pay $9.99/month if you keep it.",
+      "I'm a web designer in Squamish, just up the highway from the North Shore. I build North Vancouver and West Vancouver businesses custom websites for free, and you only pay $9/month if you keep it.",
     local:
       "North Shore businesses serve a community that's very active and very local, from Lonsdale and Deep Cove to Ambleside and Edgemont. Show up in neighbourhood searches, look as polished as the downtown competition and make booking easy.",
     meet: "The North Shore is on my way to everywhere, so meeting in person is easy.",
@@ -344,7 +344,7 @@ export const cities = [
     title: "Web Design on the Sunshine Coast, BC | Free Custom Websites",
     h1: "Web design for Sunshine Coast businesses. Free to build.",
     intro:
-      "I'm a web designer in Squamish, across Howe Sound. I build businesses in Gibsons, Sechelt and up the coast custom websites for free, and you only pay $9.99/month if you keep it.",
+      "I'm a web designer in Squamish, across Howe Sound. I build businesses in Gibsons, Sechelt and up the coast custom websites for free, and you only pay $9/month if you keep it.",
     local:
       "On the Sunshine Coast, a lot of your customers are planning a ferry trip. They want to know your hours, how to find you and whether it's worth the trip before they leave the city. A clear, fast website turns those plans into visits.",
     meet: "We can meet by video call, or in person when I'm on the coast.",
@@ -358,7 +358,7 @@ export const cities = [
     title: "Web Design in Victoria, BC | Free Custom Websites",
     h1: "Web design for Victoria small businesses. Free to build.",
     intro:
-      "I'm an independent web designer in Squamish, BC, and I build Victoria businesses custom websites for free. You only pay $9.99/month if you keep it.",
+      "I'm an independent web designer in Squamish, BC, and I build Victoria businesses custom websites for free. You only pay $9/month if you keep it.",
     local:
       "Victoria businesses serve a loyal local market plus a steady stream of visitors from cruise ships and ferries. Your site should work for both: easy for a tourist to find and visit, and good enough that locals recommend you.",
     meet: "We'll work over video calls and email. Most of my clients prefer it anyway.",
@@ -372,7 +372,7 @@ export const cities = [
     title: "Web Design in Nanaimo, BC | Free Custom Websites",
     h1: "Web design for Nanaimo businesses. Free to build.",
     intro:
-      "I'm an independent web designer in Squamish, BC, and I build Nanaimo and mid-Island businesses custom websites for free. You only pay $9.99/month if you keep it.",
+      "I'm an independent web designer in Squamish, BC, and I build Nanaimo and mid-Island businesses custom websites for free. You only pay $9/month if you keep it.",
     local:
       "Nanaimo is growing fast, and plenty of local businesses still get by on a Facebook page or a site from years ago. A modern, fast website is one of the cheapest ways to look like the established choice in your category.",
     meet: "We'll work over video calls and email, and I can be on the Island when needed.",
@@ -386,7 +386,7 @@ export const cities = [
     title: "Web Design in Kelowna, BC | Free Custom Websites",
     h1: "Web design for Kelowna businesses. Free to build.",
     intro:
-      "I'm an independent web designer in Squamish, BC, and I build Kelowna and Okanagan businesses custom websites for free. You only pay $9.99/month if you keep it.",
+      "I'm an independent web designer in Squamish, BC, and I build Kelowna and Okanagan businesses custom websites for free. You only pay $9/month if you keep it.",
     local:
       "Okanagan businesses, from wineries and patios to trades building new homes, have a busy summer and a quieter winter. A website that's easy to update through the seasons and found by both locals and visitors keeps you busy year-round.",
     meet: "We'll work over video calls and email.",
@@ -400,7 +400,7 @@ export const cities = [
     title: "Web Design in Kamloops, BC | Free Custom Websites",
     h1: "Web design for Kamloops businesses. Free to build.",
     intro:
-      "I'm an independent web designer in Squamish, BC, and I build Kamloops businesses custom websites for free. You only pay $9.99/month if you keep it.",
+      "I'm an independent web designer in Squamish, BC, and I build Kamloops businesses custom websites for free. You only pay $9/month if you keep it.",
     local:
       "Kamloops businesses serve a big region, and plenty of customers drive in from smaller towns. Your website should make the trip feel worth it: what you offer, when you're open and how to reach you, clear on any phone.",
     meet: "We'll work over video calls and email.",

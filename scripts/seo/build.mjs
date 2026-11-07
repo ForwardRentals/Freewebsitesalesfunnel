@@ -22,7 +22,7 @@ const esc = (s) =>
   String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 
 const sharedFaqs = [
-  ["How is the website actually free?", "I'd rather earn $9.99 a month from a hundred happy local businesses than charge one of them $5,000 up front. I build your site for free with two rounds of revisions. If you love it, you keep it online for $9.99/month. If you don't, you owe nothing. I love building sites for free, and a lot of those clients come back to me when they're ready for something bigger, like an online store or a custom build."],
+  ["How is the website actually free?", "I'd rather earn $9 a month from a hundred happy local businesses than charge one of them $5,000 up front. I build your site for free with two rounds of revisions. If you love it, you keep it online for $9/month. If you don't, you owe nothing. I love building sites for free, and a lot of those clients come back to me when they're ready for something bigger, like an online store or a custom build."],
   ["Do I own the website?", "Yes. You get the complete source code. Host it anywhere, change it, or hand it to another developer. Unlike Wix or Squarespace, nothing is locked to my service."],
   ["How long does it take?", "Most sites are designed, built and launched within days, not months. You'll get a live preview link while I work."],
 ];
@@ -207,13 +207,13 @@ function footer() {
 <div><h3>Web design in</h3><ul>${cities.slice(0, 6).map((c) => `<li><a href="/${cityPath(c)}/">${esc(cap(c.name))}</a></li>`).join("")}<li><a href="/${CITY_HUB}/">All areas →</a></li></ul></div>
 <div><h3>Features</h3><ul>${solutions.map((x) => `<li><a href="/${x.slug}/">${esc(x.label)}</a></li>`).join("")}<li><a href="/add-ons/">All add-ons →</a></li></ul></div>
 <div><h3>Get in touch</h3><ul><li><a href="tel:${PHONE_TEL}">${PHONE}</a></li><li><a href="mailto:freesitecompanycanada@gmail.com">freesitecompanycanada@gmail.com</a></li><li>Squamish, BC</li><li><a href="/blog/">Blog</a></li><li><a href="/custom">Custom builds (stores, booking, apps)</a></li><li><a href="/#apply">Apply for a free website →</a></li></ul></div>
-<p class="fine">*$9.99/month for your first 3 months, then $13.99/month (Starter plan). <a href="/custom">Planning an online store or something bigger? Ask about a custom build.</a></p>
+<p class="fine">*$9/month for your first 3 months, then $13/month (Starter plan). <a href="/custom">Planning an online store or something bigger? Ask about a custom build.</a></p>
 </div></footer>`;
 }
 
-// Every visible "$9.99/month" gets the asterisk that the footer note explains.
+// Every visible "$9/month" gets the asterisk that the footer note explains.
 function starPrices(html) {
-  return html.replace(/\$9\.99(\/month|\/mo|\s+a\s+month)(?!\*)/g, "$$9.99$1*");
+  return html.replace(/\$9(\/month|\/mo|\s+a\s+month)(?!\*)/g, "$$9$1*");
 }
 
 const cap = (s) => s.charAt(0).toUpperCase() + s.slice(1);
@@ -255,7 +255,7 @@ function serviceLd({ name, description, path, area }) {
     serviceType: "Web design",
     provider: { "@type": "ProfessionalService", "@id": `${SITE}/#organization`, name: "FreeSiteCompany", url: SITE, telephone: "+1-604-849-8898" },
     areaServed: area,
-    offers: { "@type": "Offer", price: "0", priceCurrency: "CAD", description: "Free custom website build. Optional hosting and support from $9.99/month." },
+    offers: { "@type": "Offer", price: "0", priceCurrency: "CAD", description: "Free custom website build. Optional hosting and support from $9/month." },
   };
 }
 
@@ -291,7 +291,7 @@ const mathSection = () => `
 <div class="math">
 <div class="row"><div>Web agency<small>up front, plus monthly fees</small></div><s>$3,000–$10,000</s></div>
 <div class="row"><div>Wix or Squarespace<small>plus your weekends, and it looks like a template</small></div><s>$20–$50/mo</s></div>
-<div class="row us"><div><b>FreeSite Company</b><small>$9.99/mo only if you keep it</small></div><strong>$0 to build</strong></div>
+<div class="row us"><div><b>FreeSite Company</b><small>$9/mo only if you keep it</small></div><strong>$0 to build</strong></div>
 </div>
 </div></section>`;
 
@@ -302,7 +302,7 @@ const stepsSection = () => `
 <div class="steps">
 <div class="step"><h3>Apply in 2 minutes</h3><p>Tell me about your business. I'll reply within 24 hours.</p></div>
 <div class="step"><h3>I build your site, free</h3><p>A fully custom, hand-coded website with two rounds of revisions.</p></div>
-<div class="step"><h3>Love it, then decide</h3><p>See the finished site before you pay anything. Keep it online from $9.99/month, or walk away.</p></div>
+<div class="step"><h3>Love it, then decide</h3><p>See the finished site before you pay anything. Keep it online from $9/month, or walk away.</p></div>
 </div>
 </div></section>`;
 
@@ -321,7 +321,7 @@ const linksSection = (heading, links) => `
 const finalCta = (line) => `
 <section class="final"><div class="wrap">
 <h2 class="d">${line}</h2>
-<p>Free to build. Free to see. $9.99/month only if you love it.</p>
+<p>Free to build. Free to see. $9/month only if you love it.</p>
 <div class="ctas"><a class="btn" href="/#apply">Apply for your free website →</a><a class="btn ghost" href="https://calendar.app.google/L4ok6TnfC8njfXXy6" target="_blank" rel="noopener">Book a call</a></div>
 </div></section>`;
 
@@ -336,7 +336,7 @@ const pages = [];
 for (const ind of industries) {
   const path = industryPath(ind);
   const faqs = [...ind.faqs, ...sharedFaqs];
-  const description = `${ind.title}: a custom, hand-coded website for your ${ind.noun}, built free by a real web designer in BC. Only $9.99/month if you keep it. Month-to-month, cancel any time.`;
+  const description = `${ind.title}: a custom, hand-coded website for your ${ind.noun}, built free by a real web designer in BC. Only $9/month if you keep it. Month-to-month, cancel any time.`;
   const trail = [["Home", "/"], ["Websites for small business", `/${INDUSTRY_HUB}/`], [ind.label, `/${path}`]];
   const body = `${crumbs(trail)}
 ${hero({ eyebrow: `Free websites for ${ind.label.toLowerCase()}`, h1: esc(ind.h1).replace(/free website/, "<em>free website</em>").replace(/free portfolio website/, "<em>free portfolio website</em>"), intro: ind.intro })}
@@ -426,7 +426,7 @@ for (const city of cities) {
     [`Do you work with businesses in ${city.name}?`, `Yes. ${city.meet} I build for businesses all over BC and Canada.`],
     ...sharedFaqs,
   ];
-  const description = `Web design in ${city.name}, ${city.region.split(", ").pop()}: a custom, hand-coded website for your small business, built free by a BC web designer. $9.99/month only if you keep it.`;
+  const description = `Web design in ${city.name}, ${city.region.split(", ").pop()}: a custom, hand-coded website for your small business, built free by a BC web designer. $9/month only if you keep it.`;
   const trail = [["Home", "/"], ["Web design in BC", `/${CITY_HUB}/`], [cap(city.name), `/${path}`]];
   const body = `${crumbs(trail)}
 ${hero({ eyebrow: `${cap(city.name)} · ${city.region}`, h1: esc(city.h1).replace(/Free to build\./, "<em>Free to build.</em>"), intro: city.intro })}
@@ -456,7 +456,7 @@ ${finalCta(`A better website for your <em>${esc(city.name)}</em> business.`)}`;
 // Hubs
 {
   const trail = [["Home", "/"], ["Websites for small business", `/${INDUSTRY_HUB}/`]];
-  const description = "Free custom websites for restaurants, salons, contractors, trades, clinics, gyms, tour operators and more. Built by a real web designer in BC. $9.99/month only if you keep it.";
+  const description = "Free custom websites for restaurants, salons, contractors, trades, clinics, gyms, tour operators and more. Built by a real web designer in BC. $9/month only if you keep it.";
   const body = `${crumbs(trail)}
 ${hero({ eyebrow: "Free website program", h1: "A <em>free website</em> for your small business", intro: "Every business needs something different from its website. A restaurant needs its menu, a contractor needs a project gallery, a clinic needs online booking. Pick your business type to see what I'd build for you, for free." })}
 <section class="band"><div class="wrap">
@@ -471,9 +471,9 @@ ${finalCta("Don't see your business? <em>Apply anyway.</em>")}`;
 }
 {
   const trail = [["Home", "/"], ["Web design in BC", `/${CITY_HUB}/`]];
-  const description = "Free custom web design for small businesses across BC: Squamish, Whistler, Vancouver, the North Shore, Victoria, Kelowna and more. $9.99/month only if you keep it.";
+  const description = "Free custom web design for small businesses across BC: Squamish, Whistler, Vancouver, the North Shore, Victoria, Kelowna and more. $9/month only if you keep it.";
   const body = `${crumbs(trail)}
-${hero({ eyebrow: "Based in Squamish · Serving all of BC", h1: "Web design across <em>British Columbia</em>", intro: "I'm a web designer in Squamish, and I build small businesses across BC custom websites for free. You only pay $9.99/month if you keep it. Pick your area to learn more." })}
+${hero({ eyebrow: "Based in Squamish · Serving all of BC", h1: "Web design across <em>British Columbia</em>", intro: "I'm a web designer in Squamish, and I build small businesses across BC custom websites for free. You only pay $9/month if you keep it. Pick your area to learn more." })}
 <section class="band"><div class="wrap">
 <p class="label">Pick your area</p>
 <div class="needs">${cities.map((c) => `<a class="need" style="text-decoration:none" href="/${cityPath(c)}/"><h3>${esc(cap(c.name))} →</h3><p>${esc(c.region)}</p></a>`).join("")}</div>
@@ -496,7 +496,7 @@ ${finalCta("Outside BC? <em>Apply anyway.</em>")}`;
 <h1 class="d">${esc(post.title)}</h1>
 <p class="meta">By Jeremy, FreeSite Company · ${fmt(post.date)}</p>
 ${post.body}
-<div class="cta-box"><p><b>Want a custom website without the up-front cost?</b> I'll build it free. You only pay $9.99/month if you keep it.</p><div class="ctas"><a class="btn" href="/#apply">Apply in 2 minutes →</a><a class="btn ghost" href="tel:${PHONE_TEL}">${PHONE}</a></div></div>
+<div class="cta-box"><p><b>Want a custom website without the up-front cost?</b> I'll build it free. You only pay $9/month if you keep it.</p><div class="ctas"><a class="btn" href="/#apply">Apply in 2 minutes →</a><a class="btn ghost" href="tel:${PHONE_TEL}">${PHONE}</a></div></div>
 </article>
 ${linksSection("More from the blog", posts.filter((p) => p !== post).map((p) => [p.title, `/blog/${p.slug}/`]))}`;
     write(path, layout({

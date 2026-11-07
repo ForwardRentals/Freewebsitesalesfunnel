@@ -296,7 +296,7 @@ export function CustomBuilds() {
                   "Contact and quote forms",
                   "Link to the booking tool you already use",
                   "By application, limited spots each month",
-                  "$0 to build, $9.99/mo for 3 months, then $13.99/mo",
+                  "$0 to build, $9/mo for 3 months, then $13/mo",
                 ].map((t) => (
                   <li key={t} className="flex gap-2.5">
                     <CheckCircle2 className="h-5 w-5 shrink-0 text-[#166b45]/70 mt-0.5" />

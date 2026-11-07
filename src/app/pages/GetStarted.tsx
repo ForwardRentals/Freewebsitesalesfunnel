@@ -354,7 +354,7 @@ export function GetStarted() {
                       id="monthlyBudget"
                       value={formData.monthlyBudget}
                       onChange={(e) => updateField("monthlyBudget", e.target.value)}
-                      placeholder="e.g., $9.99–$27.99/month"
+                      placeholder="e.g., $9–$27/month"
                       className={inputClasses}
                     />
                     <p className="text-sm text-[#6b675e] mt-2">

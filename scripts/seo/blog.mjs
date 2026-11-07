@@ -59,7 +59,7 @@ export const posts = [
 </ul>
 
 <h2>Want it built for you?</h2>
-<p>Every FreeSite Company build includes the pages your business actually needs, written in plain language and set up for local search. The build is free, you see it before you pay anything, and you only pay $9.99 a month if you keep it.</p>
+<p>Every FreeSite Company build includes the pages your business actually needs, written in plain language and set up for local search. The build is free, you see it before you pay anything, and you only pay $9 a month if you keep it.</p>
 `,
   },
   {
@@ -114,7 +114,7 @@ export const posts = [
 </ul>
 
 <h2>Or let us handle it</h2>
-<p>Every FreeSite Company site is hand-coded, with compressed images and fast hosting, so it loads quickly on a phone from day one. The build is free, and you only pay $9.99 a month if you keep it.</p>
+<p>Every FreeSite Company site is hand-coded, with compressed images and fast hosting, so it loads quickly on a phone from day one. The build is free, and you only pay $9 a month if you keep it.</p>
 `,
   },
   {
@@ -166,7 +166,7 @@ export const posts = [
 <p>It doesn't have to be. A simple, fast site with the pages you actually need (see <a href="/blog/what-pages-does-a-small-business-website-need/">what pages a small business website needs</a>) is enough for most businesses. And it's one of the few marketing tools that keeps working while you sleep.</p>
 
 <h2>Where we fit</h2>
-<p>FreeSite Company builds small businesses a custom website for free. You see the finished site before you pay anything, and if you keep it, hosting and support is $9.99 a month. If you don't love it, you walk away and owe nothing.</p>
+<p>FreeSite Company builds small businesses a custom website for free. You see the finished site before you pay anything, and if you keep it, hosting and support is $9 a month. If you don't love it, you walk away and owe nothing.</p>
 `,
   },
   {
@@ -208,7 +208,7 @@ export const posts = [
 <p><strong>Can people find you?</strong> Page titles, local business schema and a matching Google Business Profile are what get you into local search results. A pretty site nobody finds isn't doing its job.</p>
 
 <h2>Where we fit</h2>
-<p>At FreeSite Company I build small businesses a custom, hand-coded website for free, with two rounds of revisions. You see the finished site before you pay anything. If you love it, keeping it online with hosting and support is $9.99 a month. If you don't, you walk away and owe nothing. You own the code either way.</p>
+<p>At FreeSite Company I build small businesses a custom, hand-coded website for free, with two rounds of revisions. You see the finished site before you pay anything. If you love it, keeping it online with hosting and support is $9 a month. If you don't, you walk away and owe nothing. You own the code either way.</p>
 `,
   },
   {
@@ -253,7 +253,7 @@ export const posts = [
 </tbody></table></div>
 
 <h2>The middle ground</h2>
-<p>The usual reason people pick a builder is that a custom site costs thousands up front. That's the problem FreeSite Company exists to solve: I build you a custom site for free, you see it live before paying anything, and you keep it online for $9.99 a month only if you love it. You still own all the code.</p>
+<p>The usual reason people pick a builder is that a custom site costs thousands up front. That's the problem FreeSite Company exists to solve: I build you a custom site for free, you see it live before paying anything, and you keep it online for $9 a month only if you love it. You still own all the code.</p>
 <p>Already on Wix or Squarespace? That's fine. I can rebuild your site from what you already have, and you can cancel the builder once the new one is live.</p>
 `,
   },
@@ -304,7 +304,7 @@ export const posts = [
 </ul>
 
 <h2>Want this done for you?</h2>
-<p>Every FreeSite Company build includes the website side of this checklist: local schema, page titles, a sitemap, fast loading and a site that lines up with your Google Business Profile. The build is free, and you only pay $9.99 a month if you keep it.</p>
+<p>Every FreeSite Company build includes the website side of this checklist: local schema, page titles, a sitemap, fast loading and a site that lines up with your Google Business Profile. The build is free, and you only pay $9 a month if you keep it.</p>
 `,
   },
 ];

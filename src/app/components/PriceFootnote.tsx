@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 
-/* The asterisk behind every "$9.99/month" on the site. Keep the wording in
+/* The asterisk behind every "$9/month" on the site. Keep the wording in
    sync with the Plans page and Hermes's knowledge file. */
 export function PriceFootnote({
   className = "",
@@ -18,7 +18,7 @@ export function PriceFootnote({
         className
       }
     >
-      *$9.99/month for your first 3 months, then $13.99/month (Starter plan).{" "}
+      *$9/month for your first 3 months, then $13/month (Starter plan).{" "}
       <Link
         to="/custom"
         className={

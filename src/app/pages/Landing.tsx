@@ -109,7 +109,7 @@ const steps = [
     step: "3",
     title: "Love it, then decide",
     description:
-      "See the finished site before you pay a cent. Keep the code outright, or let me host and maintain it from $9.99/month.*",
+      "See the finished site before you pay a cent. Keep the code outright, or let me host and maintain it from $9/month.*",
   },
 ];
 
@@ -120,7 +120,7 @@ const faqs = [
   },
   {
     q: "Is there a catch?",
-    a: "No. The build is free and includes two full rounds of revisions. You only ever pay if you choose a hosting plan: $9.99/month for your first 3 months, then $13.99/month. It's a simple month-to-month agreement, so you can cancel any time and take your code with you.",
+    a: "No. The build is free and includes two full rounds of revisions. You only ever pay if you choose a hosting plan: $9/month for your first 3 months, then $13/month. It's a simple month-to-month agreement, so you can cancel any time and take your code with you.",
   },
   {
     q: "Do I own the website?",
@@ -410,7 +410,7 @@ function HeroBrowser() {
       >
         <p className="text-xs text-[#6b675e]">Hosting & support</p>
         <p className="font-display text-2xl font-semibold text-[#1b1a17]">
-          $9.99<span className="text-sm text-[#6b675e]">/mo*</span>
+          $9<span className="text-sm text-[#6b675e]">/mo*</span>
         </p>
       </motion.div>
     </div>
@@ -544,7 +544,7 @@ export function Landing() {
               web designer in Squamish, BC, and I'll build yours for{" "}
               <strong className="text-[#1b1a17]">$0</strong>, with two rounds of
               revisions. You only pay if you keep it:{" "}
-              <strong className="text-[#1b1a17]">$9.99/month*</strong> for
+              <strong className="text-[#1b1a17]">$9/month*</strong> for
               hosting and support. Month-to-month, cancel any time. You own the code.
             </motion.p>
 
@@ -649,7 +649,7 @@ export function Landing() {
               {[
                 { who: "Web agency", cost: "$3,000–$10,000", note: "up front, plus monthly fees", strike: true },
                 { who: "DIY builder (Wix, Squarespace)", cost: "$20–$50/mo", note: "plus your weekends, and it looks like a template", strike: true },
-                { who: "FreeSite Company", cost: "$0 to build", note: "$9.99/mo* only if you keep it", strike: false },
+                { who: "FreeSite Company", cost: "$0 to build", note: "$9/mo* only if you keep it", strike: false },
               ].map((row) => (
                 <div
                   key={row.who}
@@ -800,7 +800,7 @@ export function Landing() {
               </span>
               <p className="relative font-display text-2xl sm:text-4xl leading-snug font-medium mb-8">
                 Why free? Because I'd rather earn{" "}
-                <span className="italic text-[#166b45]">$9.99 a month*</span>{" "}
+                <span className="italic text-[#166b45]">$9 a month*</span>{" "}
                 from a hundred happy local businesses than charge one of them
                 $5,000 up front.
               </p>
@@ -1119,7 +1119,7 @@ export function Landing() {
               have to be.
             </h2>
             <p className="text-xl text-[#6b675e] mb-10">
-              Free to build. Free to see. $9.99/month* only if you love it.
+              Free to build. Free to see. $9/month* only if you love it.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <ApplyButton label="Apply for your free website" />

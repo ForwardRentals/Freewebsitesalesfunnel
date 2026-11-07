@@ -30,6 +30,13 @@ export const addons = [
     blurb: "A chat bubble trained on your services, prices and FAQs. It answers questions at 11pm and hands real leads to you (and your CRM) with their contact details.",
   },
   {
+    id: "domain",
+    name: "Domain hosting",
+    price: "$18/year",
+    blurb: "Your domain (yourbusiness.ca or .com) registered or moved over, renewed every year, and pointed at your website and email. One flat price, in Canadian dollars.",
+    page: "domain-hosting",
+  },
+  {
     id: "email",
     name: "Email at your domain",
     price: "$15/month (free on Growth and Commerce)",
@@ -148,9 +155,9 @@ export const solutions = [
     title: "Squarespace Alternative for Canadian Small Businesses",
     h1: "Leaving Squarespace? <em>I'll rebuild your site for free.</em>",
     intro:
-      "Squarespace's annual plans run roughly US$16 to $52 a month, and a lot of Canadian businesses end up paying $300 to $500 a year, in US dollars, for a template they built themselves. Send me your Squarespace link and I'll rebuild it as a custom site, for free. Keep it online for $9.99/month, billed in Canadian dollars.",
+      "Squarespace's annual plans run roughly US$16 to $52 a month, and a lot of Canadian businesses end up paying $300 to $500 a year, in US dollars, for a template they built themselves. Send me your Squarespace link and I'll rebuild it as a custom site, for free. Keep it online for $9/month, billed in Canadian dollars.",
     compare: [
-      ["Cost per year", "Roughly US$190–630 on annual plans", "$0 to build, then or $89.99/year on the annual Starter plan"],
+      ["Cost per year", "Roughly US$190–630 on annual plans", "$0 to build, then or $89/year on the annual Starter plan"],
       ["Currency", "Usually billed in US dollars", "Canadian dollars"],
       ["Who builds it", "You do, from a template", "I do, custom for your business"],
       ["Who owns the code", "Squarespace; your design can't leave", "You do, host it anywhere"],
@@ -176,9 +183,9 @@ export const solutions = [
     title: "Wix Alternative for Canadian Small Businesses",
     h1: "Done with Wix? <em>Get a custom site, free.</em>",
     intro:
-      "Wix makes it easy to start and hard to leave: sites can't be exported, the premium plans add up, and pages can get heavy on phones. I'll rebuild your Wix site as a fast, custom site you own, for free. Then it's $9.99/month in Canadian dollars to keep it online, month-to-month, cancel any time.",
+      "Wix makes it easy to start and hard to leave: sites can't be exported, the premium plans add up, and pages can get heavy on phones. I'll rebuild your Wix site as a fast, custom site you own, for free. Then it's $9/month in Canadian dollars to keep it online, month-to-month, cancel any time.",
     compare: [
-      ["Cost per year", "Premium plans, often billed in US dollars, plus apps", "$0 to build, then or $89.99/year on the annual Starter plan"],
+      ["Cost per year", "Premium plans, often billed in US dollars, plus apps", "$0 to build, then or $89/year on the annual Starter plan"],
       ["Can you move it?", "No, Wix sites can't be exported", "Yes, you get the full source code"],
       ["Who builds it", "You do, with the editor", "I do, custom for your business"],
       ["Speed on phones", "Often slowed by editor scripts and apps", "Hand-coded and light"],
@@ -217,5 +224,28 @@ export const solutions = [
     ],
     work: ["canoe", "watertaxi", "trails"],
     cta: "Let customers <em>book without calling.</em>",
+  },
+  {
+    slug: "domain-hosting",
+    label: "Domain hosting",
+    eyebrow: "Domain hosting for Canadian businesses",
+    title: "Domain Hosting for Canadian Small Businesses: $18/year",
+    h1: "Domain hosting for <em>$18 a year.</em> In Canadian dollars.",
+    intro:
+      "Your domain is your address online, and losing it to a missed renewal or a confusing registrar dashboard is a nightmare. For $18 a year I'll register your domain (or move over the one you already have), keep it renewed, and point it at your website and email. One flat price, billed in Canadian dollars, with a real person to call.",
+    needs: [
+      [".ca or .com, your choice", "Register a new domain, or transfer the one you already own from GoDaddy, Wix, Squarespace or anywhere else. It stays registered in your name."],
+      ["Renewals handled", "Your domain renews every year so it never lapses, and you're never surprised by a renewal bill at a higher price."],
+      ["Pointed at everything", "Website, email, Google verification and any other records set up correctly, so things just work."],
+      ["No upsells", "No paid add-on checkboxes at checkout and no first-year teaser price that jumps at renewal."],
+      ["Help when you need it", "Changing email providers or adding a new service? Send me a message and I'll update the settings."],
+    ],
+    faqs: [
+      ["Do I still own my domain?", "Yes. It's registered in your name or your business's name, and you can move it to another provider any time."],
+      ["Do I need a website from you to use this?", "No. Domain hosting works on its own, though it's simplest when your site is with me too."],
+      ["What does it cost?", "$18 a year per domain, in Canadian dollars. Premium domains, if you pick one, are priced separately and I'll tell you before you buy."],
+    ],
+    work: ["watertaxi", "canoe", "hobby"],
+    cta: "Keep your domain <em>safe and simple.</em>",
   },
 ];

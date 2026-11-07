@@ -25,11 +25,11 @@ import { Button } from "../components/ui/button";
 const plans = [
   {
     name: "Starter",
-    price: "$9.99",
+    price: "$9",
     priceDetail: "for first 3 months",
-    regularPrice: "$13.99/mo after",
-    annualPrice: "$89.99/year",
-    annualNote: "(Special rate - save $77!)",
+    regularPrice: "$13/mo after",
+    annualPrice: "$89/year",
+    annualNote: "(Special rate - save $67!)",
     featured: false,
     icon: Zap,
     badge: "Launch Special",
@@ -46,11 +46,11 @@ const plans = [
   },
   {
     name: "Growth",
-    price: "$19.99",
+    price: "$19",
     priceDetail: "for first 3 months",
-    regularPrice: "$27.99/mo after",
+    regularPrice: "$27/mo after",
     annualPrice: "$199/year",
-    annualNote: "(Special rate - save $136!)",
+    annualNote: "(Special rate - save $125!)",
     featured: true,
     icon: TrendingUp,
     badge: "Most Popular",
@@ -149,7 +149,7 @@ const promotions = [
   {
     icon: Star,
     title: "Annual Discount",
-    description: "Pay annually and save big! Starter: $89.99/yr, Growth: $199/yr, Commerce: $449/yr",
+    description: "Pay annually and save big! Starter: $89/yr, Growth: $199/yr, Commerce: $449/yr",
     link: "/plans#annual",
     buttonText: "View Annual Plans",
   },
@@ -167,7 +167,7 @@ export function Plans() {
     document.title = "Web Design Pricing — Free Website Build + Affordable Plans | FreeSiteCompany";
     const meta = document.querySelector('meta[name="description"]');
     if (meta) {
-      meta.setAttribute("content", "Affordable web design pricing for small businesses. Free custom website build included. Hosting & support from $9.99/mo. Month-to-month, no hidden fees. Compare to hiring a web designer or using a website builder.");
+      meta.setAttribute("content", "Affordable web design pricing for small businesses. Free custom website build included. Hosting & support from $9/mo. Month-to-month, no hidden fees. Compare to hiring a web designer or using a website builder.");
     }
   }, []);
 

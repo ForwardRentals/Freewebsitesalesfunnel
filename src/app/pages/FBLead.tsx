@@ -151,7 +151,7 @@ export function FBLead() {
               </p>
               <p className="text-[#6b675e] text-sm md:text-base mt-3 max-w-md mx-auto leading-relaxed">
                 No catch, no credit card, no commitment. The website build
-                is completely free — you only pay for hosting at just $9.99/month*
+                is completely free — you only pay for hosting at just $9/month*
                 when you're ready to go live. Fill out the form and we'll be in touch.
               </p>
               <PriceFootnote className="mt-3 max-w-md mx-auto" />
