@@ -426,7 +426,7 @@ export function GetStarted() {
                     </div>
                     {(formData.logoChoice === "mockup" || formData.logoChoice === "refresh") && (
                       <p className="mt-2 text-sm text-[#166b45]">
-                        Done. We'll mock up a few logo options for you, free, and you pick your favourite.
+                        Done. We'll mock up a few logo options for you to see, free. Love one? Keep it for $20. Want full brand guidelines too (colours, fonts, usage)? Another $20. Totally optional.
                       </p>
                     )}
                   </div>
@@ -539,7 +539,7 @@ export function GetStarted() {
                     </h3>
                     <ul className="text-sm text-[#1b1a17]/80 space-y-2">
                       <li>• We'll review your information within 24 hours</li>
-                      <li>• No logo? We'll mock some up for you to pick from</li>
+                      <li>• No logo? We'll mock some up free (keep one for $20, only if you want it)</li>
                       <li>• Everything happens by email, no meetings needed</li>
                       <li>• We'll start building your custom website</li>
                       <li>• You'll get the complete codebase when it's ready</li>

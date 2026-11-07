@@ -122,7 +122,7 @@ export function ThankYou() {
                   <h3 className="font-semibold mb-2">Send Your Assets (if you have them)</h3>
                   <p className="text-[#6b675e]">
                     Just reply to our email with your logo and photos. No logo? No problem:
-                    we'll mock some up for you to choose from.
+                    we'll mock some up free. Keep your favourite for $20, only if you want it.
                   </p>
                 </div>
               </div>

@@ -30,6 +30,18 @@ export const addons = [
     blurb: "A chat bubble trained on your services, prices and FAQs. It answers questions at 11pm and hands real leads to you (and your CRM) with their contact details.",
   },
   {
+    id: "logo",
+    name: "Logo design",
+    price: "$20 (mockups are free)",
+    blurb: "No logo? We'll mock up a few options with your website draft, free to look at. Love one? Keep it, with all the files, for $20.",
+  },
+  {
+    id: "brand",
+    name: "Brand guidelines",
+    price: "$20",
+    blurb: "A one-page brand guide: your logo versions, colour codes, fonts and simple do's and don'ts, so your signs, cards and socials all match.",
+  },
+  {
     id: "domain",
     name: "Domain hosting",
     price: "$18/year",
