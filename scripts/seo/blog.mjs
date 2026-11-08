@@ -2,6 +2,62 @@
 // Keep claims honest: no invented stats, testimonials or client numbers.
 export const posts = [
   {
+    slug: "what-should-a-plumber-website-have",
+    title: "What Should a Plumber's Website Have? A Trades Checklist",
+    description:
+      "What a plumber, electrician or HVAC website needs to win calls: tap-to-call, service pages, a proper service area on Google, licences, photos and speed.",
+    date: "2026-11-08",
+    excerpt:
+      "A plumber's website needs to do one thing well: get the phone ringing. Here's the checklist I use for plumbers, electricians and HVAC businesses.",
+    body: `
+<p>A good plumber's website makes it effortless to call you, proves you're licensed and trustworthy, and shows every town you serve. Everything else is a bonus. The same goes for electricians, HVAC techs and most other trades. Here's the checklist I work from when I build a site for a trades business.</p>
+
+<h2>1. A tap-to-call number at the very top</h2>
+<p>Someone with water on their floor isn't browsing. They're on their phone, probably stressed, and they'll call the first business that looks real. Put your phone number in the header of every page as a tap-to-call link, and add a big call button on the home page. If you offer emergency or same-day service, say so right there, along with your hours.</p>
+
+<h2>2. A page for each service</h2>
+<p>"Plumbing services" is not how people search. They type "hot water tank replacement", "drain cleaning" or "furnace repair". Give each main service its own page with a plain description of what you do, what's involved, how quickly you can come out and, if you're comfortable, a starting price or what affects the price. One page per service gives Google a clear match for each search. I cover the wider page list in <a href="/blog/what-pages-does-a-small-business-website-need/">What Pages Does a Small Business Website Need?</a></p>
+
+<h2>3. Your service area, spelled out</h2>
+<p>List every town and neighbourhood you cover, in real sentences on your site. If you're in Squamish and also work in Whistler, Pemberton and North Vancouver, say so.</p>
+<p>The same applies on Google. If you travel to customers rather than welcome them at a shop, Google says you should remove your address from your Business Profile. You can add up to 20 service areas, set by city, postal code or similar, and Google advises keeping them within about two hours' driving time of your location. You can't define an area as a radius around your business. Details are in Google's help page, linked below. My <a href="/blog/local-seo-checklist-small-business-bc/">local SEO checklist</a> covers the rest of the Business Profile setup.</p>
+
+<h2>4. Licences, insurance and guarantees</h2>
+<p>Trades are one of the few businesses where customers let you into their home, so trust matters more than almost anywhere. Show your trade qualifications and licence details, that you're insured, and any workmanship guarantee. Check your regulator's requirements for what you must display or say in advertising, and rely on them rather than me for that.</p>
+
+<h2>5. Real photos of real work</h2>
+<p>Stock photos of smiling people in clean uniforms don't earn trust. Photos of your actual van, your team and finished jobs do. Before-and-after shots of a bathroom, a panel upgrade or a new furnace work well. Ask the customer's permission before you post anything that shows their home.</p>
+
+<h2>6. Reviews you can point to</h2>
+<p>Pull in a few genuine reviews, with the customer's name if they've agreed, and link to your Google profile so people can read the rest. Don't invent or buy reviews. Ask happy customers for one right after the job while it's fresh.</p>
+
+<h2>7. A fast site that works on weak signal</h2>
+<p>Trades calls often come from basements, crawl spaces and rural roads with a poor connection. Heavy page builders and giant photos make a site crawl. A lean, hand-coded site with compressed images loads quickly almost anywhere. If your current site drags, see <a href="/blog/why-is-my-website-slow-on-phones/">Why Is My Website Slow on Phones?</a></p>
+
+<h2>8. An easy way to ask for a quote or book</h2>
+<p>Not everyone wants to call, especially for non-urgent work. Add a short form (name, phone, what you need, postal code) and make sure enquiries reach you straight away. If you'd like customers to book a time or get automatic follow-up, <a href="/online-booking-website/">online booking</a> and a <a href="/website-with-crm/">built-in CRM</a> can handle that as add-ons.</p>
+
+<h2>Put the right words on each page</h2>
+<p>Write the way you'd explain the job to a neighbour. Say what the problem looks like ("no hot water", "breaker keeps tripping", "furnace blowing cold air"), what you do about it, and what happens next: you call, you book a time, someone arrives. Plain steps reassure people who've never hired a tradesperson before, and they use the same words customers type into Google.</p>
+<p>Add a short FAQ to each service page too: how fast can you come, do you give quotes in advance, what areas do you cover, do you work evenings and weekends. Every answer is one less reason to hesitate before calling.</p>
+
+<h2>What you can skip</h2>
+<ul>
+<li>A blog you won't keep up.</li>
+<li>Autoplay videos, sliders and pop-ups.</li>
+<li>Long "about our company history" pages. A short, honest paragraph and a photo of you is enough.</li>
+</ul>
+
+<h2>How FreeSite Company can help</h2>
+<p>I'm Jeremy, a web designer in Squamish. I build plumbers, electricians and HVAC businesses a custom, hand-coded website for free. You see it finished before paying anything, and it's $9/month (then $13/month after three months, or $89/year), month-to-month, cancel any time, only if you keep it. You own the code. There's more on what I build for <a href="/free-website-for-trades/">trades businesses</a> if you'd like a look.</p>
+
+<h2>Sources</h2>
+<ul>
+<li><a href="https://support.google.com/business/answer/9157481" rel="noopener" target="_blank">Google Business Profile Help: Service-area businesses</a></li>
+</ul>
+`,
+  },
+  {
     slug: "what-pages-does-a-small-business-website-need",
     title: "What Pages Does a Small Business Website Need?",
     description:
