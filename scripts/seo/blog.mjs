@@ -2,6 +2,64 @@
 // Keep claims honest: no invented stats, testimonials or client numbers.
 export const posts = [
   {
+    slug: "can-i-email-customers-without-permission-canada-casl",
+    title: "Can I Email Customers Without Permission in Canada?",
+    description:
+      "A plain-English look at CASL for small businesses: express vs implied consent, what every marketing email must include, and how fast to honour an unsubscribe.",
+    date: "2026-11-09",
+    excerpt:
+      "Usually not: Canada's anti-spam law (CASL) requires consent before you send marketing emails. Here's what that means for a small business with a website.",
+    body: `
+<p>In most cases, no. Canada's anti-spam legislation (CASL) says you need the recipient's consent before sending a commercial electronic message, and that consent can be express or implied. That covers emails and texts that encourage someone to buy or take part in something commercial. I'm a web designer, not a lawyer, so treat this as a plain-language overview and check the government pages linked at the bottom for your own situation.</p>
+
+<h2>Express consent</h2>
+<p>Express consent means someone has clearly agreed, in writing or verbally, to receive your messages. A newsletter sign-up box on your website is the classic example. According to the Government of Canada, express consent doesn't expire unless the person withdraws it.</p>
+<p>The key word is "clearly". A box that's already ticked, or an email address you found online, isn't the same as someone saying "yes, please contact me". Keep a record of when and how each person signed up, because the sender is the one who has to be able to show consent.</p>
+
+<h2>Implied consent</h2>
+<p>Implied consent only applies in specific situations set out in the law, such as an existing business relationship. The Government of Canada's guidance gives two time limits to know:</p>
+<ul>
+<li><strong>Up to 2 years</strong> after a purchase, for example.</li>
+<li><strong>6 months</strong> after an inquiry or application, such as someone asking you for a quote.</li>
+</ul>
+<p>So if a customer bought from you last spring, you may be able to email them for a while. A person who filled in your contact form eight months ago is a different story. If your situation doesn't fit one of the categories in the law, you can't rely on implied consent.</p>
+
+<h2>What every marketing email must include</h2>
+<p>Even with consent, each message needs:</p>
+<ul>
+<li>Your business name, and the name of anyone you're sending on behalf of.</li>
+<li>A mailing address, plus a phone number, email address or website address.</li>
+<li>Contact details that stay valid for at least 60 days after you send.</li>
+<li>A clear, easy unsubscribe mechanism.</li>
+</ul>
+
+<h2>Unsubscribes need to be fast</h2>
+<p>The Act says an unsubscribe request must be acted on no later than 10 business days after it's sent, and the Government of Canada notes it must be at no cost to the person. Put the unsubscribe link somewhere visible and make sure the list you use actually removes people.</p>
+
+<h2>What this means for your website</h2>
+<p>Your website is usually where consent starts, so it's worth setting up properly:</p>
+<ul>
+<li>Add a newsletter sign-up form that's unticked by default, with a sentence saying what people will get and how often.</li>
+<li>On your contact or quote form, keep "we'll reply to your enquiry" separate from "add me to your newsletter". A reply to a question is one thing; a monthly promotion is another.</li>
+<li>Keep a record of when each person signed up.</li>
+<li>Put your business name and mailing address in the footer of every email.</li>
+</ul>
+<p>If you track leads in a <a href="/website-with-crm/">built-in CRM</a>, record how each person came to you and when, so you know who you can email and who has asked to stop. It also helps to send from an address at your own domain; I cover that in <a href="/domain-hosting/">domain hosting</a> and the <a href="/add-ons/">add-ons</a> page.</p>
+
+<h2>Not everything is a marketing email</h2>
+<p>Your replies to someone's question, an appointment confirmation, or a receipt for something they bought are generally treated differently from promotions. If you're unsure which side a message falls on, the official CASL pages are the place to check, and a lawyer is the right person for anything borderline.</p>
+
+<h2>How FreeSite Company can help</h2>
+<p>I'm Jeremy, a web designer in Squamish. I build Canadian small businesses a custom, hand-coded website for free, and you pay $9/month (then $13/month after three months, or $89/year) only if you keep it, month-to-month, cancel any time. I can set up sign-up forms, a contact form that sends enquiries straight to you, and a CRM or online booking if you want one. If you'd like to see what that looks like, you're welcome to take a look at <a href="/plans">the plans</a>.</p>
+
+<h2>Sources</h2>
+<ul>
+<li><a href="https://ised-isde.canada.ca/site/canada-anti-spam-legislation/en/getting-consent-send-email" rel="noopener" target="_blank">Government of Canada: Getting consent to send emails</a></li>
+<li><a href="https://laws-lois.justice.gc.ca/eng/acts/E-1.6/index.html" rel="noopener" target="_blank">Justice Laws: An Act respecting the promotion of efficiency and adaptability of the Canadian economy (CASL, S.C. 2010, c. 23)</a></li>
+</ul>
+`,
+  },
+  {
     slug: "what-should-a-plumber-website-have",
     title: "What Should a Plumber's Website Have? A Trades Checklist",
     description:
