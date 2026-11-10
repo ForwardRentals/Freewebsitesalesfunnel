@@ -2,6 +2,71 @@
 // Keep claims honest: no invented stats, testimonials or client numbers.
 export const posts = [
   {
+    slug: "how-do-i-verify-my-google-business-profile",
+    title: "How Do I Verify My Google Business Profile? A Plain Guide",
+    description:
+      "How to claim and verify your Google Business Profile in Canada: the verification methods Google offers, how long it takes, and what to fix if you get stuck.",
+    date: "2026-11-10",
+    excerpt:
+      "Verifying your Google Business Profile means proving to Google that you run the business, usually by phone, email, video or postcard. Here's how it works and how long to expect it to take.",
+    body: `
+<p>To verify a Google Business Profile, you claim your business on Google, then prove you're the real owner using whichever method Google offers you: a phone or text code, an email, a live video call, a video recording or a postcard in the mail. Google decides which options you see, and you can't change them. Most mailed codes arrive within 14 days, and Google says review after you finish the steps can take up to 5 business days.</p>
+
+<h2>Why verification matters</h2>
+<p>An unverified profile can't manage its details properly, and it's the profile that appears when someone nearby searches for what you do. If you want to show up on the map with your hours, photos and website link, verification is the step that gives you control. My <a href="/blog/local-seo-checklist-small-business-bc/">local SEO checklist for BC</a> covers what to do once you're verified.</p>
+
+<h2>The verification methods Google offers</h2>
+<p>According to Google's help pages, the options depend on your business type, public information, region and hours:</p>
+<ul>
+<li><strong>Phone or text:</strong> you need to answer the business phone or receive a text. Automated phone menus (IVR systems) won't receive the code, so answer with a real person or a direct line.</li>
+<li><strong>Email:</strong> make sure you can open the email address shown on the verification screen.</li>
+<li><strong>Live video call:</strong> only offered for some businesses, and only during your business hours. You're asked to show your location and proof you run the business.</li>
+<li><strong>Video recording:</strong> offered where eligible, with instructions inside the verification flow.</li>
+<li><strong>Postcard:</strong> not available for every business. Most codes arrive within 14 days and expire after 30.</li>
+</ul>
+<p>Some profiles verify instantly if your website is already verified in Google Search Console, or through bulk verification for multi-location businesses.</p>
+
+<h2>Step by step</h2>
+<ul>
+<li>Search for your business name on Google. If it already has a listing, you can claim it; if not, add it.</li>
+<li>Enter your business name exactly as it appears on your sign, website and stationery.</li>
+<li>Add your address, or a service area if you travel to customers.</li>
+<li>Choose the category that best describes your main service.</li>
+<li>Pick from the verification options shown and follow the prompts.</li>
+</ul>
+
+<h2>Get the details right first</h2>
+<p>Most verification trouble comes from profile details that don't meet Google's guidelines. A few worth knowing:</p>
+<ul>
+<li><strong>Name:</strong> it should reflect your real-world business name. Google says extra information such as taglines, hours or phone numbers doesn't belong in it, and stuffing it can lead to suspension.</li>
+<li><strong>Address:</strong> use a real location. Google says P.O. boxes and mailboxes at remote locations aren't acceptable, and a virtual office where you don't actually operate isn't eligible.</li>
+<li><strong>Service-area businesses:</strong> if you go to customers' locations, Google says to hide your address, and to keep your service area within about two hours of driving time from where you're based.</li>
+<li><strong>Home-based businesses:</strong> Google's guidance is to clear the address from your profile if you work from home and don't welcome customers there.</li>
+</ul>
+<p>If you're verifying by postcard, don't edit your name, address or category while you wait. Google warns the code won't work if you do.</p>
+
+<h2>If you get stuck</h2>
+<ul>
+<li>Check that the phone number or email you're using is one you can actually answer or open.</li>
+<li>Make sure the details match your website, so everything lines up in one place.</li>
+<li>If the postcard code expired after 30 days, request a new one.</li>
+<li>Give the review up to 5 business days before starting over, since repeat attempts can slow things down.</li>
+</ul>
+
+<h2>Tie it to your website</h2>
+<p>Your website and your profile should agree on your name, phone number, address or service area, and hours. That consistency is what helps customers trust you, and it's a clear signal for local search. Having your website at your own domain also helps, and I explain that in <a href="/domain-hosting/">domain hosting</a>. If you're not sure what to put on the site itself, see <a href="/blog/what-pages-does-a-small-business-website-need/">what pages a small business website needs</a>.</p>
+
+<h2>How FreeSite Company can help</h2>
+<p>I'm Jeremy, a web designer in Squamish. I build Canadian small businesses a custom, hand-coded website for free, and you pay $9/month (then $13/month after three months, or $89/year) only if you keep it, month-to-month, cancel any time. Google Business Profile setup is one of the <a href="/add-ons/">add-ons</a> if you'd rather hand it over. No pressure either way, and the Google steps above work whether or not we ever work together.</p>
+
+<h2>Sources</h2>
+<ul>
+<li><a href="https://support.google.com/business/answer/7107242" rel="noopener" target="_blank">Google Business Profile Help: Verify your business</a></li>
+<li><a href="https://support.google.com/business/answer/3038177" rel="noopener" target="_blank">Google Business Profile Help: Guidelines for representing your business on Google</a></li>
+</ul>
+`,
+  },
+  {
     slug: "can-i-email-customers-without-permission-canada-casl",
     title: "Can I Email Customers Without Permission in Canada?",
     description:
