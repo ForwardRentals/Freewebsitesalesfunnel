@@ -2,6 +2,77 @@
 // Keep claims honest: no invented stats, testimonials or client numbers.
 export const posts = [
   {
+    slug: "how-do-i-get-a-business-email-with-my-own-domain",
+    title: "How Do I Get a Business Email With My Own Domain?",
+    description:
+      "How to set up a professional email address like you@yourbusiness.ca: what you need, the main options, what to set up so it lands in inboxes, and what to avoid.",
+    date: "2026-11-11",
+    excerpt:
+      "To get an email like you@yourbusiness.ca you need a domain and an email host. Here's how the pieces fit together, your options, and the settings that keep your mail out of spam.",
+    body: `
+<p>To get a business email address like <strong>you@yourbusiness.ca</strong>, you need two things: a domain name you own, and an email service that handles mail for that domain. You then point the domain's email (MX) records at the service and create a mailbox. Your website and your email are separate services that share one domain, so you can set up email whether or not your site is finished.</p>
+
+<h2>Why bother with your own domain</h2>
+<p>A Gmail or Hotmail address works, but it tells customers nothing about your business. An address on your own domain looks established, is easier to remember, and stays with you if you ever change email providers. If you also have a website, your email and web address match, which helps people trust a quote request or invoice from you.</p>
+
+<h2>Step 1: Own your domain</h2>
+<p>Everything starts with the domain. Search for the name you want, register it in your own name (or your business's), and keep the login somewhere safe. If a previous web person registered it for you, ask who the registrant is. You want to be able to log in yourself. You can check availability on my <a href="/domains">domain search</a>; domains are $18/year with me.</p>
+
+<h2>Step 2: Choose an email host</h2>
+<p>Domain registration doesn't automatically include a mailbox. Your common options:</p>
+<ul>
+<li><strong>Google Workspace:</strong> Gmail with your own domain, plus calendar, Drive and Meet. Google's pricing page lists custom business email as included on all of its plans, and storage per user depends on the plan (30 GB on Starter at the time of writing).</li>
+<li><strong>Microsoft 365:</strong> Outlook-style email on your domain, popular if you already live in Word and Excel.</li>
+<li><strong>Email bundled with your domain or hosting:</strong> usually the cheapest and fine for a one-person business with light needs.</li>
+</ul>
+<p>Prices change and vary by plan, billing term and currency, so check the provider's current pricing page for your region before deciding. I haven't quoted figures here for that reason.</p>
+
+<h3>Which one should you pick?</h3>
+<ul>
+<li>If you already use Gmail and Google Calendar every day, Google Workspace is the least friction.</li>
+<li>If your accountant or clients send you Office documents all day, Microsoft 365 may fit better.</li>
+<li>If you just need <em>one</em> address that forwards or receives mail, the simpler option is often enough.</li>
+</ul>
+
+<h2>Step 3: Point your domain at the email service</h2>
+<p>Your email host will give you a list of DNS records, mainly MX records, to add in your domain's DNS settings. That's the part that tells the internet where to deliver mail for your domain. It's copy and paste, but one typo means mail goes missing, so double-check each value. Keep any existing email working until the new one is confirmed, especially if you're moving off an old address.</p>
+
+<h2>Step 4: Set up SPF, DKIM and DMARC</h2>
+<p>These three records help prove your email really comes from you, so it doesn't end up in spam. According to Google's sender guidelines:</p>
+<ul>
+<li><strong>SPF</strong> lists the services allowed to send email for your domain. Include every one that sends for you, such as your invoicing app or newsletter tool.</li>
+<li><strong>DKIM</strong> adds a signature that lets receiving servers verify the message came from the domain owner.</li>
+<li><strong>DMARC</strong> tells receivers what to do when a message fails those checks.</li>
+</ul>
+<p>Google says all senders must use SPF or DKIM, and bulk senders (over 5,000 messages a day to Gmail) must use all three. Google recommends setting up all three for every domain, and says unauthenticated messages may be marked as spam or rejected. A small business rarely sends that much, but setting all three up once is cheap insurance.</p>
+
+<h2>Step 5: Use it everywhere</h2>
+<ul>
+<li>Put the new address on your website, Google Business Profile, invoices, quotes and business cards.</li>
+<li>Set it up on your phone and computer, and add a signature with your name, phone number and website.</li>
+<li>Make your contact form send to it, and reply from it.</li>
+</ul>
+<p>If you send newsletters or promotions to customers, read my guide on <a href="/blog/can-i-email-customers-without-permission-canada-casl/">emailing customers under CASL</a> first.</p>
+
+<h2>Common mistakes</h2>
+<ul>
+<li><strong>Using a free address as your only business address.</strong> It works, but it looks less established and the address isn't yours to keep.</li>
+<li><strong>Not owning the domain.</strong> If it's registered in someone else's name, you can lose your email and website together.</li>
+<li><strong>Skipping the authentication records.</strong> Mail may still send, but more of it lands in spam.</li>
+<li><strong>Everyone sharing one login.</strong> Make a mailbox per person, or use a shared inbox such as info@ or hello@.</li>
+</ul>
+
+<h2>How FreeSite Company can help</h2>
+<p>I register domains, set up email at your domain, and build your website for free. You pay $9/month (then $13/month after three months) or $89/year only if you keep it, month-to-month, cancel any time. You can see what's available on the <a href="/add-ons/">add-ons page</a> or the <a href="/plans">plans page</a>. If you'd like me to look after the DNS records so you don't have to, just ask.</p>
+
+<h2>Sources</h2>
+<ul>
+<li><a href="https://support.google.com/a/answer/81126">Google: Email sender guidelines</a></li>
+<li><a href="https://workspace.google.com/intl/en_ca/pricing">Google Workspace pricing and plans</a></li>
+</ul>
+`,
+  },
+  {
     slug: "how-do-i-verify-my-google-business-profile",
     title: "How Do I Verify My Google Business Profile? A Plain Guide",
     description:
