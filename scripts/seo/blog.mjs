@@ -2,6 +2,74 @@
 // Keep claims honest: no invented stats, testimonials or client numbers.
 export const posts = [
   {
+    slug: "how-do-i-add-online-booking-to-my-small-business-website",
+    title: "How Do I Add Online Booking to My Business Website?",
+    description:
+      "How to add online booking to your small business website: what it does, what to look for, how to link it from Google, and when a phone call is still fine.",
+    date: "2026-11-12",
+    excerpt:
+      "Online booking lets customers pick a time on your website without phoning or messaging first. Here's how it works, what to check before you choose a tool, and how to get it in front of customers.",
+    body: `
+<p>To add online booking to your website, you choose a booking tool (or have one built into your site), list your services and opening hours, and put a clear "Book now" button on your pages. Customers then pick an available time themselves, and the booking lands in your calendar. You can do this on almost any website, whether you use a booking app, a website builder's built-in feature, or a custom-built site.</p>
+
+<h2>Who actually benefits from online booking?</h2>
+<p>Booking works best when you sell appointments or fixed time slots: salons and barbers, massage and physio clinics, fitness classes, tours, cleaners, mechanics, photographers. It matters less if every job needs a site visit and a custom quote first. In that case a quote request form is usually the better front door.</p>
+<p>If you're in one of those appointment businesses, see how this fits on my pages for <a href="/free-website-for-salons-barbers/">salons and barbers</a> and <a href="/free-website-for-wellness-clinics/">wellness clinics</a>, or the general <a href="/online-booking-website/">online booking website</a> page.</p>
+
+<h2>What good online booking does</h2>
+<ul>
+<li><strong>Works when you're closed.</strong> Customers book at 10 pm from the couch instead of waiting until you answer the phone.</li>
+<li><strong>Cuts the back-and-forth.</strong> No more "does Thursday at 2 work?" message chains.</li>
+<li><strong>Collects the details you need up front</strong>, such as service type, contact info and any notes.</li>
+<li><strong>Sends reminders</strong>, which can reduce no-shows. How much depends on your business, so I won't promise a number.</li>
+<li><strong>Avoids double-booking</strong> by syncing with your calendar.</li>
+</ul>
+
+<h2>What to check before choosing a booking tool</h2>
+<ul>
+<li><strong>Can you export your customer list?</strong> Your customers are your asset. Make sure you can take their details with you if you switch tools.</li>
+<li><strong>Does it match your services?</strong> Different durations, buffer time between appointments, multiple staff, classes with limited spots.</li>
+<li><strong>Calendar sync.</strong> It should connect to the calendar you already use.</li>
+<li><strong>Payments and deposits.</strong> If you need deposits to cut down on no-shows, check which payment processors it supports and what fees apply. Processor fees vary by plan, so read the provider's current Canadian pricing page.</li>
+<li><strong>Looks and works on a phone.</strong> Most people will book from their phone, so try it yourself first. If your site is slow on mobile, read <a href="/blog/why-is-my-website-slow-on-phones/">why websites are slow on phones</a>.</li>
+<li><strong>Total cost.</strong> Some tools charge per staff member, per booking, or by plan tier. Add it up for your real volume, and check current prices on the provider's own site, since they change.</li>
+<li><strong>Privacy.</strong> You'll be collecting names, phone numbers and sometimes health-related notes. Collect only what you need and have a privacy policy that says what you do with it.</li>
+</ul>
+
+<h2>Where to put the booking button</h2>
+<p>Put "Book now" where people already make decisions, and make it the same wording everywhere:</p>
+<ul>
+<li>At the top of your home page and in your menu or header.</li>
+<li>On every service page, next to the service it books.</li>
+<li>On your contact page, alongside your phone number for people who prefer to call.</li>
+<li>In your email signature and on social media bio links.</li>
+</ul>
+
+<h2>Link your booking page from Google</h2>
+<p>Your Google Business Profile can include a booking link. Google's help page says you can add booking links to your profile (up to 10 links per category), and that these local business links can't be added through the API or a spreadsheet upload, so you add them yourself in your profile. Some booking providers also offer a direct "Book" button on Google through Reserve with Google, but that's only available through select providers, so check whether the tool you're considering supports it. If your profile isn't verified yet, start with my guide on <a href="/blog/how-do-i-verify-my-google-business-profile/">verifying your Google Business Profile</a>.</p>
+
+<h2>When a phone number is still the right answer</h2>
+<p>Online booking isn't mandatory. If you do a handful of jobs a week, each one is different, and customers expect to talk to you first, a prominent phone number and a short contact form can do the job. Many businesses also keep both: booking for the routine stuff, a phone call for anything complicated. Whatever you choose, make sure your phone number is tappable on mobile.</p>
+
+<h2>A simple way to start</h2>
+<ol>
+<li>List your three most common services and how long each takes.</li>
+<li>Set realistic opening hours, with a buffer between appointments.</li>
+<li>Pick one booking tool and test it from your own phone, start to finish.</li>
+<li>Add the button to your site and your Google Business Profile.</li>
+<li>Review after a month: which services get booked, and where do people drop off?</li>
+</ol>
+
+<h2>How FreeSite Company can help</h2>
+<p>I build custom, hand-coded websites for Canadian small businesses for free. You pay $9/month (then $13/month after the first three months) or $89/year only if you keep it, month-to-month, cancel any time, and you own the code. Online booking is one of the upgrades I can add, along with a built-in CRM so booking enquiries and customer details sit in one place. You can see everything on the <a href="/add-ons/">add-ons page</a> or the <a href="/plans">plans page</a>.</p>
+
+<h2>Sources</h2>
+<ul>
+<li><a href="https://support.google.com/business/answer/6218037">Google Business Profile Help: Manage your local business links</a></li>
+</ul>
+`,
+  },
+  {
     slug: "how-do-i-get-a-business-email-with-my-own-domain",
     title: "How Do I Get a Business Email With My Own Domain?",
     description:
