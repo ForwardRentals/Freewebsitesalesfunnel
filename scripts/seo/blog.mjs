@@ -2,6 +2,70 @@
 // Keep claims honest: no invented stats, testimonials or client numbers.
 export const posts = [
   {
+    slug: "do-i-need-a-privacy-policy-on-my-small-business-website-canada",
+    title: "Do I Need a Privacy Policy on My Business Website?",
+    description:
+      "Do you need a privacy policy on your small business website in Canada? A plain-language look at PIPEDA, BC's PIPA, what to include, and where to start.",
+    date: "2026-11-13",
+    excerpt:
+      "If your website collects names, emails or phone numbers, a privacy policy is the sensible (and usually expected) thing to have. Here's what Canadian privacy law asks for and what to put in yours.",
+    body: `
+<p>If your website collects any personal information, such as names and emails from a contact form, booking details, or a newsletter sign-up, then yes, you should have a privacy policy. In Canada, private-sector privacy laws expect businesses to be open about how they handle personal information, and a policy page on your site is the easiest way to do that. I'm a web designer, not a lawyer, so treat this as a plain-language orientation and check the official sources below for your situation.</p>
+
+<h2>Which law applies to my business?</h2>
+<p>Canada's federal law is PIPEDA. The Office of the Privacy Commissioner says it covers organizations that collect, use or disclose personal information in the course of commercial activity, and it is built on 10 fair information principles, including accountability, consent, openness, limiting collection, safeguards and individual access.</p>
+<p>Alberta, British Columbia and Quebec have their own private-sector laws that are considered substantially similar to PIPEDA, and organizations covered by those laws are generally exempt from PIPEDA for activity within that province. In BC, that law is the Personal Information Protection Act (PIPA). Which one applies to you can depend on where you operate and where your customers are, so if you sell across provincial lines it's worth reading the official guidance or asking a professional.</p>
+
+<h2>What does BC's regulator say about policies?</h2>
+<p>BC's Office of the Information and Privacy Commissioner says PIPA requires organizations to develop and follow policies and practices to meet their obligations, and to make those documents available on request. It also notes PIPA applies to businesses, charities, associations and non-profits in BC, and that the level of detail in your policy can depend on your size, how much personal information you handle and what you do with it. A one-person trades business doesn't need a 20-page document.</p>
+
+<h2>What counts as personal information?</h2>
+<p>The BC guidance describes it as information reasonably capable of identifying a particular individual. Examples it lists include name, address, financial information, date of birth, photographs of an individual and product preferences. On a typical small business site, that usually means:</p>
+<ul>
+<li>Names, emails and phone numbers from contact or quote forms.</li>
+<li>Appointment details from <a href="/blog/how-do-i-add-online-booking-to-my-small-business-website/">online booking</a>.</li>
+<li>Customer details collected for orders or deliveries.</li>
+<li>Email addresses collected for a newsletter. (Sending marketing emails has its own rules; see <a href="/blog/can-i-email-customers-without-permission-canada-casl/">my CASL post</a>.)</li>
+</ul>
+
+<h2>What to put in a small business privacy policy</h2>
+<p>The BC guidance organizes a policy under headings based on common privacy principles. Translated into plain language for a small site, cover these:</p>
+<ul>
+<li><strong>Who is responsible.</strong> Name a person (often you) and give a contact email or phone number.</li>
+<li><strong>What you collect and why.</strong> Be specific: "your name and email so we can reply to your quote request."</li>
+<li><strong>Consent.</strong> How people agree to you using their information, and how they can say no or withdraw.</li>
+<li><strong>Who you share it with.</strong> For example your booking tool, payment processor or email service.</li>
+<li><strong>How long you keep it.</strong> Only as long as you need it.</li>
+<li><strong>How you protect it.</strong> Passwords, access limits, reputable tools.</li>
+<li><strong>How people can see or correct their information</strong>, and how to make a complaint.</li>
+</ul>
+
+<h2>Where to put it</h2>
+<p>Link your privacy policy in your website footer so it's reachable from every page, and link it right next to any form that collects information ("By submitting, you agree to our privacy policy"). Keep the wording human. A policy nobody can understand doesn't help your customers or you.</p>
+
+<h2>Practical habits that matter more than the page</h2>
+<ul>
+<li><strong>Collect less.</strong> If you don't need a customer's birthday or home address, don't ask.</li>
+<li><strong>Know where the data lives.</strong> Contact form emails, booking tools, spreadsheets, a CRM. If someone asks what you hold on them, you should be able to find it.</li>
+<li><strong>Use tools you trust</strong> and check where they store data and what they do with it.</li>
+<li><strong>Have a plan for a mistake.</strong> BC's regulator publishes a privacy breach quick reference guide for small and medium-sized businesses, which is a good thing to read before you need it.</li>
+</ul>
+
+<h2>Can I just copy another business's policy?</h2>
+<p>I wouldn't. Their business collects different information with different tools, and copying can leave you promising things you don't do. Use the regulator's guidance as your checklist, write it for your own business, and update it when you add something new such as booking, a store or a CRM. For anything complicated, such as health information, children's data or customers outside Canada, get proper advice.</p>
+
+<h2>How I can help</h2>
+<p>When I build a site for a Canadian small business, I can help you think through where a privacy page belongs and when a new feature like <a href="/online-booking-website/">online booking</a> means it needs an update. You can see <a href="/plans">how the free website works</a>, and it's month-to-month, cancel any time. If you'd rather write the policy yourself, the sources below are the best place to start.</p>
+
+<h2>Sources</h2>
+<ul>
+<li><a href="https://www.priv.gc.ca/en/privacy-topics/privacy-laws-in-canada/the-personal-information-protection-and-electronic-documents-act-pipeda/pipeda_brief/">Office of the Privacy Commissioner of Canada: PIPEDA in brief</a></li>
+<li><a href="https://www.oipc.bc.ca/documents/guidance-documents/2164">BC OIPC: Developing a privacy policy under PIPA (March 2019)</a></li>
+<li><a href="https://www.oipc.bc.ca/documents/guidance-documents/3134">BC OIPC: Privacy breach quick reference guide for small and medium-sized businesses</a></li>
+</ul>
+`,
+  },
+  {
     slug: "how-do-i-add-online-booking-to-my-small-business-website",
     title: "How Do I Add Online Booking to My Business Website?",
     description:
