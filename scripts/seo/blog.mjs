@@ -2,6 +2,59 @@
 // Keep claims honest: no invented stats, testimonials or client numbers.
 export const posts = [
   {
+    slug: "how-much-does-it-cost-to-sell-online-canada-shopify-vs-custom-store",
+    title: "How Much Does It Cost to Sell Online in Canada?",
+    description:
+      "What does an online store really cost in Canada? A factual look at Shopify's plan prices, card processing fees, and a custom-built store for small businesses.",
+    date: "2026-11-14",
+    excerpt:
+      "Platform fees, card fees and apps all add up. Here's how the costs of selling online break down in Canada, with approximate prices from Shopify and Stripe.",
+    body: `
+<p>Selling online in Canada costs you two things: the store itself (a monthly platform fee or a one-time build) and card processing on every sale, which is typically around 2.9% plus 30 cents. Everything else, such as apps, a domain and shipping, depends on what you sell. Below is how the numbers break down so you can compare options honestly. All prices are approximate and checked in November 2026; plans change, so confirm on each provider's site.</p>
+
+<h2>Cost 1: The store platform</h2>
+<p>Hosted store builders charge a monthly subscription. As an example, Shopify's Canadian pricing page currently lists these plans in Canadian dollars:</p>
+<ul>
+<li><strong>Basic:</strong> about $49/month paid monthly, or about $37/month if paid yearly.</li>
+<li><strong>Grow:</strong> about $132/month monthly, or about $99/month yearly.</li>
+<li><strong>Advanced:</strong> about $517/month monthly, or about $389/month yearly.</li>
+<li><strong>Plus:</strong> from about $3,400/month.</li>
+</ul>
+<p>Shopify also advertises an introductory offer (a short free trial, then $1/month for the first three months). Other platforms, including Squarespace, Wix and WooCommerce on WordPress, have their own plan ladders and fees, and prices vary by plan, so it's worth pricing out the exact features you need rather than the headline number.</p>
+
+<h2>Cost 2: Card processing</h2>
+<p>Every card sale carries a fee. Stripe, one of the most common processors, lists 2.9% + $0.30 CAD for standard domestic card payments in Canada, with no monthly fee. Extra charges apply for manually entered cards (+0.5%), international cards (+0.8%) and currency conversion (+2%). Shopify's own payments rates on its Canadian plans run from roughly 2.8% + 30 cents on Basic down to 2.15% + 30 cents on Plus.</p>
+<p>A quick example: on a $60 order at 2.9% + $0.30, the card fee is about $2.04. Not huge per order, but across a year it's a real cost, so it belongs in your pricing.</p>
+
+<h2>Cost 3: The extras people forget</h2>
+<ul>
+<li><strong>Apps and plugins.</strong> Reviews, subscriptions, advanced shipping rules and email tools are often paid add-ons on hosted platforms.</li>
+<li><strong>A domain name.</strong> You want <em>yourbusiness.ca</em>, not a platform address. You can <a href="/domains">search for one here</a>; domain hosting with us is $18/year.</li>
+<li><strong>Photos.</strong> Good product photography does more for conversion than almost any setting.</li>
+<li><strong>Shipping and packaging.</strong> Usually passed on to the customer, but plan for it.</li>
+<li><strong>Taxes.</strong> GST/HST/PST rules depend on your sales and where you sell. I can't give tax advice; the Canada Revenue Agency and the BC government have the official rules.</li>
+</ul>
+
+<h2>Should you build a custom store instead?</h2>
+<p>A custom-built store can avoid stacking a platform subscription and a pile of apps, because it only does what your business needs: products with sizes and colours, card checkout, stock counting, and pickup, local delivery or shipping options. The trade-off is that you rely on your web designer for changes, so choose someone who answers the phone.</p>
+<p>That's how I do it at FreeSite Company: I build the site free, and you own the code. Online stores are an upgrade, and the details and per-sale terms are on the <a href="/ecommerce-website-canada/">online store page</a> and the <a href="/plans">plans page</a>. If you're coming from another platform, I can bring your products across.</p>
+
+<h2>A simple way to compare</h2>
+<p>Add up a year of costs for each option: platform fee x 12, plus expected card fees on your realistic sales, plus any apps and your domain. Then ask what happens if you want to leave. Can you take your products, pages and design with you? Owning your code makes that an easy answer.</p>
+<p>If you're selling in person as well, or only a handful of items, a simple booking or enquiry flow may be all you need; see my post on <a href="/blog/how-do-i-add-online-booking-to-my-small-business-website/">adding online booking</a>.</p>
+
+<h2>How FreeSite Company can help</h2>
+<p>If you're weighing up selling online, send me a few of your products and I'll show you what a store could look like before you commit. No pressure, and you can always cancel any time on a month-to-month basis.</p>
+
+<h2>Sources</h2>
+<ul>
+<li><a href="https://www.shopify.com/ca/pricing" rel="noopener" target="_blank">Shopify Canada pricing</a></li>
+<li><a href="https://stripe.com/en-ca/pricing" rel="noopener" target="_blank">Stripe pricing, Canada</a></li>
+<li><a href="https://www.canada.ca/en/revenue-agency.html" rel="noopener" target="_blank">Canada Revenue Agency</a> (for GST/HST rules)</li>
+</ul>
+`,
+  },
+  {
     slug: "do-i-need-a-privacy-policy-on-my-small-business-website-canada",
     title: "Do I Need a Privacy Policy on My Business Website?",
     description:
