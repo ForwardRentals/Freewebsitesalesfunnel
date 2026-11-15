@@ -50,14 +50,14 @@ export const addons = [
   {
     id: "domain",
     name: "Domain hosting",
-    price: "$18/year",
+    price: "$19/year",
     blurb: "Your domain (yourbusiness.ca or .com) registered or moved over, renewed every year, and pointed at your website and email. One flat price, in Canadian dollars.",
     page: "domain-hosting",
   },
   {
     id: "email",
     name: "Email at your domain",
-    price: "$15/month (free on Growth and Commerce)",
+    price: "$9.99/month on any plan",
     blurb: "you@yourbusiness.com instead of a Gmail address, so every quote you send looks like it came from a real business.",
   },
   {
@@ -249,10 +249,10 @@ export const solutions = [
     slug: "domain-hosting",
     label: "Domain hosting",
     eyebrow: "Domain hosting for Canadian businesses",
-    title: "Domain Hosting for Canadian Small Businesses: $18/year",
-    h1: "Domain hosting for <em>$18 a year.</em> In Canadian dollars.",
+    title: "Domain Hosting for Canadian Small Businesses: $19/year",
+    h1: "Domain hosting for <em>$19 a year.</em> In Canadian dollars.",
     intro:
-      "Your domain is your address online, and losing it to a missed renewal or a confusing registrar dashboard is a nightmare. For $18 a year I'll register your domain (or move over the one you already have), keep it renewed, and point it at your website and email. One flat price, billed in Canadian dollars, with a real person to call.",
+      "Your domain is your address online, and losing it to a missed renewal or a confusing registrar dashboard is a nightmare. For $19 a year I'll register your domain (or move over the one you already have), keep it renewed, and point it at your website and email. One flat price, billed in Canadian dollars, with a real person to call.",
     needs: [
       [".ca or .com, your choice", "Register a new domain, or transfer the one you already own from GoDaddy, Wix, Squarespace or anywhere else. It sits on FreeSite Company’s Cloudflare account, managed for you."],
       ["Renewals handled", "Your domain renews every year so it never lapses, and you're never surprised by a renewal bill at a higher price."],
@@ -264,7 +264,7 @@ export const solutions = [
     faqs: [
       ["Can I move my domain later?", "Yes. If you ever want it on your own account or another provider, ask and I'll transfer it to you. Keep your plan current, though: if it lapses for two months in a row the domain can be released."],
       ["Do I need a website from you to use this?", "No. Domain hosting works on its own, though it's simplest when your site is with me too."],
-      ["What does it cost?", "$18 a year per domain, in Canadian dollars. Premium domains, if you pick one, are priced separately and I'll tell you before you buy."],
+      ["What does it cost?", "$19 a year per domain, in Canadian dollars. Premium domains, if you pick one, are priced separately and I'll tell you before you buy."],
     ],
     work: ["watertaxi", "canoe", "hobby"],
     cta: "Keep your domain <em>safe and simple.</em>",

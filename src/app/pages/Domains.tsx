@@ -26,9 +26,9 @@ export function Domains() {
   const [done, setDone] = useState(false);
 
   useEffect(() => {
-    document.title = "Domain Search & Domain Hosting, $18/year | FreeSiteCompany";
+    document.title = "Domain Search & Domain Hosting, $19/year | FreeSiteCompany";
     const meta = document.querySelector('meta[name="description"]');
-    meta?.setAttribute("content", "Search for your business domain (.ca, .com, .net, .org) and get it registered and managed for $18/year in Canadian dollars.");
+    meta?.setAttribute("content", "Search for your business domain (.ca, .com, .net, .org) and get it registered and managed for $19/year in Canadian dollars.");
   }, []);
 
   useEffect(() => {
@@ -106,7 +106,7 @@ export function Domains() {
             animate={{ y: 0, opacity: 1 }}
             className="inline-flex items-center gap-2 rounded-full border border-[#e7e1d6] bg-white px-4 py-1.5 text-sm font-medium text-[#6b675e] mb-6"
           >
-            <Globe className="h-4 w-4 text-[#166b45]" /> Domain hosting · $18/year CAD
+            <Globe className="h-4 w-4 text-[#166b45]" /> Domain hosting · $19/year CAD
           </motion.p>
           <motion.h1
             initial={{ y: 30, opacity: 0 }}
@@ -118,7 +118,7 @@ export function Domains() {
           </motion.h1>
           <p className="text-lg sm:text-xl text-[#6b675e] leading-relaxed max-w-2xl mx-auto mb-8">
             Search for your business name. We register it, renew it every year and point it at your website and email,
-            all for $18 a year in Canadian dollars.
+            all for $19 a year in Canadian dollars.
           </p>
 
           <form onSubmit={search} className="flex flex-col sm:flex-row gap-3 max-w-2xl mx-auto">
@@ -161,7 +161,7 @@ export function Domains() {
                     onClick={() => setPick({ domain: r.domain, action: "register" })}
                     className="rounded-full bg-[#166b45] px-5 py-2.5 font-semibold text-white hover:bg-[#0f5434]"
                   >
-                    Claim it · $18/yr
+                    Claim it · $19/yr
                   </button>
                 )}
                 {r.status === "taken" && (
@@ -200,7 +200,7 @@ export function Domains() {
                     {pick.action === "register" ? "Claim your domain" : "Move your domain to us"}
                   </p>
                   <h2 className="font-display text-2xl sm:text-3xl font-semibold break-all">{pick.domain}</h2>
-                  <p className="text-[#6b675e] mt-1">$18/year CAD, renewed and managed for you. No payment yet: we'll confirm by email first.</p>
+                  <p className="text-[#6b675e] mt-1">$19/year CAD, renewed and managed for you. No payment yet: we'll confirm by email first.</p>
                 </div>
                 <div className="grid sm:grid-cols-2 gap-4">
                   <Input required placeholder="Your name" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className={inputClasses} />
@@ -237,7 +237,7 @@ export function Domains() {
       <section className="py-14 sm:py-20 px-4 sm:px-6 bg-[#fffefb] border-y border-[#e7e1d6]">
         <div className="max-w-5xl mx-auto grid sm:grid-cols-3 gap-5">
           {[
-            [RefreshCw, "Renewed for you", "It renews every year so it never lapses, at the same flat $18."],
+            [RefreshCw, "Renewed for you", "It renews every year so it never lapses, at the same flat $19."],
             [ShieldCheck, "Set up right", "Website, email and Google verification records done properly."],
             [Phone, "A real person", "Need a change? Text, call or email Jeremy in Squamish, BC."],
           ].map(([Icon, h, p]) => {

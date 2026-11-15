@@ -19,7 +19,7 @@ export const posts = [
 <h2>What you pay for</h2>
 <ul>
 <li><strong>Hosting.</strong> Self-hosted WordPress needs a server. WordPress.org's requirements page recommends PHP 8.3 or greater, MariaDB 10.11 or greater (or MySQL 8.4 or greater) and HTTPS support. Hosts charge a monthly or yearly fee, and prices vary a lot by provider and plan.</li>
-<li><strong>A domain name.</strong> Your <em>yourbusiness.ca</em> address is a separate yearly cost. You can <a href="/domains">search for one here</a>; domain hosting with us is $18/year.</li>
+<li><strong>A domain name.</strong> Your <em>yourbusiness.ca</em> address is a separate yearly cost. You can <a href="/domains">search for one here</a>; domain hosting with us is $19/year.</li>
 <li><strong>A theme.</strong> Free themes exist, but many businesses buy a premium theme or hire someone to customize one.</li>
 <li><strong>Plugins.</strong> Contact forms, SEO tools, backups, security and online stores are usually plugins. Some are free, some are paid yearly subscriptions.</li>
 <li><strong>Design and setup.</strong> Unless you're comfortable doing it yourself, someone has to build the pages, add your photos and set it up properly.</li>
@@ -100,7 +100,7 @@ export const posts = [
 <h2>Cost 3: The extras people forget</h2>
 <ul>
 <li><strong>Apps and plugins.</strong> Reviews, subscriptions, advanced shipping rules and email tools are often paid add-ons on hosted platforms.</li>
-<li><strong>A domain name.</strong> You want <em>yourbusiness.ca</em>, not a platform address. You can <a href="/domains">search for one here</a>; domain hosting with us is $18/year.</li>
+<li><strong>A domain name.</strong> You want <em>yourbusiness.ca</em>, not a platform address. You can <a href="/domains">search for one here</a>; domain hosting with us is $19/year.</li>
 <li><strong>Photos.</strong> Good product photography does more for conversion than almost any setting.</li>
 <li><strong>Shipping and packaging.</strong> Usually passed on to the customer, but plan for it.</li>
 <li><strong>Taxes.</strong> GST/HST/PST rules depend on your sales and where you sell. I can't give tax advice; the Canada Revenue Agency and the BC government have the official rules.</li>
@@ -272,7 +272,7 @@ export const posts = [
 <p>A Gmail or Hotmail address works, but it tells customers nothing about your business. An address on your own domain looks established, is easier to remember, and stays with you if you ever change email providers. If you also have a website, your email and web address match, which helps people trust a quote request or invoice from you.</p>
 
 <h2>Step 1: Own your domain</h2>
-<p>Everything starts with the domain. Search for the name you want, register it in your own name (or your business's), and keep the login somewhere safe. If a previous web person registered it for you, ask who the registrant is. You want to be able to log in yourself. You can check availability on my <a href="/domains">domain search</a>; domains are $18/year with me.</p>
+<p>Everything starts with the domain. Search for the name you want, register it in your own name (or your business's), and keep the login somewhere safe. If a previous web person registered it for you, ask who the registrant is. You want to be able to log in yourself. You can check availability on my <a href="/domains">domain search</a>; domains are $19/year with me.</p>
 
 <h2>Step 2: Choose an email host</h2>
 <p>Domain registration doesn't automatically include a mailbox. Your common options:</p>
