@@ -38,13 +38,13 @@ export const addons = [
   {
     id: "logo",
     name: "Logo design",
-    price: "$20 (mockups are free)",
-    blurb: "No logo? We'll mock up a few options with your website draft, free to look at. Love one? Keep it, with all the files, for $20.",
+    price: "$50 (mockups are free)",
+    blurb: "No logo? We'll mock up a few options with your website draft, free to look at. Love one? Keep it, with all the files, for $50.",
   },
   {
     id: "brand",
     name: "Brand guidelines",
-    price: "$20",
+    price: "$50",
     blurb: "A one-page brand guide: your logo versions, colour codes, fonts and simple do's and don'ts, so your signs, cards and socials all match.",
   },
   {
@@ -63,7 +63,7 @@ export const addons = [
   {
     id: "gbp",
     name: "Google Business Profile setup",
-    price: "$19 one time",
+    price: "$40 one time",
     blurb: "Your Maps listing filled out properly: categories, services, hours, photos and products that match your website, so you show up for \"near me\" searches.",
   },
   {
@@ -87,7 +87,7 @@ export const addons = [
   {
     id: "dev",
     name: "Custom development",
-    price: "$35/hour",
+    price: "$50/hour",
     blurb: "New pages, integrations, member logins, calculators, anything bigger. Always quoted and approved before any paid work starts.",
   },
 ];

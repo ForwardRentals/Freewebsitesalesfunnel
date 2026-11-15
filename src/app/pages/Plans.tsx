@@ -126,19 +126,19 @@ const additionalServices = [
   {
     icon: Search,
     title: "Google Business Profile Setup",
-    price: "$19 one time",
+    price: "$40 one time",
     description: "Your Maps listing done properly: categories, services, hours, photos and products that match your new site.",
   },
   {
     icon: Palette,
     title: "Logo + Brand Guidelines",
-    price: "$20 each",
-    description: "Logo mockups are free to look at. Keep your favourite for $20. Add a one-page brand guide (colours, fonts, logo versions) for $20.",
+    price: "$50 each",
+    description: "Logo mockups are free to look at. Keep your favourite for $50. Add a one-page brand guide (colours, fonts, logo versions) for $50.",
   },
   {
     icon: FileCode,
     title: "Custom Development",
-    price: "$35/hour",
+    price: "$50/hour",
     description: "Advanced features, new pages, custom integrations, e-commerce, booking systems, major redesigns",
   },
   {
@@ -231,7 +231,7 @@ export function Plans() {
         name: "What if I need more revisions?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Additional revisions and custom work are billed at $35/hour. We'll always get your approval before doing any paid work.",
+          text: "Additional revisions and custom work are billed at $50/hour. We'll always get your approval before doing any paid work.",
         },
       },
       {
@@ -590,7 +590,7 @@ export function Plans() {
                   What if I need more revisions?
                 </h3>
                 <p className="text-sm text-[#6b675e] leading-relaxed">
-                  Additional revisions and custom work are billed at $35/hour. We'll
+                  Additional revisions and custom work are billed at $50/hour. We'll
                   always get your approval before doing any paid work.
                 </p>
               </div>
