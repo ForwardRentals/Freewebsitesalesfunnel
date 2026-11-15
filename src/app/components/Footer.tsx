@@ -52,7 +52,7 @@ export function Footer() {
                   to="/crm"
                   className="text-[#faf7f2]/60 hover:text-[#7fc8a4] transition-colors"
                 >
-                  CRM ($9/mo)
+                  CRM from $9/mo
                 </Link>
               </li>
               <li>

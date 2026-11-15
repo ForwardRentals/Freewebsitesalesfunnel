@@ -11,6 +11,7 @@ import {
   Bell,
   MessageSquare,
   Smartphone,
+  Sparkles,
   Phone,
 } from "lucide-react";
 import { Navigation } from "../components/Navigation";
@@ -70,6 +71,36 @@ const features = [
   },
 ];
 
+const plans = [
+  {
+    id: "crm",
+    name: "CRM",
+    price: "$9",
+    featured: false,
+    items: [
+      "Your own private CRM workspace",
+      "Unlimited leads and contacts",
+      "Pipeline, tasks and activity timeline",
+      "Team logins for your whole crew",
+      "Website forms connected",
+      "Set up for you, with changes on request",
+    ],
+  },
+  {
+    id: "ai-crm",
+    name: "AI CRM",
+    price: "$29",
+    featured: true,
+    items: [
+      "Everything in CRM",
+      "AI chat assistant on your website, trained on your services, prices and FAQs",
+      "Chat leads captured straight into your CRM",
+      "AI-drafted replies to new enquiries, ready for you to review and send",
+      "Set up for you, with changes on request",
+    ],
+  },
+];
+
 const steps = [
   { step: "1", title: "Tell us about your business", text: "Send the form below. A quick message or call to understand how you get leads today." },
   { step: "2", title: "We set it up", text: "Your own workspace, your stages, your team logins, and your website forms and chat connected." },
@@ -79,7 +110,7 @@ const steps = [
 const faqs = [
   {
     q: "What does it cost?",
-    a: "$9 a month, month-to-month. Cancel any time.",
+    a: "The CRM is $9 a month. The AI CRM, which adds an AI chat assistant on your site and AI-drafted replies to enquiries, is $29 a month. Both are month-to-month, cancel any time.",
   },
   {
     q: "Do I need a website from you to use it?",
@@ -98,6 +129,7 @@ const faqs = [
 export function CrmSales() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [sent, setSent] = useState(false);
+  const [plan, setPlan] = useState("ai-crm");
   const [form, setForm] = useState({
     fullName: "",
     email: "",
@@ -108,12 +140,12 @@ export function CrmSales() {
   });
 
   useEffect(() => {
-    document.title = "Small Business CRM for $9/month | FreeSiteCompany";
+    document.title = "Small Business CRM from $9/month, AI CRM $29/month | FreeSiteCompany";
     const meta = document.querySelector('meta[name="description"]');
     if (meta) {
       meta.setAttribute(
         "content",
-        "A simple, private CRM for small businesses: every website lead in one inbox, a visual pipeline, follow-up tasks, client document portals and team logins. $9/month, month-to-month.",
+        "A simple, private CRM for small businesses: every website lead in one inbox, a visual pipeline, follow-up tasks, client document portals and team logins. From $9/month, or $29/month with an AI assistant. Month-to-month.",
       );
     }
   }, []);
@@ -128,7 +160,8 @@ export function CrmSales() {
 
     const payload = new URLSearchParams({
       form_name: "CrmInquiry",
-      inquiry_type: "crm_9_month",
+      inquiry_type: plan === "ai-crm" ? "ai_crm_29_month" : "crm_9_month",
+      plan: plan === "ai-crm" ? "AI CRM $29/mo" : "CRM $9/mo",
       created_time: new Date().toISOString(),
       full_name: form.fullName,
       email: form.email,
@@ -172,7 +205,7 @@ export function CrmSales() {
             className="inline-flex items-center gap-2 rounded-full border border-[#faf7f2]/15 px-4 py-1.5 text-sm font-medium text-[#faf7f2]/70 mb-6"
           >
             <span className="h-2 w-2 rounded-full bg-[#7fc8a4]" />
-            Small business CRM · $9/month
+            Small business CRM · from $9/month
           </motion.p>
           <motion.h1
             initial={{ y: 30, opacity: 0 }}
@@ -262,35 +295,49 @@ export function CrmSales() {
 
       {/* PRICE */}
       <section className="py-14 sm:py-20 px-4 sm:px-6 bg-[#fffefb] border-y border-[#e7e1d6]">
-        <div className="max-w-xl mx-auto">
-          <div className="rounded-3xl border border-[#166b45] bg-[#166b45]/[0.05] p-8 text-center shadow-[0_12px_40px_-16px_rgba(22,107,69,0.4)]">
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#166b45] mb-2">
-              One simple price
-            </p>
-            <p className="font-display text-6xl font-semibold mb-1">
-              $9<span className="text-2xl text-[#6b675e] font-normal"> /month</span>
-            </p>
-            <p className="text-[#6b675e] mb-6">Month-to-month. Cancel any time.</p>
-            <ul className="space-y-2.5 text-left text-[#6b675e] mb-7 max-w-sm mx-auto">
-              {[
-                "Your own private CRM workspace",
-                "Unlimited leads and contacts",
-                "Team logins for your whole crew",
-                "Website forms and chat connected",
-                "Set up for you, with changes on request",
-              ].map((t) => (
-                <li key={t} className="flex gap-2.5">
-                  <CheckCircle2 className="h-5 w-5 shrink-0 text-[#166b45] mt-0.5" />
-                  {t}
-                </li>
-              ))}
-            </ul>
-            <a
-              href="#get-crm"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-[#166b45] px-8 py-4 text-lg font-semibold text-white transition-all hover:bg-[#0f5434] hover:-translate-y-0.5"
-            >
-              Get my CRM <ArrowRight className="h-5 w-5" />
-            </a>
+        <div className="max-w-4xl mx-auto">
+          <h2 className="font-display text-3xl sm:text-4xl font-semibold tracking-tight text-center mb-10">
+            Two plans, <span className="italic text-[#166b45]">one simple price each</span>
+          </h2>
+          <div className="grid md:grid-cols-2 gap-5">
+            {plans.map((pl) => (
+              <div
+                key={pl.id}
+                className={`rounded-3xl p-8 text-center ${
+                  pl.featured
+                    ? "border border-[#166b45] bg-[#166b45]/[0.05] shadow-[0_12px_40px_-16px_rgba(22,107,69,0.4)]"
+                    : "border border-[#e7e1d6] bg-white"
+                }`}
+              >
+                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#166b45] mb-2 inline-flex items-center gap-1.5">
+                  {pl.featured && <Sparkles className="h-4 w-4" />}
+                  {pl.name}
+                </p>
+                <p className="font-display text-6xl font-semibold mb-1">
+                  {pl.price}<span className="text-2xl text-[#6b675e] font-normal"> /month</span>
+                </p>
+                <p className="text-[#6b675e] mb-6">Month-to-month. Cancel any time.</p>
+                <ul className="space-y-2.5 text-left text-[#6b675e] mb-7 max-w-sm mx-auto">
+                  {pl.items.map((t) => (
+                    <li key={t} className="flex gap-2.5">
+                      <CheckCircle2 className="h-5 w-5 shrink-0 text-[#166b45] mt-0.5" />
+                      {t}
+                    </li>
+                  ))}
+                </ul>
+                <a
+                  href="#get-crm"
+                  onClick={() => setPlan(pl.id)}
+                  className={`inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 text-lg font-semibold transition-all hover:-translate-y-0.5 ${
+                    pl.featured
+                      ? "bg-[#166b45] text-white hover:bg-[#0f5434]"
+                      : "border border-[#166b45] text-[#166b45] hover:bg-[#166b45]/[0.06]"
+                  }`}
+                >
+                  Get {pl.name} <ArrowRight className="h-5 w-5" />
+                </a>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -383,6 +430,26 @@ export function CrmSales() {
                 </div>
 
                 <div>
+                  <Label className="mb-2.5 block text-sm font-medium">Plan</Label>
+                  <div className="flex flex-wrap gap-2">
+                    {plans.map((pl) => (
+                      <button
+                        key={pl.id}
+                        type="button"
+                        onClick={() => setPlan(pl.id)}
+                        className={`px-3.5 py-2 rounded-full text-sm transition-all duration-200 ${
+                          plan === pl.id
+                            ? "bg-[#166b45] text-white font-semibold"
+                            : "bg-[#faf7f2] text-[#6b675e] border border-[#e7e1d6] hover:border-[#166b45]/40 hover:text-[#1b1a17]"
+                        }`}
+                      >
+                        {pl.name} · {pl.price}/mo
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                <div>
                   <Label htmlFor="mDetails" className="mb-1.5 block text-sm font-medium">How do you get leads today? (optional)</Label>
                   <Textarea
                     id="mDetails"
@@ -403,7 +470,7 @@ export function CrmSales() {
                   {!isSubmitting && <ArrowRight className="h-5 w-5 ml-2" />}
                 </Button>
                 <p className="text-center text-xs leading-relaxed text-[#6b675e]">
-                  $9/month, month-to-month, cancel any time. After you submit, we'll reach out by{" "}
+                  Month-to-month, cancel any time. After you submit, we'll reach out by{" "}
                   <span className="font-semibold text-[#1b1a17]">text, phone call, or email</span>. No obligation.
                 </p>
               </form>
