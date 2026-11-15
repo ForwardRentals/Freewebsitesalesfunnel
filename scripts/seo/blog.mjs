@@ -2,6 +2,77 @@
 // Keep claims honest: no invented stats, testimonials or client numbers.
 export const posts = [
   {
+    slug: "is-wordpress-really-free-what-a-wordpress-website-costs-canada",
+    title: "Is WordPress Really Free? What a Site Actually Costs",
+    description:
+      "WordPress software is free, but a working website isn't. Here's what hosting, a domain, themes, plugins and upkeep add up to for a Canadian small business.",
+    date: "2026-11-15",
+    excerpt:
+      "The WordPress software costs nothing, but hosting, a domain, plugins and updates do. Here's an honest look at what a WordPress site involves and the alternatives.",
+    body: `
+<p>Yes and no. The WordPress software itself is free: it's open source and licensed under the GPL. But a website needs somewhere to live, a domain name, a design, and someone to keep it updated, and those are where the costs come from. Here's what to expect so you can compare it with other options fairly.</p>
+
+<h2>What's free about WordPress</h2>
+<p>WordPress.org describes WordPress as open source software, licensed under the GPL (version 2 or later). That means you can download it, use it for any purpose and change it. Plenty of themes and plugins are free too.</p>
+<p>That's the part people hear when they say "WordPress is free." It's true, but it's like saying a recipe is free: you still have to buy the groceries and cook the meal.</p>
+
+<h2>What you pay for</h2>
+<ul>
+<li><strong>Hosting.</strong> Self-hosted WordPress needs a server. WordPress.org's requirements page recommends PHP 8.3 or greater, MariaDB 10.11 or greater (or MySQL 8.4 or greater) and HTTPS support. Hosts charge a monthly or yearly fee, and prices vary a lot by provider and plan.</li>
+<li><strong>A domain name.</strong> Your <em>yourbusiness.ca</em> address is a separate yearly cost. You can <a href="/domains">search for one here</a>; domain hosting with us is $18/year.</li>
+<li><strong>A theme.</strong> Free themes exist, but many businesses buy a premium theme or hire someone to customize one.</li>
+<li><strong>Plugins.</strong> Contact forms, SEO tools, backups, security and online stores are usually plugins. Some are free, some are paid yearly subscriptions.</li>
+<li><strong>Design and setup.</strong> Unless you're comfortable doing it yourself, someone has to build the pages, add your photos and set it up properly.</li>
+<li><strong>Ongoing updates.</strong> WordPress, themes and plugins need regular updates.</li>
+</ul>
+
+<h2>WordPress.com is a different thing</h2>
+<p>WordPress.com is a hosted service built on the WordPress software, and it has paid plans. At the time of writing its pricing page lists prices in US dollars, roughly US$4 to US$45 per month on yearly billing depending on the plan (Personal, Premium, Business and Commerce), and higher on month-to-month billing. Plugin installation is listed on the paid plans but not the free one. Prices change and vary by plan and billing term, so check the current page before deciding.</p>
+
+<h2>The hidden cost: maintenance</h2>
+<p>WordPress's own documentation says you should always update to the latest version, and to check that your plugins and themes are compatible before you do. Minor and security updates can apply automatically on many sites, but major releases need you to click "Update Now," and it recommends a backup first.</p>
+<p>That's fine if you enjoy it, or have someone who does. If nobody is looking after the site, outdated plugins are a common way sites break. It's not a flaw in WordPress, just a job somebody has to own.</p>
+
+<h2>When WordPress is a good fit</h2>
+<ul>
+<li>You publish a lot of content and want a mature editor and a huge plugin library.</li>
+<li>You or a developer you trust will maintain it.</li>
+<li>You need a specific plugin that only exists for WordPress.</li>
+</ul>
+
+<h2>When another route may suit you better</h2>
+<ul>
+<li>You'd rather not think about updates, hosting and plugin compatibility at all.</li>
+<li>Your site is mainly there to be found, build trust and get calls, bookings or orders.</li>
+<li>You want one predictable monthly cost instead of several small ones.</li>
+</ul>
+<p>If you're weighing platforms, my comparison of <a href="/blog/wix-vs-squarespace-vs-custom-website/">Wix, Squarespace and a custom website</a> covers the other common choices, and <a href="/blog/how-much-does-a-small-business-website-cost-canada/">what a small business website costs in Canada</a> puts the numbers side by side.</p>
+
+<h2>Questions to ask before you choose</h2>
+<p>Whatever platform you land on, a few questions will keep the real cost honest:</p>
+<ul>
+<li>Who will update the site, and how often? Is that included or extra?</li>
+<li>Who handles backups and security, and what happens if the site goes down?</li>
+<li>Do I own the site and the domain, and can I take them with me if I leave?</li>
+<li>Which features need paid plugins or higher plans, and what do they cost per year?</li>
+<li>If I need a change, can I reach a real person, and how quickly?</li>
+</ul>
+<p>Add up the yearly total, including the domain, then divide by twelve. That monthly number is the one worth comparing, not the headline price.</p>
+
+<h2>How FreeSite Company is different</h2>
+<p>I'm Jeremy, a web designer in Squamish, BC. I build you a custom, hand-coded website for free. You pay $9/month for the first three months, then $13/month, or $89/year, month-to-month, cancel any time, and only if you keep the site. Hosting, updates and security are handled for you, and you own the code. Bigger needs such as booking, a CRM or an online store are available as upgrades; see <a href="/add-ons/">add-ons</a> and <a href="/plans">plans</a>.</p>
+<p>If you already have a WordPress site that's become a chore, or you're deciding for the first time, I'm happy to talk it through with no pressure, whichever way you go.</p>
+
+<h2>Sources</h2>
+<ul>
+<li><a href="https://wordpress.org/about/">WordPress.org: About</a></li>
+<li><a href="https://wordpress.org/about/requirements/">WordPress.org: Requirements</a></li>
+<li><a href="https://wordpress.org/documentation/article/updating-wordpress/">WordPress.org: Updating WordPress</a></li>
+<li><a href="https://wordpress.com/pricing/">WordPress.com: Pricing</a></li>
+</ul>
+`,
+  },
+  {
     slug: "how-much-does-it-cost-to-sell-online-canada-shopify-vs-custom-store",
     title: "How Much Does It Cost to Sell Online in Canada?",
     description:
