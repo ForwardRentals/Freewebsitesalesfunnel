@@ -48,6 +48,12 @@ export function Navigation() {
             Custom Builds
           </Link>
           <Link
+            to="/crm"
+            className="font-medium text-[#6b675e] hover:text-[#1b1a17] transition-colors"
+          >
+            CRM
+          </Link>
+          <Link
             to="/domains"
             className="font-medium text-[#6b675e] hover:text-[#1b1a17] transition-colors"
           >
@@ -141,6 +147,13 @@ export function Navigation() {
                 className="font-medium text-[#6b675e]"
               >
                 Custom Builds
+              </Link>
+              <Link
+                to="/crm"
+                onClick={() => setMobileOpen(false)}
+                className="font-medium text-[#6b675e]"
+              >
+                CRM
               </Link>
               <Link
                 to="/domains"

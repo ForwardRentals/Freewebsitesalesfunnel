@@ -48,6 +48,14 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link
+                  to="/crm"
+                  className="text-[#faf7f2]/60 hover:text-[#7fc8a4] transition-colors"
+                >
+                  CRM ($99/mo)
+                </Link>
+              </li>
+              <li>
                 <a
                   href="/website-with-crm/"
                   className="text-[#faf7f2]/60 hover:text-[#7fc8a4] transition-colors"
