@@ -79,7 +79,7 @@ const steps = [
 const faqs = [
   {
     q: "What does it cost?",
-    a: "$99 a month, month-to-month. Cancel any time.",
+    a: "$9 a month, month-to-month. Cancel any time.",
   },
   {
     q: "Do I need a website from you to use it?",
@@ -108,12 +108,12 @@ export function CrmSales() {
   });
 
   useEffect(() => {
-    document.title = "Small Business CRM for $99/month | FreeSiteCompany";
+    document.title = "Small Business CRM for $9/month | FreeSiteCompany";
     const meta = document.querySelector('meta[name="description"]');
     if (meta) {
       meta.setAttribute(
         "content",
-        "A simple, private CRM for small businesses: every website lead in one inbox, a visual pipeline, follow-up tasks, client document portals and team logins. $99/month, month-to-month.",
+        "A simple, private CRM for small businesses: every website lead in one inbox, a visual pipeline, follow-up tasks, client document portals and team logins. $9/month, month-to-month.",
       );
     }
   }, []);
@@ -128,7 +128,7 @@ export function CrmSales() {
 
     const payload = new URLSearchParams({
       form_name: "CrmInquiry",
-      inquiry_type: "crm_99_month",
+      inquiry_type: "crm_9_month",
       created_time: new Date().toISOString(),
       full_name: form.fullName,
       email: form.email,
@@ -172,7 +172,7 @@ export function CrmSales() {
             className="inline-flex items-center gap-2 rounded-full border border-[#faf7f2]/15 px-4 py-1.5 text-sm font-medium text-[#faf7f2]/70 mb-6"
           >
             <span className="h-2 w-2 rounded-full bg-[#7fc8a4]" />
-            Small business CRM · $99/month
+            Small business CRM · $9/month
           </motion.p>
           <motion.h1
             initial={{ y: 30, opacity: 0 }}
@@ -268,7 +268,7 @@ export function CrmSales() {
               One simple price
             </p>
             <p className="font-display text-6xl font-semibold mb-1">
-              $99<span className="text-2xl text-[#6b675e] font-normal"> /month</span>
+              $9<span className="text-2xl text-[#6b675e] font-normal"> /month</span>
             </p>
             <p className="text-[#6b675e] mb-6">Month-to-month. Cancel any time.</p>
             <ul className="space-y-2.5 text-left text-[#6b675e] mb-7 max-w-sm mx-auto">
@@ -403,7 +403,7 @@ export function CrmSales() {
                   {!isSubmitting && <ArrowRight className="h-5 w-5 ml-2" />}
                 </Button>
                 <p className="text-center text-xs leading-relaxed text-[#6b675e]">
-                  $99/month, month-to-month, cancel any time. After you submit, we'll reach out by{" "}
+                  $9/month, month-to-month, cancel any time. After you submit, we'll reach out by{" "}
                   <span className="font-semibold text-[#1b1a17]">text, phone call, or email</span>. No obligation.
                 </p>
               </form>
