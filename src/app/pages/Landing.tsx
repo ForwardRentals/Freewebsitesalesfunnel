@@ -711,7 +711,7 @@ export function Landing() {
               <span className="rounded-full bg-[#166b45] px-2 py-0.5 text-xs font-bold uppercase tracking-wide text-white">Promo</span>
               <span>
                 <strong>Free full SEO overhaul</strong> with every new site{" "}
-                <span className="text-[#6b675e]">(usually <s>$59</s>)</span>
+                <span className="text-[#6b675e]">(usually <s>$50</s>)</span>
               </span>
             </motion.div>
 

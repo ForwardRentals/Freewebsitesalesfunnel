@@ -190,7 +190,7 @@ const promotions = [
   },
   {
     icon: Rocket,
-    title: "Free SEO Overhaul (usually $59)",
+    title: "Free SEO Overhaul (usually $50)",
     description: "Launch promo: when your new site is built, we do a full SEO overhaul free of charge: page titles and descriptions, local business schema, sitemap and Google Search Console setup, Google Business Profile alignment, image alt text and a speed check.",
     link: "/get-started",
     buttonText: "Claim my free SEO overhaul",
