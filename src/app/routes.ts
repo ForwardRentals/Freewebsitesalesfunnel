@@ -42,6 +42,12 @@ export const router = createBrowserRouter(
       }),
     },
     {
+      path: "/crm-setup",
+      lazy: async () => ({
+        Component: (await import("./pages/CrmSetup")).CrmSetup,
+      }),
+    },
+    {
       path: "/thank-you",
       lazy: async () => ({
         Component: (await import("./pages/ThankYou")).ThankYou,

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router";
 import { motion } from "motion/react";
 import {
   ArrowRight,
@@ -37,7 +38,7 @@ const features = [
   {
     icon: KanbanSquare,
     title: "A pipeline you can see",
-    text: "Move each lead from New to Contacted to Quoted to Won. Open the lead and the full timeline is there: every message, note and stage change.",
+    text: "Move each lead from New to Contacted to Proposal to Won. Open the lead and the full timeline is there: every message, note and stage change.",
   },
   {
     icon: ListChecks,
@@ -102,7 +103,7 @@ const plans = [
 ];
 
 const steps = [
-  { step: "1", title: "Tell us about your business", text: "Send the form below. A quick message or call to understand how you get leads today." },
+  { step: "1", title: "Pick a plan and fill out the setup form", text: "Five minutes: your business, how leads reach you, your team, and the stages you work through." },
   { step: "2", title: "We set it up", text: "Your own workspace, your stages, your team logins, and your website forms and chat connected." },
   { step: "3", title: "Start using it", text: "Leads begin landing in your CRM. We're a message away if you want something changed." },
 ];
@@ -129,7 +130,6 @@ const faqs = [
 export function CrmSales() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [sent, setSent] = useState(false);
-  const [plan, setPlan] = useState("ai-crm");
   const [form, setForm] = useState({
     fullName: "",
     email: "",
@@ -160,8 +160,7 @@ export function CrmSales() {
 
     const payload = new URLSearchParams({
       form_name: "CrmInquiry",
-      inquiry_type: plan === "ai-crm" ? "ai_crm_29_month" : "crm_9_month",
-      plan: plan === "ai-crm" ? "AI CRM $29/mo" : "CRM $9/mo",
+      inquiry_type: "crm_question",
       created_time: new Date().toISOString(),
       full_name: form.fullName,
       email: form.email,
@@ -233,10 +232,10 @@ export function CrmSales() {
             className="flex flex-col sm:flex-row gap-3 justify-center"
           >
             <a
-              href="#get-crm"
+              href="#plans"
               className="inline-flex items-center justify-center gap-2 rounded-full bg-[#faf7f2] px-8 py-4 text-lg font-semibold text-[#1b1a17] transition-all hover:-translate-y-0.5 hover:shadow-xl"
             >
-              Get my CRM <ArrowRight className="h-5 w-5" />
+              See plans <ArrowRight className="h-5 w-5" />
             </a>
             <a
               href="tel:+16048498898"
@@ -294,7 +293,7 @@ export function CrmSales() {
       </section>
 
       {/* PRICE */}
-      <section className="py-14 sm:py-20 px-4 sm:px-6 bg-[#fffefb] border-y border-[#e7e1d6]">
+      <section id="plans" className="scroll-mt-24 py-14 sm:py-20 px-4 sm:px-6 bg-[#fffefb] border-y border-[#e7e1d6]">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-display text-3xl sm:text-4xl font-semibold tracking-tight text-center mb-10">
             Two plans, <span className="italic text-[#166b45]">one simple price each</span>
@@ -325,9 +324,8 @@ export function CrmSales() {
                     </li>
                   ))}
                 </ul>
-                <a
-                  href="#get-crm"
-                  onClick={() => setPlan(pl.id)}
+                <Link
+                  to={`/crm-setup?plan=${pl.id}`}
                   className={`inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 text-lg font-semibold transition-all hover:-translate-y-0.5 ${
                     pl.featured
                       ? "bg-[#166b45] text-white hover:bg-[#0f5434]"
@@ -335,7 +333,7 @@ export function CrmSales() {
                   }`}
                 >
                   Get {pl.name} <ArrowRight className="h-5 w-5" />
-                </a>
+                </Link>
               </div>
             ))}
           </div>
@@ -382,10 +380,10 @@ export function CrmSales() {
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-8">
             <h2 className="font-display text-3xl sm:text-5xl font-semibold tracking-tight mb-3">
-              Get your <span className="italic text-[#166b45]">CRM</span> set up
+              Have a <span className="italic text-[#166b45]">question</span> first?
             </h2>
             <p className="text-[#6b675e] text-lg">
-              Tell us a bit about your business and we'll be in touch to get you started.
+              Ask away and we'll get back to you. Ready to go? Pick a plan above and fill out the setup form.
             </p>
           </div>
 
@@ -400,7 +398,8 @@ export function CrmSales() {
                 <p className="font-display text-2xl font-semibold mb-2">Request received</p>
                 <p className="text-[#6b675e] max-w-md mx-auto">
                   Thanks, {form.fullName.split(" ")[0] || "friend"}. We'll reach out by text,
-                  phone call, or email to get your CRM set up.
+                  phone call, or email. Want to skip ahead?{" "}
+                  <Link to="/crm-setup" className="font-semibold text-[#166b45] underline">Fill out the setup form</Link>.
                 </p>
               </motion.div>
             ) : (
@@ -430,33 +429,13 @@ export function CrmSales() {
                 </div>
 
                 <div>
-                  <Label className="mb-2.5 block text-sm font-medium">Plan</Label>
-                  <div className="flex flex-wrap gap-2">
-                    {plans.map((pl) => (
-                      <button
-                        key={pl.id}
-                        type="button"
-                        onClick={() => setPlan(pl.id)}
-                        className={`px-3.5 py-2 rounded-full text-sm transition-all duration-200 ${
-                          plan === pl.id
-                            ? "bg-[#166b45] text-white font-semibold"
-                            : "bg-[#faf7f2] text-[#6b675e] border border-[#e7e1d6] hover:border-[#166b45]/40 hover:text-[#1b1a17]"
-                        }`}
-                      >
-                        {pl.name} · {pl.price}/mo
-                      </button>
-                    ))}
-                  </div>
-                </div>
-
-                <div>
-                  <Label htmlFor="mDetails" className="mb-1.5 block text-sm font-medium">How do you get leads today? (optional)</Label>
+                  <Label htmlFor="mDetails" className="mb-1.5 block text-sm font-medium">Your question (optional)</Label>
                   <Textarea
                     id="mDetails"
                     rows={4}
                     value={form.details}
                     onChange={(e) => update("details", e.target.value)}
-                    placeholder="Website form, phone calls, Facebook, referrals... and roughly how many a month."
+                    placeholder="What would you like to know?"
                     className="bg-white border-[#e7e1d6] text-[#1b1a17] placeholder:text-[#6b675e]/60 rounded-xl focus-visible:border-[#166b45] focus-visible:ring-[#166b45]/15"
                   />
                 </div>
@@ -466,7 +445,7 @@ export function CrmSales() {
                   disabled={!isValid || isSubmitting}
                   className="w-full h-14 rounded-full bg-[#166b45] text-white font-bold text-lg transition-all duration-300 hover:bg-[#0f5434] hover:-translate-y-0.5 disabled:opacity-40 disabled:hover:translate-y-0"
                 >
-                  {isSubmitting ? "Sending..." : "Get my CRM"}
+                  {isSubmitting ? "Sending..." : "Send my question"}
                   {!isSubmitting && <ArrowRight className="h-5 w-5 ml-2" />}
                 </Button>
                 <p className="text-center text-xs leading-relaxed text-[#6b675e]">
