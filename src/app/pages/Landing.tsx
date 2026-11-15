@@ -10,6 +10,7 @@ import {
 import { Navigation } from "../components/Navigation";
 import { Footer } from "../components/Footer";
 import { PriceFootnote } from "../components/PriceFootnote";
+import { PlanCompare } from "../components/PlanCompare";
 import { QuickApplyForm } from "../components/QuickApplyForm";
 import {
   ArrowRight,
@@ -1090,6 +1091,8 @@ export function Landing() {
       </section>
 
       <CtaStrip line="All of that, free to build. Keep it for $9/month*." />
+
+      <PlanCompare />
 
       {/* ========================================================== GROWTH */}
       <section className="py-14 sm:py-20 px-4 sm:px-6 bg-[#fffefb] border-y border-[#e7e1d6]">
