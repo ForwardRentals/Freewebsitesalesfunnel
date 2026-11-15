@@ -34,7 +34,7 @@ const groups: Group[] = [
       { label: "Light SEO hygiene (metadata, broken links)", starter: false, growth: true, commerce: true },
       { label: "Advanced analytics & conversion tracking", starter: false, growth: true, commerce: true },
       { label: "1 blog post per month", starter: false, growth: true, commerce: true },
-      { label: "Custom email (you@yourbusiness.com)", starter: "$9.99/mo extra", growth: "$9.99/mo extra", commerce: "$9.99/mo extra" },
+      { label: "Custom email (you@yourbusiness.com)", starter: "$9/mo extra", growth: "$9/mo extra", commerce: "$9/mo extra" },
     ],
   },
   {

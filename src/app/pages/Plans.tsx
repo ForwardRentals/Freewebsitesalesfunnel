@@ -144,7 +144,7 @@ const additionalServices = [
   {
     icon: Mail,
     title: "Custom Email Address",
-    price: "$9.99/month",
+    price: "$9/month",
     description: "Add a professional email with your domain (e.g., you@yourbusiness.com) to any plan. Not included in any plan.",
   },
   {

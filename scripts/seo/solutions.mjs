@@ -57,7 +57,7 @@ export const addons = [
   {
     id: "email",
     name: "Email at your domain",
-    price: "$9.99/month on any plan",
+    price: "$9/month on any plan",
     blurb: "you@yourbusiness.com instead of a Gmail address, so every quote you send looks like it came from a real business.",
   },
   {
