@@ -19,12 +19,13 @@ const groups: Group[] = [
   {
     title: "Hosting & security",
     rows: [
-      { label: "Website + domain hosting", starter: true, growth: true, commerce: true },
+      { label: "Website hosting", starter: true, growth: true, commerce: true },
+      { label: "Domain hosting", starter: "$19/yr extra", growth: true, commerce: true },
       { label: "Security monitoring & automated backups", starter: true, growth: true, commerce: true },
       { label: "Basic performance monitoring", starter: true, growth: true, commerce: true },
       { label: "Speed optimization", starter: false, growth: true, commerce: true },
       { label: "Plugin / CMS updates", starter: false, growth: true, commerce: true },
-      { label: "Monthly site health check & fixes", starter: false, growth: true, commerce: true },
+      { label: "Monthly site health check & fixes", starter: "Basic", growth: true, commerce: true },
     ],
   },
   {
@@ -33,7 +34,7 @@ const groups: Group[] = [
       { label: "Light SEO hygiene (metadata, broken links)", starter: false, growth: true, commerce: true },
       { label: "Advanced analytics & conversion tracking", starter: false, growth: true, commerce: true },
       { label: "1 blog post per month", starter: false, growth: true, commerce: true },
-      { label: "Custom email (you@yourbusiness.com)", starter: "$15/mo extra", growth: true, commerce: true },
+      { label: "Custom email (you@yourbusiness.com)", starter: "$9.99/mo extra", growth: "$9.99/mo extra", commerce: "$9.99/mo extra" },
     ],
   },
   {
