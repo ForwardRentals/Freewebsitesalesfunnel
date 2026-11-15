@@ -10,6 +10,15 @@ import {
 } from "./ui/dropdown-menu";
 import { Logo } from "./Logo";
 
+const subscribeLinks = [
+  { label: "Starter, monthly", href: "https://buy.stripe.com/dRm5kFfgE3qq3Yi5RO1ck05" },
+  { label: "Growth, monthly", href: "https://buy.stripe.com/dRm4gBecAf980M64NK1ck06" },
+  { label: "Commerce, monthly", href: "https://buy.stripe.com/aFafZjgkI0eeamGfso1ck07" },
+  { label: "Starter, annual (save more)", href: "https://buy.stripe.com/eVq5kFgkI0eedyS7ZW1ck08" },
+  { label: "Growth, annual (save more)", href: "https://buy.stripe.com/aFa6oJ6K84uugL42FC1ck09" },
+  { label: "Commerce, annual (save more)", href: "https://buy.stripe.com/28E3cxecAgdceCW2FC1ck0a" },
+];
+
 export function Navigation() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -72,30 +81,15 @@ export function Navigation() {
               Subscribe
             </DropdownMenuTrigger>
             <DropdownMenuContent className="bg-white border-[#e7e1d6] text-[#1b1a17]">
-              <DropdownMenuItem
-                className="cursor-pointer focus:bg-[#faf7f2]"
-                onSelect={() =>
-                  window.open(
-                    "https://buy.stripe.com/9B68wR5G48KK66qa841ck01",
-                    "_blank",
-                    "noopener,noreferrer",
-                  )
-                }
-              >
-                Monthly Plan
-              </DropdownMenuItem>
-              <DropdownMenuItem
-                className="cursor-pointer focus:bg-[#faf7f2]"
-                onSelect={() =>
-                  window.open(
-                    "https://buy.stripe.com/14AbJ38Sg5yycuO9401ck02",
-                    "_blank",
-                    "noopener,noreferrer",
-                  )
-                }
-              >
-                Annual Plan — Save More!
-              </DropdownMenuItem>
+              {subscribeLinks.map((l) => (
+                <DropdownMenuItem
+                  key={l.href}
+                  className="cursor-pointer focus:bg-[#faf7f2]"
+                  onSelect={() => window.open(l.href, "_blank", "noopener,noreferrer")}
+                >
+                  {l.label}
+                </DropdownMenuItem>
+              ))}
             </DropdownMenuContent>
           </DropdownMenu>
           <Link
@@ -173,22 +167,17 @@ export function Navigation() {
               >
                 Book a Call
               </a>
-              <a
-                href="https://buy.stripe.com/9B68wR5G48KK66qa841ck01"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-medium text-[#6b675e]"
-              >
-                Subscribe — Monthly
-              </a>
-              <a
-                href="https://buy.stripe.com/14AbJ38Sg5yycuO9401ck02"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-medium text-[#6b675e]"
-              >
-                Subscribe — Annual (Save More!)
-              </a>
+              {subscribeLinks.map((l) => (
+                <a
+                  key={l.href}
+                  href={l.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-medium text-[#6b675e]"
+                >
+                  Subscribe: {l.label}
+                </a>
+              ))}
               <Link
                 to="/get-started"
                 onClick={() => setMobileOpen(false)}
