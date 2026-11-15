@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import { Navigation } from "../components/Navigation";
 import { Footer } from "../components/Footer";
+import { CrmDemo } from "../components/CrmDemo";
 import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
 import { Label } from "../components/ui/label";
@@ -238,12 +239,37 @@ export function CrmSales() {
               See plans <ArrowRight className="h-5 w-5" />
             </a>
             <a
+              href="#demo"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-[#faf7f2]/20 px-8 py-4 text-lg font-semibold transition-all hover:border-[#faf7f2]/50 hover:-translate-y-0.5"
+            >
+              Try the live demo
+            </a>
+            <a
               href="tel:+16048498898"
               className="inline-flex items-center justify-center gap-2 rounded-full border border-[#faf7f2]/20 px-8 py-4 text-lg font-semibold transition-all hover:border-[#faf7f2]/50 hover:-translate-y-0.5"
             >
               <Phone className="h-5 w-5" /> (604) 849-8898
             </a>
           </motion.div>
+        </div>
+      </section>
+
+      {/* LIVE DEMO */}
+      <section id="demo" className="scroll-mt-20 py-14 sm:py-24 px-4 sm:px-6 bg-[#faf7f2] border-b border-[#e7e1d6]">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-8 sm:mb-12">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#166b45] mb-3">
+              Try it right here
+            </p>
+            <h2 className="font-display text-3xl sm:text-5xl font-semibold tracking-tight mb-4">
+              This is what your CRM <span className="italic text-[#166b45]">looks like</span>
+            </h2>
+            <p className="text-lg text-[#6b675e] max-w-2xl mx-auto">
+              Open a lead, drag it to the next stage, tick off a task, or hit
+              "Simulate new lead" to see what happens when an enquiry comes in.
+            </p>
+          </div>
+          <CrmDemo />
         </div>
       </section>
 
