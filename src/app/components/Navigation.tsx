@@ -11,12 +11,12 @@ import {
 import { Logo } from "./Logo";
 
 const subscribeLinks = [
-  { label: "Starter, monthly", href: "https://buy.stripe.com/dRm5kFfgE3qq3Yi5RO1ck05" },
-  { label: "Growth, monthly", href: "https://buy.stripe.com/dRm4gBecAf980M64NK1ck06" },
-  { label: "Commerce, monthly", href: "https://buy.stripe.com/aFafZjgkI0eeamGfso1ck07" },
-  { label: "Starter, annual (save more)", href: "https://buy.stripe.com/eVq5kFgkI0eedyS7ZW1ck08" },
-  { label: "Growth, annual (save more)", href: "https://buy.stripe.com/aFa6oJ6K84uugL42FC1ck09" },
-  { label: "Commerce, annual (save more)", href: "https://buy.stripe.com/28E3cxecAgdceCW2FC1ck0a" },
+  { label: "Starter, $9 for 3 months then $13/mo", href: "https://buy.stripe.com/8x24gBc4s8KK1Qafso1ck0b?prefilled_promo_code=STARTER9" },
+  { label: "Growth, $19 for 3 months then $27/mo", href: "https://buy.stripe.com/5kQ3cxc4sgdcamGbc81ck0c?prefilled_promo_code=GROWTH19" },
+  { label: "Commerce, $49/mo", href: "https://buy.stripe.com/dRmcN7gkI1iigL41By1ck0d" },
+  { label: "Starter, $89/yr", href: "https://buy.stripe.com/bJecN73xW7GG0M6fso1ck0e" },
+  { label: "Growth, $199/yr", href: "https://buy.stripe.com/4gMfZj3xW3qq1Qadkg1ck0f" },
+  { label: "Commerce, $449/yr", href: "https://buy.stripe.com/14A28t2tS1ii1Qa4NK1ck0g" },
 ];
 
 export function Navigation() {
