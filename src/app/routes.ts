@@ -62,3 +62,17 @@ export const router = createBrowserRouter(
   ],
   { basename },
 );
+
+// Scroll to top whenever the user navigates to a new page (not on back/forward,
+// where the browser restores position, and not for #hash links).
+if (typeof window !== "undefined") {
+  let lastPath = window.location.pathname;
+  router.subscribe((state) => {
+    if (state.navigation.state !== "idle") return;
+    const { pathname, hash } = state.location;
+    if (pathname === lastPath) return;
+    lastPath = pathname;
+    if (hash || state.historyAction === "POP") return;
+    window.scrollTo(0, 0);
+  });
+}
