@@ -2,6 +2,73 @@
 // Keep claims honest: no invented stats, testimonials or client numbers.
 export const posts = [
   {
+    slug: "should-i-get-a-dot-ca-or-dot-com-domain-for-my-canadian-business",
+    title: "Should I Get a .ca or .com Domain for My Business?",
+    description:
+      "Should a Canadian small business pick a .ca or a .com? Who can register a .ca, what Google says about country domains, and how to choose and protect your name.",
+    date: "2026-11-16",
+    excerpt:
+      "For most Canadian businesses serving Canadian customers, .ca is a solid first choice, and grabbing the .com too is a bonus. Here's how to decide.",
+    body: `
+<p>If your customers are mostly in Canada, a .ca domain is a perfectly good first choice, and it's the one I'd lean toward for a local business. If you already own the .com, or plan to sell well beyond Canada, a .com works just as well. The best answer is often both, pointing to the same website. Here's how I think it through with business owners.</p>
+
+<h2>Who can register a .ca?</h2>
+<p>Unlike .com, a .ca isn't open to everyone. The Canadian Internet Registration Authority (CIRA), which runs .ca, requires registrants to meet its Canadian Presence Requirements. In general that covers Canadian citizens and permanent residents, Canadian corporations and other Canadian organizations, and owners of a trademark registered in Canada. The exact categories are on CIRA's site, so check them there if your situation is unusual (a sole proprietor who recently moved, say, or a business owned from abroad).</p>
+<p>For a typical Canadian small business, this is no obstacle. It's actually a small advantage: a .ca tells visitors you're a real Canadian business.</p>
+
+<h2>What does Google say about .ca?</h2>
+<p>Google's documentation says country-code domains like .ca are tied to a specific country and are a strong signal to both people and search engines that a site is meant for that country. It also notes that targeting a country can help rankings there. That's about relevance to Canadian searchers, not a magic ranking boost. A .ca won't beat a .com that has better pages, better reviews and a well-set-up <a href="/blog/how-do-i-verify-my-google-business-profile/">Google Business Profile</a>.</p>
+<p>The reverse is also true. A .com doesn't stop a local business from ranking locally, as long as the site clearly shows where you work: your town, your service area, your address and phone number. My <a href="/blog/local-seo-checklist-small-business-bc/">local SEO checklist</a> covers those signals.</p>
+
+<h2>When .ca is the better pick</h2>
+<ul>
+<li>You serve customers in one town, region or across Canada.</li>
+<li>Your ideal .com is already taken by someone else (a different business, or a parked domain).</li>
+<li>You want to look clearly Canadian, which matters to many shoppers, especially when prices are in Canadian dollars.</li>
+</ul>
+
+<h2>When .com is the better pick</h2>
+<ul>
+<li>You already own it and it's on your cards, truck and signage. Changing a well-known address costs more than it saves.</li>
+<li>You sell to customers around the world.</li>
+<li>You expect people to type your name from memory. Plenty of people still add .com by habit, so owning it avoids losing visitors to a typo.</li>
+</ul>
+
+<h2>Should I buy both?</h2>
+<p>If the budget allows, registering both is a cheap way to protect your name. Pick one as your main address, then have the other redirect to it. That way a customer who types the wrong ending still lands on your site, and nobody else can pick up the look-alike name. It's optional, though. One good domain is enough to get started.</p>
+
+<h2>How to choose the name itself</h2>
+<ul>
+<li><strong>Keep it short and easy to say.</strong> If you'd have to spell it out over the phone, it's too complicated.</li>
+<li><strong>Use your business name</strong> where you can. It matches what's on your signs and your Google profile.</li>
+<li><strong>Avoid hyphens and numbers.</strong> They're easy to mishear and mistype.</li>
+<li><strong>Add your trade or town only if your name is taken.</strong> Something like yourname-squamish.ca is fine as a fallback.</li>
+<li><strong>Check social handles</strong> so everything matches.</li>
+</ul>
+
+<h2>Make sure the domain is actually yours</h2>
+<p>This is the part that bites people. Check three things:</p>
+<ul>
+<li>The registrant (the owner of record) is you or your business, not a former web designer or agency.</li>
+<li>The contact email on the domain is one you still use, because renewal notices and transfer codes go there.</li>
+<li>Auto-renew is on, and you know the renewal date and price. Renewal prices can differ from the first-year price, so look before you buy.</li>
+</ul>
+<p>If you ever lose the domain, you lose your website address and any email that uses it. I explain that connection in <a href="/blog/how-do-i-get-a-business-email-with-my-own-domain/">How Do I Get a Business Email With My Own Domain?</a></p>
+
+<h2>Where to check availability</h2>
+<p>You can search for a name at our <a href="/domains">domain search</a> to see if the .ca and .com are free. If you already own a domain elsewhere, you don't need to move it to use it with a website I build. I can point it at your site, and you can transfer it later if you wish.</p>
+
+<h2>How FreeSite Company can help</h2>
+<p>I'm Jeremy, a web designer in Squamish, BC. I build Canadian small businesses a custom, hand-coded website for free. You see it finished before paying anything, and if you keep it, it's $9/month (then $13/month after three months, or $89/year), month-to-month, cancel any time. You own the code. If you'd like help with a domain, I offer <a href="/domain-hosting/">domain hosting</a> as an add-on, along with <a href="/add-ons/">other upgrades</a>, so you don't have to untangle registrars on your own.</p>
+
+<h2>Sources</h2>
+<ul>
+<li><a href="https://www.cira.ca/en/resources/documents/domains/canadian-presence-requirements-registrants/" rel="noopener" target="_blank">CIRA: Canadian Presence Requirements for Registrants</a></li>
+<li><a href="https://developers.google.com/search/docs/specialty/international/managing-multi-regional-sites" rel="noopener" target="_blank">Google Search Central: Managing multi-regional and multilingual sites</a></li>
+</ul>
+`,
+  },
+  {
     slug: "is-wordpress-really-free-what-a-wordpress-website-costs-canada",
     title: "Is WordPress Really Free? What a Site Actually Costs",
     description:
