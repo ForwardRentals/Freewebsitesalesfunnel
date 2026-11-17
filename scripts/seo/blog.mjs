@@ -2,6 +2,62 @@
 // Keep claims honest: no invented stats, testimonials or client numbers.
 export const posts = [
   {
+    slug: "what-should-a-hair-salon-website-have",
+    title: "What Should a Hair Salon Website Have? A Checklist",
+    description:
+      "What a hair salon or barbershop website needs to turn searches into bookings: a Book Now button, prices, stylist pages, a fast gallery and Google booking link.",
+    date: "2026-11-17",
+    excerpt:
+      "A salon website has one job: get people booked. Here's the checklist I use for hair salons and barbershops, from the Book Now button to a Google booking link.",
+    body: `
+<p>A good hair salon website makes it easy to see what you offer, what it costs and how to book, all within a few seconds on a phone. Everything else supports that. Here's the checklist I work from when I build a site for a salon or barbershop.</p>
+
+<h2>1. A Book Now button on every screen</h2>
+<p>Most people looking for a haircut are on their phone and ready to act. Put a Book Now button in the header and again near the top of the home page, so nobody has to scroll or hunt for it. It can link to Fresha, Square, Vagaro or whatever booking tool you already use. If you'd rather have booking built into your own site, that's an <a href="/online-booking-website/">online booking add-on</a>. For the bigger picture, see <a href="/blog/how-do-i-add-online-booking-to-my-small-business-website/">How Do I Add Online Booking to My Business Website?</a></p>
+
+<h2>2. A clear list of services and prices</h2>
+<p>"Starting at" prices are fine. What frustrates people is having to message you to find out whether a cut is $40 or $120. Group your services (cuts, colour, treatments, beard trims), add rough durations, and note anything that changes the price, like hair length or a consultation first. A clear price list also means fewer calls and DMs that interrupt you mid-appointment.</p>
+
+<h2>3. A short page for each stylist or barber</h2>
+<p>Regulars book a person, not a salon. Give each stylist a photo, a few lines about what they love doing and a booking link that goes straight to their calendar. New clients find it much easier to pick someone when they can see who they'll be sitting with.</p>
+
+<h2>4. A gallery that loads fast</h2>
+<p>Your work is your best advertisement, but a slow, photo-heavy page makes people leave before they see it. Use your own photos of real cuts and colour (with the client's okay), compressed so they load quickly on mobile data. If a professional shoot is on your wish list, I also offer <a href="/add-ons/">photography and video</a>. If your current site is sluggish, <a href="/blog/why-is-my-website-slow-on-phones/">here's why it might be slow and how to fix it</a>.</p>
+
+<h2>5. Your address, hours and parking, in plain text</h2>
+<p>List your full address, opening hours, phone number and a map, plus the practical stuff: where to park, whether you take walk-ins, and your cancellation policy. Keep this as real text on the page rather than inside an image, so Google and screen readers can read it.</p>
+
+<h2>6. A Google Business Profile that links to booking</h2>
+<p>For a salon, many first impressions happen on Google Maps, before anyone visits your website. Google lets you add booking links to your Business Profile. In Google Search you select Booking, and in Google Maps you choose Edit profile and then the transaction type, then Add link and paste your booking URL. You can add up to 10 links per category and mark one as your preferred link.</p>
+<p>One thing to watch: third-party booking links can sometimes show up on your profile automatically through partners, and you can't delete those from your profile settings. You'd contact the provider instead. If you haven't claimed your profile yet, start with <a href="/blog/how-do-i-verify-my-google-business-profile/">How Do I Verify My Google Business Profile?</a></p>
+
+<h2>7. Reviews and a link to leave one</h2>
+<p>Show a few genuine reviews, with the client's permission, and link to your Google profile so people can read more. Don't write or buy reviews. A simple "How was your visit? Leave us a review" link on your confirmation message or receipt is an easy way to collect real ones.</p>
+
+<h2>8. Your Instagram, without relying on it</h2>
+<p>Instagram is great for showing off your work, and a feed on your site keeps it feeling current. But your own website is the one place you control: you own the address, the content and the customer path. Social media alone isn't a full substitute, which I explain in <a href="/blog/do-i-need-a-website-if-i-have-facebook-instagram/">Do I Need a Website If I Already Have Facebook or Instagram?</a></p>
+
+<h2>Write it the way clients search</h2>
+<p>People type things like "balayage near me", "barber open Saturday" or "kids' haircut in Squamish". Use those plain words in your page titles, headings and service descriptions, and mention your town naturally. Add a short FAQ too: do you take walk-ins, how long does a colour appointment take, what's your cancellation policy, do you do consultations first. Every answer saves a phone call and makes booking feel safer for first-timers. My <a href="/blog/local-seo-checklist-small-business-bc/">local SEO checklist</a> covers the rest of the basics.</p>
+
+<h2>What you can skip</h2>
+<ul>
+<li>Autoplay videos and music.</li>
+<li>Pop-ups that cover the Book Now button.</li>
+<li>Long "our story" pages. A short paragraph and a photo of the team is plenty.</li>
+<li>A blog you won't keep up.</li>
+</ul>
+
+<h2>How FreeSite Company can help</h2>
+<p>I'm Jeremy, a web designer in Squamish. I build salons and barbershops a custom, hand-coded website for free, with your services, prices and booking button front and centre. You see it finished before paying anything. If you keep it, it's $9/month (then $13/month after three months, or $89/year), month-to-month, cancel any time, and you own the code. You can see what I build for <a href="/free-website-for-salons-barbers/">salons and barbershops</a> if you'd like a look.</p>
+
+<h2>Sources</h2>
+<ul>
+<li><a href="https://support.google.com/business/answer/6218037" rel="noopener" target="_blank">Google Business Profile Help: Manage your local business links</a></li>
+</ul>
+`,
+  },
+  {
     slug: "should-i-get-a-dot-ca-or-dot-com-domain-for-my-canadian-business",
     title: "Should I Get a .ca or .com Domain for My Business?",
     description:
