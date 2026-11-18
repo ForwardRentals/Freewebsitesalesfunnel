@@ -5,6 +5,7 @@ import { mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { industries, cities, portfolio } from "./data.mjs";
 import { posts } from "./blog.mjs";
+import { photographersPage } from "./photographers.mjs";
 
 const SITE = "https://freesitecompany.com";
 const OUT = "dist";
@@ -147,7 +148,7 @@ footer .logo{color:#fff}footer .logo b span{color:#c5f06a}footer .logo small{col
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 `;
 
-function layout({ path, title, description, body, jsonld }) {
+function layout({ path, title, description, body, jsonld, css = "", ogImage }) {
   const url = `${SITE}/${path}/`;
   return `<!DOCTYPE html>
 <html lang="en">
@@ -168,12 +169,12 @@ function layout({ path, title, description, body, jsonld }) {
 <meta property="og:locale" content="en_CA">
 <meta property="og:title" content="${esc(title)}">
 <meta property="og:description" content="${esc(description)}">
-<meta property="og:image" content="${SITE}/og-image.png">
+<meta property="og:image" content="${ogImage || SITE + "/og-image.png"}">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,600&family=Inter:wght@400;500;600;700;800&display=swap">
-<style>${CSS.replace(/\n/g, "")}</style>
+<style>${(CSS + css).replace(/\n/g, "")}</style>
 ${jsonld.map((j) => `<script type="application/ld+json">${JSON.stringify(j)}</script>`).join("\n")}
 </head>
 <body>
@@ -193,7 +194,7 @@ ${footer()}
 function footer() {
   return `<footer><div class="wrap">
 <div><a class="logo" href="/" aria-label="FreeSite Company"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#166b45"/><path d="M16 15a2 2 0 0 1 2-2h28a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H25v6.5h11a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H25V49a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2Z" fill="#fff"/><path d="M38 36v20l4.6-4.4 3.6 7.6 3.4-1.6-3.6-7.4 6.4-.4Z" fill="#c5f06a"/></svg><span><b>Free<span>Site</span></b><small>COMPANY</small></span></a><p>A real web designer in Squamish, BC. Free custom websites for small businesses across BC and Canada. You own the code.</p></div>
-<div><h3>Websites for</h3><ul>${industries.slice(0, 6).map((i) => `<li><a href="/${industryPath(i)}/">${esc(i.label)}</a></li>`).join("")}<li><a href="/${INDUSTRY_HUB}/">All business types →</a></li></ul></div>
+<div><h3>Websites for</h3><ul>${industries.slice(0, 6).map((i) => `<li><a href="/${industryPath(i)}/">${esc(i.label)}</a></li>`).join("")}<li><a href="/free-website-for-photographers/">Photographers</a></li><li><a href="/${INDUSTRY_HUB}/">All business types →</a></li></ul></div>
 <div><h3>Web design in</h3><ul>${cities.slice(0, 6).map((c) => `<li><a href="/${cityPath(c)}/">${esc(cap(c.name))}</a></li>`).join("")}<li><a href="/${CITY_HUB}/">All areas →</a></li></ul></div>
 <div><h3>Get in touch</h3><ul><li><a href="tel:${PHONE_TEL}">${PHONE}</a></li><li><a href="mailto:freesitecompanycanada@gmail.com">freesitecompanycanada@gmail.com</a></li><li>Squamish, BC</li><li><a href="/blog/">Blog</a></li><li><a href="/#apply">Apply for a free website →</a></li></ul></div>
 </div></footer>`;
@@ -334,7 +335,7 @@ ${mathSection()}
 ${stepsSection()}
 ${faqSection(faqs)}
 ${linksSection("Web design near you", cities.map((c) => [cap(c.name), `/${cityPath(c)}/`]))}
-${linksSection("Other businesses I build for", industries.filter((x) => x !== ind).map((x) => [x.label, `/${industryPath(x)}/`]))}
+${linksSection("Other businesses I build for", [...(ind.slug === "photographers-artists" ? [["Photographers: full photography website page", "/free-website-for-photographers/"]] : []), ...industries.filter((x) => x !== ind).map((x) => [x.label, `/${industryPath(x)}/`])])}
 ${finalCta(`Your ${esc(ind.noun)} deserves a <em>better website.</em>`)}`;
   write(path, layout({
     path,
@@ -387,7 +388,7 @@ ${finalCta(`A better website for your <em>${esc(city.name)}</em> business.`)}`;
 ${hero({ eyebrow: "Free website program", h1: "A <em>free website</em> for your small business", intro: "Every business needs something different from its website. A restaurant needs its menu, a contractor needs a project gallery, a clinic needs online booking. Pick your business type to see what I'd build for you, for free." })}
 <section class="band"><div class="wrap">
 <p class="label">Pick your business type</p>
-<div class="needs">${industries.map((i) => `<a class="need" style="text-decoration:none" href="/${industryPath(i)}/"><h3>${esc(i.label)} →</h3><p>${esc(i.needs.slice(0, 3).map((n) => n[0]).join(" · "))}</p></a>`).join("")}</div>
+<div class="needs">${industries.map((i) => `<a class="need" style="text-decoration:none" href="/${industryPath(i)}/"><h3>${esc(i.label)} →</h3><p>${esc(i.needs.slice(0, 3).map((n) => n[0]).join(" · "))}</p></a>`).join("")}<a class="need" style="text-decoration:none" href="/free-website-for-photographers/"><h3>Photographers →</h3><p>Fast galleries · Image SEO · Licensing and print sales</p></a></div>
 </div></section>
 ${workSection(["watertaxi", "canoe", "dobson"])}
 ${mathSection()}
@@ -460,6 +461,13 @@ ${finalCta("Ready for a better website? <em>It's free to build.</em>")}`;
   pages.push({ path: "blog/", priority: "0.7" });
 }
 
+// Dedicated photographers landing page (bespoke layout + image sitemap entries)
+{
+  const r = photographersPage({ esc, crumbs, breadcrumbLd, faqLd, serviceLd, workSection, includedSection, stepsSection, faqSection, linksSection, finalCta, layout, industries, industryPath, sharedFaqs, SITE, PHONE, PHONE_TEL });
+  write(r.path, r.html);
+  pages.push({ path: `${r.path}/`, priority: "0.9", images: r.images });
+}
+
 const urls = [
   { path: "", priority: "1.0" },
   { path: "plans", priority: "0.9" },
@@ -469,8 +477,8 @@ const urls = [
 writeFileSync(
   join(OUT, "sitemap.xml"),
   `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urls.map((u) => `  <url><loc>${SITE}/${u.path}</loc><lastmod>${today}</lastmod><priority>${u.priority}</priority></url>`).join("\n")}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+${urls.map((u) => `  <url><loc>${SITE}/${u.path}</loc><lastmod>${today}</lastmod><priority>${u.priority}</priority>${(u.images || []).map((i) => `<image:image><image:loc>${i.loc}</image:loc><image:title>${esc(i.alt)}</image:title></image:image>`).join("")}</url>`).join("\n")}
 </urlset>
 `,
 );
