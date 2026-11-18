@@ -2,6 +2,78 @@
 // Keep claims honest: no invented stats, testimonials or client numbers.
 export const posts = [
   {
+    slug: "how-do-i-get-more-google-reviews-for-my-small-business",
+    title: "How Do I Get More Google Reviews for My Business?",
+    description:
+      "How to get more Google reviews the honest way: use your Business Profile review link or QR code, ask at the right moment, reply to every review and avoid incentives.",
+    date: "2026-11-18",
+    excerpt:
+      "The simplest way to get more Google reviews is to ask, every time, with a direct link. Here's how to do it within Google's rules, plus what to say and when.",
+    body: `
+<p>The most reliable way to get more Google reviews is to ask happy customers, right after a good experience, with a direct review link or QR code from your Google Business Profile. Don't offer discounts or freebies for reviews, because Google prohibits it. That's the whole strategy; the rest is making it a habit. Here's how I'd set it up.</p>
+
+<h2>1. Get your review link or QR code</h2>
+<p>You don't need a third-party tool for this. Google gives you a link for free:</p>
+<ul>
+<li>Sign in to your Google Business Profile at <a href="https://business.google.com" rel="noopener" target="_blank">business.google.com</a>.</li>
+<li>Select <strong>Read reviews</strong>, then the option to get more reviews (the share icon).</li>
+<li>Copy the link, or save the QR code. Google notes that QR codes can only be generated from a computer browser, not a phone.</li>
+</ul>
+<p>You'll need a verified profile first. If you haven't done that yet, <a href="/blog/how-do-i-verify-my-google-business-profile/">here's a plain guide to verifying your Google Business Profile</a>.</p>
+
+<h2>2. Ask at the right moment</h2>
+<p>Timing matters more than wording. The best moment is when the customer is pleased and the job is fresh in their mind:</p>
+<ul>
+<li>A plumber or electrician can send a text as they pack up, once the problem is fixed.</li>
+<li>A salon or spa can ask at the till or in a follow-up message the same day.</li>
+<li>A restaurant or cafe can put the QR code on the bill folder or the counter.</li>
+<li>A photographer, contractor or coach can include the link in the thank-you email after delivery.</li>
+</ul>
+<p>A short, personal message works best. Something like: "Thanks so much for choosing us today. If you have a minute, a Google review really helps a small local business like ours. Here's the link." Keep it to a couple of sentences and make it easy to tap.</p>
+
+<h2>3. Ask everyone, not just the people you expect to rave</h2>
+<p>It's tempting to only message the customers you know loved you. I'd rather you ask everyone who had a normal experience with you. Reviews are supposed to reflect genuine experiences, and a profile with a natural mix of feedback is more believable to the next customer than a wall of identical five-star lines.</p>
+
+<h2>4. Don't offer anything in exchange</h2>
+<p>Google's help pages say that offering free or discounted goods or services in exchange for a review is strictly prohibited. That covers rewards for leaving a review, for changing one, or for removing a negative one. Reviews that Google suspects were influenced this way can be removed, and it isn't worth putting your profile at risk. Asking politely, with no reward attached, is fine.</p>
+
+<h2>5. Reply to every review</h2>
+<p>Replying shows future customers that a real person is paying attention. Google's own advice for replies is to keep them short and simple and stay professional. For a good review, a quick thank-you by name is plenty. For a negative one:</p>
+<ul>
+<li>Respond promptly and politely, using the reviewer's name.</li>
+<li>Apologise where it's fair to, and acknowledge real mistakes.</li>
+<li>Don't share the customer's private details or get into an argument in public.</li>
+<li>Offer to continue the conversation offline, with a phone number or email.</li>
+</ul>
+<p>If a review looks fake or breaks Google's content policies, you can flag it from your profile rather than replying to it.</p>
+
+<h2>6. Make asking automatic</h2>
+<p>The businesses with plenty of reviews usually aren't better at asking; they've just made it a routine. A few ways to build the habit:</p>
+<ul>
+<li>Save your review link as a text shortcut on your phone.</li>
+<li>Print the QR code on a small card, a receipt or a counter sign.</li>
+<li>Add the link to your email signature and your invoices.</li>
+<li>Put a "Leave us a Google review" button on your website, so happy visitors have an obvious next step.</li>
+<li>If you use a CRM or booking system, send the link as part of your follow-up after each appointment. See <a href="/website-with-crm/">websites with a built-in CRM</a> and <a href="/online-booking-website/">online booking</a>.</li>
+</ul>
+
+<h2>7. Check that your profile is ready for new reviews</h2>
+<p>New reviews help most when the rest of your profile is complete: correct hours, a clear primary category, real photos and a link to your website. For the full list, see my <a href="/blog/local-seo-checklist-small-business-bc/">local SEO checklist for small businesses in BC</a>.</p>
+
+<h2>How many reviews do you need?</h2>
+<p>There's no magic number. I'd focus on a steady trickle of recent, genuine reviews rather than a target. Two or three new ones a month from real customers looks healthier than fifty in a week followed by silence.</p>
+
+<h2>How FreeSite Company can help</h2>
+<p>When I build a site for a small business, I add a review button that points to your Google link and make sure your site details match your profile. The website is free to build, and you only pay $9/month (then $13/month after the first 3 months, or $89/year) if you keep it, month-to-month, cancel any time. You can see what's included on the <a href="/plans">plans page</a> and the <a href="/add-ons/">add-ons</a>, like online booking and a built-in CRM.</p>
+
+<h2>Sources</h2>
+<ul>
+<li><a href="https://support.google.com/business/answer/16816815" rel="noopener" target="_blank">Google Business Profile Help: Create a Google link or QR code to request reviews</a></li>
+<li><a href="https://support.google.com/business/answer/3474122" rel="noopener" target="_blank">Google Business Profile Help: Read and reply to reviews</a></li>
+</ul>
+`,
+  },
+  {
     slug: "what-should-a-hair-salon-website-have",
     title: "What Should a Hair Salon Website Have? A Checklist",
     description:
