@@ -63,12 +63,49 @@ export const photoCss = `
 .cmp td:last-child{background:#eaf2ec;font-weight:500}
 .cmp tr:last-child td{border-bottom:0}
 .tw{overflow-x:auto}
+.mods{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:18px}
+.mod{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column}
+.mod .vis{aspect-ratio:16/9;background:#111;overflow:hidden;position:relative}
+.mod .vis img{width:100%;height:100%;object-fit:cover}
+.mod .body{padding:20px 22px 24px}
+.mod h3{margin:0 0 6px;font-family:Fraunces,Georgia,serif;font-size:1.35rem;line-height:1.2}
+.mod p{margin:0 0 12px;color:var(--muted);font-size:16px}
+.mod ul{margin:0;padding:0;list-style:none;display:grid;gap:6px;font-size:15px}
+.mod li{display:flex;gap:8px}
+.mod li:before{content:"✓";color:var(--green);font-weight:700}
+.tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:3px 10px;background:#eaf2ec;color:var(--green);margin-bottom:10px}
+.tag.opt{background:#f6ead3;color:#8a5f12}
+.vis.dark{display:grid;place-items:center;background:linear-gradient(135deg,#17231d,#0e1512);padding:18px}
+.login{width:min(260px,100%);background:#fffefb;border-radius:12px;padding:16px;box-shadow:0 18px 40px -16px rgba(0,0,0,.6)}
+.login b{display:block;font-size:14px;margin-bottom:10px}
+.login i{display:block;height:28px;border:1px solid var(--line);border-radius:8px;margin-bottom:8px;font-style:normal;font-size:12px;color:var(--muted);padding:5px 10px}
+.login u{display:block;text-decoration:none;text-align:center;background:var(--green);color:#fff;border-radius:999px;font-size:13px;font-weight:600;padding:6px}
+.stockmock{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;padding:6px;background:#111;height:100%}
+.stockmock img{width:100%;height:100%;object-fit:cover;border-radius:3px}
+.stockmock span{position:absolute;right:10px;bottom:10px;background:var(--green);color:#fff;font-size:12px;font-weight:600;border-radius:999px;padding:5px 12px}
+.plans{width:100%;min-width:620px;border-collapse:separate;border-spacing:0;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;text-align:left}
+.plans th,.plans td{padding:12px 14px;border-top:1px solid var(--line);text-align:center;font-size:15px}
+.plans td:first-child,.plans th:first-child{text-align:left}
+.plans thead th{border-top:0;vertical-align:bottom;font-weight:400;background:#fff}
+.plans thead th.hl{background:var(--green);color:#fff}
+.plans .nm{font-family:Fraunces,Georgia,serif;font-size:1.3rem;font-weight:600}
+.plans .pr{font-family:Fraunces,Georgia,serif;font-size:2rem;font-weight:600;color:var(--green);line-height:1.1}
+.plans th.hl .pr{color:#fff}
+.plans small{display:block;font-size:12px;opacity:.75}
+.plans .pop{display:inline-block;background:var(--gold);color:var(--fg);font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;border-radius:999px;padding:2px 10px;margin-bottom:6px}
+.plans .grp td{background:var(--bg);text-align:left;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--green)}
+.plans td.g{background:rgba(22,107,69,.07)}
+.plans .y{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--green);color:#fff;font-size:12px}
+.plans .n{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:rgba(27,26,23,.07);color:rgba(27,26,23,.35);font-size:12px}
+.plans .t{font-size:13px;font-weight:600;color:rgba(27,26,23,.75)}
+.plans tfoot td{padding:16px 10px}
+.plans tfoot .btn{padding:9px 16px;font-size:14px}
 .note{font-size:14px;color:var(--muted);margin-top:12px}
 @media (max-width:860px){.mosaic{grid-auto-rows:44px}.ph-hero .wrap,.ex{grid-template-columns:1fr}.ph-hero h1{max-width:none}}
 `;
 
 export const photoFaqs = [
-  ["Is the website really free for photographers?", "Yes. I build your portfolio for free, including two rounds of revisions. If you love it, hosting and support are $9.99/month. If you don't, you owe nothing and I won't send you an invoice."],
+  ["Is the website really free for photographers?", "Yes. I build your portfolio for free, including two rounds of revisions. If you love it, hosting and support start at $9/month for your first 3 months ($13/month after). If you don't, you owe nothing and I won't send you an invoice."],
   ["Will my photos look sharp, or get compressed to mush?", "They'll look sharp. I serve modern formats (WebP/AVIF) in responsive sizes, so full-width images still load fast on a phone, and your originals are never degraded. Big, clean images are the whole point of a photographer's site."],
   ["Can I license or sell my photos from the site?", "Yes. My own site, thefulltimehobby.com, has a self-hosted stock library with a page for every photo, license tiers and an enquiry link that carries the photo ID. I can set up the same thing for you, or link to the print lab or stock agency you already use."],
   ["Will it help my photos show up in Google Images?", "That's part of the build: descriptive file names, alt text, captions, image sitemap entries and, where it fits, IPTC/XMP metadata with your creator and licensing details so Google can show the Licensable badge."],
@@ -82,7 +119,7 @@ export function photographersPage(h) {
   const { esc, crumbs, breadcrumbLd, faqLd, serviceLd, workSection, includedSection, stepsSection, faqSection, linksSection, finalCta, layout, industries, industryPath, sharedFaqs, SITE, PHONE, PHONE_TEL } = h;
   const path = PHOTO_PATH;
   const title = "Free Photography Website for Photographers | FreeSiteCompany";
-  const description = "A free custom portfolio website for photographers: full-quality galleries, client proofing, stock and print sales, and image SEO. Built free, $9.99/month if you keep it.";
+  const description = "A free custom portfolio website for photographers: full-quality galleries, client proofing, stock and print sales, and image SEO. Built free, from $9/month if you keep it.";
   const trail = [["Home", "/"], ["Websites for small business", "/free-website-for-small-business/"], ["Photographers", `/${path}`]];
   const faqs = [...photoFaqs, ...sharedFaqs.slice(1)];
 
@@ -115,7 +152,7 @@ export function photographersPage(h) {
 <div>
 <span class="eyebrow"><i></i>Free websites for photographers</span>
 <h1 class="d">A <em>free portfolio website</em> for photographers</h1>
-<p class="lead">Your photos deserve better than a template everyone else is using. I'm a working photographer in Squamish, BC, and I build portfolio sites the way I wish mine had been built: big, sharp images, fast on every phone, and set up so clients can find, book and license you. The build is free. You pay $9.99/month only if you keep it.</p>
+<p class="lead">Your photos deserve better than a template everyone else is using. I'm a working photographer in Squamish, BC, and I build portfolio sites the way I wish mine had been built: big, sharp images, fast on every phone, and set up so clients can find, book and license you. The build is free. Hosting is from $9/month, and only if you keep it.</p>
 <div class="ctas"><a class="btn" href="/#apply">Apply in 2 minutes →</a><a class="btn ghost" href="https://thefulltimehobby.com" target="_blank" rel="noopener">See my own site</a></div>
 <p class="fine">Free build with 2 rounds of revisions · See it live before you pay · You own the code and your images</p>
 </div>
@@ -140,25 +177,26 @@ export function photographersPage(h) {
 </div>
 </div></section>
 
-<section><div class="wrap">
+<section class="band"><div class="wrap">
 <p class="label">What your portfolio could look like</p>
 <h2 class="d">Big images. <em>Fast pages.</em> Nothing in the way.</h2>
 <div class="gal">${gallery}</div>
 <p class="note">Sample images are previews from my own library at thefulltimehobby.com/stock. Your site would carry your work, in your style.</p>
 </div></section>
 
-<section class="band"><div class="wrap">
-<p class="label">What a photographer's website needs</p>
-<h2 class="d">Built to <em>get you booked</em>, found and paid</h2>
-<div class="needs">
-<div class="need"><h3>Full-quality, fast galleries</h3><p>Responsive WebP/AVIF images, lazy loading and a layout that puts the photo first. Sharp on a 5K monitor, quick on a phone with one bar.</p></div>
-<div class="need"><h3>A design that fits your style</h3><p>Custom layouts, type and colour for your work. Moody and dark, light and airy, or editorial. Never the same template as the photographer down the road.</p></div>
-<div class="need"><h3>Image SEO for Google Images</h3><p>File names, alt text, captions, structured data and an image sitemap, so your work is found by people searching for it, not just people who already know you.</p></div>
-<div class="need"><h3>Licensing and print sales</h3><p>Per-photo pages with license tiers (web, commercial, extended), an enquiry link that carries the photo ID, or a simple print shop.</p></div>
-<div class="need"><h3>Enquiry forms that qualify</h3><p>Date, location, budget and shot list up front, delivered straight to your inbox, so you spend time on real leads.</p></div>
-<div class="need"><h3>Client galleries and proofing</h3><p>Private, password-protected galleries, or a clean link-out to Pixieset, ShootProof or Pic-Time if you already use one.</p></div>
-<div class="need"><h3>Local search</h3><p>Pages and schema written for searches like "wedding photographer in your town" or "commercial photographer near me", plus Google Business Profile alignment.</p></div>
-<div class="need"><h3>You own everything</h3><p>The complete source code, your own domain, and your images stay yours. No lock-in, no export fees.</p></div>
+<section><div class="wrap">
+<p class="label">What's included</p>
+<h2 class="d">Not just a portfolio. <em>Your whole photography business, online.</em></h2>
+<p class="local" style="margin-bottom:28px">This is the platform I run my own photo business on. Every module below is built into your site, not bolted on from five different subscriptions.</p>
+<div class="mods">
+<div class="mod"><div class="vis">${img("alpenglow")}</div><div class="body"><span class="tag">Included</span><h3>Portfolio &amp; galleries</h3><p>Full-bleed galleries organized by series, sport, location or client type, with a layout designed around your style.</p><ul><li>Fast WebP/AVIF images, sharp on any screen</li><li>Lightbox viewing and clean project pages</li><li>About page and artist statement</li></ul></div></div>
+<div class="mod"><div class="vis"><div class="stockmock">${img("tusk")}${img("surf")}${img("dome")}${img("cabin")}${img("rime")}${img("inversion")}</div><span style="position:absolute;right:10px;bottom:10px;background:#166b45;color:#fff;font-size:12px;font-weight:600;border-radius:999px;padding:5px 12px">License this photo</span></div><div class="body"><span class="tag">Included</span><h3>Stock licensing page</h3><p>Your own stock library, like the one on thefulltimehobby.com: every photo gets its own page that Google can find and a buyer can license.</p><ul><li>Filterable grid and lightbox</li><li>License tiers you set (web, commercial, extended)</li><li>Per-photo pages, location hubs and embedded IPTC metadata</li></ul></div></div>
+<div class="mod"><div class="vis dark"><div class="login"><b>Client login</b><i>Gallery password</i><u>View my photos</u></div></div><div class="body"><span class="tag">Included</span><h3>Client login portal</h3><p>Private, password-protected galleries so clients can view and download their photos without hunting through Drive links.</p><ul><li>One link and password per client or shoot</li><li>Download All in a single zip</li><li>Cover slideshow, ordered by capture time</li></ul></div></div>
+<div class="mod"><div class="vis">${img("aurora")}</div><div class="body"><span class="tag">Included</span><h3>Contact &amp; booking enquiries</h3><p>Enquiry forms that ask for what you need to quote: date, location, budget and shot list, delivered straight to your inbox.</p><ul><li>Tap-to-call and tap-to-email on phones</li><li>Booking link to your calendar if you use one</li><li>Instant thank-you page for ad and referral tracking</li></ul></div></div>
+<div class="mod"><div class="vis">${img("train")}</div><div class="body"><span class="tag">Included</span><h3>Gear rentals page</h3><p>Rent out your camera gear? A page built to rank for local searches like "camera gear rentals" in your town, with a booking link to your rental platform.</p><ul><li>Gear cards with photos and prices</li><li>Service and FAQ schema for Google</li><li>A second income stream from gear you already own</li></ul></div></div>
+<div class="mod"><div class="vis">${img("highline")}</div><div class="body"><span class="tag opt">If you want it</span><h3>Print shop</h3><p>Sell prints and products directly: products, cart and Stripe or PayPal checkout, with order management behind it. Or simply link to the print lab you already use on any plan.</p><ul><li>Cart, checkout and inventory (Commerce plan)</li><li>Abandoned-cart recovery</li><li>Store build is quoted separately</li></ul></div></div>
+<div class="mod"><div class="vis">${img("bear")}</div><div class="body"><span class="tag">Included</span><h3>Image SEO &amp; local search</h3><p>The part most builders skip. Your work becomes findable in Google Images and local searches, not just by people who already know you.</p><ul><li>File names, alt text, captions and image sitemap</li><li>Local business and service schema</li><li>Google Business Profile alignment</li></ul></div></div>
+<div class="mod"><div class="vis">${img("rime")}</div><div class="body"><span class="tag">Included</span><h3>You own all of it</h3><p>The complete source code, your own domain and your images. Take it anywhere, hand it to another developer, or keep it with me.</p><ul><li>No lock-in, no export fees</li><li>Hosting, security monitoring and backups</li><li>Phone and email support</li></ul></div></div>
 </div>
 </div></section>
 
@@ -169,6 +207,21 @@ export function photographersPage(h) {
 </div></section>
 
 <section class="band"><div class="wrap">
+<p class="label">Compare plans</p>
+<h2 class="d">The build is free. <em>Pick how much help you want.</em></h2>
+<p class="local" style="margin-bottom:24px">Month-to-month. Cancel anytime and keep your site. You pay nothing until you love it.</p>
+<div class="tw"><table class="plans">
+<thead><tr><th></th>
+<th><div class="nm">Starter</div><div class="pr">$9<span style="font-size:.9rem">/mo*</span></div><small>then $13/mo</small></th>
+<th class="hl"><span class="pop">Most popular</span><div class="nm">Growth</div><div class="pr">$19<span style="font-size:.9rem">/mo*</span></div><small>then $27/mo</small></th>
+<th><div class="nm">Commerce</div><div class="pr">$49<span style="font-size:.9rem">/mo</span></div><small>per month</small></th></tr></thead>
+<tbody><tr class="grp"><td colspan="4">Your photography platform</td></tr><tr><td>Custom portfolio &amp; galleries</td><td><span class="y" aria-label="Included">✓</span></td><td class=g><span class="y" aria-label="Included">✓</span></td><td><span class="y" aria-label="Included">✓</span></td></tr><tr><td>Contact &amp; booking enquiry forms</td><td><span class="y" aria-label="Included">✓</span></td><td class=g><span class="y" aria-label="Included">✓</span></td><td><span class="y" aria-label="Included">✓</span></td></tr><tr><td>Stock licensing page (per-photo pages)</td><td><span class="y" aria-label="Included">✓</span></td><td class=g><span class="y" aria-label="Included">✓</span></td><td><span class="y" aria-label="Included">✓</span></td></tr><tr><td>Client login portal &amp; private galleries</td><td><span class="y" aria-label="Included">✓</span></td><td class=g><span class="y" aria-label="Included">✓</span></td><td><span class="y" aria-label="Included">✓</span></td></tr><tr><td>Gear rentals page</td><td><span class="y" aria-label="Included">✓</span></td><td class=g><span class="y" aria-label="Included">✓</span></td><td><span class="y" aria-label="Included">✓</span></td></tr><tr><td>Print shop: cart, checkout, orders</td><td><span class="n" aria-label="Not included">✕</span></td><td class=g><span class="n" aria-label="Not included">✕</span></td><td><span class="y" aria-label="Included">✓</span></td></tr><tr class="grp"><td colspan="4">Get found</td></tr><tr><td>Image SEO: alt text, sitemap, metadata</td><td><span class="y" aria-label="Included">✓</span></td><td class=g><span class="y" aria-label="Included">✓</span></td><td><span class="y" aria-label="Included">✓</span></td></tr><tr><td>Light SEO hygiene &amp; advanced analytics</td><td><span class="n" aria-label="Not included">✕</span></td><td class=g><span class="y" aria-label="Included">✓</span></td><td><span class="y" aria-label="Included">✓</span></td></tr><tr><td>1 blog post per month</td><td><span class="n" aria-label="Not included">✕</span></td><td class=g><span class="y" aria-label="Included">✓</span></td><td><span class="y" aria-label="Included">✓</span></td></tr><tr class="grp"><td colspan="4">Hosting &amp; support</td></tr><tr><td>Website hosting, security &amp; backups</td><td><span class="y" aria-label="Included">✓</span></td><td class=g><span class="y" aria-label="Included">✓</span></td><td><span class="y" aria-label="Included">✓</span></td></tr><tr><td>Domain hosting</td><td><span class="t">$19/yr extra</span></td><td class=g><span class="y" aria-label="Included">✓</span></td><td><span class="y" aria-label="Included">✓</span></td></tr><tr><td>Revisions on your build</td><td><span class="t">2</span></td><td class=g><span class="t">3</span></td><td><span class="t">3</span></td></tr><tr><td>No FreeSiteCompany.com footer credit</td><td><span class="n" aria-label="Not included">✕</span></td><td class=g><span class="y" aria-label="Included">✓</span></td><td><span class="y" aria-label="Included">✓</span></td></tr><tr><td>Priority support</td><td><span class="n" aria-label="Not included">✕</span></td><td class=g><span class="y" aria-label="Included">✓</span></td><td><span class="y" aria-label="Included">✓</span></td></tr><tr><td>Dedicated account manager</td><td><span class="n" aria-label="Not included">✕</span></td><td class=g><span class="n" aria-label="Not included">✕</span></td><td><span class="y" aria-label="Included">✓</span></td></tr></tbody>
+<tfoot><tr><td></td><td><a class="btn" href="/get-started">Start free</a></td><td class="g"><a class="btn" href="/get-started">Get Growth</a></td><td><a class="btn" href="/custom">Ask about a store</a></td></tr></tfoot>
+</table></div>
+<p class="note">*Starter and Growth: intro price for your first 3 months, then the regular rate shown. Commerce covers hosting and support; the store build itself is quoted as a custom project. <a href="/plans">Full plan details</a></p>
+</div></section>
+
+<section><div class="wrap">
 <p class="label">Custom vs. builders</p>
 <h2 class="d">Photography site builders vs. <em>a site built for you</em></h2>
 <div class="tw"><table class="cmp">
@@ -176,7 +229,8 @@ export function photographersPage(h) {
 <tbody>
 <tr><td><b>Setup</b></td><td>You design it yourself, on your weekends</td><td>I build it for you, free</td></tr>
 <tr><td><b>Look</b></td><td>A template many photographers also use</td><td>Custom design for your work</td></tr>
-<tr><td><b>Cost</b></td><td>Typically $20–$50/month and up, depending on plan</td><td>$0 to build, $9.99/month if you keep it</td></tr>
+<tr><td><b>Cost</b></td><td>Typically $20–$50/month and up, depending on plan</td><td>$0 to build, then from $9/month if you keep it</td></tr>
+<tr><td><b>Stock, clients, prints</b></td><td>Separate apps and subscriptions for each</td><td>Stock page, client portal, gear rentals and print shop in one site</td></tr>
 <tr><td><b>Image SEO &amp; licensing</b></td><td>Basic fields; limited control</td><td>Full control of titles, alt text, sitemaps, metadata and license pages</td></tr>
 <tr><td><b>Ownership</b></td><td>Locked to the platform</td><td>You get all the code</td></tr>
 </tbody></table></div>
