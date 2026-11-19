@@ -2,6 +2,70 @@
 // Keep claims honest: no invented stats, testimonials or client numbers.
 export const posts = [
   {
+    slug: "does-my-small-business-website-need-to-be-accessible-canada",
+    title: "Does My Business Website Need to Be Accessible in BC?",
+    description:
+      "Is website accessibility required for a small business in BC? What the Accessible BC Act covers today, what WCAG is, and simple fixes that help every visitor.",
+    date: "2026-11-19",
+    excerpt:
+      "BC's accessibility law mainly targets the public sector for now, but an accessible site helps every customer. Here's where things stand and what to fix first.",
+    body: `
+<p>For most small private businesses in BC, there's no accessibility standard for websites that you're legally required to meet today, but the rules are developing and an accessible site is good business regardless. I'm not a lawyer, so treat this as a plain-language overview and check the official sources below for your situation.</p>
+
+<h2>What BC's law covers right now</h2>
+<p>The <em>Accessible British Columbia Act</em> passed in 2021. Its first duties (an accessibility committee, an accessibility plan and a way to collect feedback) apply to the provincial government and to organizations the regulations name, which so far are mainly public-sector bodies such as school districts, health authorities and municipalities.</p>
+<p>The Act also sets up accessibility standards. The first two, Employment Accessibility and Accessible Service Delivery, were proposed to the Minister at the end of 2025 and, as far as I can tell from the Province's own pages, are still in draft form. Government decides which organizations each standard will apply to, so I can't tell you today whether or when a small business would be covered. Check the Province's accessibility standards page before relying on anything I've said here.</p>
+<p>Separately, the federal <em>Accessible Canada Act</em> applies to federally regulated sectors such as banking, broadcasting and interprovincial transportation, which doesn't describe most local shops and trades.</p>
+
+<h2>What WCAG is</h2>
+<p>When people talk about accessible websites, they usually mean the Web Content Accessibility Guidelines (WCAG), an international standard published by the W3C. WCAG 2.2 is the latest version. Each requirement sits at level A, AA or AAA, and AA is the level most organizations aim for. It's organized around four ideas: content should be perceivable, operable, understandable and robust.</p>
+<p>You don't need to read the whole thing. A handful of habits cover a lot of ground.</p>
+
+<h2>Why bother if it isn't required?</h2>
+<ul>
+<li><strong>More people can use your site.</strong> That includes people with low vision, people who navigate by keyboard or screen reader, and anyone squinting at a phone in bright sun.</li>
+<li><strong>The fixes help everyone.</strong> Readable text, clear buttons and labelled forms make a site easier for all customers.</li>
+<li><strong>It lines up with good SEO and speed.</strong> Descriptive headings and image descriptions also help search engines understand your pages.</li>
+</ul>
+
+<h2>Seven practical fixes</h2>
+<h3>1. Readable colour contrast</h3>
+<p>Under WCAG AA, normal text needs a contrast ratio of at least 4.5:1 against its background. Large text (18pt or bigger, or 14pt or bigger if bold) needs at least 3:1. Light grey text on white is the most common failure. Free contrast checkers, such as WebAIM's, take two colours and tell you the ratio.</p>
+<h3>2. Descriptions for images</h3>
+<p>Every meaningful image needs a short text description (alt text) so a screen reader can describe it. A photo of your finished deck might be "Cedar deck with glass railing on a Squamish home". Purely decorative images can have empty alt text.</p>
+<h3>3. Labelled forms</h3>
+<p>Every field in your contact or booking form should have a visible label, not just placeholder text that vanishes when someone types. Make error messages say what went wrong.</p>
+<h3>4. Headings in a sensible order</h3>
+<p>Use one main heading, then section headings in order. Screen reader users often jump from heading to heading, so they work like a table of contents.</p>
+<h3>5. Keyboard-friendly navigation</h3>
+<p>Try using your site with only the Tab key. You should be able to reach every link, button and menu, and see where you are. If you get stuck in a menu, that's a problem worth fixing.</p>
+<h3>6. Descriptive link text</h3>
+<p>"Click here" tells a screen reader user nothing. "See our drain cleaning services" does.</p>
+<h3>7. Text that resizes, and tap targets that fit fingers</h3>
+<p>Your site shouldn't break when someone enlarges the text, and buttons should be big enough to tap on a phone. A lean, well-built mobile layout helps here, and so does speed; see <a href="/blog/why-is-my-website-slow-on-phones/">Why Is My Website Slow on Phones?</a></p>
+
+<h2>A quick self-check</h2>
+<ul>
+<li>Open your site on your phone and zoom the text up.</li>
+<li>Tab through the home page with your keyboard.</li>
+<li>Run your main text and button colours through a contrast checker.</li>
+<li>Check that each photo has a description and each form field has a label.</li>
+</ul>
+<p>Automated tools catch only some problems, so treat them as a starting point. If your business serves the public in a regulated or public-sector setting, ask your regulator or a lawyer what applies to you.</p>
+
+<h2>How FreeSite Company can help</h2>
+<p>I'm Jeremy, a web designer in Squamish. I build Canadian small businesses a custom, hand-coded website for free, and I build with these basics in mind: readable colours, labelled forms, proper headings and image descriptions. It's $9/month (then $13/month after three months, or $89/year), month-to-month, cancel any time, only if you keep it, and you own the code. If you're also sorting out what pages you need, see <a href="/blog/what-pages-does-a-small-business-website-need/">What Pages Does a Small Business Website Need?</a>, or have a look at <a href="/plans">the plans</a>.</p>
+
+<h2>Sources</h2>
+<ul>
+<li><a href="https://www2.gov.bc.ca/gov/content/governments/about-the-bc-government/initiatives/accessibility/standards" rel="noopener" target="_blank">Province of BC: Accessibility standards</a></li>
+<li><a href="https://www.bclaws.gov.bc.ca/civix/document/id/complete/statreg/21019" rel="noopener" target="_blank">BC Laws: Accessible British Columbia Act</a></li>
+<li><a href="https://www.w3.org/WAI/standards-guidelines/wcag/" rel="noopener" target="_blank">W3C: Web Content Accessibility Guidelines (WCAG) overview</a></li>
+<li><a href="https://webaim.org/articles/contrast/" rel="noopener" target="_blank">WebAIM: Contrast and Color Accessibility</a></li>
+</ul>
+`,
+  },
+  {
     slug: "how-do-i-get-more-google-reviews-for-my-small-business",
     title: "How Do I Get More Google Reviews for My Business?",
     description:
