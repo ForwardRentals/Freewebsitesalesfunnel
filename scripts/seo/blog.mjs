@@ -2,6 +2,68 @@
 // Keep claims honest: no invented stats, testimonials or client numbers.
 export const posts = [
   {
+    slug: "what-should-a-restaurant-website-have",
+    title: "What Should a Restaurant Website Have? A Practical Checklist",
+    description:
+      "What a restaurant or cafe website needs: a real text menu, hours, tap-to-call, ordering and reservation links, Google Business Profile links and fast loading.",
+    date: "2026-11-20",
+    excerpt:
+      "A restaurant website has to answer four questions fast: what's on the menu, are you open, where are you, and how do I order or book. Here's my checklist.",
+    body: `
+<p>A good restaurant website answers four questions in seconds: what's on the menu, are you open right now, where are you, and how do I order or reserve. If a hungry person on a phone can find all four without pinching and zooming, the site is doing its job. Here's the checklist I use when I build a site for a restaurant, cafe or food truck.</p>
+
+<h2>1. Your menu as real text on the page</h2>
+<p>The menu is the most-visited page on most restaurant sites, so make it easy. Put it on the page as ordinary text with prices, not as a photo or a PDF someone has to download and zoom into. Text loads quickly, reads well on a small screen, can be updated in a minute, and gives search engines your dish names to match. Mark vegetarian, vegan, gluten-free and common allergens clearly, and keep the menu current. An out-of-date menu is worse than none.</p>
+
+<h2>2. Hours, address and phone at the top</h2>
+<p>Put your hours, address and a tap-to-call number where people see them without scrolling, and repeat them in the footer of every page. Include holiday hours and any seasonal changes. This is also where most "are you open?" searches end, so make sure the hours on your site match your Google profile exactly.</p>
+
+<h2>3. A clear way to order or reserve</h2>
+<p>Decide what you want people to do and give it one obvious button: "Order pickup", "Reserve a table" or "Call us". Whichever tools you use, link to them from a single prominent spot rather than scattering five different links around. If you'd like reservations or table bookings to run through your own site, <a href="/online-booking-website/">online booking</a> is available as an add-on. If you sell merchandise, gift cards or packaged food, an <a href="/ecommerce-website-canada/">online store</a> is an upgrade too.</p>
+
+<h2>4. Photos of your own food and room</h2>
+<p>Skip stock photos. Show your actual dishes, your dining room, your patio and your team. Good natural light and a clean plate make a big difference, and a handful of strong photos beats a gallery of forty mediocre ones. Compress them so they don't slow the page down. If you'd rather have a professional do it, photography and video are available as add-ons.</p>
+
+<h2>5. Connect the site to your Google Business Profile</h2>
+<p>For a restaurant, most discovery happens on Google Search and Maps, not on your own website. So the two should work together. According to Google's help pages, a Business Profile has a field for a menu link, and you can add links for booking and food ordering (up to 10 links per type) from the Business Information section or in Maps. Point the menu link at the menu page on your own site so people see your current prices and dishes. You must be verified first; my guide on <a href="/blog/how-do-i-verify-my-google-business-profile/">verifying your Google Business Profile</a> walks through it, and the <a href="/blog/local-seo-checklist-small-business-bc/">local SEO checklist</a> covers the rest.</p>
+<p>One thing to know: Google says third-party ordering and reservation providers can add their own links to your profile automatically. It's worth checking now and then which links are showing, and making sure they send people where you want.</p>
+
+<h2>6. Speed on a phone</h2>
+<p>People often look up a restaurant while standing on a sidewalk with one bar of signal. Big uncompressed photos, auto-playing video and heavy page builders make a site crawl. A lean, hand-coded site with sized images loads fast almost anywhere. If yours feels slow, read <a href="/blog/why-is-my-website-slow-on-phones/">Why Is My Website Slow on Phones?</a></p>
+
+<h2>7. A short "about" and the practical details</h2>
+<p>Two or three sentences about who you are and what you cook is plenty. Then the practical details people ask over and over:</p>
+<ul>
+<li>Parking and transit nearby</li>
+<li>Wheelchair access and washrooms</li>
+<li>Dog-friendly patio or not</li>
+<li>Large group, private event or catering enquiries</li>
+<li>Whether you take walk-ins or only reservations</li>
+</ul>
+<p>Each of these is one less phone call for your staff during a rush.</p>
+
+<h2>8. Your own domain and email</h2>
+<p>A name like yourrestaurant.ca on your menu cards, signage and receipts looks established and is easy to remember. Email at that address (for example, events@yourrestaurant.ca) looks better than a free webmail account when someone wants to book a group. You can check what's available with the <a href="/domains">domain search</a>.</p>
+
+<h2>What you can skip</h2>
+<ul>
+<li>Autoplay music or video.</li>
+<li>A menu that only exists as a scanned image.</li>
+<li>A long history of the building. Keep it short.</li>
+<li>Pop-ups that cover the hours and menu.</li>
+</ul>
+
+<h2>How FreeSite Company can help</h2>
+<p>I'm Jeremy, a web designer in Squamish. I build restaurants, cafes and food businesses a custom, hand-coded website for free. You see it finished before paying anything, and it's $9/month (then $13/month after three months, or $89/year), month-to-month, cancel any time, only if you keep it. You own the code. If you're curious, take a look at what I build for <a href="/free-website-for-restaurants/">restaurants</a>.</p>
+
+<h2>Sources</h2>
+<ul>
+<li><a href="https://support.google.com/business/answer/6218037" rel="noopener" target="_blank">Google Business Profile Help: Add or edit local business links</a></li>
+<li><a href="https://support.google.com/business/answer/9455840" rel="noopener" target="_blank">Google Business Profile Help: Add or edit your menu</a></li>
+</ul>
+`,
+  },
+  {
     slug: "does-my-small-business-website-need-to-be-accessible-canada",
     title: "Does My Business Website Need to Be Accessible in BC?",
     description:
