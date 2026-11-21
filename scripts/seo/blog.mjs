@@ -2,6 +2,66 @@
 // Keep claims honest: no invented stats, testimonials or client numbers.
 export const posts = [
   {
+    slug: "what-should-an-auto-repair-shop-website-have",
+    title: "What Should an Auto Repair Shop Website Have?",
+    description:
+      "What a mechanic or detailing shop website needs: services and makes, booking, honest pricing, trust signals, hours and a Google Business Profile that matches.",
+    date: "2026-11-21",
+    excerpt:
+      "A good auto shop website answers three questions before the phone rings: do you work on my car, roughly what will it cost, and can I trust you. Here's my checklist.",
+    body: `
+<p>An auto repair shop website needs to answer three things quickly: do you work on my vehicle, roughly what will it cost, and how do I book. Add your hours, a tap-to-call number and proof that real customers trust you, and you've covered most of what a driver with a warning light wants to know. Here's the checklist I use when I build for a mechanic or detailer.</p>
+
+<h2>1. Services and makes, each in plain words</h2>
+<p>List what you actually do: oil changes, brakes, tires, diagnostics, alignments, detailing. If you specialize in certain makes, such as Subarus, diesel trucks or European cars, say so on the page. People search for exactly that ("brake repair Squamish", "diesel mechanic near me"), and a page that names the job and the town is far easier for Google to match than a vague "we fix cars" line. One short section per service works better than one giant list.</p>
+
+<h2>2. A clear way to book</h2>
+<p>Put one obvious "Book a service" button near the top, plus a tap-to-call number for the urgent stuff. A simple request form (name, phone, vehicle, what's wrong) saves a lot of phone tag. If you'd like customers to pick a time slot themselves, <a href="/online-booking-website/">online booking</a> is available as an add-on.</p>
+
+<h2>3. Honest starting prices</h2>
+<p>You can't price every repair without seeing the vehicle, but you can list starting prices for common jobs like an oil change, a tire swap or a basic detail, and explain how you quote the rest. Something like "we'll call with an estimate before any work starts" sets expectations and cuts down on the "how much for...?" calls. Keep the prices current; an old price on your site is worse than none.</p>
+
+<h2>4. Trust signals</h2>
+<p>Drivers are handing over something expensive and often don't know what's wrong with it, so trust matters more here than in most trades. Show what's real:</p>
+<ul>
+<li>Technician certifications or training, if you have them</li>
+<li>Your warranty on parts and labour, in writing</li>
+<li>Your own Google reviews, linked or quoted with permission</li>
+<li>Photos of your actual shop, bays and team</li>
+</ul>
+<p>If reviews are thin, my guide on <a href="/blog/how-do-i-get-more-google-reviews-for-my-small-business/">getting more Google reviews</a> is a good place to start.</p>
+
+<h2>5. Hours, address and a map</h2>
+<p>Show your hours, address, parking and drop-off instructions where people see them without scrolling. Say what happens after hours: is there a key drop box, and how do people get their keys back? Those practical details are what customers phone to ask, so answering them on the site saves your front counter time.</p>
+
+<h2>6. Make your Google Business Profile match</h2>
+<p>Most people find a shop through Google Search and Maps, so your profile and website should tell the same story. According to Google's help pages, you can add one link for your services list and up to 10 links for booking an appointment, and you can mark one as "business preferred". Google also lets you set special hours for holidays or other temporary periods, which is handy around statutory holidays and shop closures. If you haven't claimed your profile yet, start with <a href="/blog/how-do-i-verify-my-google-business-profile/">how to verify your Google Business Profile</a>, then run through the <a href="/blog/local-seo-checklist-small-business-bc/">local SEO checklist</a>.</p>
+
+<h2>7. Detailing packages laid out like a menu</h2>
+<p>If you detail vehicles, show packages the way a restaurant shows a menu: name, what's included, starting price and roughly how long it takes. Before-and-after photos of your own work do more than any adjective. Use bright, natural-light photos and compress them so the page stays quick on a phone; see <a href="/blog/why-is-my-website-slow-on-phones/">why websites are slow on phones</a> if yours drags.</p>
+
+<h2>8. A domain and email that look established</h2>
+<p>A web address like yourshop.ca on your invoices, work orders and van lettering is easy to remember, and email at that address looks better than a free webmail account when you're quoting a fleet customer. You can see what's available with the <a href="/domains">domain search</a>, and I covered the choice in <a href="/blog/should-i-get-a-dot-ca-or-dot-com-domain-for-my-canadian-business/">.ca or .com?</a></p>
+
+<h2>What you can skip</h2>
+<ul>
+<li>Stock photos of generic mechanics</li>
+<li>Long paragraphs about the company history</li>
+<li>Pop-ups that cover your phone number</li>
+<li>A "Contact us" page that is only a form with no phone or address</li>
+</ul>
+
+<h2>How FreeSite Company can help</h2>
+<p>I'm Jeremy, a web designer in Squamish. I build mechanics, tire shops and detailers a custom, hand-coded website for free. You see it finished before paying anything, and it's $9/month (then $13/month after three months, or $89/year), month-to-month, cancel any time, only if you keep it. You own the code. You can see what I put together for <a href="/free-website-for-auto-repair/">auto repair and detailing shops</a>, and add-ons like booking or a built-in CRM are there if you want them later.</p>
+
+<h2>Sources</h2>
+<ul>
+<li><a href="https://support.google.com/business/answer/6218037" rel="noopener" target="_blank">Google Business Profile Help: Add or edit local business links</a></li>
+<li><a href="https://support.google.com/business/answer/3039617" rel="noopener" target="_blank">Google Business Profile Help: Edit your business information, including special hours</a></li>
+</ul>
+`,
+  },
+  {
     slug: "what-should-a-restaurant-website-have",
     title: "What Should a Restaurant Website Have? A Practical Checklist",
     description:
