@@ -2,6 +2,78 @@
 // Keep claims honest: no invented stats, testimonials or client numbers.
 export const posts = [
   {
+    slug: "how-do-i-follow-up-with-website-enquiries-small-business",
+    title: "How Do I Follow Up With Website Enquiries and Quotes?",
+    description:
+      "A plain guide to following up website enquiries: reply fast, track every lead in one place, send a polite nudge on quotes, and stay on the right side of CASL.",
+    date: "2026-11-22",
+    excerpt:
+      "Most lost leads aren't lost to a competitor, they're lost to a slow or forgotten reply. Here's a simple follow-up routine a small business can actually keep up with.",
+    body: `
+<p>The best way to follow up on a website enquiry is to reply the same day with a real answer, write down what happens next, and send one polite nudge if a quote goes quiet. You don't need fancy software to do it, but you do need one place where every lead lives so none of them slip through. Here's the routine I'd set up for any small business.</p>
+
+<h2>1. Get every enquiry into one place</h2>
+<p>Leads arrive from everywhere: the contact form, a Facebook message, a missed call, a text, a chat on your site. If they're spread over five inboxes, some will be forgotten. Pick one list, even a spreadsheet, and put every enquiry on it with a name, contact details, what they asked for and the date.</p>
+<p>When you outgrow a spreadsheet, a simple CRM does the same job with less effort. I can connect your site so form submissions and chats land in one pipeline automatically. See <a href="/website-with-crm/">websites with a built-in CRM</a> for how that works.</p>
+
+<h2>2. Reply fast, and say something useful</h2>
+<p>I won't quote a statistic here, but you already know how it feels from the other side: when you ask three businesses for a price, the one that answers first and clearly usually wins your attention. Aim to reply the same business day, even if it's only to say "got it, I'll send a quote by Thursday."</p>
+<p>A good first reply does three things:</p>
+<ul>
+<li>Thanks them by name and repeats what they asked for, so they know you read it</li>
+<li>Answers the easy questions (availability, service area, rough timing)</li>
+<li>Says exactly what happens next and when</li>
+</ul>
+<p>If your form asks the right questions up front (job type, location, preferred date), your first reply gets much easier to write. Trades and service businesses especially benefit; my <a href="/blog/what-should-a-plumber-website-have/">plumber website checklist</a> shows the kind of quote form I mean.</p>
+
+<h2>3. Use stages so you know who needs a nudge</h2>
+<p>Keep it to a handful of stages:</p>
+<ul>
+<li><strong>New:</strong> they've just contacted you</li>
+<li><strong>Contacted:</strong> you've replied or spoken</li>
+<li><strong>Quoted:</strong> a price or proposal is out</li>
+<li><strong>Won or lost:</strong> the job is booked, or it isn't happening</li>
+</ul>
+<p>Every Monday, scan the list for anything sitting in "Quoted" for more than a few days. Those are your follow-ups. Putting a due date on each ("call back Tuesday") beats trusting your memory.</p>
+
+<h2>4. A follow-up that doesn't feel pushy</h2>
+<p>Most people who go quiet aren't saying no. They're busy, comparing options or waiting on a partner. A short, friendly check-in works well:</p>
+<ul>
+<li>Day 2 or 3 after the quote: "Just checking the quote reached you and answering any questions."</li>
+<li>About a week later: one more nudge, ideally with something new (an available date, a quick answer to a question they raised).</li>
+<li>After that: leave the door open, mark it lost, and move on.</li>
+</ul>
+<p>Two or three touches is plenty. Past that it starts to feel like pressure, and it rarely helps your reputation in a small community.</p>
+
+<h2>5. Know the CASL basics for email follow-ups</h2>
+<p>In Canada, follow-up emails and texts can count as commercial messages under CASL. Replying directly to what someone asked you is one thing; sending a promotional email months later is another. Under the Act, a person's inquiry about your products or services within the previous six months can give you implied consent to send relevant messages. That's a time-limited window, and the burden of proving consent is on the sender. So keep a note of when and how they contacted you, and include your identity and a working unsubscribe in commercial messages.</p>
+<p>I'm not a lawyer, and this isn't legal advice. For the details, see my longer guide on <a href="/blog/can-i-email-customers-without-permission-canada-casl/">emailing customers under CASL</a> and the official sources below.</p>
+
+<h2>6. Make the first step easy to take</h2>
+<p>Follow-up is much easier when customers can move themselves forward. If your service suits it, <a href="/online-booking-website/">online booking</a> lets people pick a time instead of waiting for you to reply, and it drops the appointment straight into your calendar. For quotes, a clear "what happens next" line on your site cuts down on back-and-forth.</p>
+
+<h2>A simple checklist</h2>
+<ul>
+<li>One list or CRM for every lead, from every channel</li>
+<li>Same-day first reply that says what happens next</li>
+<li>Stages from New to Won/Lost</li>
+<li>A weekly check for quotes that have gone quiet</li>
+<li>Two or three friendly nudges, then let it go</li>
+<li>A note of when each person contacted you, for CASL</li>
+</ul>
+
+<h2>How FreeSite Company can help</h2>
+<p>I'm Jeremy, a web designer in Squamish, BC. I build Canadian small businesses a custom, hand-coded website for free. You pay $9/month for the first three months, then $13/month, or $89/year, only if you keep it. It's month-to-month, cancel any time, and you own the code. A built-in CRM and online booking are available as add-ons if you want leads organized for you; the options are on the <a href="/add-ons/">add-ons page</a>. No pressure, just ask if you'd like to talk it through.</p>
+
+<h2>Sources</h2>
+<ul>
+<li><a href="https://laws-lois.justice.gc.ca/eng/acts/E-1.6/page-2.html">Government of Canada: Canada's Anti-Spam Legislation (S.C. 2010, c. 23), section 10(10)</a></li>
+<li><a href="https://crtc.gc.ca/eng/com500/guide.htm">CRTC: Guidance on implied consent under CASL</a></li>
+<li><a href="https://crtc.gc.ca/eng/com500/faq500.htm">CRTC: Frequently asked questions about CASL</a></li>
+</ul>
+`,
+  },
+  {
     slug: "what-should-an-auto-repair-shop-website-have",
     title: "What Should an Auto Repair Shop Website Have?",
     description:
