@@ -2,6 +2,66 @@
 // Keep claims honest: no invented stats, testimonials or client numbers.
 export const posts = [
   {
+    slug: "what-should-a-landscaper-website-have",
+    title: "What Should a Landscaper's Website Have? A Checklist",
+    description:
+      "What a landscaping or lawn care website needs to win jobs: a project gallery, seasonal service pages, a quote form with yard details, service areas and speed.",
+    date: "2026-11-23",
+    excerpt:
+      "Landscaping is won with pictures and clear quotes. Here's the checklist I use when I build a website for a landscaper, gardener or lawn care business.",
+    body: `
+<p>A good landscaper's website shows finished projects up front, lists every service you offer by season, makes it easy to ask for a quote, and spells out the towns you serve. People hire a landscaper based on what they can see, so photos do most of the selling. Here's the checklist I work from when I build a site for a landscaping or lawn care business.</p>
+
+<h2>1. A project gallery that leads the home page</h2>
+<p>Nobody can judge your work from a description. Put your best finished jobs near the top of the home page, then give a fuller gallery its own page. Before-and-after pairs of the same yard from the same angle are the most convincing thing a landscaper can show.</p>
+<ul>
+<li>Use your own photos, not stock images</li>
+<li>Add a short caption: the town, the work done, roughly how long it took</li>
+<li>Compress the images so the page still loads quickly on a phone</li>
+<li>Ask the homeowner before posting photos that show their property</li>
+</ul>
+
+<h2>2. A separate page for each service</h2>
+<p>Customers don't search for "landscaping". They search for "spring yard cleanup", "retaining wall", "weekly lawn mowing" or "snow removal". Give each main service its own page that says what's included, how it works and what affects the price. That gives Google a clear page to show for each search. My <a href="/blog/what-pages-does-a-small-business-website-need/">guide to the pages a small business site needs</a> goes through the wider list.</p>
+
+<h2>3. Seasonal services, kept current</h2>
+<p>Landscaping changes with the calendar. In fall people want leaf cleanup and winterizing; in winter, snow removal; in spring, cleanups and planting. Your site should match what you're selling right now. Feature the current season's services on the home page and update them as the year turns, so a visitor in November isn't reading about a May special.</p>
+
+<h2>4. A quote form that asks the right questions</h2>
+<p>A bare "contact us" box leaves you chasing details. A short form that asks for the following lets you quote faster and weed out jobs outside your area:</p>
+<ul>
+<li>Name, phone number and email</li>
+<li>Address or postal code</li>
+<li>Which services they want</li>
+<li>Rough size of the yard</li>
+<li>A way to attach a photo or two</li>
+</ul>
+<p>Then make sure the enquiry reaches you straight away, and reply the same day. My post on <a href="/blog/how-do-i-follow-up-with-website-enquiries-small-business/">following up website enquiries and quotes</a> covers the routine.</p>
+
+<h2>5. Maintenance plans people can sign up for</h2>
+<p>One-off jobs are great, but recurring work like weekly mowing or seasonal visits is what keeps a landscaping business steady. Explain your maintenance options plainly: what's included, how often you visit and how to get started. A visitor who can see the plan and tap a button to ask about it is far more likely to follow through than one who has to guess.</p>
+
+<h2>6. Your service area, written out</h2>
+<p>List every town and neighbourhood you cover in real sentences on your site. If you work in Squamish, Whistler and Pemberton, say so. Do the same on your Google Business Profile so you show up when someone nearby searches "landscaper near me". My <a href="/blog/local-seo-checklist-small-business-bc/">local SEO checklist for BC</a> covers the profile side.</p>
+
+<h2>7. Proof you're the real thing</h2>
+<p>Show that you're insured, mention any relevant qualifications or certifications you hold, and include any workmanship guarantee. Add a few genuine reviews and link to your Google profile so people can read the rest. Never invent or buy reviews; ask satisfied customers for one right after the job. If you want a hand with that, see <a href="/blog/how-do-i-get-more-google-reviews-for-my-small-business/">how to get more Google reviews</a>.</p>
+
+<h2>8. A phone-friendly, fast site</h2>
+<p>Most people look up a landscaper on their phone, often standing in the yard they're annoyed about. Make sure your phone number is a tap-to-call link at the top of every page, text is easy to read and photos don't make the page crawl. Heavy page builders and giant uncompressed images are the usual culprits; a lean, hand-coded site avoids them.</p>
+
+<h2>What you can skip</h2>
+<ul>
+<li>A blog you won't keep up with</li>
+<li>Autoplay videos, sliders and pop-ups</li>
+<li>Long company-history pages; a short paragraph and a photo of you and your crew is plenty</li>
+</ul>
+
+<h2>How FreeSite Company can help</h2>
+<p>I'm Jeremy, a web designer in Squamish. I build landscapers a custom, hand-coded website for free, with a project gallery, seasonal service pages and a quote form that collects the details you need. You see it finished before paying anything, and it's $9/month (then $13/month after three months, or $89/year), month-to-month, cancel any time, only if you keep it. You own the code. There's more on what I do for <a href="/free-website-for-landscapers/">landscapers and lawn care businesses</a> if you'd like a look.</p>
+`,
+  },
+  {
     slug: "how-do-i-follow-up-with-website-enquiries-small-business",
     title: "How Do I Follow Up With Website Enquiries and Quotes?",
     description:
