@@ -2,6 +2,74 @@
 // Keep claims honest: no invented stats, testimonials or client numbers.
 export const posts = [
   {
+    slug: "how-do-i-set-holiday-hours-on-google-business-profile",
+    title: "How Do I Set Holiday Hours on Google Business Profile?",
+    description:
+      "How to set holiday and special hours on your Google Business Profile so customers don't show up to a locked door, plus what to put on your website too.",
+    date: "2026-11-24",
+    excerpt:
+      "Holiday hours take five minutes to set on Google and save you from annoyed customers. Here are the steps, the limits and what to update on your website.",
+    body: `
+<p>You set holiday hours in your Google Business Profile under Edit profile, then Hours, then the pencil next to "Special hours". Pick the date, mark it closed or enter that day's hours, and save. It takes about five minutes, and it stops customers turning up to a locked door on December 25. With the holidays close, now's the time to do it.</p>
+
+<h2>Step by step</h2>
+<ul>
+<li>Sign in to Google with the account that manages your profile (search your business name while signed in, or go to business.google.com)</li>
+<li>Choose <strong>Edit profile</strong>, then <strong>Hours</strong></li>
+<li>Next to <strong>Special hours</strong>, click the pencil icon</li>
+<li>Pick the date. Google often suggests upcoming holidays for you</li>
+<li>Tick <strong>Closed</strong>, or enter the hours you'll be open that day</li>
+<li>Save, then search for your business to check that the change shows</li>
+</ul>
+<p>Google may review changes before they go live, so don't leave this until the morning of the holiday. If you haven't verified your profile yet, start with <a href="/blog/how-do-i-verify-my-google-business-profile/">how to verify your Google Business Profile</a>.</p>
+
+<h2>Rules worth knowing</h2>
+<ul>
+<li><strong>Your main hours need to say "Open with main hours".</strong> Otherwise special hours won't display.</li>
+<li><strong>Special hours are for short changes.</strong> Google describes them for temporary adjustments or closures of up to 6 days in a row.</li>
+<li><strong>One set of special hours can't be longer than 24 hours.</strong> If you're open past midnight, split it into two entries.</li>
+<li><strong>They only apply to the dates you enter.</strong> Your regular hours return afterwards, but check back next year, because holiday dates change and you'll want to confirm them again.</li>
+<li><strong>Different hours for a service?</strong> Google has a separate "More hours" option for things like delivery, takeout or appointments only.</li>
+</ul>
+
+<h2>Which dates to add</h2>
+<p>Add every day your hours differ from normal, not only statutory holidays. For many Canadian businesses that's:</p>
+<ul>
+<li>Christmas Eve, Christmas Day and Boxing Day</li>
+<li>New Year's Eve and New Year's Day</li>
+<li>Family Day and Good Friday</li>
+<li>Any long weekend you close early or open late</li>
+<li>Private events, staff days, or a winter break</li>
+</ul>
+<p>Which days apply to you depends on your business. Check the <a href="https://www2.gov.bc.ca/gov/content/employment-business/employment-standards-advice/employment-standards/statutory-holidays">BC Employment Standards page on statutory holidays</a> if you have staff and aren't sure what's required.</p>
+
+<h2>Longer closures</h2>
+<p>If you're shutting for a week or more, special hours aren't the right tool. Google offers a temporarily closed setting for longer breaks, and that's what I'd use for a month-long winter closure. Remember to switch it back when you reopen.</p>
+
+<h2>Don't forget your website and other listings</h2>
+<p>Google is only one place people check. Update the rest of these on the same day:</p>
+<ul>
+<li>A short notice on your home page and contact page: "Closed December 24 to 26. Back December 27."</li>
+<li>Your phone voicemail and email auto-reply</li>
+<li>Facebook and Instagram pages</li>
+<li>Any online booking page, so people can't book on days you're closed</li>
+</ul>
+<p>Mismatched hours are one of the most common reasons for unhappy reviews, and consistent details also help your <a href="/blog/local-seo-checklist-small-business-bc/">local SEO</a>. If you do get a grumpy one-star about a closed door, a calm public reply goes a long way, and <a href="/blog/how-do-i-get-more-google-reviews-for-my-small-business/">getting more happy reviews</a> balances it out.</p>
+
+<h2>Make it a yearly habit</h2>
+<p>Put a reminder in your calendar for early November: "Update holiday hours." Add the dates, post the website notice, and take it down in January. Once it's a routine, it's a ten-minute job.</p>
+
+<h2>How FreeSite Company can help</h2>
+<p>I'm Jeremy, a web designer in Squamish. I build Canadian small businesses a custom, hand-coded website for free, and I can update your hours or add a holiday notice when you ask. It's $9/month (then $13/month after three months, or $89/year), month-to-month, cancel any time, only if you keep it, and you own the code. I can also set up your Google Business Profile as an add-on. Have a look at the <a href="/plans">plans</a> if you're curious.</p>
+
+<h2>Sources</h2>
+<ul>
+<li><a href="https://support.google.com/business/answer/6303076">Google Business Profile Help: How to set special hours</a></li>
+<li><a href="https://www2.gov.bc.ca/gov/content/employment-business/employment-standards-advice/employment-standards/statutory-holidays">Government of BC: Statutory holidays</a></li>
+</ul>
+`,
+  },
+  {
     slug: "what-should-a-landscaper-website-have",
     title: "What Should a Landscaper's Website Have? A Checklist",
     description:
