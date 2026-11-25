@@ -2,6 +2,70 @@
 // Keep claims honest: no invented stats, testimonials or client numbers.
 export const posts = [
   {
+    slug: "what-should-a-tour-operator-website-have",
+    title: "What Should a Tour Operator's Website Have? A Checklist",
+    description:
+      "What a tour, guiding or rental company website needs to turn visitors into bookings: booking links, trip pages, photos, maps and seasonal updates.",
+    date: "2026-11-25",
+    excerpt:
+      "Visitors book whoever makes it easiest. Here's what a tour, guiding or rental website needs, from a Book now button to meeting-point details.",
+    body: `
+<p>A tour operator's website needs one thing above everything else: a clear way to book, one tap away on every page, backed by a page for each trip with photos, price, duration and what's included. Visitors usually plan on their phones, often from another town or country, and they book whoever makes the decision easiest. Here's the checklist I use when I build sites for tour, guiding and rental businesses.</p>
+
+<h2>1. A Book now button on every page</h2>
+<p>Whether you use FareHarbor, Rezdy, Checkfront or booking built into your own site, the button should sit in the header and be easy to hit with a thumb. Don't make people hunt through menus. If you'd rather run booking on your own site, see <a href="/blog/how-do-i-add-online-booking-to-my-small-business-website/">how to add online booking to your website</a> and the <a href="/online-booking-website/">online booking</a> option.</p>
+
+<h2>2. One page per trip or rental</h2>
+<p>Each tour or rental deserves its own page, not a paragraph on a general page. Include:</p>
+<ul>
+<li>A short description of what the experience is actually like</li>
+<li>Duration, start times and season</li>
+<li>Price, and what's included and not included</li>
+<li>Age, fitness or skill requirements, and what to bring</li>
+<li>Group size and private-trip options</li>
+<li>Your cancellation and weather policy, in plain language</li>
+</ul>
+<p>A page like this also gives you something specific to show up for in search. Someone typing "kayak rental near me" or "things to do in Squamish" is far more likely to land on a page about that exact thing than on a generic home page.</p>
+
+<h2>3. Real photos, and a bit of video</h2>
+<p>Tourism is a visual sale. Use your own photos of real guests (with permission) and your real gear, guides and locations. Keep file sizes small so pages load quickly on weak mobile signal, which matters at a trailhead or on a ferry. Our guide to <a href="/blog/why-is-my-website-slow-on-phones/">why websites are slow on phones</a> covers the usual culprits. I also do photography and video if you'd like a hand.</p>
+
+<h2>4. Getting there: meeting point, parking and map</h2>
+<p>A surprising share of day-of phone calls are "where do we meet?" and "where do I park?" Answer them on the site and in your booking confirmation:</p>
+<ul>
+<li>The exact meeting spot, with a map link</li>
+<li>Parking details and any fees</li>
+<li>What to do if guests are running late</li>
+<li>A phone number that works on the day</li>
+</ul>
+
+<h2>5. Trust details</h2>
+<p>Guests are putting their time, and sometimes their safety, in your hands. Show the things that are true for you: your guides' experience, certifications, insurance, your safety briefing and the years you've operated. Only include what you can back up. Don't pad it.</p>
+<p>If you guide or charge for activities on provincial Crown land in BC, you generally need authorization from the province. The government's <a href="https://www2.gov.bc.ca/gov/content/industry/natural-resource-use/natural-resource-permits/permit-connect-bc/permit-connect-bc-adventure-tourism">Permit Connect BC page for adventure tourism</a> is the place to check what applies to you. I'm a web designer, not a lawyer, so I won't advise on that part.</p>
+
+<h2>6. A Google Business Profile that matches your site</h2>
+<p>Many visitors will find you through Google Maps first. Make sure your profile has the same name, phone number, hours and season details as your site, and add your booking page as a booking or appointment link. Google's community guidance notes that the options you see depend on your business category, so check what's available for yours. Our <a href="/blog/local-seo-checklist-small-business-bc/">local SEO checklist</a> walks through the basics, and <a href="/blog/how-do-i-set-holiday-hours-on-google-business-profile/">setting special hours</a> helps in the shoulder seasons.</p>
+
+<h2>7. Easy seasonal changes</h2>
+<p>Most tour and rental businesses change with the seasons: new trips, new prices, shorter hours, a winter closure. Your site should let you swap those without a big project. Update trip pages, pause bookings when you're closed, and put a short notice on the home page when something changes.</p>
+
+<h2>8. Language and accessibility for visitors</h2>
+<p>Write in plain English with short sentences. Many guests will be reading it as a second language. Use clear button labels, readable text sizes and good contrast. It helps everyone, and it's covered in more detail in <a href="/blog/does-my-small-business-website-need-to-be-accessible-canada/">accessibility for BC business websites</a>.</p>
+
+<h2>9. A simple way to ask a question</h2>
+<p>Not everyone is ready to book. A short contact form, a phone number you can tap and an honest FAQ (weather, what to wear, cancellations, kids) catch the people sitting on the fence. Reply quickly. In tourism, the first business to answer often gets the booking.</p>
+
+<h2>How FreeSite Company can help</h2>
+<p>I'm Jeremy, a web designer in Squamish, and tour and rental sites are some of the ones I build most, including for a water taxi, a canoe rental and an outdoor guide here. I build Canadian small businesses a custom, hand-coded website for free. It's $9/month (then $13/month after three months, or $89/year), month-to-month, cancel any time, only if you keep it, and you own the code. Have a look at the <a href="/free-website-for-tour-operators/">free website for tour operators</a> page, or the <a href="/plans">plans</a> if you're curious.</p>
+
+<h2>Sources</h2>
+<ul>
+<li><a href="https://www2.gov.bc.ca/gov/content/industry/natural-resource-use/natural-resource-permits/permit-connect-bc/permit-connect-bc-adventure-tourism">Government of BC: Permit Connect BC, adventure tourism</a></li>
+<li><a href="https://support.google.com/business/community-guide/346935230/how-to-add-remove-edit-booking-links-or-ordering-links-on-google-business-profile-2025-guide?hl=en">Google Business Profile Community: Add, remove or edit booking links</a></li>
+</ul>
+`,
+  },
+  {
     slug: "how-do-i-set-holiday-hours-on-google-business-profile",
     title: "How Do I Set Holiday Hours on Google Business Profile?",
     description:
