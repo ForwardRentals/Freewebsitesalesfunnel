@@ -2,6 +2,80 @@
 // Keep claims honest: no invented stats, testimonials or client numbers.
 export const posts = [
   {
+    slug: "what-should-a-cleaning-company-website-have",
+    title: "What Should a Cleaning Company's Website Have?",
+    description:
+      "What a house or office cleaning website needs to win bookings: clear pricing, a quote form, trust signals, service areas and a Google profile that matches.",
+    date: "2026-11-26",
+    excerpt:
+      "People let you into their home, so trust decides who gets hired. Here's what a cleaning company website needs, from pricing to service areas.",
+    body: `
+<p>A cleaning company's website needs to do one job: make a stranger comfortable enough to let you into their home or office. That means clear services and pricing (or what affects the price), a quick quote or booking form, visible proof you're trustworthy, and the neighbourhoods you cover in plain words. Here's the checklist I use when I build sites for cleaning businesses.</p>
+
+<h2>1. Say what you clean, and for whom</h2>
+<p>Homeowners and office managers search differently, so give each its own section or page. Typical services to list separately:</p>
+<ul>
+<li>Regular house cleaning (weekly, bi-weekly, monthly)</li>
+<li>One-time and deep cleans</li>
+<li>Move-in and move-out cleans</li>
+<li>Vacation rental turnovers</li>
+<li>Office and commercial cleaning</li>
+</ul>
+<p>People type things like "move out cleaning near me", not "cleaning services". One page per main service gives Google a clear match. I go through the wider page list in <a href="/blog/what-pages-does-a-small-business-website-need/">What Pages Does a Small Business Website Need?</a></p>
+
+<h2>2. Be upfront about price</h2>
+<p>Nobody wants to phone just to learn whether you're in their budget. You don't have to publish every number. A starting price ("Regular cleans from $X for a one-bedroom") or a short list of what affects the cost (home size, number of bathrooms, pets, how long since the last clean) is enough to filter out the wrong enquiries and attract the right ones.</p>
+
+<h2>3. Make quoting and booking quick</h2>
+<p>A short form (name, phone, address or postal code, type of clean, preferred timing) beats an email address every time. If you'd like customers to pick a time themselves, look at <a href="/online-booking-website/">online booking</a>, and see <a href="/blog/how-do-i-add-online-booking-to-my-small-business-website/">how to add online booking to your website</a> for how it works. Put a tap-to-call number at the top of every page, too.</p>
+
+<h2>4. Show you're trustworthy</h2>
+<p>This matters more for cleaners than almost any other trade. Put these where people see them, but only claim what's true for your business:</p>
+<ul>
+<li>Whether you're insured and, if you are, a line saying so</li>
+<li>Whether your staff are background-checked</li>
+<li>Your satisfaction guarantee or re-clean policy</li>
+<li>What products you use, especially if you offer eco-friendly or fragrance-free options</li>
+<li>A real photo of you or your team, with first names</li>
+<li>Real customer reviews, with permission</li>
+</ul>
+<p>Never invent testimonials. If you don't have many reviews yet, <a href="/blog/how-do-i-get-more-google-reviews-for-my-small-business/">here's how to ask for them</a>.</p>
+
+<h2>5. Spell out your service area</h2>
+<p>List the towns and neighbourhoods you cover, in sentences on the page rather than hidden in a footer. Then match it on Google. If you clean at customers' homes and don't welcome visitors at your own address, Google's guidance is to remove your address from your Business Profile and enter a service area instead. A few details from Google's help page:</p>
+<ul>
+<li>You set service areas by city, postal code or other area, not by a radius.</li>
+<li>You can have up to 20 service areas.</li>
+<li>The overall area shouldn't stretch more than about two hours' drive from your business.</li>
+</ul>
+<p>If your Business Profile isn't set up yet, start with <a href="/blog/how-do-i-verify-my-google-business-profile/">how to verify it</a>, then work through the <a href="/blog/local-seo-checklist-small-business-bc/">local SEO checklist for BC</a>. Keep your business name, phone and service area the same everywhere they appear.</p>
+
+<h2>6. Before-and-after photos, taken properly</h2>
+<p>Good photos of your own work do more than any stock image. Take them in decent light, from the same angle before and after, and ask the customer before you post anything showing their home. Compress them so the page stays quick on a phone; <a href="/blog/why-is-my-website-slow-on-phones/">here's why speed matters</a>. If you'd rather not shoot them yourself, photography is one of the add-ons I offer.</p>
+
+<h2>7. Answer the questions people always ask</h2>
+<p>A short FAQ saves you phone calls and builds confidence. Common ones for cleaners:</p>
+<ul>
+<li>Do I need to be home?</li>
+<li>Do you bring your own supplies and equipment?</li>
+<li>How do I pay, and when?</li>
+<li>What if I'm not happy with the clean?</li>
+<li>What's your cancellation or rescheduling policy?</li>
+</ul>
+
+<h2>8. Keep follow-up organized</h2>
+<p>Cleaning leads go cold quickly. If three people ask for a quote on Monday, the first to reply usually gets the job. A simple <a href="/website-with-crm/">built-in CRM</a> that logs every enquiry and reminds you to follow up helps; <a href="/blog/how-do-i-follow-up-with-website-enquiries-small-business/">this guide to following up</a> has a plain routine you can start today. If you email customers promotions, make sure you have permission first (see <a href="/blog/can-i-email-customers-without-permission-canada-casl/">CASL basics</a>).</p>
+
+<h2>How FreeSite Company can help</h2>
+<p>I'm Jeremy, a web designer in Squamish, and I build custom, hand-coded websites for Canadian small businesses for free. If you keep it, it's $9/month for the first three months and $13/month after that (or $89/year), month-to-month, cancel any time, and you own the code. Booking, a CRM and a domain and email at your own address are available as add-ons; you can see the <a href="/free-website-for-cleaning-services/">cleaning company page</a> or the <a href="/add-ons/">add-ons</a> if you're curious. No pressure either way.</p>
+
+<h2>Sources</h2>
+<ul>
+<li><a href="https://support.google.com/business/answer/9157481">Google Business Profile Help: Manage your service area</a></li>
+</ul>
+`,
+  },
+  {
     slug: "what-should-a-tour-operator-website-have",
     title: "What Should a Tour Operator's Website Have? A Checklist",
     description:
