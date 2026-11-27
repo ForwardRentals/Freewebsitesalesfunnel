@@ -2,6 +2,65 @@
 // Keep claims honest: no invented stats, testimonials or client numbers.
 export const posts = [
   {
+    slug: "can-i-hide-my-home-address-on-google-business-profile",
+    title: "Can I Hide My Home Address on Google Business Profile?",
+    description:
+      "Yes, if you travel to customers. How to hide a home address on Google Business Profile, set a service area, and when you should show your address instead.",
+    date: "2026-11-27",
+    excerpt:
+      "If you work from home and go to your customers, Google says to hide your address and list a service area. Here's how that works and when it doesn't apply.",
+    body: `
+<p>Yes. If you run your business from home and travel to your customers (a plumber, cleaner, landscaper or mobile mechanic, for example), Google's guidelines say you should hide your address from customers and show a service area instead. If customers actually visit you at that address during set hours, that's a different setup. Here's how to tell which one you are.</p>
+
+<h2>Which kind of business are you?</h2>
+<p>Google splits businesses into a few types, and your address settings depend on which one fits:</p>
+<ul>
+<li><strong>Service-area business:</strong> you go to customers and they don't come to you. Google says these businesses should hide their address from customers. Its own example is a plumber who works from a residential address and should clear that address from the profile.</li>
+<li><strong>Storefront:</strong> customers visit you at your address during stated hours. The address stays public.</li>
+<li><strong>Hybrid:</strong> you have a staffed location and you also travel, like an auto repair shop with a garage and roadside service. Google says these can show the address and also set a service area.</li>
+</ul>
+<p>The test is simple: could a customer show up at that address during your listed hours and be served by your team? If not, hide it.</p>
+
+<h2>How to hide your address</h2>
+<p>The exact menu wording changes from time to time, so check Google's own help pages if something looks different. In general, the steps are:</p>
+<ul>
+<li>Sign in to the Google account that manages your profile and open your Business Profile.</li>
+<li>Choose to edit your profile, then the location section.</li>
+<li>Turn off the option to show your business address to customers, and save.</li>
+<li>Add the areas you serve (cities, neighbourhoods or postal areas).</li>
+</ul>
+<p>You'll usually still enter an address when you set the profile up, because Google uses it behind the scenes. Once it's hidden, customers see your service area rather than your street.</p>
+
+<h2>Set a realistic service area</h2>
+<p>Google says a service area shouldn't extend farther than about two hours of driving time from where your business is based, though larger areas can make sense for some businesses. List the places you genuinely serve, not every town you'd like to. A Squamish-based business, for instance, would sensibly list Squamish, Whistler and Pemberton before reaching toward Vancouver. If you want to see how a town-focused page looks on a website, here's what I do for <a href="/web-design-squamish/">web design in Squamish</a>.</p>
+
+<h2>What doesn't work</h2>
+<p>Hiding a home address is fine. Swapping it for a made-up one isn't. Google says:</p>
+<ul>
+<li>P.O. boxes and mailboxes at remote locations aren't acceptable.</li>
+<li>A virtual office isn't eligible for a Business Profile, and service-area businesses can't list one unless it's staffed during business hours.</li>
+<li>If you need to include a suite or mailbox number, the physical street address goes on the first line and the suite or mailbox number on the second.</li>
+</ul>
+<p>Showing an address you should have hidden, or listing a fake storefront, can get a profile suspended, and a suspended profile means disappearing from the map until it's sorted out.</p>
+
+<h2>A quick example</h2>
+<p>Say you're a mobile dog groomer who works out of a van and your home in Squamish. Customers never come to the house, so the address should be hidden and your service area listed. Now say you also rent a small shop where clients drop dogs off on Saturdays, with your name on the door. That's a hybrid: the shop address can show, with a service area for the van. The same person can have either setup, and what matters is what actually happens at the address.</p>
+<p>If you're unsure, think about what a customer would experience if they went to the address on your profile. A closed door at your house is a sign it should be hidden. A staffed counter during your listed hours is a sign it can stay.</p>
+
+<h2>Keep your website consistent</h2>
+<p>Whatever you decide, your website should say the same thing as your profile. If you've hidden your home address on Google, don't print it in your website footer or contact page. Show your service area, a phone number and a contact form instead. Matching details across your profile and site also help people trust you, and I list the other pieces in my <a href="/blog/local-seo-checklist-small-business-bc/">local SEO checklist for BC</a>. If you haven't confirmed the profile yet, start with <a href="/blog/how-do-i-verify-my-google-business-profile/">how to verify your Google Business Profile</a>.</p>
+<p>It also helps to have a page for each main service and area you cover, so a visitor who finds you through the map lands on something relevant. For trades, my <a href="/blog/what-should-a-plumber-website-have/">plumber website checklist</a> shows the idea in practice.</p>
+
+<h2>How FreeSite Company can help</h2>
+<p>I'm Jeremy, a web designer in Squamish. I build Canadian small businesses a custom, hand-coded website for free, and you pay $9/month (then $13/month after three months, or $89/year) only if you keep it, month-to-month, cancel any time. You own the code. Google Business Profile setup is one of my <a href="/add-ons/">add-ons</a> if you'd like help with the address and service-area settings. No pressure either way, and the steps above work whether or not we ever work together.</p>
+
+<h2>Sources</h2>
+<ul>
+<li><a href="https://support.google.com/business/answer/3038177" rel="noopener" target="_blank">Google Business Profile Help: Guidelines for representing your business on Google</a></li>
+</ul>
+`,
+  },
+  {
     slug: "what-should-a-cleaning-company-website-have",
     title: "What Should a Cleaning Company's Website Have?",
     description:
